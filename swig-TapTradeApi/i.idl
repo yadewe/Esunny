@@ -1,0 +1,30 @@
+%module TapTradeAPI
+
+%{
+	/* 在包装代码中包含头文件 */
+
+#include "TapAPICommDef.h"  
+#include "TapTradeAPIDataType.h" 
+#include "TapAPIError.h"  	
+#include "TapTradeAPI.h"  
+%}
+/* 解析头文件生成包装代码 */
+
+%include "csharp.swg"
+%include "carrays.i"
+%include "windows.i"
+%include "typemaps.i"
+%include "arrays_csharp.i"
+
+
+%apply int { ITapTrade::TAPIINT32 &iResult }
+%typemap(cstype) ITapTrade::TAPIINT32 &iResult "out int";
+%apply int { ITapTrade::TAPIUINT32 *sessionID }
+%typemap(cstype) ITapTrade::TAPIUINT32 *sessionID "ref int";
+%apply char *{ ITapTrade::TAPISTR_50 * };
+
+%include "TapAPICommDef.h"
+%include "TapTradeAPIDataType.h"
+%include "TapAPIError.h"
+%include "TapTradeAPI.h"
+

@@ -1,0 +1,1 @@
+swig -csharp -c++ -namespace TapTradeApi -o TapTradeApi.cpp -dllimport TapTradeApi.dll i.idl
