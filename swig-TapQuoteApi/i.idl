@@ -1,0 +1,44 @@
+%module TapQuoteWrapperAPI
+
+%{
+	/* 在包装代码中包含头文件 */
+
+#include "TapAPICommDef.h"  
+#include "TapQuoteAPIDataType.h" 
+#include "TapAPIError.h"  	
+#include "TapQuoteAPI.h"  
+%}
+/* 解析头文件生成包装代码 */
+
+%include "csharp.swg"
+%include "carrays.i"
+%include "windows.i"
+%include "typemaps.i"
+%include "arrays_csharp.i"
+
+%apply int { ITapTrade::TAPIUINT32 *sessionID }
+%typemap(cstype) ITapTrade::TAPIUINT32 *sessionID "ref int";
+%apply int { TAPIINT32 &iResult }
+%typemap(cstype) TAPIINT32 &iResult "out int";
+%apply int { TAPIUINT32 *sessionID }
+%typemap(cstype) TAPIUINT32 *sessionID "ref int";
+
+%array_class(double, doubleArray);
+%array_class(unsigned long long, longArray);
+/*%array_class(long, longArray);
+%apply double *{ TAPIQPRICE					QBidPrice[20] };
+%typemap(cstype) TAPIQPRICE					QBidPrice[20] "double[]";
+%apply double INPUT[]{ TAPIQPRICE					QBidPrice[20] };
+
+%apply double OUTPUT[]  {TAPIQPRICE					QBidPrice[20]};
+%apply int INPUT[]  {TAPIQVOLUME					QBidQty[20]};
+%apply double INPUT[]  {TAPIQPRICE					QAskPrice[20]};
+%apply int INPUT[]  {TAPIQVOLUME					QAskQty[20]};*/
+
+
+
+%include "TapAPICommDef.h"
+%include "TapQuoteAPIDataType.h"
+%include "TapAPIError.h"
+%include "TapQuoteAPI.h"
+

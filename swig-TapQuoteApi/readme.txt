@@ -1,0 +1,1 @@
+swig -csharp -c++ -namespace TapQuoteWrapperApi -o TapQuoteWrapperApi.cpp -dllimport TapQuoteWrapperApi.dll i.idl
