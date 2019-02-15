@@ -18,7 +18,11 @@
 
 %apply int { ITapTrade::TAPIUINT32 *sessionID }
 %typemap(cstype) ITapTrade::TAPIUINT32 *sessionID "ref int";
-%apply int { TAPIINT32 &iResult }
+
+/* %apply  int { TAPIINT32 &iResult } */
+
+%typemap(imtype) TAPIINT32 &iResult "out int"
+%typemap(csin) TAPIINT32 &iResult %{out $csinput%} 
 %typemap(cstype) TAPIINT32 &iResult "out int";
 %apply int { TAPIUINT32 *sessionID }
 %typemap(cstype) TAPIUINT32 *sessionID "ref int";
