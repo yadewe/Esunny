@@ -32,7 +32,7 @@
     <ProjectGuid>{22E2BD34-A81B-42BB-B48F-A42F987BC569}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>TapTradeApiWrapper</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
