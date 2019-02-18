@@ -1209,8 +1209,9 @@ public class TapQuoteWrapperAPI {
   }
 
   public static ITapQuoteAPI CreateTapQuoteAPI(TapAPIApplicationInfo appInfo, out int iResult) {
-    global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.CreateTapQuoteAPI(TapAPIApplicationInfo.getCPtr(appInfo), iResult);
+    global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.CreateTapQuoteAPI(TapAPIApplicationInfo.getCPtr(appInfo), out iResult);
     ITapQuoteAPI ret = (cPtr == global::System.IntPtr.Zero) ? null : new ITapQuoteAPI(cPtr, false);
+    if (TapQuoteWrapperAPIPINVOKE.SWIGPendingException.Pending) throw TapQuoteWrapperAPIPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 

@@ -1427,8 +1427,14 @@ class TapQuoteWrapperAPIPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_ITapQuoteAPINotify_OnRtnQuote")]
   public static extern void ITapQuoteAPINotify_OnRtnQuote(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_new_ITapQuoteAPINotify")]
+  public static extern global::System.IntPtr new_ITapQuoteAPINotify();
+
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_delete_ITapQuoteAPINotify")]
   public static extern void delete_ITapQuoteAPINotify(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_ITapQuoteAPINotify_director_connect")]
+  public static extern void ITapQuoteAPINotify_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, ITapQuoteAPINotify.SwigDelegateITapQuoteAPINotify_0 delegate0, ITapQuoteAPINotify.SwigDelegateITapQuoteAPINotify_1 delegate1, ITapQuoteAPINotify.SwigDelegateITapQuoteAPINotify_2 delegate2, ITapQuoteAPINotify.SwigDelegateITapQuoteAPINotify_3 delegate3, ITapQuoteAPINotify.SwigDelegateITapQuoteAPINotify_4 delegate4, ITapQuoteAPINotify.SwigDelegateITapQuoteAPINotify_5 delegate5, ITapQuoteAPINotify.SwigDelegateITapQuoteAPINotify_6 delegate6, ITapQuoteAPINotify.SwigDelegateITapQuoteAPINotify_7 delegate7);
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_ITapQuoteAPI_SetAPINotify")]
   public static extern int ITapQuoteAPI_SetAPINotify(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
@@ -1458,7 +1464,7 @@ class TapQuoteWrapperAPIPINVOKE {
   public static extern void delete_ITapQuoteAPI(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_CreateTapQuoteAPI")]
-  public static extern global::System.IntPtr CreateTapQuoteAPI(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  public static extern global::System.IntPtr CreateTapQuoteAPI(global::System.Runtime.InteropServices.HandleRef jarg1, out int jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_FreeTapQuoteAPI")]
   public static extern void FreeTapQuoteAPI(global::System.Runtime.InteropServices.HandleRef jarg1);
