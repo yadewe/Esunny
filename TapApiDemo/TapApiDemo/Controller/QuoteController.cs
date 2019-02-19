@@ -26,6 +26,10 @@ namespace TapApiDemo
         public delegate void OnQryContractFinishHandler();
         public event OnQryContractFinishHandler OnQryContractFinishEvent;
 
+        public List<TapAPIQuoteCommodityInfo> ListCommodity = new List<TapAPIQuoteCommodityInfo>();
+
+        public List<TapAPIQuoteContractInfo> ListContract = new List<TapAPIQuoteContractInfo>();
+
         public QuoteController()
         {
             QuoteNotify = new CTapQuoteAPINotify();
@@ -60,6 +64,8 @@ namespace TapApiDemo
             QuoteNotify.OnAPIReadyEvent += QuoteNotify_OnAPIReadyEvent;
             QuoteNotify.OnQuoteUpdateEvent += QuoteNotify_OnQuoteUpdateEvent;
             QuoteNotify.OnDisconnectEvent += QuoteNotify_OnDisconnectEvent;
+            QuoteNotify.OnRspQryCommodityEvent += QuoteNotify_OnRspQryCommodityEvent;
+            QuoteNotify.OnRspQryContractEvent += QuoteNotify_OnRspQryContractEvent;
         }
 
         private void ClearEventHandler()
@@ -116,6 +122,49 @@ namespace TapApiDemo
             //m_api.QryContract(out m_sessionID,null);
         }
 
+        void QuoteNotify_OnRspQryCommodityEvent(uint sessionId,int errorCode,char isLast, TapAPIQuoteCommodityInfo info)
+        {
+            if (errorCode == 0)
+            {
+                if (isLast != 'Y')
+                {
+                    ListCommodity.Add(info);
+                }
+                else
+                {
+                    m_api.QryContract(out m_sessionID, new TapAPICommodity()
+                    {
+                        ExchangeNo = ListCommodity[1].Commodity.ExchangeNo,
+                        CommodityNo = "",
+                        CommodityType='F'
+                       
+                    });
+                }
+            }
+        }
+
+        void QuoteNotify_OnRspQryContractEvent(uint sessionId, int errorCode, char isLast, TapAPIQuoteContractInfo info)
+        {
+            if (errorCode == 0)
+            {
+                if (isLast != 'Y')
+                {
+                    ListContract.Add(info);
+                }
+                else
+                {
+                    var contract =new TapAPIContract();
+                    contract.Commodity.ExchangeNo = "HKEX";
+                    contract.Commodity.CommodityType = 'F';
+                    contract.Commodity.CommodityNo = "HSI";
+                    contract.ContractNo1 = "1903";
+                    contract.CallOrPutFlag1 = 'N';
+                    contract.CallOrPutFlag2 = 'N';
+                    m_api.SubscribeQuote(out m_sessionID, contract);
+                }
+            }
+        }
+
 
         public bool Login(string ip, ushort port, string username, string password)
         {
@@ -128,6 +177,8 @@ namespace TapApiDemo
             var result = m_api.Login(loginInfo);
             return result==0;
         }
+
+        
 
         public void Disconnect()
         {

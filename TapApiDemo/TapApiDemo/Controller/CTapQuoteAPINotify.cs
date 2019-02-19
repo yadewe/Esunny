@@ -46,16 +46,27 @@ namespace TapApiDemo
             }
         }
 
+        public Action<uint, int, char, TapAPIQuoteCommodityInfo> OnRspQryCommodityEvent;
+
         public override void OnRspQryCommodity(uint sessionID, int errorCode, char isLast, TapAPIQuoteCommodityInfo info)
         {
-            
+            if (OnRspQryCommodityEvent != null)
+            {
+                OnRspQryCommodityEvent(sessionID, errorCode, isLast, info);
+            }
         }
 
 
 
 
+        public Action<uint, int, char, TapAPIQuoteContractInfo> OnRspQryContractEvent;
+
         public override void OnRspQryContract(uint sessionID, int errorCode, char isLast, TapAPIQuoteContractInfo info)
         {
+            if (OnRspQryContractEvent != null)
+            {
+                OnRspQryContractEvent(sessionID, errorCode, isLast, info);
+            }
         }
 
 
@@ -63,7 +74,13 @@ namespace TapApiDemo
         public event OnQuoteUpdateHandler OnQuoteUpdateEvent;
         public override void OnRspSubscribeQuote(uint sessionID, int errorCode, char isLast, TapAPIQuoteWhole info)
         {
-            
+            if (errorCode == 0)
+            {
+                if (info != null)
+                {
+                    Console.WriteLine(info.Contract.Commodity.ExchangeNo+" "+info.Contract.Commodity.CommodityNo + " " + info.Contract.StrikePrice1 + " " + info.Q5DAvgQty);
+                }
+            }
         }
 
         public override void OnRspUnSubscribeQuote(uint sessionID, int errorCode, char isLast, TapAPIContract info)
@@ -73,7 +90,7 @@ namespace TapApiDemo
 
         public override void OnRtnQuote(TapAPIQuoteWhole info)
         {
-            
+            Console.WriteLine($"更新时间：{info.DateTimeStamp}，交易所：{info.Contract.Commodity.ExchangeNo}，品种：{info.Contract.Commodity.CommodityNo}，合约：{info.Contract.ContractNo1}，最后价格：{info.QLastPrice}，币种：{info.QImpliedBidQty}");
         }
     }
 }
