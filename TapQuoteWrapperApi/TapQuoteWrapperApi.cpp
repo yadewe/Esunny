@@ -5272,7 +5272,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_Disconnect(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_QryCommodity(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_QryCommodity(void * jarg1, unsigned int * jarg2) {
   int jresult ;
   ITapQuoteAPI *arg1 = (ITapQuoteAPI *) 0 ;
   TAPIUINT32 *arg2 = (TAPIUINT32 *) 0 ;
@@ -5286,7 +5286,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_QryCommodity(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_QryContract(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_QryContract(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapQuoteAPI *arg1 = (ITapQuoteAPI *) 0 ;
   TAPIUINT32 *arg2 = (TAPIUINT32 *) 0 ;
@@ -5302,7 +5302,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_QryContract(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_SubscribeQuote(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_SubscribeQuote(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapQuoteAPI *arg1 = (ITapQuoteAPI *) 0 ;
   TAPIUINT32 *arg2 = (TAPIUINT32 *) 0 ;
@@ -5318,7 +5318,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_SubscribeQuote
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_UnSubscribeQuote(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_ITapQuoteAPI_UnSubscribeQuote(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapQuoteAPI *arg1 = (ITapQuoteAPI *) 0 ;
   TAPIUINT32 *arg2 = (TAPIUINT32 *) 0 ;
