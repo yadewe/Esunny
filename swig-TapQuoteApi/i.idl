@@ -16,15 +16,30 @@
 %include "typemaps.i"
 %include "arrays_csharp.i"
 
-%apply int { ITapTrade::TAPIUINT32 *sessionID }
-%typemap(cstype) ITapTrade::TAPIUINT32 *sessionID "ref int";
+%apply unsigned int *INPUT  { TAPIUINT32 *sessionID}
+%apply unsigned int *OUTPUT { TAPIUINT32 *sessionID }; 
+
+%typemap(csin) TAPIUINT32 *sessionID %{out $csinput%} 
+%typemap(cstype) TAPIUINT32 *sessionID "out uint";
+
 %typemap(imtype) TAPIINT32 &iResult "out int"
 %typemap(csin) TAPIINT32 &iResult %{out $csinput%} 
 %typemap(cstype) TAPIINT32 &iResult "out int";
-%apply int { TAPIUINT32 *sessionID }
-%typemap(cstype) TAPIUINT32 *sessionID "ref int";
+
 %array_class(double, doubleArray);
 %array_class(unsigned long long, longArray);
+
+/*
+%apply int { ITapTrade::TAPIUINT32 *sessionID }
+%typemap(cstype) ITapTrade::TAPIUINT32 *sessionID "out uint";
+%apply unsigned int { TAPIUINT32 *sessionID }
+%typemap(cstype) TAPIUINT32 *sessionID "out uint"  
+*/
+
+/*
+%apply int { TAPIUINT32 *sessionID }
+%typemap(cstype) TAPIUINT32 *sessionID "out uint";
+*/
 
 /*
 %array_class(long, longArray);
