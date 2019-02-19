@@ -48,7 +48,7 @@ namespace TapApiDemo
 
         public override void OnRspQryCommodity(uint sessionID, int errorCode, char isLast, TapAPIQuoteCommodityInfo info)
         {
-            //throw new NotImplementedException();
+            
         }
 
 

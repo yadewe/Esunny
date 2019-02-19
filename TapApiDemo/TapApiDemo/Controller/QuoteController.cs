@@ -12,7 +12,7 @@ namespace TapApiDemo
     {
         public CTapQuoteAPINotify QuoteNotify = null;
         private ITapQuoteAPI m_api = null;
-        private int m_sessionID = 0;
+        private uint m_sessionID = 0;
 
         public delegate void OnQuoteUpdateHandler();
         public event OnQuoteUpdateHandler OnQuoteUpdateEvent;
@@ -112,7 +112,8 @@ namespace TapApiDemo
 
         void QuoteNotify_OnAPIReadyEvent()
         {
-            m_api.QryContract(ref m_sessionID, null);
+            m_api.QryCommodity(out m_sessionID);
+            //m_api.QryContract(out m_sessionID,null);
         }
 
 

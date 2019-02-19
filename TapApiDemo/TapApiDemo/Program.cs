@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TapQuoteWrapperApi;
 
 namespace TapApiDemo
 {
@@ -53,6 +54,7 @@ namespace TapApiDemo
             else
             {
                 Console.WriteLine("登录成功");
+                
             }
         }
     }

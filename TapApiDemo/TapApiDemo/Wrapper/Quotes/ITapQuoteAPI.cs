@@ -60,23 +60,23 @@ public class ITapQuoteAPI : global::System.IDisposable {
     return ret;
   }
 
-  public virtual int QryCommodity(ref int sessionID) {
-    int ret = TapQuoteWrapperAPIPINVOKE.ITapQuoteAPI_QryCommodity(swigCPtr, sessionID);
+  public virtual int QryCommodity(out uint sessionID) {
+    int ret = TapQuoteWrapperAPIPINVOKE.ITapQuoteAPI_QryCommodity(swigCPtr, out sessionID);
     return ret;
   }
 
-  public virtual int QryContract(ref int sessionID, TapAPICommodity qryReq) {
-    int ret = TapQuoteWrapperAPIPINVOKE.ITapQuoteAPI_QryContract(swigCPtr, sessionID, TapAPICommodity.getCPtr(qryReq));
+  public virtual int QryContract(out uint sessionID, TapAPICommodity qryReq) {
+    int ret = TapQuoteWrapperAPIPINVOKE.ITapQuoteAPI_QryContract(swigCPtr, out sessionID, TapAPICommodity.getCPtr(qryReq));
     return ret;
   }
 
-  public virtual int SubscribeQuote(ref int sessionID, TapAPIContract contract) {
-    int ret = TapQuoteWrapperAPIPINVOKE.ITapQuoteAPI_SubscribeQuote(swigCPtr, sessionID, TapAPIContract.getCPtr(contract));
+  public virtual int SubscribeQuote(out uint sessionID, TapAPIContract contract) {
+    int ret = TapQuoteWrapperAPIPINVOKE.ITapQuoteAPI_SubscribeQuote(swigCPtr, out sessionID, TapAPIContract.getCPtr(contract));
     return ret;
   }
 
-  public virtual int UnSubscribeQuote(ref int sessionID, TapAPIContract contract) {
-    int ret = TapQuoteWrapperAPIPINVOKE.ITapQuoteAPI_UnSubscribeQuote(swigCPtr, sessionID, TapAPIContract.getCPtr(contract));
+  public virtual int UnSubscribeQuote(out uint sessionID, TapAPIContract contract) {
+    int ret = TapQuoteWrapperAPIPINVOKE.ITapQuoteAPI_UnSubscribeQuote(swigCPtr, out sessionID, TapAPIContract.getCPtr(contract));
     return ret;
   }
 
