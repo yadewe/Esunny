@@ -380,10 +380,6 @@ SwigDirector_ITapTradeAPINotify::SwigDirector_ITapTradeAPINotify() : ITapTrade::
   swig_init_callbacks();
 }
 
-SwigDirector_ITapTradeAPINotify::SwigDirector_ITapTradeAPINotify(ITapTradeAPINotify const &other) : ITapTradeAPINotify(other), Swig::Director() {
-	swig_init_callbacks();
-}
-
 void SwigDirector_ITapTradeAPINotify::OnConnect() {
   if (!swig_callbackOnConnect) {
     throw Swig::DirectorPureVirtualException("ITapTrade::ITapTradeAPINotify::OnConnect");
