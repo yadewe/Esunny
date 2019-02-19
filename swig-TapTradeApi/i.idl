@@ -1,4 +1,4 @@
-%module TapTradeAPI
+%module(directors="1") TapTradeWrapperAPI
 
 %{
 	/* 在包装代码中包含头文件 */
@@ -8,6 +8,9 @@
 #include "TapAPIError.h"  	
 #include "TapTradeAPI.h"  
 %}
+/* turn on director wrapping Callback */
+%feature("director") ITapTradeAPINotify;
+
 /* 解析头文件生成包装代码 */
 
 %include "csharp.swg"

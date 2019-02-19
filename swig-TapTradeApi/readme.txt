@@ -1,1 +1,1 @@
-swig -csharp -c++ -namespace TapTradeApi -o TapTradeApi.cpp -dllimport TapTradeApi.dll i.idl
+swig -csharp -c++ -namespace TapTradeWrapperAPI -o TapTradeWrapperAPI.cpp -dllimport TapTradeWrapperAPI.dll -outdir E:\SwigTest\Esunny\swig-TapTradeApi\cs i.idl
