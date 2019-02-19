@@ -15,14 +15,14 @@ class SwigDirector_ITapQuoteAPINotify : public ITapQuoteAPINotify, public Swig::
 
 public:
     SwigDirector_ITapQuoteAPINotify();
-    virtual void OnRspLogin(TAPIINT32 errorCode, TapAPIQuotLoginRspInfo const *info);
-    virtual void OnAPIReady();
-    virtual void OnDisconnect(TAPIINT32 reasonCode);
-    virtual void OnRspQryCommodity(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIQuoteCommodityInfo const *info);
-    virtual void OnRspQryContract(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIQuoteContractInfo const *info);
-    virtual void OnRspSubscribeQuote(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIQuoteWhole const *info);
-    virtual void OnRspUnSubscribeQuote(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIContract const *info);
-    virtual void OnRtnQuote(TapAPIQuoteWhole const *info);
+    virtual void TAP_CDECL OnRspLogin(TAPIINT32 errorCode, TapAPIQuotLoginRspInfo const *info);
+    virtual void TAP_CDECL OnAPIReady();
+    virtual void TAP_CDECL OnDisconnect(TAPIINT32 reasonCode);
+    virtual void TAP_CDECL OnRspQryCommodity(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIQuoteCommodityInfo const *info);
+    virtual void TAP_CDECL OnRspQryContract(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIQuoteContractInfo const *info);
+    virtual void TAP_CDECL OnRspSubscribeQuote(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIQuoteWhole const *info);
+    virtual void TAP_CDECL OnRspUnSubscribeQuote(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIContract const *info);
+    virtual void TAP_CDECL OnRtnQuote(TapAPIQuoteWhole const *info);
 
     typedef void (SWIGSTDCALL* SWIG_Callback0_t)(int, void *);
     typedef void (SWIGSTDCALL* SWIG_Callback1_t)();
