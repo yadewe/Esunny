@@ -15,24 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\TapAPICommDef.h">
+    <ClInclude Include="..\TapTradeWrapperApi.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\TapAPIError.h">
+    <ClInclude Include="..\iTapAPICommDef.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\TapTradeAPI.h">
+    <ClInclude Include="..\iTapAPIError.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\TapTradeAPIDataType.h">
+    <ClInclude Include="..\iTapTradeAPI.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\TapTradeWrapperAPI.h">
+    <ClInclude Include="..\iTapTradeAPIDataType.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\TapTradeWrapperAPI.cpp">
+    <ClCompile Include="..\TapTradeWrapperApi.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

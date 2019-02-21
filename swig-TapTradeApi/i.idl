@@ -3,10 +3,10 @@
 %{
 	/* 在包装代码中包含头文件 */
 
-#include "TapAPICommDef.h"  
-#include "TapTradeAPIDataType.h" 
-#include "TapAPIError.h"  	
-#include "TapTradeAPI.h"  
+#include "iTapAPICommDef.h"  
+#include "iTapTradeAPIDataType.h" 
+#include "iTapAPIError.h"  	
+#include "iTapTradeAPI.h"  
 %}
 /* turn on director wrapping Callback */
 %feature("director") ITapTradeAPINotify;
@@ -19,15 +19,20 @@
 %include "typemaps.i"
 %include "arrays_csharp.i"
 
-
-%apply int { ITapTrade::TAPIINT32 &iResult }
+%typemap(imtype) ITapTrade::TAPIINT32 &iResult "out int"
+%typemap(csin) ITapTrade::TAPIINT32 &iResult %{out $csinput%} 
 %typemap(cstype) ITapTrade::TAPIINT32 &iResult "out int";
-%apply int { ITapTrade::TAPIUINT32 *sessionID }
-%typemap(cstype) ITapTrade::TAPIUINT32 *sessionID "ref int";
+
+%apply unsigned int *INPUT  { ITapTrade::TAPIUINT32 *sessionID}
+%apply unsigned int *OUTPUT { ITapTrade::TAPIUINT32 *sessionID }; 
+
+%typemap(csin) ITapTrade::TAPIUINT32 *sessionID %{out $csinput%} 
+%typemap(cstype) ITapTrade::TAPIUINT32 *sessionID "out uint";
+
 %apply char *{ ITapTrade::TAPISTR_50 * };
 
-%include "TapAPICommDef.h"
-%include "TapTradeAPIDataType.h"
-%include "TapAPIError.h"
-%include "TapTradeAPI.h"
+%include "iTapAPICommDef.h"
+%include "iTapTradeAPIDataType.h"
+%include "iTapAPIError.h"
+%include "iTapTradeAPI.h"
 

@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperAPI {
+namespace TapTradeWrapperApi {
 
 public class TapTradeWrapperAPI {
   public static char APIYNFLAG_YES {
@@ -3113,8 +3113,9 @@ public class TapTradeWrapperAPI {
   }
 
   public static ITapTradeAPI CreateITapTradeAPI(TapAPIApplicationInfo appInfo, out int iResult) {
-    global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.CreateITapTradeAPI(TapAPIApplicationInfo.getCPtr(appInfo), iResult);
+    global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.CreateITapTradeAPI(TapAPIApplicationInfo.getCPtr(appInfo), out iResult);
     ITapTradeAPI ret = (cPtr == global::System.IntPtr.Zero) ? null : new ITapTradeAPI(cPtr, false);
+    if (TapTradeWrapperAPIPINVOKE.SWIGPendingException.Pending) throw TapTradeWrapperAPIPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 

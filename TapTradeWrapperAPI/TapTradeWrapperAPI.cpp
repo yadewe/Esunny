@@ -363,10 +363,10 @@ namespace Swig {
 
 	/* 在包装代码中包含头文件 */
 
-#include "TapAPICommDef.h"  
-#include "TapTradeAPIDataType.h" 
-#include "TapAPIError.h"  	
-#include "TapTradeAPI.h"  
+#include "iTapAPICommDef.h"  
+#include "iTapTradeAPIDataType.h" 
+#include "iTapAPIError.h"  	
+#include "iTapTradeAPI.h"  
 
 
 
@@ -374,11 +374,16 @@ namespace Swig {
  * C++ director class methods
  * --------------------------------------------------- */
 
-#include "TapTradeWrapperAPI.h"
+#include "TapTradeWrapperApi.h"
 
 SwigDirector_ITapTradeAPINotify::SwigDirector_ITapTradeAPINotify() : ITapTrade::ITapTradeAPINotify(), Swig::Director() {
   swig_init_callbacks();
 }
+
+SwigDirector_ITapTradeAPINotify::SwigDirector_ITapTradeAPINotify(ITapTradeAPINotify const &other) : ITapTradeAPINotify(other), Swig::Director() {
+	swig_init_callbacks();
+}
+
 
 void SwigDirector_ITapTradeAPINotify::OnConnect() {
   if (!swig_callbackOnConnect) {
@@ -1207,7 +1212,7 @@ void SwigDirector_ITapTradeAPINotify::swig_init_callbacks() {
 extern "C" {
 #endif
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIYNFLAG_YES_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIYNFLAG_YES_get() {
   char jresult ;
   ITapTrade::TAPIYNFLAG result;
   
@@ -1217,7 +1222,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIYNFLAG_YES_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIYNFLAG_NO_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIYNFLAG_NO_get() {
   char jresult ;
   ITapTrade::TAPIYNFLAG result;
   
@@ -1227,7 +1232,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIYNFLAG_NO_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIPASSWORD_TRADE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIPASSWORD_TRADE_get() {
   char jresult ;
   ITapTrade::TAPIPasswordType result;
   
@@ -1237,7 +1242,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIPASSWORD_TRADE_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIPASSWORD_PHONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIPASSWORD_PHONE_get() {
   char jresult ;
   ITapTrade::TAPIPasswordType result;
   
@@ -1247,7 +1252,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIPASSWORD_PHONE_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APILOGLEVEL_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APILOGLEVEL_NONE_get() {
   char jresult ;
   ITapTrade::TAPILOGLEVEL result;
   
@@ -1257,7 +1262,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APILOGLEVEL_NONE_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APILOGLEVEL_ERROR_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APILOGLEVEL_ERROR_get() {
   char jresult ;
   ITapTrade::TAPILOGLEVEL result;
   
@@ -1267,7 +1272,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APILOGLEVEL_ERROR_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APILOGLEVEL_WARNING_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APILOGLEVEL_WARNING_get() {
   char jresult ;
   ITapTrade::TAPILOGLEVEL result;
   
@@ -1277,7 +1282,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APILOGLEVEL_WARNING_get() 
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APILOGLEVEL_DEBUG_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APILOGLEVEL_DEBUG_get() {
   char jresult ;
   ITapTrade::TAPILOGLEVEL result;
   
@@ -1287,7 +1292,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APILOGLEVEL_DEBUG_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_TYPE_AMERICAN_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_OPTION_TYPE_AMERICAN_get() {
   char jresult ;
   ITapTrade::TAPIOptionType result;
   
@@ -1297,7 +1302,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_TYPE_AMERICAN_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_TYPE_AMERICAN2_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_OPTION_TYPE_AMERICAN2_get() {
   char jresult ;
   ITapTrade::TAPIOptionType result;
   
@@ -1307,7 +1312,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_TYPE_AMERICAN2
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_TYPE_EUROPEAN_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_OPTION_TYPE_EUROPEAN_get() {
   char jresult ;
   ITapTrade::TAPIOptionType result;
   
@@ -1317,7 +1322,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_TYPE_EUROPEAN_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_TYPE_EUROPEAN2_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_OPTION_TYPE_EUROPEAN2_get() {
   char jresult ;
   ITapTrade::TAPIOptionType result;
   
@@ -1327,7 +1332,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_TYPE_EUROPEAN2
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_NONE_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1337,7 +1342,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_NONE_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_SPOT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_SPOT_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1347,7 +1352,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_SPOT_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_FUTURES_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_FUTURES_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1357,7 +1362,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_FUTURE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_OPTION_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_OPTION_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1367,7 +1372,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_OPTION
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_SPREAD_MONTH_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_SPREAD_MONTH_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1377,7 +1382,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_SPREAD
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_SPREAD_COMMODITY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_SPREAD_COMMODITY_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1387,7 +1392,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_SPREAD
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_BUL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_BUL_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1397,7 +1402,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_BUL_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_BER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_BER_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1407,7 +1412,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_BER_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_STD_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_STD_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1417,7 +1422,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_STD_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_STG_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_STG_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1427,7 +1432,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_STG_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_PRT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_PRT_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1437,7 +1442,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_PRT_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_DIRECTFOREX_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_DIRECTFOREX_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1447,7 +1452,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_DIRECT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_INDIRECTFOREX_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_INDIRECTFOREX_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1457,7 +1462,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_INDIRE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_CROSSFOREX_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_CROSSFOREX_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1467,7 +1472,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_CROSSF
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_INDEX_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_INDEX_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1477,7 +1482,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_INDEX_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_STOCK_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_COMMODITY_TYPE_STOCK_get() {
   char jresult ;
   ITapTrade::TAPICommodityType result;
   
@@ -1487,7 +1492,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_COMMODITY_TYPE_STOCK_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALLPUT_FLAG_CALL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CALLPUT_FLAG_CALL_get() {
   char jresult ;
   ITapTrade::TAPICallOrPutFlagType result;
   
@@ -1497,7 +1502,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALLPUT_FLAG_CALL_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALLPUT_FLAG_PUT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CALLPUT_FLAG_PUT_get() {
   char jresult ;
   ITapTrade::TAPICallOrPutFlagType result;
   
@@ -1507,7 +1512,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALLPUT_FLAG_PUT_get(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALLPUT_FLAG_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CALLPUT_FLAG_NONE_get() {
   char jresult ;
   ITapTrade::TAPICallOrPutFlagType result;
   
@@ -1517,7 +1522,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALLPUT_FLAG_NONE_get
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIApplicationInfo_AuthCode_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIApplicationInfo_AuthCode_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIApplicationInfo *arg1 = (ITapTrade::TapAPIApplicationInfo *) 0 ;
   char *arg2 ;
   
@@ -1534,7 +1539,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIApplicationInfo_Auth
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIApplicationInfo_AuthCode_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIApplicationInfo_AuthCode_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIApplicationInfo *arg1 = (ITapTrade::TapAPIApplicationInfo *) 0 ;
   char *result = 0 ;
@@ -1546,7 +1551,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIApplicationInfo_Au
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIApplicationInfo_KeyOperationLogPath_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIApplicationInfo_KeyOperationLogPath_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIApplicationInfo *arg1 = (ITapTrade::TapAPIApplicationInfo *) 0 ;
   char *arg2 ;
   
@@ -1563,7 +1568,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIApplicationInfo_KeyO
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIApplicationInfo_KeyOperationLogPath_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIApplicationInfo_KeyOperationLogPath_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIApplicationInfo *arg1 = (ITapTrade::TapAPIApplicationInfo *) 0 ;
   char *result = 0 ;
@@ -1575,7 +1580,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIApplicationInfo_Ke
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIApplicationInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIApplicationInfo() {
   void * jresult ;
   ITapTrade::TapAPIApplicationInfo *result = 0 ;
   
@@ -1585,7 +1590,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIApplicationInf
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIApplicationInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIApplicationInfo(void * jarg1) {
   ITapTrade::TapAPIApplicationInfo *arg1 = (ITapTrade::TapAPIApplicationInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPIApplicationInfo *)jarg1; 
@@ -1593,7 +1598,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIApplicationIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodity_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodity *arg1 = (ITapTrade::TapAPICommodity *) 0 ;
   char *arg2 ;
   
@@ -1610,7 +1615,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_ExchangeNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodity_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodity *arg1 = (ITapTrade::TapAPICommodity *) 0 ;
   char *result = 0 ;
@@ -1622,7 +1627,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_Exchange
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodity_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICommodity *arg1 = (ITapTrade::TapAPICommodity *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -1632,7 +1637,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_CommodityT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodity_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICommodity *arg1 = (ITapTrade::TapAPICommodity *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -1644,7 +1649,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_CommodityT
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodity_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodity *arg1 = (ITapTrade::TapAPICommodity *) 0 ;
   char *arg2 ;
   
@@ -1661,7 +1666,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_CommodityN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodity_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodity *arg1 = (ITapTrade::TapAPICommodity *) 0 ;
   char *result = 0 ;
@@ -1673,7 +1678,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodity_Commodit
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICommodity() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPICommodity() {
   void * jresult ;
   ITapTrade::TapAPICommodity *result = 0 ;
   
@@ -1683,7 +1688,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICommodity() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICommodity(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPICommodity(void * jarg1) {
   ITapTrade::TapAPICommodity *arg1 = (ITapTrade::TapAPICommodity *) 0 ;
   
   arg1 = (ITapTrade::TapAPICommodity *)jarg1; 
@@ -1691,7 +1696,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICommodity(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_Commodity_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_Commodity_set(void * jarg1, void * jarg2) {
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   ITapTrade::TapAPICommodity *arg2 = (ITapTrade::TapAPICommodity *) 0 ;
   
@@ -1701,7 +1706,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_Commodity_s
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_Commodity_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_Commodity_get(void * jarg1) {
   void * jresult ;
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   ITapTrade::TapAPICommodity *result = 0 ;
@@ -1713,7 +1718,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_Commodity
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_ContractNo1_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_ContractNo1_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   char *arg2 ;
   
@@ -1730,7 +1735,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_ContractNo1
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_ContractNo1_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_ContractNo1_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   char *result = 0 ;
@@ -1742,7 +1747,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_ContractN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_StrikePrice1_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_StrikePrice1_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   char *arg2 ;
   
@@ -1759,7 +1764,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_StrikePrice
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_StrikePrice1_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_StrikePrice1_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   char *result = 0 ;
@@ -1771,7 +1776,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_StrikePri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_CallOrPutFlag1_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_CallOrPutFlag1_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -1781,7 +1786,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_CallOrPutFl
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_CallOrPutFlag1_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_CallOrPutFlag1_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -1793,7 +1798,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_CallOrPutFl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_ContractNo2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_ContractNo2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   char *arg2 ;
   
@@ -1810,7 +1815,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_ContractNo2
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_ContractNo2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_ContractNo2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   char *result = 0 ;
@@ -1822,7 +1827,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_ContractN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_StrikePrice2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_StrikePrice2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   char *arg2 ;
   
@@ -1839,7 +1844,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_StrikePrice
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_StrikePrice2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_StrikePrice2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   char *result = 0 ;
@@ -1851,7 +1856,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_StrikePri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_CallOrPutFlag2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_CallOrPutFlag2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -1861,7 +1866,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_CallOrPutFl
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_CallOrPutFlag2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIContract_CallOrPutFlag2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -1873,7 +1878,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIContract_CallOrPutFl
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIContract() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIContract() {
   void * jresult ;
   ITapTrade::TapAPIContract *result = 0 ;
   
@@ -1883,7 +1888,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIContract() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIContract(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIContract(void * jarg1) {
   ITapTrade::TapAPIContract *arg1 = (ITapTrade::TapAPIContract *) 0 ;
   
   arg1 = (ITapTrade::TapAPIContract *)jarg1; 
@@ -1891,7 +1896,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIContract(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIExchangeInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIExchangeInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIExchangeInfo *arg1 = (ITapTrade::TapAPIExchangeInfo *) 0 ;
   char *arg2 ;
   
@@ -1908,7 +1913,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIExchangeInfo_Exchang
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIExchangeInfo_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIExchangeInfo_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIExchangeInfo *arg1 = (ITapTrade::TapAPIExchangeInfo *) 0 ;
   char *result = 0 ;
@@ -1920,7 +1925,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIExchangeInfo_Excha
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIExchangeInfo_ExchangeName_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIExchangeInfo_ExchangeName_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIExchangeInfo *arg1 = (ITapTrade::TapAPIExchangeInfo *) 0 ;
   char *arg2 ;
   
@@ -1937,7 +1942,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIExchangeInfo_Exchang
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIExchangeInfo_ExchangeName_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIExchangeInfo_ExchangeName_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIExchangeInfo *arg1 = (ITapTrade::TapAPIExchangeInfo *) 0 ;
   char *result = 0 ;
@@ -1949,7 +1954,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIExchangeInfo_Excha
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIExchangeInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIExchangeInfo() {
   void * jresult ;
   ITapTrade::TapAPIExchangeInfo *result = 0 ;
   
@@ -1959,7 +1964,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIExchangeInfo()
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIExchangeInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIExchangeInfo(void * jarg1) {
   ITapTrade::TapAPIExchangeInfo *arg1 = (ITapTrade::TapAPIExchangeInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPIExchangeInfo *)jarg1; 
@@ -1967,7 +1972,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIExchangeInfo(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIChangePasswordReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIChangePasswordReq *arg1 = (ITapTrade::TapAPIChangePasswordReq *) 0 ;
   char *arg2 ;
   
@@ -1984,7 +1989,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_Ac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIChangePasswordReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIChangePasswordReq *arg1 = (ITapTrade::TapAPIChangePasswordReq *) 0 ;
   char *result = 0 ;
@@ -1996,7 +2001,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_PasswordType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIChangePasswordReq_PasswordType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIChangePasswordReq *arg1 = (ITapTrade::TapAPIChangePasswordReq *) 0 ;
   ITapTrade::TAPIPasswordType arg2 ;
   
@@ -2006,7 +2011,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_Pa
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_PasswordType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIChangePasswordReq_PasswordType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIChangePasswordReq *arg1 = (ITapTrade::TapAPIChangePasswordReq *) 0 ;
   ITapTrade::TAPIPasswordType result;
@@ -2018,7 +2023,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_Pa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_OldPassword_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIChangePasswordReq_OldPassword_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIChangePasswordReq *arg1 = (ITapTrade::TapAPIChangePasswordReq *) 0 ;
   char *arg2 ;
   
@@ -2035,7 +2040,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_Ol
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_OldPassword_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIChangePasswordReq_OldPassword_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIChangePasswordReq *arg1 = (ITapTrade::TapAPIChangePasswordReq *) 0 ;
   char *result = 0 ;
@@ -2047,7 +2052,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_NewPassword_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIChangePasswordReq_NewPassword_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIChangePasswordReq *arg1 = (ITapTrade::TapAPIChangePasswordReq *) 0 ;
   char *arg2 ;
   
@@ -2064,7 +2069,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_Ne
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_NewPassword_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIChangePasswordReq_NewPassword_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIChangePasswordReq *arg1 = (ITapTrade::TapAPIChangePasswordReq *) 0 ;
   char *result = 0 ;
@@ -2076,7 +2081,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIChangePasswordReq_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIChangePasswordReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIChangePasswordReq() {
   void * jresult ;
   ITapTrade::TapAPIChangePasswordReq *result = 0 ;
   
@@ -2086,7 +2091,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIChangePassword
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIChangePasswordReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIChangePasswordReq(void * jarg1) {
   ITapTrade::TapAPIChangePasswordReq *arg1 = (ITapTrade::TapAPIChangePasswordReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIChangePasswordReq *)jarg1; 
@@ -2094,7 +2099,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIChangePasswor
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAuthPasswordReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAuthPasswordReq *arg1 = (ITapTrade::TapAPIAuthPasswordReq *) 0 ;
   char *arg2 ;
   
@@ -2111,7 +2116,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_Acco
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAuthPasswordReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAuthPasswordReq *arg1 = (ITapTrade::TapAPIAuthPasswordReq *) 0 ;
   char *result = 0 ;
@@ -2123,7 +2128,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_Ac
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_PasswordType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAuthPasswordReq_PasswordType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAuthPasswordReq *arg1 = (ITapTrade::TapAPIAuthPasswordReq *) 0 ;
   ITapTrade::TAPIPasswordType arg2 ;
   
@@ -2133,7 +2138,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_Pass
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_PasswordType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAuthPasswordReq_PasswordType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAuthPasswordReq *arg1 = (ITapTrade::TapAPIAuthPasswordReq *) 0 ;
   ITapTrade::TAPIPasswordType result;
@@ -2145,7 +2150,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_Pass
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_Password_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAuthPasswordReq_Password_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAuthPasswordReq *arg1 = (ITapTrade::TapAPIAuthPasswordReq *) 0 ;
   char *arg2 ;
   
@@ -2162,7 +2167,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_Pass
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_Password_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAuthPasswordReq_Password_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAuthPasswordReq *arg1 = (ITapTrade::TapAPIAuthPasswordReq *) 0 ;
   char *result = 0 ;
@@ -2174,7 +2179,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAuthPasswordReq_Pa
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAuthPasswordReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAuthPasswordReq() {
   void * jresult ;
   ITapTrade::TapAPIAuthPasswordReq *result = 0 ;
   
@@ -2184,7 +2189,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAuthPasswordRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAuthPasswordReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAuthPasswordReq(void * jarg1) {
   ITapTrade::TapAPIAuthPasswordReq *arg1 = (ITapTrade::TapAPIAuthPasswordReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAuthPasswordReq *)jarg1; 
@@ -2192,7 +2197,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAuthPasswordR
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_PERSON_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_TYPE_PERSON_get() {
   char jresult ;
   ITapTrade::TAPIAccountType result;
   
@@ -2202,7 +2207,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_PERSON_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_ORGANIZATION_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_TYPE_ORGANIZATION_get() {
   char jresult ;
   ITapTrade::TAPIAccountType result;
   
@@ -2212,7 +2217,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_ORGANIZA
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_AGENT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_TYPE_AGENT_get() {
   char jresult ;
   ITapTrade::TAPIAccountType result;
   
@@ -2222,7 +2227,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_AGENT_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_MARGIN_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_TYPE_MARGIN_get() {
   char jresult ;
   ITapTrade::TAPIAccountType result;
   
@@ -2232,7 +2237,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_MARGIN_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_HOUSE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_TYPE_HOUSE_get() {
   char jresult ;
   ITapTrade::TAPIAccountType result;
   
@@ -2242,7 +2247,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_HOUSE_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_STOCK_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_TYPE_STOCK_get() {
   char jresult ;
   ITapTrade::TAPIAccountType result;
   
@@ -2252,7 +2257,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TYPE_STOCK_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_RIGHT_ORDER_DEL_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_RIGHT_ORDER_DEL_get() {
   int jresult ;
   ITapTrade::TAPIRightIDType result;
   
@@ -2262,7 +2267,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_RIGHT_ORDER_DEL_get() 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_RIGHT_ORDER_CHECK_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_RIGHT_ORDER_CHECK_get() {
   int jresult ;
   ITapTrade::TAPIRightIDType result;
   
@@ -2272,7 +2277,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_RIGHT_ORDER_CHECK_get(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_RIGHT_ONLY_QRY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_RIGHT_ONLY_QRY_get() {
   int jresult ;
   ITapTrade::TAPIRightIDType result;
   
@@ -2282,7 +2287,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_RIGHT_ONLY_QRY_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_RIGHT_ONLY_OPEN_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_RIGHT_ONLY_OPEN_get() {
   int jresult ;
   ITapTrade::TAPIRightIDType result;
   
@@ -2292,7 +2297,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_RIGHT_ONLY_OPEN_get() 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_CLIENT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_USERTYPE_CLIENT_get() {
   int jresult ;
   ITapTrade::TAPIUserTypeType result;
   
@@ -2302,7 +2307,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_CLIENT_get() 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_BROKER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_USERTYPE_BROKER_get() {
   int jresult ;
   ITapTrade::TAPIUserTypeType result;
   
@@ -2312,7 +2317,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_BROKER_get() 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_TRADER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_USERTYPE_TRADER_get() {
   int jresult ;
   ITapTrade::TAPIUserTypeType result;
   
@@ -2322,7 +2327,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_TRADER_get() 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_RISK_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_USERTYPE_RISK_get() {
   int jresult ;
   ITapTrade::TAPIUserTypeType result;
   
@@ -2332,7 +2337,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_RISK_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_MANAGER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_USERTYPE_MANAGER_get() {
   int jresult ;
   ITapTrade::TAPIUserTypeType result;
   
@@ -2342,7 +2347,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_MANAGER_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_QUOTE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_USERTYPE_QUOTE_get() {
   int jresult ;
   ITapTrade::TAPIUserTypeType result;
   
@@ -2352,7 +2357,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_USERTYPE_QUOTE_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_STATE_NORMAL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_STATE_NORMAL_get() {
   char jresult ;
   ITapTrade::TAPIAccountState result;
   
@@ -2362,7 +2367,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_STATE_NORMAL_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_STATE_CANCEL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_STATE_CANCEL_get() {
   char jresult ;
   ITapTrade::TAPIAccountState result;
   
@@ -2372,7 +2377,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_STATE_CANCEL_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_STATE_SLEEP_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_STATE_SLEEP_get() {
   char jresult ;
   ITapTrade::TAPIAccountState result;
   
@@ -2382,7 +2387,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_STATE_SLEEP_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TRADING_RIGHT_NORMAL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_TRADING_RIGHT_NORMAL_get() {
   char jresult ;
   ITapTrade::TAPIAccountRightType result;
   
@@ -2392,7 +2397,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TRADING_RIGHT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TRADING_RIGHT_NOTRADE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_TRADING_RIGHT_NOTRADE_get() {
   char jresult ;
   ITapTrade::TAPIAccountRightType result;
   
@@ -2402,7 +2407,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TRADING_RIGHT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TRADING_RIGHT_CLOSE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ACCOUNT_TRADING_RIGHT_CLOSE_get() {
   char jresult ;
   ITapTrade::TAPIAccountRightType result;
   
@@ -2412,7 +2417,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ACCOUNT_TRADING_RIGHT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_MARKET_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_MARKET_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2422,7 +2427,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_MARKET_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_LIMIT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_LIMIT_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2432,7 +2437,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_LIMIT_get(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_STOP_MARKET_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_STOP_MARKET_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2442,7 +2447,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_STOP_MARKE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_STOP_LIMIT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_STOP_LIMIT_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2452,7 +2457,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_STOP_LIMIT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_OPT_EXEC_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_OPT_EXEC_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2462,7 +2467,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_OPT_EXEC_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_OPT_ABANDON_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_OPT_ABANDON_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2472,7 +2477,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_OPT_ABANDO
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_REQQUOT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_REQQUOT_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2482,7 +2487,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_REQQUOT_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_RSPQUOT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_RSPQUOT_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2492,7 +2497,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_RSPQUOT_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_ICEBERG_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_ICEBERG_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2502,7 +2507,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_ICEBERG_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_GHOST_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_GHOST_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2512,7 +2517,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_GHOST_get(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_HKEX_AUCTION_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_HKEX_AUCTION_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2522,7 +2527,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_HKEX_AUCTI
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_SWAP_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TYPE_SWAP_get() {
   char jresult ;
   ITapTrade::TAPIOrderTypeType result;
   
@@ -2532,7 +2537,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TYPE_SWAP_get()
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_SELF_ETRADER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_SOURCE_SELF_ETRADER_get() {
   char jresult ;
   ITapTrade::TAPIOrderSourceType result;
   
@@ -2542,7 +2547,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_SELF_ETR
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_PROXY_ETRADER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_SOURCE_PROXY_ETRADER_get() {
   char jresult ;
   ITapTrade::TAPIOrderSourceType result;
   
@@ -2552,7 +2557,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_PROXY_ET
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_JTRADER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_SOURCE_JTRADER_get() {
   char jresult ;
   ITapTrade::TAPIOrderSourceType result;
   
@@ -2562,7 +2567,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_JTRADER_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_MANUAL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_SOURCE_MANUAL_get() {
   char jresult ;
   ITapTrade::TAPIOrderSourceType result;
   
@@ -2572,7 +2577,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_MANUAL_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_CARRY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_SOURCE_CARRY_get() {
   char jresult ;
   ITapTrade::TAPIOrderSourceType result;
   
@@ -2582,7 +2587,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_CARRY_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_PROGRAM_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_SOURCE_PROGRAM_get() {
   char jresult ;
   ITapTrade::TAPIOrderSourceType result;
   
@@ -2592,7 +2597,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_PROGRAM_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_DELIVERY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_SOURCE_DELIVERY_get() {
   char jresult ;
   ITapTrade::TAPIOrderSourceType result;
   
@@ -2602,7 +2607,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_DELIVERY
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_ABANDON_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_SOURCE_ABANDON_get() {
   char jresult ;
   ITapTrade::TAPIOrderSourceType result;
   
@@ -2612,7 +2617,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_ABANDON_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_CHANNEL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_SOURCE_CHANNEL_get() {
   char jresult ;
   ITapTrade::TAPIOrderSourceType result;
   
@@ -2622,7 +2627,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_SOURCE_CHANNEL_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_GFD_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TIMEINFORCE_GFD_get() {
   char jresult ;
   ITapTrade::TAPITimeInForceType result;
   
@@ -2632,7 +2637,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_GFD
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_GTC_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TIMEINFORCE_GTC_get() {
   char jresult ;
   ITapTrade::TAPITimeInForceType result;
   
@@ -2642,7 +2647,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_GTC
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_GTD_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TIMEINFORCE_GTD_get() {
   char jresult ;
   ITapTrade::TAPITimeInForceType result;
   
@@ -2652,7 +2657,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_GTD
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_FAK_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TIMEINFORCE_FAK_get() {
   char jresult ;
   ITapTrade::TAPITimeInForceType result;
   
@@ -2662,7 +2667,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_FAK
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_FOK_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_TIMEINFORCE_FOK_get() {
   char jresult ;
   ITapTrade::TAPITimeInForceType result;
   
@@ -2672,7 +2677,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_TIMEINFORCE_FOK
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_SIDE_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_SIDE_NONE_get() {
   char jresult ;
   ITapTrade::TAPISideType result;
   
@@ -2682,7 +2687,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_SIDE_NONE_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_SIDE_BUY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_SIDE_BUY_get() {
   char jresult ;
   ITapTrade::TAPISideType result;
   
@@ -2692,7 +2697,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_SIDE_BUY_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_SIDE_SELL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_SIDE_SELL_get() {
   char jresult ;
   ITapTrade::TAPISideType result;
   
@@ -2702,7 +2707,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_SIDE_SELL_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_PositionEffect_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_PositionEffect_NONE_get() {
   char jresult ;
   ITapTrade::TAPIPositionEffectType result;
   
@@ -2712,7 +2717,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_PositionEffect_NONE_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_PositionEffect_OPEN_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_PositionEffect_OPEN_get() {
   char jresult ;
   ITapTrade::TAPIPositionEffectType result;
   
@@ -2722,7 +2727,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_PositionEffect_OPEN_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_PositionEffect_COVER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_PositionEffect_COVER_get() {
   char jresult ;
   ITapTrade::TAPIPositionEffectType result;
   
@@ -2732,7 +2737,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_PositionEffect_COVER_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_PositionEffect_COVER_TODAY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_PositionEffect_COVER_TODAY_get() {
   char jresult ;
   ITapTrade::TAPIPositionEffectType result;
   
@@ -2742,7 +2747,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_PositionEffect_COVER_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_HEDGEFLAG_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_HEDGEFLAG_NONE_get() {
   char jresult ;
   ITapTrade::TAPIHedgeFlagType result;
   
@@ -2752,7 +2757,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_HEDGEFLAG_NONE_get() 
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_HEDGEFLAG_T_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_HEDGEFLAG_T_get() {
   char jresult ;
   ITapTrade::TAPIHedgeFlagType result;
   
@@ -2762,7 +2767,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_HEDGEFLAG_T_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_HEDGEFLAG_B_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_HEDGEFLAG_B_get() {
   char jresult ;
   ITapTrade::TAPIHedgeFlagType result;
   
@@ -2772,7 +2777,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_HEDGEFLAG_B_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_HEDGEFLAG_L_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_HEDGEFLAG_L_get() {
   char jresult ;
   ITapTrade::TAPIHedgeFlagType result;
   
@@ -2782,7 +2787,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_HEDGEFLAG_L_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_SUBMIT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_SUBMIT_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2792,7 +2797,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_SUBMIT_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_ACCEPT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_ACCEPT_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2802,7 +2807,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_ACCEPT_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_TRIGGERING_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_TRIGGERING_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2812,7 +2817,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_TRIGGERIN
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_EXCTRIGGERING_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_EXCTRIGGERING_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2822,7 +2827,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_EXCTRIGGE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_QUEUED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_QUEUED_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2832,7 +2837,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_QUEUED_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_PARTFINISHED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_PARTFINISHED_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2842,7 +2847,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_PARTFINIS
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_FINISHED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_FINISHED_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2852,7 +2857,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_FINISHED_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_CANCELING_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_CANCELING_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2862,7 +2867,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_CANCELING
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_MODIFYING_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_MODIFYING_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2872,7 +2877,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_MODIFYING
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_CANCELED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_CANCELED_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2882,7 +2887,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_CANCELED_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_LEFTDELETED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_LEFTDELETED_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2892,7 +2897,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_LEFTDELET
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_FAIL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_FAIL_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2902,7 +2907,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_FAIL_get(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_DELETED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_DELETED_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2912,7 +2917,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_DELETED_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_SUPPENDED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_SUPPENDED_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2922,7 +2927,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_SUPPENDED
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_DELETEDFOREXPIRE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_DELETEDFOREXPIRE_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2932,7 +2937,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_DELETEDFO
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_EFFECT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_EFFECT_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2942,7 +2947,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_EFFECT_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_APPLY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_STATE_APPLY_get() {
   char jresult ;
   ITapTrade::TAPIOrderStateType result;
   
@@ -2952,7 +2957,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_STATE_APPLY_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALULATE_MODE_COMBINE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CALULATE_MODE_COMBINE_get() {
   char jresult ;
   ITapTrade::TAPICalculateModeType result;
   
@@ -2962,7 +2967,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALULATE_MODE_COMBINE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_PERCENTAGE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CALCULATE_MODE_PERCENTAGE_get() {
   char jresult ;
   ITapTrade::TAPICalculateModeType result;
   
@@ -2972,7 +2977,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_PERCEN
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_QUOTA_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CALCULATE_MODE_QUOTA_get() {
   char jresult ;
   ITapTrade::TAPICalculateModeType result;
   
@@ -2982,7 +2987,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_QUOTA_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_CHAPERCENTAGE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CALCULATE_MODE_CHAPERCENTAGE_get() {
   char jresult ;
   ITapTrade::TAPICalculateModeType result;
   
@@ -2992,7 +2997,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_CHAPER
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_CHAQUOTA_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CALCULATE_MODE_CHAQUOTA_get() {
   char jresult ;
   ITapTrade::TAPICalculateModeType result;
   
@@ -3002,7 +3007,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_CHAQUO
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_DISCOUNT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CALCULATE_MODE_DISCOUNT_get() {
   char jresult ;
   ITapTrade::TAPICalculateModeType result;
   
@@ -3012,7 +3017,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CALCULATE_MODE_DISCOU
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_ALL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_ALL_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3022,7 +3027,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_ALL_get(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_SELF_ETRADER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_SELF_ETRADER_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3032,7 +3037,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_SELF_ETR
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_PROXY_ETRADER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_PROXY_ETRADER_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3042,7 +3047,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_PROXY_ET
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_JTRADER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_JTRADER_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3052,7 +3057,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_JTRADER_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_MANUAL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_MANUAL_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3062,7 +3067,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_MANUAL_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_CARRY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_CARRY_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3072,7 +3077,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_CARRY_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_PROGRAM_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_PROGRAM_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3082,7 +3087,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_PROGRAM_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_DELIVERY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_DELIVERY_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3092,7 +3097,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_DELIVERY
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_ABANDON_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_ABANDON_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3102,7 +3107,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_ABANDON_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_CHANNEL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_CHANNEL_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3112,7 +3117,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_CHANNEL_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_ESUNNY_API_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MATCH_SOURCE_ESUNNY_API_get() {
   char jresult ;
   ITapTrade::TAPIMatchSourceType result;
   
@@ -3122,7 +3127,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MATCH_SOURCE_ESUNNY_A
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CLOSE_MODE_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CLOSE_MODE_NONE_get() {
   char jresult ;
   ITapTrade::TAPIOpenCloseModeType result;
   
@@ -3132,7 +3137,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CLOSE_MODE_NONE_get()
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CLOSE_MODE_UNFINISHED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CLOSE_MODE_UNFINISHED_get() {
   char jresult ;
   ITapTrade::TAPIOpenCloseModeType result;
   
@@ -3142,7 +3147,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CLOSE_MODE_UNFINISHED
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CLOSE_MODE_OPENCOVER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CLOSE_MODE_OPENCOVER_get() {
   char jresult ;
   ITapTrade::TAPIOpenCloseModeType result;
   
@@ -3152,7 +3157,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CLOSE_MODE_OPENCOVER_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CLOSE_MODE_CLOSETODAY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CLOSE_MODE_CLOSETODAY_get() {
   char jresult ;
   ITapTrade::TAPIOpenCloseModeType result;
   
@@ -3162,7 +3167,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CLOSE_MODE_CLOSETODAY
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_FUTURES_ALG_ZHUBI_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_FUTURES_ALG_ZHUBI_get() {
   char jresult ;
   ITapTrade::TAPIFutureAlgType result;
   
@@ -3172,7 +3177,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_FUTURES_ALG_ZHUBI_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_FUTURES_ALG_DINGSHI_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_FUTURES_ALG_DINGSHI_get() {
   char jresult ;
   ITapTrade::TAPIFutureAlgType result;
   
@@ -3182,7 +3187,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_FUTURES_ALG_DINGSHI_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_ALG_FUTURES_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_OPTION_ALG_FUTURES_get() {
   char jresult ;
   ITapTrade::TAPIOptionAlgType result;
   
@@ -3192,7 +3197,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_ALG_FUTURES_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_ALG_OPTION_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_OPTION_ALG_OPTION_get() {
   char jresult ;
   ITapTrade::TAPIOptionAlgType result;
   
@@ -3202,7 +3207,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_OPTION_ALG_OPTION_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_SENDTYPE_SMS_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_SENDTYPE_SMS_get() {
   char jresult ;
   ITapTrade::TAPISendType result;
   
@@ -3212,7 +3217,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_SENDTYPE_SMS_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_SENDTYPE_MAIL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_SENDTYPE_MAIL_get() {
   char jresult ;
   ITapTrade::TAPISendType result;
   
@@ -3222,7 +3227,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_SENDTYPE_MAIL_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_LWFlag_L_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_LWFlag_L_get() {
   char jresult ;
   ITapTrade::TAPIBankAccountLWFlagType result;
   
@@ -3232,7 +3237,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_LWFlag_L_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_LWFlag_W_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_LWFlag_W_get() {
   char jresult ;
   ITapTrade::TAPIBankAccountLWFlagType result;
   
@@ -3242,7 +3247,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_LWFlag_W_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_FEEADJUST_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CASHINOUT_MODE_FEEADJUST_get() {
   char jresult ;
   ITapTrade::TAPICashAdjustTypeType result;
   
@@ -3252,7 +3257,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_FEEADJ
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_YKADJUST_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CASHINOUT_MODE_YKADJUST_get() {
   char jresult ;
   ITapTrade::TAPICashAdjustTypeType result;
   
@@ -3262,7 +3267,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_YKADJU
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_PLEDGE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CASHINOUT_MODE_PLEDGE_get() {
   char jresult ;
   ITapTrade::TAPICashAdjustTypeType result;
   
@@ -3272,7 +3277,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_PLEDGE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_INTERESTREVENUE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CASHINOUT_MODE_INTERESTREVENUE_get() {
   char jresult ;
   ITapTrade::TAPICashAdjustTypeType result;
   
@@ -3282,7 +3287,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_INTERE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_COLLECTIONCOST_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CASHINOUT_MODE_COLLECTIONCOST_get() {
   char jresult ;
   ITapTrade::TAPICashAdjustTypeType result;
   
@@ -3292,7 +3297,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_COLLEC
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_OTHER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CASHINOUT_MODE_OTHER_get() {
   char jresult ;
   ITapTrade::TAPICashAdjustTypeType result;
   
@@ -3302,7 +3307,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_OTHER_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_COMPANY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CASHINOUT_MODE_COMPANY_get() {
   char jresult ;
   ITapTrade::TAPICashAdjustTypeType result;
   
@@ -3312,7 +3317,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CASHINOUT_MODE_COMPAN
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DEPOSITCALCULATE_MODE_FEN_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_DEPOSITCALCULATE_MODE_FEN_get() {
   char jresult ;
   ITapTrade::TAPIMarginCalculateModeType result;
   
@@ -3322,7 +3327,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DEPOSITCALCULATE_MODE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DEPOSITCALCULATE_MODE_SUO_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_DEPOSITCALCULATE_MODE_SUO_get() {
   char jresult ;
   ITapTrade::TAPIMarginCalculateModeType result;
   
@@ -3332,7 +3337,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DEPOSITCALCULATE_MODE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CMB_DIRECT_FIRST_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CMB_DIRECT_FIRST_get() {
   char jresult ;
   ITapTrade::TAPICmbDirectType result;
   
@@ -3342,7 +3347,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CMB_DIRECT_FIRST_get(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CMB_DIRECT_SECOND_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CMB_DIRECT_SECOND_get() {
   char jresult ;
   ITapTrade::TAPICmbDirectType result;
   
@@ -3352,7 +3357,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CMB_DIRECT_SECOND_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_GOODS_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_DELIVERY_MODE_GOODS_get() {
   char jresult ;
   ITapTrade::TAPIDeliveryModeType result;
   
@@ -3362,7 +3367,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_GOODS_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_CASH_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_DELIVERY_MODE_CASH_get() {
   char jresult ;
   ITapTrade::TAPIDeliveryModeType result;
   
@@ -3372,7 +3377,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_CASH_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_EXECUTE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_DELIVERY_MODE_EXECUTE_get() {
   char jresult ;
   ITapTrade::TAPIDeliveryModeType result;
   
@@ -3382,7 +3387,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_EXECUTE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_ABANDON_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_DELIVERY_MODE_ABANDON_get() {
   char jresult ;
   ITapTrade::TAPIDeliveryModeType result;
   
@@ -3392,7 +3397,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_ABANDON
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_HKF_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_DELIVERY_MODE_HKF_get() {
   char jresult ;
   ITapTrade::TAPIDeliveryModeType result;
   
@@ -3402,7 +3407,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_DELIVERY_MODE_HKF_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CONTRACT_TYPE_TRADEQUOTE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CONTRACT_TYPE_TRADEQUOTE_get() {
   char jresult ;
   ITapTrade::TAPIContractTypeType result;
   
@@ -3412,7 +3417,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CONTRACT_TYPE_TRADEQU
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CONTRACT_TYPE_QUOTE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_CONTRACT_TYPE_QUOTE_get() {
   char jresult ;
   ITapTrade::TAPIContractTypeType result;
   
@@ -3422,7 +3427,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_CONTRACT_TYPE_QUOTE_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TACTICS_TYPE_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TACTICS_TYPE_NONE_get() {
   char jresult ;
   ITapTrade::TAPITacticsTypeType result;
   
@@ -3432,7 +3437,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TACTICS_TYPE_NONE_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TACTICS_TYPE_READY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TACTICS_TYPE_READY_get() {
   char jresult ;
   ITapTrade::TAPITacticsTypeType result;
   
@@ -3442,7 +3447,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TACTICS_TYPE_READY_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TACTICS_TYPE_ATUO_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TACTICS_TYPE_ATUO_get() {
   char jresult ;
   ITapTrade::TAPITacticsTypeType result;
   
@@ -3452,7 +3457,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TACTICS_TYPE_ATUO_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TACTICS_TYPE_CONDITION_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TACTICS_TYPE_CONDITION_get() {
   char jresult ;
   ITapTrade::TAPITacticsTypeType result;
   
@@ -3462,7 +3467,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TACTICS_TYPE_CONDITIO
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_INSERT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIORDER_INSERT_get() {
   char jresult ;
   ITapTrade::TAPIORDERACT result;
   
@@ -3472,7 +3477,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_INSERT_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_MODIFY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIORDER_MODIFY_get() {
   char jresult ;
   ITapTrade::TAPIORDERACT result;
   
@@ -3482,7 +3487,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_MODIFY_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_DELETE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIORDER_DELETE_get() {
   char jresult ;
   ITapTrade::TAPIORDERACT result;
   
@@ -3492,7 +3497,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_DELETE_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_SUSPEND_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIORDER_SUSPEND_get() {
   char jresult ;
   ITapTrade::TAPIORDERACT result;
   
@@ -3502,7 +3507,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_SUSPEND_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_ACTIVATE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIORDER_ACTIVATE_get() {
   char jresult ;
   ITapTrade::TAPIORDERACT result;
   
@@ -3512,7 +3517,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_ACTIVATE_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_SYSTEM_DELETE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_APIORDER_SYSTEM_DELETE_get() {
   char jresult ;
   ITapTrade::TAPIORDERACT result;
   
@@ -3522,7 +3527,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_APIORDER_SYSTEM_DELETE_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_CONDITION_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRIGGER_CONDITION_NONE_get() {
   char jresult ;
   ITapTrade::TAPITriggerConditionType result;
   
@@ -3532,7 +3537,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_CONDITION_NON
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_CONDITION_GREAT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRIGGER_CONDITION_GREAT_get() {
   char jresult ;
   ITapTrade::TAPITriggerConditionType result;
   
@@ -3542,7 +3547,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_CONDITION_GRE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_CONDITION_LITTLE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRIGGER_CONDITION_LITTLE_get() {
   char jresult ;
   ITapTrade::TAPITriggerConditionType result;
   
@@ -3552,7 +3557,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_CONDITION_LIT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_PRICE_NONE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRIGGER_PRICE_NONE_get() {
   char jresult ;
   ITapTrade::TAPITriggerPriceTypeType result;
   
@@ -3562,7 +3567,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_PRICE_NONE_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_PRICE_BUY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRIGGER_PRICE_BUY_get() {
   char jresult ;
   ITapTrade::TAPITriggerPriceTypeType result;
   
@@ -3572,7 +3577,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_PRICE_BUY_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_PRICE_SELL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRIGGER_PRICE_SELL_get() {
   char jresult ;
   ITapTrade::TAPITriggerPriceTypeType result;
   
@@ -3582,7 +3587,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_PRICE_SELL_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_PRICE_LAST_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRIGGER_PRICE_LAST_get() {
   char jresult ;
   ITapTrade::TAPITriggerPriceTypeType result;
   
@@ -3592,7 +3597,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRIGGER_PRICE_LAST_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_BID_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_BID_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3602,7 +3607,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_BID_get()
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_MATCH_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_MATCH_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3612,7 +3617,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_MATCH_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_CONTINUOUS_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_CONTINUOUS_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3622,7 +3627,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_CONTINUOU
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_PAUSED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_PAUSED_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3632,7 +3637,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_PAUSED_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_CLOSE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_CLOSE_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3642,7 +3647,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_CLOSE_get
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_DEALLAST_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_DEALLAST_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3652,7 +3657,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_DEALLAST_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_GWDISCONNECT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_GWDISCONNECT_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3662,7 +3667,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_GWDISCONN
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_UNKNOWN_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_UNKNOWN_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3672,7 +3677,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_UNKNOWN_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_INITIALIZE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_INITIALIZE_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3682,7 +3687,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_INITIALIZ
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_READY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_TRADE_STATE_READY_get() {
   char jresult ;
   ITapTrade::TAPITradingStateType result;
   
@@ -3692,7 +3697,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_TRADE_STATE_READY_get
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE_NONE_get() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_NOTICE_IGNORE_NONE_get() {
   unsigned int jresult ;
   ITapTrade::TAPINoticeIgnoreFlagType result;
   
@@ -3702,7 +3707,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE_ALL_get() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_NOTICE_IGNORE_ALL_get() {
   unsigned int jresult ;
   ITapTrade::TAPINoticeIgnoreFlagType result;
   
@@ -3712,7 +3717,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE_FUND_get() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_NOTICE_IGNORE_FUND_get() {
   unsigned int jresult ;
   ITapTrade::TAPINoticeIgnoreFlagType result;
   
@@ -3722,7 +3727,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE_ORDER_get() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_NOTICE_IGNORE_ORDER_get() {
   unsigned int jresult ;
   ITapTrade::TAPINoticeIgnoreFlagType result;
   
@@ -3732,7 +3737,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE_FILL_get() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_NOTICE_IGNORE_FILL_get() {
   unsigned int jresult ;
   ITapTrade::TAPINoticeIgnoreFlagType result;
   
@@ -3742,7 +3747,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE_POSITION_get() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_NOTICE_IGNORE_POSITION_get() {
   unsigned int jresult ;
   ITapTrade::TAPINoticeIgnoreFlagType result;
   
@@ -3752,7 +3757,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE_CLOSE_get() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_NOTICE_IGNORE_CLOSE_get() {
   unsigned int jresult ;
   ITapTrade::TAPINoticeIgnoreFlagType result;
   
@@ -3762,7 +3767,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE_POSITIONPROFIT_get() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_NOTICE_IGNORE_POSITIONPROFIT_get() {
   unsigned int jresult ;
   ITapTrade::TAPINoticeIgnoreFlagType result;
   
@@ -3772,7 +3777,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_NOTICE_IGNORE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_QRY_TYPE_ALL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_QRY_TYPE_ALL_get() {
   char jresult ;
   ITapTrade::TAPIOrderQryTypeType result;
   
@@ -3782,7 +3787,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_QRY_TYPE_ALL_ge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_QRY_TYPE_UNENDED_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_ORDER_QRY_TYPE_UNENDED_get() {
   char jresult ;
   ITapTrade::TAPIOrderQryTypeType result;
   
@@ -3792,7 +3797,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_ORDER_QRY_TYPE_UNENDE
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_UserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginAuth_UserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginAuth *arg1 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
   char *arg2 ;
   
@@ -3809,7 +3814,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_UserN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_UserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginAuth_UserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginAuth *arg1 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
   char *result = 0 ;
@@ -3821,7 +3826,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_Use
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_ISModifyPassword_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginAuth_ISModifyPassword_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPITradeLoginAuth *arg1 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -3831,7 +3836,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_ISMod
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_ISModifyPassword_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginAuth_ISModifyPassword_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPITradeLoginAuth *arg1 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -3843,7 +3848,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_ISMod
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_Password_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginAuth_Password_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginAuth *arg1 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
   char *arg2 ;
   
@@ -3860,7 +3865,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_Passw
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_Password_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginAuth_Password_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginAuth *arg1 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
   char *result = 0 ;
@@ -3872,7 +3877,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_Pas
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_NewPassword_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginAuth_NewPassword_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginAuth *arg1 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
   char *arg2 ;
   
@@ -3889,7 +3894,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_NewPa
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_NewPassword_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginAuth_NewPassword_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginAuth *arg1 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
   char *result = 0 ;
@@ -3901,7 +3906,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginAuth_New
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeLoginAuth() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPITradeLoginAuth() {
   void * jresult ;
   ITapTrade::TapAPITradeLoginAuth *result = 0 ;
   
@@ -3911,7 +3916,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeLoginAuth
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeLoginAuth(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPITradeLoginAuth(void * jarg1) {
   ITapTrade::TapAPITradeLoginAuth *arg1 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
   
   arg1 = (ITapTrade::TapAPITradeLoginAuth *)jarg1; 
@@ -3919,7 +3924,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeLoginAut
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_UserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_UserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -3936,7 +3941,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_Us
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_UserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_UserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -3948,7 +3953,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_UserType_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_UserType_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   ITapTrade::TAPIUserTypeType arg2 ;
   
@@ -3958,7 +3963,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_Us
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_UserType_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_UserType_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   ITapTrade::TAPIUserTypeType result;
@@ -3970,7 +3975,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_Use
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_UserName_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_UserName_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -3987,7 +3992,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_Us
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_UserName_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_UserName_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -3999,7 +4004,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_ReservedInfo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_ReservedInfo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -4016,7 +4021,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_Re
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_ReservedInfo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_ReservedInfo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -4028,7 +4033,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastLoginIP_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastLoginIP_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -4045,7 +4050,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_La
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastLoginIP_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastLoginIP_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -4057,7 +4062,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastLoginProt_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastLoginProt_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -4067,7 +4072,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_La
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastLoginProt_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastLoginProt_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -4079,7 +4084,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRs
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastLoginTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastLoginTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -4096,7 +4101,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_La
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastLoginTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastLoginTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -4108,7 +4113,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastLogoutTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastLogoutTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -4125,7 +4130,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_La
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastLogoutTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastLogoutTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -4137,7 +4142,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_TradeDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_TradeDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -4154,7 +4159,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_Tr
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_TradeDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_TradeDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -4166,7 +4171,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastSettleTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastSettleTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -4183,7 +4188,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_La
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_LastSettleTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_LastSettleTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -4195,7 +4200,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_StartTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_StartTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -4212,7 +4217,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_St
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_StartTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_StartTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -4224,7 +4229,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_InitTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_InitTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *arg2 ;
   
@@ -4241,7 +4246,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_In
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_InitTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeLoginRspInfo_InitTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   char *result = 0 ;
@@ -4253,7 +4258,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeLoginRspInfo_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeLoginRspInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPITradeLoginRspInfo() {
   void * jresult ;
   ITapTrade::TapAPITradeLoginRspInfo *result = 0 ;
   
@@ -4263,7 +4268,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeLoginRspI
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeLoginRspInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPITradeLoginRspInfo(void * jarg1) {
   ITapTrade::TapAPITradeLoginRspInfo *arg1 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPITradeLoginRspInfo *)jarg1; 
@@ -4271,7 +4276,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeLoginRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIRequestVertificateCodeRsp_SecondSerialID_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIRequestVertificateCodeRsp_SecondSerialID_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIRequestVertificateCodeRsp *arg1 = (ITapTrade::TapAPIRequestVertificateCodeRsp *) 0 ;
   char *arg2 ;
   
@@ -4288,7 +4293,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIRequestVertificateCo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIRequestVertificateCodeRsp_SecondSerialID_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIRequestVertificateCodeRsp_SecondSerialID_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIRequestVertificateCodeRsp *arg1 = (ITapTrade::TapAPIRequestVertificateCodeRsp *) 0 ;
   char *result = 0 ;
@@ -4300,7 +4305,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIRequestVertificate
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIRequestVertificateCodeRsp_Effective_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIRequestVertificateCodeRsp_Effective_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPIRequestVertificateCodeRsp *arg1 = (ITapTrade::TapAPIRequestVertificateCodeRsp *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -4310,7 +4315,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIRequestVertificateCo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIRequestVertificateCodeRsp_Effective_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIRequestVertificateCodeRsp_Effective_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPIRequestVertificateCodeRsp *arg1 = (ITapTrade::TapAPIRequestVertificateCodeRsp *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -4322,7 +4327,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIRequestVertificateCod
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIRequestVertificateCodeRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIRequestVertificateCodeRsp() {
   void * jresult ;
   ITapTrade::TapAPIRequestVertificateCodeRsp *result = 0 ;
   
@@ -4332,7 +4337,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIRequestVertifi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIRequestVertificateCodeRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIRequestVertificateCodeRsp(void * jarg1) {
   ITapTrade::TapAPIRequestVertificateCodeRsp *arg1 = (ITapTrade::TapAPIRequestVertificateCodeRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIRequestVertificateCodeRsp *)jarg1; 
@@ -4340,7 +4345,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIRequestVertif
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAccQryReq() {
   void * jresult ;
   ITapTrade::TapAPIAccQryReq *result = 0 ;
   
@@ -4350,7 +4355,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccQryReq() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAccQryReq(void * jarg1) {
   ITapTrade::TapAPIAccQryReq *arg1 = (ITapTrade::TapAPIAccQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAccQryReq *)jarg1; 
@@ -4358,7 +4363,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccQryReq(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   char *arg2 ;
   
@@ -4375,7 +4380,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   char *result = 0 ;
@@ -4387,7 +4392,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_Accoun
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   ITapTrade::TAPIAccountType arg2 ;
   
@@ -4397,7 +4402,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   ITapTrade::TAPIAccountType result;
@@ -4409,7 +4414,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountT
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountState_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountState_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   ITapTrade::TAPIAccountState arg2 ;
   
@@ -4419,7 +4424,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountS
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountState_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountState_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   ITapTrade::TAPIAccountState result;
@@ -4431,7 +4436,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountS
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountTradeRight_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountTradeRight_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   ITapTrade::TAPIAccountRightType arg2 ;
   
@@ -4441,7 +4446,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountTradeRight_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountTradeRight_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   ITapTrade::TAPIAccountRightType result;
@@ -4453,7 +4458,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountT
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_CommodityGroupNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_CommodityGroupNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   char *arg2 ;
   
@@ -4470,7 +4475,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_Commodit
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_CommodityGroupNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_CommodityGroupNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   char *result = 0 ;
@@ -4482,7 +4487,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_Commod
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountShortName_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountShortName_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   char *arg2 ;
   
@@ -4499,7 +4504,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountS
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountShortName_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountShortName_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   char *result = 0 ;
@@ -4511,7 +4516,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_Accoun
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountEnShortName_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountEnShortName_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   char *arg2 ;
   
@@ -4528,7 +4533,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountE
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_AccountEnShortName_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountInfo_AccountEnShortName_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   char *result = 0 ;
@@ -4540,7 +4545,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountInfo_Accoun
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAccountInfo() {
   void * jresult ;
   ITapTrade::TapAPIAccountInfo *result = 0 ;
   
@@ -4550,7 +4555,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountInfo() 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAccountInfo(void * jarg1) {
   ITapTrade::TapAPIAccountInfo *arg1 = (ITapTrade::TapAPIAccountInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAccountInfo *)jarg1; 
@@ -4558,7 +4563,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountInfo(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -4575,7 +4580,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_AccountNo_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -4587,7 +4592,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_AccountNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -4604,7 +4609,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ExchangeNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -4616,7 +4621,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ExchangeN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -4626,7 +4631,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CommodityTy
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -4638,7 +4643,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CommodityTy
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -4655,7 +4660,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CommodityNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -4667,7 +4672,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_Commodity
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -4684,7 +4689,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ContractNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -4696,7 +4701,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ContractN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -4713,7 +4718,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StrikePrice
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -4725,7 +4730,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StrikePri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -4735,7 +4740,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CallOrPutFl
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -4747,7 +4752,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CallOrPutFl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ContractNo2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ContractNo2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -4764,7 +4769,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ContractNo2
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ContractNo2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ContractNo2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -4776,7 +4781,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ContractN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StrikePrice2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_StrikePrice2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -4793,7 +4798,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StrikePrice
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StrikePrice2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_StrikePrice2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -4805,7 +4810,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StrikePri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CallOrPutFlag2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_CallOrPutFlag2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -4815,7 +4820,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CallOrPutFl
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CallOrPutFlag2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_CallOrPutFlag2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -4827,7 +4832,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_CallOrPutFl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIOrderTypeType arg2 ;
   
@@ -4837,7 +4842,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderType_s
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIOrderTypeType result;
@@ -4849,7 +4854,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderType_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIOrderSourceType arg2 ;
   
@@ -4859,7 +4864,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderSource
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIOrderSourceType result;
@@ -4871,7 +4876,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderSource
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TimeInForce_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_TimeInForce_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPITimeInForceType arg2 ;
   
@@ -4881,7 +4886,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TimeInForce
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TimeInForce_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_TimeInForce_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPITimeInForceType result;
@@ -4893,7 +4898,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TimeInForce
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ExpireTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ExpireTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -4910,7 +4915,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ExpireTime_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ExpireTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ExpireTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -4922,7 +4927,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ExpireTim
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_IsRiskOrder_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_IsRiskOrder_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -4932,7 +4937,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_IsRiskOrder
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_IsRiskOrder_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_IsRiskOrder_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -4944,7 +4949,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_IsRiskOrder
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -4954,7 +4959,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderSide_s
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPISideType result;
@@ -4966,7 +4971,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderSide_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_PositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_PositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -4976,7 +4981,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_PositionEff
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_PositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_PositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -4988,7 +4993,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_PositionEff
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_PositionEffect2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_PositionEffect2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -4998,7 +5003,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_PositionEff
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_PositionEffect2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_PositionEffect2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -5010,7 +5015,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_PositionEff
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_InquiryNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_InquiryNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -5027,7 +5032,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_InquiryNo_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_InquiryNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_InquiryNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -5039,7 +5044,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_InquiryNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_HedgeFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_HedgeFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIHedgeFlagType arg2 ;
   
@@ -5049,7 +5054,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_HedgeFlag_s
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_HedgeFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_HedgeFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIHedgeFlagType result;
@@ -5061,7 +5066,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_HedgeFlag_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -5071,7 +5076,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderPrice_
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -5083,7 +5088,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderPric
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderPrice2_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderPrice2_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -5093,7 +5098,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderPrice2
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderPrice2_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderPrice2_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -5105,7 +5110,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderPric
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StopPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_StopPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -5115,7 +5120,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StopPrice_s
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StopPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_StopPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -5127,7 +5132,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_StopPrice
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -5137,7 +5142,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderQty_se
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -5149,7 +5154,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderMinQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderMinQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -5159,7 +5164,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderMinQty
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_OrderMinQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_OrderMinQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -5171,7 +5176,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_MinClipSize_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_MinClipSize_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -5181,7 +5186,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_MinClipSize
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_MinClipSize_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_MinClipSize_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -5193,7 +5198,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_Min
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_MaxClipSize_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_MaxClipSize_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -5203,7 +5208,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_MaxClipSize
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_MaxClipSize_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_MaxClipSize_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -5215,7 +5220,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_Max
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefInt_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_RefInt_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -5225,7 +5230,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefInt_set(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefInt_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_RefInt_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -5237,7 +5242,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefInt_get(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefDouble_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_RefDouble_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -5247,7 +5252,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefDouble_s
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefDouble_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_RefDouble_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -5259,7 +5264,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefDouble
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefString_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_RefString_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -5276,7 +5281,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefString_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefString_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_RefString_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -5288,7 +5293,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_RefString
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ClientID_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ClientID_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *arg2 ;
   
@@ -5305,7 +5310,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ClientID_se
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ClientID_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_ClientID_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   char *result = 0 ;
@@ -5317,7 +5322,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_ClientID_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TacticsType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_TacticsType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPITacticsTypeType arg2 ;
   
@@ -5327,7 +5332,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TacticsType
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TacticsType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_TacticsType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPITacticsTypeType result;
@@ -5339,7 +5344,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TacticsType
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TriggerCondition_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_TriggerCondition_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPITriggerConditionType arg2 ;
   
@@ -5349,7 +5354,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TriggerCond
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TriggerCondition_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_TriggerCondition_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPITriggerConditionType result;
@@ -5361,7 +5366,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TriggerCond
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TriggerPriceType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_TriggerPriceType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPITriggerPriceTypeType arg2 ;
   
@@ -5371,7 +5376,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TriggerPric
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TriggerPriceType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_TriggerPriceType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPITriggerPriceTypeType result;
@@ -5383,7 +5388,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_TriggerPric
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_AddOneIsValid_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_AddOneIsValid_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -5393,7 +5398,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_AddOneIsVal
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_AddOneIsValid_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPINewOrder_AddOneIsValid_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -5405,7 +5410,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPINewOrder_AddOneIsVal
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPINewOrder() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPINewOrder() {
   void * jresult ;
   ITapTrade::TapAPINewOrder *result = 0 ;
   
@@ -5415,7 +5420,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPINewOrder() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPINewOrder(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPINewOrder(void * jarg1) {
   ITapTrade::TapAPINewOrder *arg1 = (ITapTrade::TapAPINewOrder *) 0 ;
   
   arg1 = (ITapTrade::TapAPINewOrder *)jarg1; 
@@ -5423,7 +5428,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPINewOrder(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -5440,7 +5445,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_AccountNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -5452,7 +5457,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_AccountN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -5469,7 +5474,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ExchangeNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -5481,7 +5486,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Exchange
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -5491,7 +5496,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CommodityT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -5503,7 +5508,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CommodityT
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -5520,7 +5525,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CommodityN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -5532,7 +5537,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Commodit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -5549,7 +5554,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ContractNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -5561,7 +5566,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Contract
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -5578,7 +5583,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StrikePric
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -5590,7 +5595,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StrikePr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -5600,7 +5605,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CallOrPutF
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -5612,7 +5617,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CallOrPutF
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ContractNo2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ContractNo2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -5629,7 +5634,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ContractNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ContractNo2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ContractNo2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -5641,7 +5646,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Contract
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StrikePrice2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_StrikePrice2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -5658,7 +5663,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StrikePric
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StrikePrice2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_StrikePrice2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -5670,7 +5675,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StrikePr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CallOrPutFlag2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_CallOrPutFlag2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -5680,7 +5685,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CallOrPutF
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CallOrPutFlag2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_CallOrPutFlag2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -5692,7 +5697,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_CallOrPutF
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIOrderTypeType arg2 ;
   
@@ -5702,7 +5707,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderType_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIOrderTypeType result;
@@ -5714,7 +5719,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderType_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIOrderSourceType arg2 ;
   
@@ -5724,7 +5729,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSourc
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIOrderSourceType result;
@@ -5736,7 +5741,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSourc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TimeInForce_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_TimeInForce_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPITimeInForceType arg2 ;
   
@@ -5746,7 +5751,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TimeInForc
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TimeInForce_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_TimeInForce_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPITimeInForceType result;
@@ -5758,7 +5763,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TimeInForc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ExpireTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ExpireTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -5775,7 +5780,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ExpireTime
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ExpireTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ExpireTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -5787,7 +5792,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ExpireTi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsRiskOrder_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_IsRiskOrder_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -5797,7 +5802,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsRiskOrde
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsRiskOrder_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_IsRiskOrder_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -5809,7 +5814,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsRiskOrde
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -5819,7 +5824,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSide_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPISideType result;
@@ -5831,7 +5836,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSide_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_PositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_PositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -5841,7 +5846,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_PositionEf
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_PositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_PositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -5853,7 +5858,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_PositionEf
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_PositionEffect2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_PositionEffect2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -5863,7 +5868,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_PositionEf
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_PositionEffect2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_PositionEffect2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -5875,7 +5880,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_PositionEf
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_InquiryNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_InquiryNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -5892,7 +5897,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_InquiryNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_InquiryNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_InquiryNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -5904,7 +5909,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_InquiryN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_HedgeFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_HedgeFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIHedgeFlagType arg2 ;
   
@@ -5914,7 +5919,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_HedgeFlag_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_HedgeFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_HedgeFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIHedgeFlagType result;
@@ -5926,7 +5931,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_HedgeFlag_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -5936,7 +5941,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderPrice
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -5948,7 +5953,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderPri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderPrice2_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderPrice2_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -5958,7 +5963,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderPrice
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderPrice2_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderPrice2_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -5970,7 +5975,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderPri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StopPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_StopPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -5980,7 +5985,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StopPrice_
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StopPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_StopPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -5992,7 +5997,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_StopPric
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -6002,7 +6007,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderQty_s
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -6014,7 +6019,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Or
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMinQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMinQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -6024,7 +6029,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMinQt
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMinQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMinQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -6036,7 +6041,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Or
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefInt_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_RefInt_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -6046,7 +6051,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefInt_set
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefInt_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_RefInt_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -6058,7 +6063,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefInt_get(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefDouble_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_RefDouble_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -6068,7 +6073,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefDouble_
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefDouble_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_RefDouble_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -6080,7 +6085,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefDoubl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefString_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_RefString_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6097,7 +6102,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefString_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefString_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_RefString_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6109,7 +6114,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_RefStrin
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_MinClipSize_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_MinClipSize_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -6119,7 +6124,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_MinClipSiz
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_MinClipSize_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_MinClipSize_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -6131,7 +6136,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Mi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_MaxClipSize_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_MaxClipSize_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -6141,7 +6146,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_MaxClipSiz
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_MaxClipSize_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_MaxClipSize_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -6153,7 +6158,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Ma
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_LicenseNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_LicenseNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6170,7 +6175,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_LicenseNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_LicenseNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_LicenseNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6182,7 +6187,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_LicenseN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -6192,7 +6197,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ServerFlag
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -6204,7 +6209,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ServerFlag
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6221,7 +6226,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderNo_se
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6233,7 +6238,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderNo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientOrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientOrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6250,7 +6255,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientOrde
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientOrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientOrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6262,7 +6267,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientOr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientID_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientID_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6279,7 +6284,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientID_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientID_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientID_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6291,7 +6296,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientID
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TacticsType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_TacticsType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPITacticsTypeType arg2 ;
   
@@ -6301,7 +6306,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TacticsTyp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TacticsType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_TacticsType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPITacticsTypeType result;
@@ -6313,7 +6318,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TacticsTyp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TriggerCondition_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_TriggerCondition_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPITriggerConditionType arg2 ;
   
@@ -6323,7 +6328,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TriggerCon
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TriggerCondition_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_TriggerCondition_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPITriggerConditionType result;
@@ -6335,7 +6340,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TriggerCon
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TriggerPriceType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_TriggerPriceType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPITriggerPriceTypeType arg2 ;
   
@@ -6345,7 +6350,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TriggerPri
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TriggerPriceType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_TriggerPriceType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPITriggerPriceTypeType result;
@@ -6357,7 +6362,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_TriggerPri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_AddOneIsValid_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_AddOneIsValid_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -6367,7 +6372,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_AddOneIsVa
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_AddOneIsValid_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_AddOneIsValid_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -6379,7 +6384,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_AddOneIsVa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientLocalIP_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientLocalIP_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6396,7 +6401,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientLoca
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientLocalIP_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientLocalIP_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6408,7 +6413,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientLo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientMac_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientMac_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6425,7 +6430,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientMac_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientMac_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientMac_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6437,7 +6442,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientMa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientIP_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientIP_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6454,7 +6459,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientIP_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientIP_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ClientIP_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6466,7 +6471,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ClientIP
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderStreamID_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderStreamID_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -6476,7 +6481,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderStrea
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderStreamID_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderStreamID_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -6488,7 +6493,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Or
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6505,7 +6510,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperNo_se
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6517,7 +6522,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperNo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperChannelNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_UpperChannelNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6534,7 +6539,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperChann
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperChannelNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_UpperChannelNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6546,7 +6551,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperCha
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderLocalNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderLocalNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6563,7 +6568,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderLocal
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderLocalNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderLocalNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6575,7 +6580,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderLoc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperStreamID_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_UpperStreamID_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -6585,7 +6590,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperStrea
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_UpperStreamID_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_UpperStreamID_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -6597,7 +6602,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Up
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6614,7 +6619,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSyste
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6626,7 +6631,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderSys
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderExchangeSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderExchangeSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6643,7 +6648,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderExcha
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderExchangeSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderExchangeSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6655,7 +6660,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderExc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderParentSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderParentSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6672,7 +6677,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderParen
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderParentSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderParentSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6684,7 +6689,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderPar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderInsertUserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderInsertUserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6701,7 +6706,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderInser
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderInsertUserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderInsertUserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6713,7 +6718,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderIns
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderInsertTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderInsertTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6730,7 +6735,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderInser
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderInsertTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderInsertTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6742,7 +6747,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderIns
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderCommandUserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderCommandUserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6759,7 +6764,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderComma
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderCommandUserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderCommandUserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6771,7 +6776,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderCom
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderUpdateUserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderUpdateUserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6788,7 +6793,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderUpdat
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderUpdateUserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderUpdateUserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6800,7 +6805,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderUpd
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderUpdateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderUpdateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6817,7 +6822,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderUpdat
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderUpdateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderUpdateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6829,7 +6834,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderUpd
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderState_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderState_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIOrderStateType arg2 ;
   
@@ -6839,7 +6844,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderState
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderState_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderState_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIOrderStateType result;
@@ -6851,7 +6856,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderState
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatchPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMatchPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -6861,7 +6866,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatch
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatchPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMatchPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -6873,7 +6878,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatchPrice2_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMatchPrice2_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -6883,7 +6888,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatch
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatchPrice2_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMatchPrice2_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -6895,7 +6900,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatchQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMatchQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -6905,7 +6910,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatch
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatchQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMatchQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -6917,7 +6922,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Or
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatchQty2_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMatchQty2_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -6927,7 +6932,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatch
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_OrderMatchQty2_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_OrderMatchQty2_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -6939,7 +6944,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Or
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ErrorCode_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ErrorCode_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -6949,7 +6954,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ErrorCode_
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ErrorCode_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ErrorCode_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -6961,7 +6966,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_Er
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ErrorText_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ErrorText_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *arg2 ;
   
@@ -6978,7 +6983,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ErrorText_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ErrorText_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_ErrorText_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   char *result = 0 ;
@@ -6990,7 +6995,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_ErrorTex
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsBackInput_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_IsBackInput_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -7000,7 +7005,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsBackInpu
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsBackInput_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_IsBackInput_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -7012,7 +7017,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsBackInpu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsDeleted_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_IsDeleted_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -7022,7 +7027,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsDeleted_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsDeleted_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_IsDeleted_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -7034,7 +7039,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsDeleted_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsAddOne_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_IsAddOne_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -7044,7 +7049,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsAddOne_s
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsAddOne_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfo_IsAddOne_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -7056,7 +7061,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfo_IsAddOne_g
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderInfo() {
   void * jresult ;
   ITapTrade::TapAPIOrderInfo *result = 0 ;
   
@@ -7066,7 +7071,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderInfo() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderInfo(void * jarg1) {
   ITapTrade::TapAPIOrderInfo *arg1 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderInfo *)jarg1; 
@@ -7074,7 +7079,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderInfo(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_SessionID_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfoNotice_SessionID_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfoNotice *arg1 = (ITapTrade::TapAPIOrderInfoNotice *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -7084,7 +7089,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_Sess
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_SessionID_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfoNotice_SessionID_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfoNotice *arg1 = (ITapTrade::TapAPIOrderInfoNotice *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -7096,7 +7101,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNot
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_ErrorCode_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfoNotice_ErrorCode_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderInfoNotice *arg1 = (ITapTrade::TapAPIOrderInfoNotice *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -7106,7 +7111,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_Erro
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_ErrorCode_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfoNotice_ErrorCode_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderInfoNotice *arg1 = (ITapTrade::TapAPIOrderInfoNotice *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -7118,7 +7123,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNot
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_OrderInfo_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfoNotice_OrderInfo_set(void * jarg1, void * jarg2) {
   ITapTrade::TapAPIOrderInfoNotice *arg1 = (ITapTrade::TapAPIOrderInfoNotice *) 0 ;
   ITapTrade::TapAPIOrderInfo *arg2 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   
@@ -7128,7 +7133,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_Orde
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_OrderInfo_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderInfoNotice_OrderInfo_get(void * jarg1) {
   void * jresult ;
   ITapTrade::TapAPIOrderInfoNotice *arg1 = (ITapTrade::TapAPIOrderInfoNotice *) 0 ;
   ITapTrade::TapAPIOrderInfo *result = 0 ;
@@ -7140,7 +7145,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderInfoNotice_Or
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderInfoNotice() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderInfoNotice() {
   void * jresult ;
   ITapTrade::TapAPIOrderInfoNotice *result = 0 ;
   
@@ -7150,7 +7155,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderInfoNotic
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderInfoNotice(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderInfoNotice(void * jarg1) {
   ITapTrade::TapAPIOrderInfoNotice *arg1 = (ITapTrade::TapAPIOrderInfoNotice *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderInfoNotice *)jarg1; 
@@ -7158,7 +7163,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderInfoNoti
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderActionRsp_ActionType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderActionRsp_ActionType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderActionRsp *arg1 = (ITapTrade::TapAPIOrderActionRsp *) 0 ;
   ITapTrade::TAPIORDERACT arg2 ;
   
@@ -7168,7 +7173,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderActionRsp_Actio
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderActionRsp_ActionType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderActionRsp_ActionType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderActionRsp *arg1 = (ITapTrade::TapAPIOrderActionRsp *) 0 ;
   ITapTrade::TAPIORDERACT result;
@@ -7180,7 +7185,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderActionRsp_Actio
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderActionRsp_OrderInfo_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderActionRsp_OrderInfo_set(void * jarg1, void * jarg2) {
   ITapTrade::TapAPIOrderActionRsp *arg1 = (ITapTrade::TapAPIOrderActionRsp *) 0 ;
   ITapTrade::TapAPIOrderInfo *arg2 = (ITapTrade::TapAPIOrderInfo *) 0 ;
   
@@ -7190,7 +7195,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderActionRsp_Order
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderActionRsp_OrderInfo_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderActionRsp_OrderInfo_get(void * jarg1) {
   void * jresult ;
   ITapTrade::TapAPIOrderActionRsp *arg1 = (ITapTrade::TapAPIOrderActionRsp *) 0 ;
   ITapTrade::TapAPIOrderInfo *result = 0 ;
@@ -7202,7 +7207,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderActionRsp_Ord
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderActionRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderActionRsp() {
   void * jresult ;
   ITapTrade::TapAPIOrderActionRsp *result = 0 ;
   
@@ -7212,7 +7217,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderActionRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderActionRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderActionRsp(void * jarg1) {
   ITapTrade::TapAPIOrderActionRsp *arg1 = (ITapTrade::TapAPIOrderActionRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderActionRsp *)jarg1; 
@@ -7220,7 +7225,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderActionRs
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_ReqData_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAmendOrder_ReqData_set(void * jarg1, void * jarg2) {
   ITapTrade::TapAPIAmendOrder *arg1 = (ITapTrade::TapAPIAmendOrder *) 0 ;
   ITapTrade::TapAPINewOrder *arg2 = (ITapTrade::TapAPINewOrder *) 0 ;
   
@@ -7230,7 +7235,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_ReqData_s
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_ReqData_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAmendOrder_ReqData_get(void * jarg1) {
   void * jresult ;
   ITapTrade::TapAPIAmendOrder *arg1 = (ITapTrade::TapAPIAmendOrder *) 0 ;
   ITapTrade::TapAPINewOrder *result = 0 ;
@@ -7242,7 +7247,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_ReqData
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAmendOrder_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAmendOrder *arg1 = (ITapTrade::TapAPIAmendOrder *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -7252,7 +7257,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_ServerFla
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAmendOrder_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAmendOrder *arg1 = (ITapTrade::TapAPIAmendOrder *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -7264,7 +7269,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_ServerFla
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAmendOrder_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAmendOrder *arg1 = (ITapTrade::TapAPIAmendOrder *) 0 ;
   char *arg2 ;
   
@@ -7281,7 +7286,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_OrderNo_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAmendOrder_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAmendOrder *arg1 = (ITapTrade::TapAPIAmendOrder *) 0 ;
   char *result = 0 ;
@@ -7293,7 +7298,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAmendOrder_OrderNo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAmendOrder() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAmendOrder() {
   void * jresult ;
   ITapTrade::TapAPIAmendOrder *result = 0 ;
   
@@ -7303,7 +7308,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAmendOrder() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAmendOrder(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAmendOrder(void * jarg1) {
   ITapTrade::TapAPIAmendOrder *arg1 = (ITapTrade::TapAPIAmendOrder *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAmendOrder *)jarg1; 
@@ -7311,7 +7316,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAmendOrder(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefInt_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_RefInt_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -7321,7 +7326,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefIn
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefInt_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_RefInt_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -7333,7 +7338,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefInt
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefDouble_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_RefDouble_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -7343,7 +7348,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefDo
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefDouble_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_RefDouble_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -7355,7 +7360,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_Ref
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefString_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_RefString_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   char *arg2 ;
   
@@ -7372,7 +7377,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefSt
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_RefString_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_RefString_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   char *result = 0 ;
@@ -7384,7 +7389,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_Ref
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -7394,7 +7399,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_Serve
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -7406,7 +7411,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_Serve
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   char *arg2 ;
   
@@ -7423,7 +7428,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderCancelReq_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   char *result = 0 ;
@@ -7435,7 +7440,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderCancelReq_Ord
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderCancelReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderCancelReq() {
   void * jresult ;
   ITapTrade::TapAPIOrderCancelReq *result = 0 ;
   
@@ -7445,7 +7450,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderCancelReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderCancelReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderCancelReq(void * jarg1) {
   ITapTrade::TapAPIOrderCancelReq *arg1 = (ITapTrade::TapAPIOrderCancelReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderCancelReq *)jarg1; 
@@ -7453,7 +7458,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderCancelRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *arg2 ;
   
@@ -7470,7 +7475,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_AccountN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *result = 0 ;
@@ -7482,7 +7487,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_Accoun
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *arg2 ;
   
@@ -7499,7 +7504,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_Exchange
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *result = 0 ;
@@ -7511,7 +7516,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_Exchan
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -7521,7 +7526,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_Commodit
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -7533,7 +7538,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_Commodit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *arg2 ;
   
@@ -7550,7 +7555,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_Commodit
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *result = 0 ;
@@ -7562,7 +7567,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_Commod
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_OrderType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIOrderTypeType arg2 ;
   
@@ -7572,7 +7577,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderTyp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_OrderType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIOrderTypeType result;
@@ -7584,7 +7589,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderTyp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_OrderSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIOrderSourceType arg2 ;
   
@@ -7594,7 +7599,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderSou
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_OrderSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIOrderSourceType result;
@@ -7606,7 +7611,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderSou
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_TimeInForce_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_TimeInForce_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPITimeInForceType arg2 ;
   
@@ -7616,7 +7621,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_TimeInFo
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_TimeInForce_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_TimeInForce_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPITimeInForceType result;
@@ -7628,7 +7633,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_TimeInFo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_ExpireTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_ExpireTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *arg2 ;
   
@@ -7645,7 +7650,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_ExpireTi
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_ExpireTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_ExpireTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *result = 0 ;
@@ -7657,7 +7662,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_Expire
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsRiskOrder_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_IsRiskOrder_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -7667,7 +7672,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsRiskOr
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsRiskOrder_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_IsRiskOrder_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -7679,7 +7684,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsRiskOr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -7689,7 +7694,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_ServerFl
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -7701,7 +7706,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_ServerFl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *arg2 ;
   
@@ -7718,7 +7723,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   char *result = 0 ;
@@ -7730,7 +7735,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_OrderN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsBackInput_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_IsBackInput_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -7740,7 +7745,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsBackIn
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsBackInput_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_IsBackInput_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -7752,7 +7757,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsBackIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsDeleted_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_IsDeleted_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -7762,7 +7767,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsDelete
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsDeleted_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_IsDeleted_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -7774,7 +7779,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsDelete
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsAddOne_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_IsAddOne_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -7784,7 +7789,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsAddOne
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsAddOne_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQryReq_IsAddOne_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -7796,7 +7801,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQryReq_IsAddOne
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderQryReq() {
   void * jresult ;
   ITapTrade::TapAPIOrderQryReq *result = 0 ;
   
@@ -7806,7 +7811,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderQryReq() 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderQryReq(void * jarg1) {
   ITapTrade::TapAPIOrderQryReq *arg1 = (ITapTrade::TapAPIOrderQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderQryReq *)jarg1; 
@@ -7814,7 +7819,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderQryReq(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderProcessQryReq_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderProcessQryReq_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderProcessQryReq *arg1 = (ITapTrade::TapAPIOrderProcessQryReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -7824,7 +7829,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderProcessQryReq_S
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderProcessQryReq_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderProcessQryReq_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderProcessQryReq *arg1 = (ITapTrade::TapAPIOrderProcessQryReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -7836,7 +7841,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderProcessQryReq_S
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderProcessQryReq_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderProcessQryReq_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderProcessQryReq *arg1 = (ITapTrade::TapAPIOrderProcessQryReq *) 0 ;
   char *arg2 ;
   
@@ -7853,7 +7858,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderProcessQryReq_O
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderProcessQryReq_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderProcessQryReq_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderProcessQryReq *arg1 = (ITapTrade::TapAPIOrderProcessQryReq *) 0 ;
   char *result = 0 ;
@@ -7865,7 +7870,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderProcessQryReq
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderProcessQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderProcessQryReq() {
   void * jresult ;
   ITapTrade::TapAPIOrderProcessQryReq *result = 0 ;
   
@@ -7875,7 +7880,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderProcessQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderProcessQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderProcessQryReq(void * jarg1) {
   ITapTrade::TapAPIOrderProcessQryReq *arg1 = (ITapTrade::TapAPIOrderProcessQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderProcessQryReq *)jarg1; 
@@ -7883,7 +7888,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderProcessQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *arg2 ;
   
@@ -7900,7 +7905,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_AccountNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *result = 0 ;
@@ -7912,7 +7917,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_Account
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *arg2 ;
   
@@ -7929,7 +7934,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ExchangeN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *result = 0 ;
@@ -7941,7 +7946,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_Exchang
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -7951,7 +7956,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_Commodity
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -7963,7 +7968,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_Commodity
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *arg2 ;
   
@@ -7980,7 +7985,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_Commodity
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *result = 0 ;
@@ -7992,7 +7997,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_Commodi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *arg2 ;
   
@@ -8009,7 +8014,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ContractN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *result = 0 ;
@@ -8021,7 +8026,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_Contrac
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *arg2 ;
   
@@ -8038,7 +8043,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_StrikePri
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *result = 0 ;
@@ -8050,7 +8055,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_StrikeP
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -8060,7 +8065,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_CallOrPut
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -8072,7 +8077,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_CallOrPut
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_MatchSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_MatchSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPIMatchSourceType arg2 ;
   
@@ -8082,7 +8087,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_MatchSour
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_MatchSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_MatchSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPIMatchSourceType result;
@@ -8094,7 +8099,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_MatchSour
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_MatchSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_MatchSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -8104,7 +8109,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_MatchSide
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_MatchSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_MatchSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPISideType result;
@@ -8116,7 +8121,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_MatchSide
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_PositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_PositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -8126,7 +8131,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_PositionE
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_PositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_PositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -8138,7 +8143,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_PositionE
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -8148,7 +8153,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ServerFla
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -8160,7 +8165,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_ServerFla
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *arg2 ;
   
@@ -8177,7 +8182,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_OrderNo_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *result = 0 ;
@@ -8189,7 +8194,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_OrderNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *arg2 ;
   
@@ -8206,7 +8211,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_UpperNo_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   char *result = 0 ;
@@ -8218,7 +8223,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_UpperNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_IsDeleted_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_IsDeleted_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -8228,7 +8233,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_IsDeleted
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_IsDeleted_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_IsDeleted_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -8240,7 +8245,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_IsDeleted
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_IsAddOne_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_IsAddOne_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -8250,7 +8255,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_IsAddOne_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_IsAddOne_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillQryReq_IsAddOne_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -8262,7 +8267,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillQryReq_IsAddOne_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFillQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIFillQryReq() {
   void * jresult ;
   ITapTrade::TapAPIFillQryReq *result = 0 ;
   
@@ -8272,7 +8277,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFillQryReq() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFillQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIFillQryReq(void * jarg1) {
   ITapTrade::TapAPIFillQryReq *arg1 = (ITapTrade::TapAPIFillQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIFillQryReq *)jarg1; 
@@ -8280,7 +8285,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFillQryReq(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8297,7 +8302,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_AccountNo_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8309,7 +8314,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_AccountNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8326,7 +8331,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ExchangeNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8338,7 +8343,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ExchangeN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -8348,7 +8353,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CommodityTy
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -8360,7 +8365,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CommodityTy
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8377,7 +8382,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CommodityNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8389,7 +8394,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_Commodity
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8406,7 +8411,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ContractNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8418,7 +8423,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ContractN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8435,7 +8440,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_StrikePrice
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8447,7 +8452,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_StrikePri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -8457,7 +8462,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CallOrPutFl
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -8469,7 +8474,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CallOrPutFl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIMatchSourceType arg2 ;
   
@@ -8479,7 +8484,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchSource
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIMatchSourceType result;
@@ -8491,7 +8496,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchSource
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -8501,7 +8506,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchSide_s
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPISideType result;
@@ -8513,7 +8518,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchSide_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_PositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_PositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -8523,7 +8528,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_PositionEff
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_PositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_PositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -8535,7 +8540,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_PositionEff
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -8545,7 +8550,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ServerFlag_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -8557,7 +8562,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ServerFlag_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8574,7 +8579,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_OrderNo_set
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8586,7 +8591,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_OrderNo_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_OrderSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_OrderSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8603,7 +8608,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_OrderSystem
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_OrderSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_OrderSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8615,7 +8620,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_OrderSyst
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8632,7 +8637,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchNo_set
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8644,7 +8649,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchNo_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperMatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_UpperMatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8661,7 +8666,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperMatchN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperMatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_UpperMatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8673,7 +8678,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperMatc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ExchangeMatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ExchangeMatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8690,7 +8695,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ExchangeMat
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ExchangeMatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ExchangeMatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8702,7 +8707,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ExchangeM
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8719,7 +8724,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchDateTi
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8731,7 +8736,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchDate
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperMatchDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_UpperMatchDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8748,7 +8753,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperMatchD
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperMatchDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_UpperMatchDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8760,7 +8765,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperMatc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8777,7 +8782,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperNo_set
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8789,7 +8794,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_UpperNo_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -8799,7 +8804,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchPrice_
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -8811,7 +8816,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchPric
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -8821,7 +8826,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchQty_se
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_MatchQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_MatchQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -8833,7 +8838,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_Mat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsDeleted_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_IsDeleted_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -8843,7 +8848,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsDeleted_s
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsDeleted_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_IsDeleted_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -8855,7 +8860,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsDeleted_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsAddOne_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_IsAddOne_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -8865,7 +8870,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsAddOne_se
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsAddOne_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_IsAddOne_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -8877,7 +8882,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsAddOne_ge
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeCurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_FeeCurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8894,7 +8899,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeCurrency
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeCurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_FeeCurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8906,7 +8911,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeCurren
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_FeeCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *arg2 ;
   
@@ -8923,7 +8928,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeCurrency
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_FeeCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   char *result = 0 ;
@@ -8935,7 +8940,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeCurren
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_FeeValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -8945,7 +8950,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeValue_se
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_FeeValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -8957,7 +8962,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_FeeValue_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsManualFee_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_IsManualFee_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -8967,7 +8972,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsManualFee
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsManualFee_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_IsManualFee_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -8979,7 +8984,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_IsManualFee
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ClosePrositionPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ClosePrositionPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -8989,7 +8994,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_CloseProsit
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ClosePrositionPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillInfo_ClosePrositionPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -9001,7 +9006,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillInfo_ClosePros
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFillInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIFillInfo() {
   void * jresult ;
   ITapTrade::TapAPIFillInfo *result = 0 ;
   
@@ -9011,7 +9016,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFillInfo() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFillInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIFillInfo(void * jarg1) {
   ITapTrade::TapAPIFillInfo *arg1 = (ITapTrade::TapAPIFillInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPIFillInfo *)jarg1; 
@@ -9019,7 +9024,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFillInfo(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseQryReq *arg1 = (ITapTrade::TapAPICloseQryReq *) 0 ;
   char *arg2 ;
   
@@ -9036,7 +9041,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_AccountN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseQryReq *arg1 = (ITapTrade::TapAPICloseQryReq *) 0 ;
   char *result = 0 ;
@@ -9048,7 +9053,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_Accoun
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseQryReq_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseQryReq *arg1 = (ITapTrade::TapAPICloseQryReq *) 0 ;
   char *arg2 ;
   
@@ -9065,7 +9070,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_Exchange
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseQryReq_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseQryReq *arg1 = (ITapTrade::TapAPICloseQryReq *) 0 ;
   char *result = 0 ;
@@ -9077,7 +9082,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_Exchan
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseQryReq_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICloseQryReq *arg1 = (ITapTrade::TapAPICloseQryReq *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -9087,7 +9092,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_Commodit
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseQryReq_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICloseQryReq *arg1 = (ITapTrade::TapAPICloseQryReq *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -9099,7 +9104,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_Commodit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseQryReq_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseQryReq *arg1 = (ITapTrade::TapAPICloseQryReq *) 0 ;
   char *arg2 ;
   
@@ -9116,7 +9121,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_Commodit
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseQryReq_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseQryReq *arg1 = (ITapTrade::TapAPICloseQryReq *) 0 ;
   char *result = 0 ;
@@ -9128,7 +9133,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseQryReq_Commod
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICloseQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPICloseQryReq() {
   void * jresult ;
   ITapTrade::TapAPICloseQryReq *result = 0 ;
   
@@ -9138,7 +9143,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICloseQryReq() 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICloseQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPICloseQryReq(void * jarg1) {
   ITapTrade::TapAPICloseQryReq *arg1 = (ITapTrade::TapAPICloseQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPICloseQryReq *)jarg1; 
@@ -9146,7 +9151,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICloseQryReq(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9163,7 +9168,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_AccountNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9175,7 +9180,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_AccountN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9192,7 +9197,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ExchangeNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9204,7 +9209,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_Exchange
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -9214,7 +9219,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -9226,7 +9231,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityT
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9243,7 +9248,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9255,7 +9260,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_Commodit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9272,7 +9277,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ContractNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9284,7 +9289,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_Contract
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9301,7 +9306,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_StrikePric
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9313,7 +9318,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_StrikePr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -9323,7 +9328,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CallOrPutF
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -9335,7 +9340,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CallOrPutF
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -9345,7 +9350,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseSide_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPISideType result;
@@ -9357,7 +9362,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseSide_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -9367,7 +9372,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseQty_s
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -9379,7 +9384,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_Cl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_OpenPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -9389,7 +9394,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenPrice_
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_OpenPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -9401,7 +9406,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenPric
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ClosePrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_ClosePrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -9411,7 +9416,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ClosePrice
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ClosePrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_ClosePrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -9423,7 +9428,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ClosePri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenMatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_OpenMatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9440,7 +9445,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenMatchN
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenMatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_OpenMatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9452,7 +9457,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenMatc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenMatchDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_OpenMatchDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9469,7 +9474,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenMatchD
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenMatchDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_OpenMatchDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9481,7 +9486,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_OpenMatc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseMatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseMatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9498,7 +9503,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseMatch
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseMatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseMatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9510,7 +9515,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseMat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseMatchDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseMatchDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9527,7 +9532,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseMatch
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseMatchDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseMatchDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9539,7 +9544,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseMat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseStreamId_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseStreamId_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -9549,7 +9554,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseStrea
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseStreamId_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseStreamId_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -9561,7 +9566,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_Cl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityCurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CommodityCurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9578,7 +9583,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityC
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityCurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CommodityCurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9590,7 +9595,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_Commodit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CommodityCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *arg2 ;
   
@@ -9607,7 +9612,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityC
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CommodityCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CommodityCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   char *result = 0 ;
@@ -9619,7 +9624,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_Commodit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -9629,7 +9634,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseProfi
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_CloseProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICloseInfo_CloseProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -9641,7 +9646,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICloseInfo_ClosePro
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICloseInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPICloseInfo() {
   void * jresult ;
   ITapTrade::TapAPICloseInfo *result = 0 ;
   
@@ -9651,7 +9656,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICloseInfo() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICloseInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPICloseInfo(void * jarg1) {
   ITapTrade::TapAPICloseInfo *arg1 = (ITapTrade::TapAPICloseInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPICloseInfo *)jarg1; 
@@ -9659,7 +9664,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICloseInfo(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionQryReq *arg1 = (ITapTrade::TapAPIPositionQryReq *) 0 ;
   char *arg2 ;
   
@@ -9676,7 +9681,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionQryReq_Accou
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionQryReq *arg1 = (ITapTrade::TapAPIPositionQryReq *) 0 ;
   char *result = 0 ;
@@ -9688,7 +9693,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionQryReq_Acc
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIPositionQryReq() {
   void * jresult ;
   ITapTrade::TapAPIPositionQryReq *result = 0 ;
   
@@ -9698,7 +9703,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionQryReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIPositionQryReq(void * jarg1) {
   ITapTrade::TapAPIPositionQryReq *arg1 = (ITapTrade::TapAPIPositionQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIPositionQryReq *)jarg1; 
@@ -9706,7 +9711,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionQryRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -9723,7 +9728,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Account
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -9735,7 +9740,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Accou
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -9752,7 +9757,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Exchang
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -9764,7 +9769,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Excha
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -9774,7 +9779,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Commodi
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -9786,7 +9791,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Commodi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -9803,7 +9808,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Commodi
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -9815,7 +9820,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Commo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -9832,7 +9837,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Contrac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -9844,7 +9849,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Contr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -9861,7 +9866,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_StrikeP
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -9873,7 +9878,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Strik
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -9883,7 +9888,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CallOrP
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -9895,7 +9900,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CallOrP
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_MatchSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_MatchSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -9905,7 +9910,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_MatchSi
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_MatchSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_MatchSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPISideType result;
@@ -9917,7 +9922,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_MatchSi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_HedgeFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_HedgeFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIHedgeFlagType arg2 ;
   
@@ -9927,7 +9932,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_HedgeFl
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_HedgeFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_HedgeFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIHedgeFlagType result;
@@ -9939,7 +9944,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_HedgeFl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -9956,7 +9961,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Positio
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -9968,7 +9973,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Posit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -9978,7 +9983,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_ServerF
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -9990,7 +9995,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_ServerF
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -10007,7 +10012,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_OrderNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -10019,7 +10024,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Order
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_MatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_MatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -10036,7 +10041,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_MatchNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_MatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_MatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -10048,7 +10053,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Match
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -10065,7 +10070,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_UpperNo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -10077,7 +10082,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Upper
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10087,7 +10092,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Positio
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10099,7 +10104,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Posit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -10109,7 +10114,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Positio
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -10121,7 +10126,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionStreamId_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionStreamId_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -10131,7 +10136,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Positio
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionStreamId_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionStreamId_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -10143,7 +10148,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CommodityCurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CommodityCurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -10160,7 +10165,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Commodi
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CommodityCurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CommodityCurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -10172,7 +10177,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Commo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CommodityCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CommodityCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *arg2 ;
   
@@ -10189,7 +10194,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Commodi
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CommodityCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CommodityCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   char *result = 0 ;
@@ -10201,7 +10206,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Commo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CalculatePrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CalculatePrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10211,7 +10216,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Calcula
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_CalculatePrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_CalculatePrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10223,7 +10228,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Calcu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_AccountInitialMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_AccountInitialMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10233,7 +10238,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Account
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_AccountInitialMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_AccountInitialMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10245,7 +10250,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Accou
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_AccountMaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_AccountMaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10255,7 +10260,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Account
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_AccountMaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_AccountMaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10267,7 +10272,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Accou
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_UpperInitialMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_UpperInitialMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10277,7 +10282,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_UpperIn
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_UpperInitialMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_UpperInitialMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10289,7 +10294,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Upper
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_UpperMaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_UpperMaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10299,7 +10304,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_UpperMa
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_UpperMaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_UpperMaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10311,7 +10316,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Upper
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10321,7 +10326,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Positio
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_PositionProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_PositionProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10333,7 +10338,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Posit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_LMEPositionProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_LMEPositionProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10343,7 +10348,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_LMEPosi
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_LMEPositionProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_LMEPositionProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10355,7 +10360,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_LMEPo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_OptionMarketValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_OptionMarketValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10365,7 +10370,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_OptionM
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_OptionMarketValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_OptionMarketValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10377,7 +10382,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_Optio
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_IsHistory_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_IsHistory_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -10387,7 +10392,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_IsHisto
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_IsHistory_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionInfo_IsHistory_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -10399,7 +10404,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionInfo_IsHisto
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIPositionInfo() {
   void * jresult ;
   ITapTrade::TapAPIPositionInfo *result = 0 ;
   
@@ -10409,7 +10414,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionInfo()
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIPositionInfo(void * jarg1) {
   ITapTrade::TapAPIPositionInfo *arg1 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPIPositionInfo *)jarg1; 
@@ -10417,7 +10422,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionInfo(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_PositionNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_PositionNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   char *arg2 ;
   
@@ -10434,7 +10439,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_Posit
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_PositionNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_PositionNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   char *result = 0 ;
@@ -10446,7 +10451,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_Pos
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_PositionStreamId_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_PositionStreamId_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -10456,7 +10461,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_Posit
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_PositionStreamId_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_PositionStreamId_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -10468,7 +10473,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProf
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_PositionProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_PositionProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10478,7 +10483,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_Posit
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_PositionProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_PositionProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10490,7 +10495,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_Pos
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_LMEPositionProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_LMEPositionProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10500,7 +10505,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_LMEPo
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_LMEPositionProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_LMEPositionProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10512,7 +10517,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_LME
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_OptionMarketValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_OptionMarketValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10522,7 +10527,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_Optio
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_OptionMarketValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_OptionMarketValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10534,7 +10539,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_Opt
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_CalculatePrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_CalculatePrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10544,7 +10549,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_Calcu
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_CalculatePrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfit_CalculatePrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10556,7 +10561,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfit_Cal
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionProfit() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIPositionProfit() {
   void * jresult ;
   ITapTrade::TapAPIPositionProfit *result = 0 ;
   
@@ -10566,7 +10571,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionProfit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionProfit(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIPositionProfit(void * jarg1) {
   ITapTrade::TapAPIPositionProfit *arg1 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   
   arg1 = (ITapTrade::TapAPIPositionProfit *)jarg1; 
@@ -10574,7 +10579,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionProfi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfitNotice_IsLast_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfitNotice_IsLast_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionProfitNotice *arg1 = (ITapTrade::TapAPIPositionProfitNotice *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -10584,7 +10589,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfitNotice
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfitNotice_IsLast_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfitNotice_IsLast_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionProfitNotice *arg1 = (ITapTrade::TapAPIPositionProfitNotice *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -10596,7 +10601,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfitNotice
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfitNotice_Data_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfitNotice_Data_set(void * jarg1, void * jarg2) {
   ITapTrade::TapAPIPositionProfitNotice *arg1 = (ITapTrade::TapAPIPositionProfitNotice *) 0 ;
   ITapTrade::TapAPIPositionProfit *arg2 = (ITapTrade::TapAPIPositionProfit *) 0 ;
   
@@ -10606,7 +10611,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfitNotice
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfitNotice_Data_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionProfitNotice_Data_get(void * jarg1) {
   void * jresult ;
   ITapTrade::TapAPIPositionProfitNotice *arg1 = (ITapTrade::TapAPIPositionProfitNotice *) 0 ;
   ITapTrade::TapAPIPositionProfit *result = 0 ;
@@ -10618,7 +10623,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionProfitNoti
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionProfitNotice() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIPositionProfitNotice() {
   void * jresult ;
   ITapTrade::TapAPIPositionProfitNotice *result = 0 ;
   
@@ -10628,7 +10633,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionProfit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionProfitNotice(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIPositionProfitNotice(void * jarg1) {
   ITapTrade::TapAPIPositionProfitNotice *arg1 = (ITapTrade::TapAPIPositionProfitNotice *) 0 ;
   
   arg1 = (ITapTrade::TapAPIPositionProfitNotice *)jarg1; 
@@ -10636,7 +10641,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionProfi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *arg2 ;
   
@@ -10653,7 +10658,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Acco
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *result = 0 ;
@@ -10665,7 +10670,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Ac
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *arg2 ;
   
@@ -10682,7 +10687,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Exch
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *result = 0 ;
@@ -10694,7 +10699,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Ex
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -10704,7 +10709,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Comm
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -10716,7 +10721,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Comm
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *arg2 ;
   
@@ -10733,7 +10738,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Comm
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *result = 0 ;
@@ -10745,7 +10750,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Co
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *arg2 ;
   
@@ -10762,7 +10767,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Cont
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *result = 0 ;
@@ -10774,7 +10779,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Co
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *arg2 ;
   
@@ -10791,7 +10796,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Stri
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   char *result = 0 ;
@@ -10803,7 +10808,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_St
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -10813,7 +10818,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Call
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -10825,7 +10830,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Call
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_MatchSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_MatchSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -10835,7 +10840,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Matc
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_MatchSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_MatchSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPISideType result;
@@ -10847,7 +10852,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Matc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_PositionPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_PositionPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -10857,7 +10862,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Posi
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_PositionPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_PositionPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -10869,7 +10874,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Po
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_PositionQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_PositionQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -10879,7 +10884,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_Posi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_PositionQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_PositionQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -10891,7 +10896,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSumm
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_HisPositionQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_HisPositionQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -10901,7 +10906,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_HisP
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSummary_HisPositionQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIPositionSummary_HisPositionQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -10913,7 +10918,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIPositionSumm
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionSummary() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIPositionSummary() {
   void * jresult ;
   ITapTrade::TapAPIPositionSummary *result = 0 ;
   
@@ -10923,7 +10928,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIPositionSummar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionSummary(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIPositionSummary(void * jarg1) {
   ITapTrade::TapAPIPositionSummary *arg1 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   
   arg1 = (ITapTrade::TapAPIPositionSummary *)jarg1; 
@@ -10931,7 +10936,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIPositionSumma
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFundReq *arg1 = (ITapTrade::TapAPIFundReq *) 0 ;
   char *arg2 ;
   
@@ -10948,7 +10953,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundReq_AccountNo_se
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFundReq *arg1 = (ITapTrade::TapAPIFundReq *) 0 ;
   char *result = 0 ;
@@ -10960,7 +10965,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundReq_AccountNo_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFundReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIFundReq() {
   void * jresult ;
   ITapTrade::TapAPIFundReq *result = 0 ;
   
@@ -10970,7 +10975,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFundReq() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFundReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIFundReq(void * jarg1) {
   ITapTrade::TapAPIFundReq *arg1 = (ITapTrade::TapAPIFundReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIFundReq *)jarg1; 
@@ -10978,7 +10983,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFundReq(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   char *arg2 ;
   
@@ -10995,7 +11000,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountNo_s
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   char *result = 0 ;
@@ -11007,7 +11012,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   char *arg2 ;
   
@@ -11024,7 +11029,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CurrencyGro
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CurrencyGroupNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CurrencyGroupNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   char *result = 0 ;
@@ -11036,7 +11041,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CurrencyG
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CurrencyNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CurrencyNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   char *arg2 ;
   
@@ -11053,7 +11058,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CurrencyNo_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CurrencyNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CurrencyNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   char *result = 0 ;
@@ -11065,7 +11070,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CurrencyN
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_TradeRate_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_TradeRate_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11075,7 +11080,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_TradeRate_s
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_TradeRate_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_TradeRate_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11087,7 +11092,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_TradeRate
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FutureAlg_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_FutureAlg_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIFutureAlgType arg2 ;
   
@@ -11097,7 +11102,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FutureAlg_s
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FutureAlg_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_FutureAlg_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIFutureAlgType result;
@@ -11109,7 +11114,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FutureAlg_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_OptionAlg_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_OptionAlg_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIOptionAlgType arg2 ;
   
@@ -11119,7 +11124,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_OptionAlg_s
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_OptionAlg_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_OptionAlg_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIOptionAlgType result;
@@ -11131,7 +11136,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_OptionAlg_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreBalance_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreBalance_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11141,7 +11146,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreBalance_
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreBalance_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreBalance_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11153,7 +11158,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreBalanc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreUnExpProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreUnExpProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11163,7 +11168,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreUnExpPro
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreUnExpProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreUnExpProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11175,7 +11180,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreUnExpP
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreLMEPositionProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreLMEPositionProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11185,7 +11190,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreLMEPosit
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreLMEPositionProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreLMEPositionProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11197,7 +11202,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreLMEPos
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreEquity_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreEquity_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11207,7 +11212,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreEquity_s
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreEquity_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreEquity_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11219,7 +11224,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreEquity
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreAvailable1_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreAvailable1_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11229,7 +11234,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreAvailabl
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreAvailable1_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreAvailable1_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11241,7 +11246,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreAvaila
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreMarketEquity_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreMarketEquity_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11251,7 +11256,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreMarketEq
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreMarketEquity_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PreMarketEquity_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11263,7 +11268,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PreMarket
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashInValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CashInValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11273,7 +11278,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashInValue
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashInValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CashInValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11285,7 +11290,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashInVal
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashOutValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CashOutValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11295,7 +11300,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashOutValu
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashOutValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CashOutValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11307,7 +11312,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashOutVa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashAdjustValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CashAdjustValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11317,7 +11322,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashAdjustV
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashAdjustValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CashAdjustValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11329,7 +11334,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashAdjus
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashPledged_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CashPledged_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11339,7 +11344,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashPledged
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashPledged_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CashPledged_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11351,7 +11356,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CashPledg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_FrozenFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11361,7 +11366,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenFee_s
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_FrozenFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11373,7 +11378,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenFee
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenDeposit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_FrozenDeposit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11383,7 +11388,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenDepos
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenDeposit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_FrozenDeposit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11395,7 +11400,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenDep
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AccountFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11405,7 +11410,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountFee_
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AccountFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11417,7 +11422,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountFe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_SwapInValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_SwapInValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11427,7 +11432,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_SwapInValue
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_SwapInValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_SwapInValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11439,7 +11444,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_SwapInVal
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_SwapOutValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_SwapOutValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11449,7 +11454,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_SwapOutValu
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_SwapOutValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_SwapOutValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11461,7 +11466,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_SwapOutVa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PremiumIncome_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PremiumIncome_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11471,7 +11476,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PremiumInco
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PremiumIncome_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PremiumIncome_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11483,7 +11488,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PremiumIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PremiumPay_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PremiumPay_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11493,7 +11498,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PremiumPay_
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PremiumPay_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PremiumPay_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11505,7 +11510,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PremiumPa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CloseProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CloseProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11515,7 +11520,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CloseProfit
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CloseProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CloseProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11527,7 +11532,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CloseProf
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenFund_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_FrozenFund_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11537,7 +11542,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenFund_
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenFund_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_FrozenFund_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11549,7 +11554,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_FrozenFun
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UnExpProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_UnExpProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11559,7 +11564,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UnExpProfit
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UnExpProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_UnExpProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11571,7 +11576,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UnExpProf
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_ExpProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_ExpProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11581,7 +11586,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_ExpProfit_s
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_ExpProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_ExpProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11593,7 +11598,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_ExpProfit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PositionProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PositionProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11603,7 +11608,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PositionPro
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PositionProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_PositionProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11615,7 +11620,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_PositionP
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_LmePositionProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_LmePositionProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11625,7 +11630,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_LmePosition
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_LmePositionProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_LmePositionProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11637,7 +11642,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_LmePositi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_OptionMarketValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_OptionMarketValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11647,7 +11652,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_OptionMarke
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_OptionMarketValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_OptionMarketValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11659,7 +11664,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_OptionMar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountIntialMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AccountIntialMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11669,7 +11674,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountInti
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountIntialMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AccountIntialMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11681,7 +11686,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountMaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AccountMaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11691,7 +11696,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountMain
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountMaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AccountMaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11703,7 +11708,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AccountMa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UpperInitalMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_UpperInitalMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11713,7 +11718,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UpperInital
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UpperInitalMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_UpperInitalMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11725,7 +11730,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UpperInit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UpperMaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_UpperMaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11735,7 +11740,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UpperMainte
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UpperMaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_UpperMaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11747,7 +11752,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_UpperMain
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Discount_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_Discount_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11757,7 +11762,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Discount_se
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Discount_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_Discount_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11769,7 +11774,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Discount_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Balance_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_Balance_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11779,7 +11784,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Balance_set
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Balance_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_Balance_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11791,7 +11796,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Balance_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Equity_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_Equity_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11801,7 +11806,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Equity_set(
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Equity_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_Equity_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11813,7 +11818,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Equity_ge
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Available_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_Available_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11823,7 +11828,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Available_s
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Available_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_Available_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11835,7 +11840,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_Available
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CanDraw_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CanDraw_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11845,7 +11850,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CanDraw_set
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CanDraw_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_CanDraw_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11857,7 +11862,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_CanDraw_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_MarketEquity_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_MarketEquity_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11867,7 +11872,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_MarketEquit
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_MarketEquity_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_MarketEquity_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11879,7 +11884,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_MarketEqu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AuthMoney_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AuthMoney_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -11889,7 +11894,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AuthMoney_s
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AuthMoney_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFundData_AuthMoney_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -11901,7 +11906,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFundData_AuthMoney
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFundData() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIFundData() {
   void * jresult ;
   ITapTrade::TapAPIFundData *result = 0 ;
   
@@ -11911,7 +11916,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFundData() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFundData(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIFundData(void * jarg1) {
   ITapTrade::TapAPIFundData *arg1 = (ITapTrade::TapAPIFundData *) 0 ;
   
   arg1 = (ITapTrade::TapAPIFundData *)jarg1; 
@@ -11919,7 +11924,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFundData(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -11936,7 +11941,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Exchan
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -11948,7 +11953,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Exch
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -11958,7 +11963,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commod
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -11970,7 +11975,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commod
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -11987,7 +11992,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commod
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -11999,7 +12004,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Comm
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityName_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityName_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -12016,7 +12021,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commod
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityName_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityName_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -12028,7 +12033,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Comm
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityEngName_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityEngName_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -12045,7 +12050,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commod
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityEngName_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityEngName_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -12057,7 +12062,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Comm
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -12074,7 +12079,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Relate
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -12086,7 +12091,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Rela
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateCommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateCommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -12096,7 +12101,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Relate
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateCommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateCommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -12108,7 +12113,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Relate
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateCommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateCommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -12125,7 +12130,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Relate
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateCommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateCommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -12137,7 +12142,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Rela
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateExchangeNo2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateExchangeNo2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -12154,7 +12159,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Relate
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateExchangeNo2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateExchangeNo2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -12166,7 +12171,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Rela
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateCommodityType2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateCommodityType2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -12176,7 +12181,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Relate
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateCommodityType2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateCommodityType2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -12188,7 +12193,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Relate
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateCommodityNo2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateCommodityNo2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -12205,7 +12210,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Relate
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_RelateCommodityNo2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_RelateCommodityNo2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -12217,7 +12222,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Rela
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -12234,7 +12239,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Curren
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CurrencyGroupNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CurrencyGroupNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -12246,7 +12251,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Curr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_TradeCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_TradeCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -12263,7 +12268,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_TradeC
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_TradeCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_TradeCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -12275,7 +12280,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Trad
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_ContractSize_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_ContractSize_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -12285,7 +12290,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Contra
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_ContractSize_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_ContractSize_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -12297,7 +12302,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Cont
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_OpenCloseMode_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_OpenCloseMode_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIOpenCloseModeType arg2 ;
   
@@ -12307,7 +12312,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_OpenCl
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_OpenCloseMode_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_OpenCloseMode_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIOpenCloseModeType result;
@@ -12319,7 +12324,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_OpenCl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_StrikePriceTimes_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_StrikePriceTimes_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -12329,7 +12334,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Strike
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_StrikePriceTimes_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_StrikePriceTimes_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -12341,7 +12346,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Stri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityTickSize_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityTickSize_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -12351,7 +12356,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commod
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityTickSize_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityTickSize_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -12363,7 +12368,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Comm
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityDenominator_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityDenominator_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -12373,7 +12378,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commod
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityDenominator_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityDenominator_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -12385,7 +12390,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commodi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CmbDirect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CmbDirect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPICmbDirectType arg2 ;
   
@@ -12395,7 +12400,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CmbDir
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CmbDirect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CmbDirect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPICmbDirectType result;
@@ -12407,7 +12412,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CmbDir
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_DeliveryMode_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_DeliveryMode_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIDeliveryModeType arg2 ;
   
@@ -12417,7 +12422,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Delive
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_DeliveryMode_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_DeliveryMode_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIDeliveryModeType result;
@@ -12429,7 +12434,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Delive
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_DeliveryDays_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_DeliveryDays_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -12439,7 +12444,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Delive
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_DeliveryDays_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_DeliveryDays_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -12451,7 +12456,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Deliver
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_AddOneTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_AddOneTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *arg2 ;
   
@@ -12468,7 +12473,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_AddOne
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_AddOneTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_AddOneTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   char *result = 0 ;
@@ -12480,7 +12485,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_AddO
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityTimeZone_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityTimeZone_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -12490,7 +12495,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commod
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_CommodityTimeZone_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_CommodityTimeZone_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -12502,7 +12507,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_Commodi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_IsAddOne_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_IsAddOne_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -12512,7 +12517,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_IsAddO
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_IsAddOne_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICommodityInfo_IsAddOne_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -12524,7 +12529,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICommodityInfo_IsAddO
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICommodityInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPICommodityInfo() {
   void * jresult ;
   ITapTrade::TapAPICommodityInfo *result = 0 ;
   
@@ -12534,7 +12539,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICommodityInfo(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICommodityInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPICommodityInfo(void * jarg1) {
   ITapTrade::TapAPICommodityInfo *arg1 = (ITapTrade::TapAPICommodityInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPICommodityInfo *)jarg1; 
@@ -12542,7 +12547,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICommodityInfo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12559,7 +12564,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Ex
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12571,7 +12576,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -12581,7 +12586,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Co
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -12593,7 +12598,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Co
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12610,7 +12615,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12622,7 +12627,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractNo1_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractNo1_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12639,7 +12644,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractNo1_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractNo1_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12651,7 +12656,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_StrikePrice1_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_StrikePrice1_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12668,7 +12673,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_St
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_StrikePrice1_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_StrikePrice1_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12680,7 +12685,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_CallOrPutFlag1_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_CallOrPutFlag1_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -12690,7 +12695,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Ca
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_CallOrPutFlag1_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_CallOrPutFlag1_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -12702,7 +12707,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Ca
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractNo2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractNo2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12719,7 +12724,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractNo2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractNo2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12731,7 +12736,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_StrikePrice2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_StrikePrice2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12748,7 +12753,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_St
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_StrikePrice2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_StrikePrice2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12760,7 +12765,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_CallOrPutFlag2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_CallOrPutFlag2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -12770,7 +12775,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Ca
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_CallOrPutFlag2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_CallOrPutFlag2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -12782,7 +12787,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Ca
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   ITapTrade::TAPIContractTypeType arg2 ;
   
@@ -12792,7 +12797,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Co
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   ITapTrade::TAPIContractTypeType result;
@@ -12804,7 +12809,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Co
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_QuoteUnderlyingContract_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_QuoteUnderlyingContract_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12821,7 +12826,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Qu
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_QuoteUnderlyingContract_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_QuoteUnderlyingContract_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12833,7 +12838,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractName_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractName_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12850,7 +12855,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractName_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractName_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12862,7 +12867,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractExpDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractExpDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12879,7 +12884,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_ContractExpDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_ContractExpDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12891,7 +12896,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_LastTradeDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_LastTradeDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12908,7 +12913,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_La
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_LastTradeDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_LastTradeDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12920,7 +12925,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_FirstNoticeDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_FirstNoticeDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *arg2 ;
   
@@ -12937,7 +12942,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_Fi
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_FirstNoticeDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeContractInfo_FirstNoticeDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   char *result = 0 ;
@@ -12949,7 +12954,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeContractInfo_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeContractInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPITradeContractInfo() {
   void * jresult ;
   ITapTrade::TapAPITradeContractInfo *result = 0 ;
   
@@ -12959,7 +12964,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeContractI
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeContractInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPITradeContractInfo(void * jarg1) {
   ITapTrade::TapAPITradeContractInfo *arg1 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPITradeContractInfo *)jarg1; 
@@ -12967,7 +12972,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeContract
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_CurrencyNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_CurrencyNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   char *arg2 ;
   
@@ -12984,7 +12989,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_Currenc
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_CurrencyNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_CurrencyNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   char *result = 0 ;
@@ -12996,7 +13001,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_Curre
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   char *arg2 ;
   
@@ -13013,7 +13018,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_Currenc
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_CurrencyGroupNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_CurrencyGroupNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   char *result = 0 ;
@@ -13025,7 +13030,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_Curre
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_TradeRate_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_TradeRate_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -13035,7 +13040,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_TradeRa
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_TradeRate_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_TradeRate_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -13047,7 +13052,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_Trade
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_TradeRate2_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_TradeRate2_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -13057,7 +13062,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_TradeRa
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_TradeRate2_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_TradeRate2_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -13069,7 +13074,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_Trade
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_FutureAlg_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_FutureAlg_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   ITapTrade::TAPIFutureAlgType arg2 ;
   
@@ -13079,7 +13084,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_FutureA
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_FutureAlg_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_FutureAlg_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   ITapTrade::TAPIFutureAlgType result;
@@ -13091,7 +13096,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_FutureA
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_OptionAlg_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_OptionAlg_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   ITapTrade::TAPIOptionAlgType arg2 ;
   
@@ -13101,7 +13106,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_OptionA
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_OptionAlg_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPICurrencyInfo_OptionAlg_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   ITapTrade::TAPIOptionAlgType result;
@@ -13113,7 +13118,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPICurrencyInfo_OptionA
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICurrencyInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPICurrencyInfo() {
   void * jresult ;
   ITapTrade::TapAPICurrencyInfo *result = 0 ;
   
@@ -13123,7 +13128,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPICurrencyInfo()
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICurrencyInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPICurrencyInfo(void * jarg1) {
   ITapTrade::TapAPICurrencyInfo *arg1 = (ITapTrade::TapAPICurrencyInfo *) 0 ;
   
   arg1 = (ITapTrade::TapAPICurrencyInfo *)jarg1; 
@@ -13131,7 +13136,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPICurrencyInfo(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_RECEIVER_ACCOUNTNO_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MSG_RECEIVER_ACCOUNTNO_get() {
   char jresult ;
   ITapTrade::TAPIMsgReceiverType result;
   
@@ -13141,7 +13146,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_RECEIVER_ACCOUNTN
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_RECEIVER_ACCOUNTGROUPNO_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MSG_RECEIVER_ACCOUNTGROUPNO_get() {
   char jresult ;
   ITapTrade::TAPIMsgReceiverType result;
   
@@ -13151,7 +13156,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_RECEIVER_ACCOUNTG
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_RECEIVER_ATTRIBUTE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MSG_RECEIVER_ATTRIBUTE_get() {
   char jresult ;
   ITapTrade::TAPIMsgReceiverType result;
   
@@ -13161,7 +13166,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_RECEIVER_ATTRIBUT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_RECEIVER_USERNO_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MSG_RECEIVER_USERNO_get() {
   char jresult ;
   ITapTrade::TAPIMsgReceiverType result;
   
@@ -13171,7 +13176,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_RECEIVER_USERNO_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_LEVEL_NORMAL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MSG_LEVEL_NORMAL_get() {
   char jresult ;
   ITapTrade::TAPIMsgLevelType result;
   
@@ -13181,7 +13186,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_LEVEL_NORMAL_get(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_LEVEL_IMPORTANT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MSG_LEVEL_IMPORTANT_get() {
   char jresult ;
   ITapTrade::TAPIMsgLevelType result;
   
@@ -13191,7 +13196,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_LEVEL_IMPORTANT_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_LEVEL_IMERGENCY_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_MSG_LEVEL_IMERGENCY_get() {
   char jresult ;
   ITapTrade::TAPIMsgLevelType result;
   
@@ -13201,7 +13206,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_MSG_LEVEL_IMERGENCY_g
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_Msg_TYPE_MANAGER_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_Msg_TYPE_MANAGER_get() {
   char jresult ;
   ITapTrade::TAPIMsgTypeType result;
   
@@ -13211,7 +13216,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_Msg_TYPE_MANAGER_get(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_Msg_TYPE_RISKCONTROL_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_Msg_TYPE_RISKCONTROL_get() {
   char jresult ;
   ITapTrade::TAPIMsgTypeType result;
   
@@ -13221,7 +13226,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_Msg_TYPE_RISKCONTROL_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_BILL_DATE_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_BILL_DATE_get() {
   char jresult ;
   ITapTrade::TAPIBillTypeType result;
   
@@ -13231,7 +13236,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_BILL_DATE_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_BILL_MONTH_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_BILL_MONTH_get() {
   char jresult ;
   ITapTrade::TAPIBillTypeType result;
   
@@ -13241,7 +13246,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_BILL_MONTH_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_BILL_FILE_TXT_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_BILL_FILE_TXT_get() {
   char jresult ;
   ITapTrade::TAPIBillFileTypeType result;
   
@@ -13251,7 +13256,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_BILL_FILE_TXT_get() {
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_BILL_FILE_PDF_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPI_BILL_FILE_PDF_get() {
   char jresult ;
   ITapTrade::TAPIBillFileTypeType result;
   
@@ -13261,7 +13266,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPI_BILL_FILE_PDF_get() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessageReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessageReq *arg1 = (ITapTrade::TapAPITradeMessageReq *) 0 ;
   char *arg2 ;
   
@@ -13278,7 +13283,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_Acco
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessageReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessageReq *arg1 = (ITapTrade::TapAPITradeMessageReq *) 0 ;
   char *result = 0 ;
@@ -13290,7 +13295,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_Ac
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessageReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessageReq *arg1 = (ITapTrade::TapAPITradeMessageReq *) 0 ;
   char *arg2 ;
   
@@ -13307,7 +13312,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_Acco
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_AccountAttributeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessageReq_AccountAttributeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessageReq *arg1 = (ITapTrade::TapAPITradeMessageReq *) 0 ;
   char *result = 0 ;
@@ -13319,7 +13324,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_Ac
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_BenginSendDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessageReq_BenginSendDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessageReq *arg1 = (ITapTrade::TapAPITradeMessageReq *) 0 ;
   char *arg2 ;
   
@@ -13336,7 +13341,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_Beng
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_BenginSendDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessageReq_BenginSendDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessageReq *arg1 = (ITapTrade::TapAPITradeMessageReq *) 0 ;
   char *result = 0 ;
@@ -13348,7 +13353,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_Be
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_EndSendDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessageReq_EndSendDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessageReq *arg1 = (ITapTrade::TapAPITradeMessageReq *) 0 ;
   char *arg2 ;
   
@@ -13365,7 +13370,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_EndS
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_EndSendDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessageReq_EndSendDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessageReq *arg1 = (ITapTrade::TapAPITradeMessageReq *) 0 ;
   char *result = 0 ;
@@ -13377,7 +13382,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessageReq_En
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeMessageReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPITradeMessageReq() {
   void * jresult ;
   ITapTrade::TapAPITradeMessageReq *result = 0 ;
   
@@ -13387,7 +13392,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeMessageRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeMessageReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPITradeMessageReq(void * jarg1) {
   ITapTrade::TapAPITradeMessageReq *arg1 = (ITapTrade::TapAPITradeMessageReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPITradeMessageReq *)jarg1; 
@@ -13395,7 +13400,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeMessageR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_SerialID_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_SerialID_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -13405,7 +13410,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_SerialI
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_SerialID_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_SerialID_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -13417,7 +13422,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *arg2 ;
   
@@ -13434,7 +13439,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_Account
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *result = 0 ;
@@ -13446,7 +13451,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_Accou
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgValidDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgValidDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *arg2 ;
   
@@ -13463,7 +13468,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgVal
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgValidDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgValidDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *result = 0 ;
@@ -13475,7 +13480,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgV
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgTitle_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgTitle_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *arg2 ;
   
@@ -13492,7 +13497,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgTit
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgTitle_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgTitle_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *result = 0 ;
@@ -13504,7 +13509,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgT
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgContent_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgContent_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *arg2 ;
   
@@ -13521,7 +13526,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgCon
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgContent_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgContent_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *result = 0 ;
@@ -13533,7 +13538,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgC
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIMsgTypeType arg2 ;
   
@@ -13543,7 +13548,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgTyp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIMsgTypeType result;
@@ -13555,7 +13560,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgTyp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgLevel_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgLevel_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIMsgLevelType arg2 ;
   
@@ -13565,7 +13570,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgLev
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgLevel_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_TMsgLevel_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIMsgLevelType result;
@@ -13577,7 +13582,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_TMsgLev
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_IsSendBySMS_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_IsSendBySMS_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -13587,7 +13592,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_IsSendB
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_IsSendBySMS_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_IsSendBySMS_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -13599,7 +13604,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_IsSendB
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_IsSendByEMail_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_IsSendByEMail_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -13609,7 +13614,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_IsSendB
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_IsSendByEMail_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_IsSendByEMail_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -13621,7 +13626,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_IsSendB
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_Sender_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_Sender_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *arg2 ;
   
@@ -13638,7 +13643,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_Sender_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_Sender_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_Sender_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *result = 0 ;
@@ -13650,7 +13655,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_Sende
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_SendDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_SendDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *arg2 ;
   
@@ -13667,7 +13672,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_SendDat
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_SendDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradeMessage_SendDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   char *result = 0 ;
@@ -13679,7 +13684,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPITradeMessage_SendD
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeMessage() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPITradeMessage() {
   void * jresult ;
   ITapTrade::TapAPITradeMessage *result = 0 ;
   
@@ -13689,7 +13694,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPITradeMessage()
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeMessage(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPITradeMessage(void * jarg1) {
   ITapTrade::TapAPITradeMessage *arg1 = (ITapTrade::TapAPITradeMessage *) 0 ;
   
   arg1 = (ITapTrade::TapAPITradeMessage *)jarg1; 
@@ -13697,7 +13702,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPITradeMessage(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_UserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryReq_UserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIBillQryReq *arg1 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   char *arg2 ;
   
@@ -13714,7 +13719,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_UserNo_se
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_UserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryReq_UserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIBillQryReq *arg1 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   char *result = 0 ;
@@ -13726,7 +13731,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_UserNo_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryReq_BillType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIBillQryReq *arg1 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   ITapTrade::TAPIBillTypeType arg2 ;
   
@@ -13736,7 +13741,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillType_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryReq_BillType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIBillQryReq *arg1 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   ITapTrade::TAPIBillTypeType result;
@@ -13748,7 +13753,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillType_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryReq_BillDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIBillQryReq *arg1 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   char *arg2 ;
   
@@ -13765,7 +13770,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillDate_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryReq_BillDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIBillQryReq *arg1 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   char *result = 0 ;
@@ -13777,7 +13782,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillDat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillFileType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryReq_BillFileType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIBillQryReq *arg1 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   ITapTrade::TAPIBillFileTypeType arg2 ;
   
@@ -13787,7 +13792,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillFileT
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillFileType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryReq_BillFileType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIBillQryReq *arg1 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   ITapTrade::TAPIBillFileTypeType result;
@@ -13799,7 +13804,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryReq_BillFileT
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIBillQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIBillQryReq() {
   void * jresult ;
   ITapTrade::TapAPIBillQryReq *result = 0 ;
   
@@ -13809,7 +13814,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIBillQryReq() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIBillQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIBillQryReq(void * jarg1) {
   ITapTrade::TapAPIBillQryReq *arg1 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIBillQryReq *)jarg1; 
@@ -13817,7 +13822,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIBillQryReq(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_Reqdata_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryRsp_Reqdata_set(void * jarg1, void * jarg2) {
   ITapTrade::TapAPIBillQryRsp *arg1 = (ITapTrade::TapAPIBillQryRsp *) 0 ;
   ITapTrade::TapAPIBillQryReq *arg2 = (ITapTrade::TapAPIBillQryReq *) 0 ;
   
@@ -13827,7 +13832,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_Reqdata_s
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_Reqdata_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryRsp_Reqdata_get(void * jarg1) {
   void * jresult ;
   ITapTrade::TapAPIBillQryRsp *arg1 = (ITapTrade::TapAPIBillQryRsp *) 0 ;
   ITapTrade::TapAPIBillQryReq *result = 0 ;
@@ -13839,7 +13844,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_Reqdata
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_BillLen_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryRsp_BillLen_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPIBillQryRsp *arg1 = (ITapTrade::TapAPIBillQryRsp *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -13849,7 +13854,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_BillLen_s
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_BillLen_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryRsp_BillLen_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPIBillQryRsp *arg1 = (ITapTrade::TapAPIBillQryRsp *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -13861,7 +13866,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_BillLen_ge
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_BillText_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryRsp_BillText_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIBillQryRsp *arg1 = (ITapTrade::TapAPIBillQryRsp *) 0 ;
   ITapTrade::TAPICHAR *arg2 ;
   
@@ -13878,7 +13883,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_BillText_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_BillText_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIBillQryRsp_BillText_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIBillQryRsp *arg1 = (ITapTrade::TapAPIBillQryRsp *) 0 ;
   ITapTrade::TAPICHAR *result = 0 ;
@@ -13890,7 +13895,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIBillQryRsp_BillTex
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIBillQryRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIBillQryRsp() {
   void * jresult ;
   ITapTrade::TapAPIBillQryRsp *result = 0 ;
   
@@ -13900,7 +13905,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIBillQryRsp() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIBillQryRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIBillQryRsp(void * jarg1) {
   ITapTrade::TapAPIBillQryRsp *arg1 = (ITapTrade::TapAPIBillQryRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIBillQryRsp *)jarg1; 
@@ -13908,7 +13913,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIBillQryRsp(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryReq *arg1 = (ITapTrade::TapAPIHisOrderQryReq *) 0 ;
   char *arg2 ;
   
@@ -13925,7 +13930,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_Accou
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryReq *arg1 = (ITapTrade::TapAPIHisOrderQryReq *) 0 ;
   char *result = 0 ;
@@ -13937,7 +13942,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryReq *arg1 = (ITapTrade::TapAPIHisOrderQryReq *) 0 ;
   char *arg2 ;
   
@@ -13954,7 +13959,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_Accou
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_AccountAttributeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryReq_AccountAttributeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryReq *arg1 = (ITapTrade::TapAPIHisOrderQryReq *) 0 ;
   char *result = 0 ;
@@ -13966,7 +13971,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_BeginDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryReq_BeginDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryReq *arg1 = (ITapTrade::TapAPIHisOrderQryReq *) 0 ;
   char *arg2 ;
   
@@ -13983,7 +13988,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_Begin
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_BeginDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryReq_BeginDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryReq *arg1 = (ITapTrade::TapAPIHisOrderQryReq *) 0 ;
   char *result = 0 ;
@@ -13995,7 +14000,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_Beg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_EndDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryReq_EndDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryReq *arg1 = (ITapTrade::TapAPIHisOrderQryReq *) 0 ;
   char *arg2 ;
   
@@ -14012,7 +14017,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_EndDa
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_EndDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryReq_EndDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryReq *arg1 = (ITapTrade::TapAPIHisOrderQryReq *) 0 ;
   char *result = 0 ;
@@ -14024,7 +14029,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryReq_End
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisOrderQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIHisOrderQryReq() {
   void * jresult ;
   ITapTrade::TapAPIHisOrderQryReq *result = 0 ;
   
@@ -14034,7 +14039,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisOrderQryReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisOrderQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIHisOrderQryReq(void * jarg1) {
   ITapTrade::TapAPIHisOrderQryReq *arg1 = (ITapTrade::TapAPIHisOrderQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIHisOrderQryReq *)jarg1; 
@@ -14042,7 +14047,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisOrderQryRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Date_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_Date_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14059,7 +14064,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Date_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Date_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_Date_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14071,7 +14076,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Dat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14088,7 +14093,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Accou
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14100,7 +14105,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14117,7 +14122,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Excha
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14129,7 +14134,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Exc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -14139,7 +14144,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Commo
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -14151,7 +14156,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Commo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14168,7 +14173,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Commo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14180,7 +14185,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Com
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14197,7 +14202,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Contr
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14209,7 +14214,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Con
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14226,7 +14231,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Strik
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14238,7 +14243,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Str
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -14248,7 +14253,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CallO
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -14260,7 +14265,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CallO
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ContractNo2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ContractNo2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14277,7 +14282,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Contr
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ContractNo2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ContractNo2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14289,7 +14294,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Con
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_StrikePrice2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_StrikePrice2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14306,7 +14311,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Strik
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_StrikePrice2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_StrikePrice2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14318,7 +14323,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Str
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CallOrPutFlag2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_CallOrPutFlag2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -14328,7 +14333,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CallO
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CallOrPutFlag2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_CallOrPutFlag2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -14340,7 +14345,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_CallO
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIOrderTypeType arg2 ;
   
@@ -14350,7 +14355,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIOrderTypeType result;
@@ -14362,7 +14367,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIOrderSourceType arg2 ;
   
@@ -14372,7 +14377,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIOrderSourceType result;
@@ -14384,7 +14389,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TimeInForce_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_TimeInForce_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPITimeInForceType arg2 ;
   
@@ -14394,7 +14399,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TimeI
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TimeInForce_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_TimeInForce_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPITimeInForceType result;
@@ -14406,7 +14411,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TimeI
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ExpireTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ExpireTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14423,7 +14428,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Expir
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ExpireTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ExpireTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14435,7 +14440,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Exp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsRiskOrder_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_IsRiskOrder_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -14445,7 +14450,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsRis
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsRiskOrder_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_IsRiskOrder_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -14457,7 +14462,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsRis
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -14467,7 +14472,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPISideType result;
@@ -14479,7 +14484,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_PositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_PositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -14489,7 +14494,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Posit
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_PositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_PositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -14501,7 +14506,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Posit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_PositionEffect2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_PositionEffect2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -14511,7 +14516,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Posit
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_PositionEffect2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_PositionEffect2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -14523,7 +14528,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Posit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_InquiryNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_InquiryNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14540,7 +14545,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Inqui
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_InquiryNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_InquiryNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14552,7 +14557,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Inq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_HedgeFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_HedgeFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIHedgeFlagType arg2 ;
   
@@ -14562,7 +14567,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Hedge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_HedgeFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_HedgeFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIHedgeFlagType result;
@@ -14574,7 +14579,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Hedge
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -14584,7 +14589,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -14596,7 +14601,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderPrice2_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderPrice2_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -14606,7 +14611,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderPrice2_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderPrice2_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -14618,7 +14623,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_StopPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_StopPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -14628,7 +14633,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_StopP
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_StopPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_StopPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -14640,7 +14645,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Sto
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -14650,7 +14655,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -14662,7 +14667,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMinQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMinQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -14672,7 +14677,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMinQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMinQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -14684,7 +14689,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderCanceledQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderCanceledQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -14694,7 +14699,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderCanceledQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderCanceledQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -14706,7 +14711,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefInt_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_RefInt_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -14716,7 +14721,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefIn
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefInt_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_RefInt_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -14728,7 +14733,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefInt
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefDouble_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_RefDouble_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -14738,7 +14743,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefDo
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefDouble_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_RefDouble_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -14750,7 +14755,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ref
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefString_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_RefString_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14767,7 +14772,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefSt
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_RefString_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_RefString_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14779,7 +14784,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ref
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -14789,7 +14794,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Serve
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -14801,7 +14806,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Serve
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14818,7 +14823,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14830,7 +14835,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderStreamID_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderStreamID_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -14840,7 +14845,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderStreamID_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderStreamID_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -14852,7 +14857,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14869,7 +14874,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Upper
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14881,7 +14886,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Upp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_UpperChannelNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_UpperChannelNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14898,7 +14903,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Upper
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_UpperChannelNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_UpperChannelNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14910,7 +14915,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Upp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderLocalNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderLocalNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14927,7 +14932,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderLocalNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderLocalNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14939,7 +14944,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_UpperStreamID_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_UpperStreamID_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -14949,7 +14954,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Upper
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_UpperStreamID_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_UpperStreamID_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -14961,7 +14966,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -14978,7 +14983,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -14990,7 +14995,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderExchangeSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderExchangeSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15007,7 +15012,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderExchangeSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderExchangeSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -15019,7 +15024,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderParentSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderParentSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15036,7 +15041,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderParentSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderParentSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -15048,7 +15053,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderInsertUserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderInsertUserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15065,7 +15070,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderInsertUserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderInsertUserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -15077,7 +15082,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderInsertTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderInsertTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15094,7 +15099,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderInsertTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderInsertTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -15106,7 +15111,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderCommandUserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderCommandUserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15123,7 +15128,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderCommandUserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderCommandUserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -15135,7 +15140,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderUpdateUserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderUpdateUserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15152,7 +15157,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderUpdateUserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderUpdateUserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -15164,7 +15169,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderUpdateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderUpdateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15181,7 +15186,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderUpdateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderUpdateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -15193,7 +15198,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderState_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderState_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIOrderStateType arg2 ;
   
@@ -15203,7 +15208,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderState_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderState_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIOrderStateType result;
@@ -15215,7 +15220,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMatchPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMatchPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -15225,7 +15230,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMatchPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMatchPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -15237,7 +15242,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMatchPrice2_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMatchPrice2_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -15247,7 +15252,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMatchPrice2_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMatchPrice2_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -15259,7 +15264,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMatchQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMatchQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -15269,7 +15274,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMatchQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMatchQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -15281,7 +15286,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMatchQty2_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMatchQty2_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -15291,7 +15296,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Order
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_OrderMatchQty2_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_OrderMatchQty2_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -15303,7 +15308,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ErrorCode_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ErrorCode_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -15313,7 +15318,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Error
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ErrorCode_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ErrorCode_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -15325,7 +15330,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ErrorText_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ErrorText_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15342,7 +15347,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Error
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_ErrorText_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_ErrorText_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -15354,7 +15359,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Err
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsBackInput_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_IsBackInput_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -15364,7 +15369,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsBac
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsBackInput_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_IsBackInput_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -15376,7 +15381,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsBac
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsDeleted_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_IsDeleted_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -15386,7 +15391,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsDel
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsDeleted_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_IsDeleted_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -15398,7 +15403,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsDel
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsAddOne_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_IsAddOne_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -15408,7 +15413,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsAdd
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsAddOne_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_IsAddOne_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -15420,7 +15425,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_IsAdd
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_AddOneIsValid_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_AddOneIsValid_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -15430,7 +15435,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_AddOn
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_AddOneIsValid_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_AddOneIsValid_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -15442,7 +15447,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_AddOn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_MinClipSize_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_MinClipSize_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -15452,7 +15457,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_MinCl
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_MinClipSize_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_MinClipSize_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -15464,7 +15469,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_MaxClipSize_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_MaxClipSize_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -15474,7 +15479,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_MaxCl
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_MaxClipSize_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_MaxClipSize_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -15486,7 +15491,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_LicenseNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_LicenseNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15503,7 +15508,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Licen
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_LicenseNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_LicenseNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   char *result = 0 ;
@@ -15515,7 +15520,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Lic
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TacticsType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_TacticsType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPITacticsTypeType arg2 ;
   
@@ -15525,7 +15530,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Tacti
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TacticsType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_TacticsType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPITacticsTypeType result;
@@ -15537,7 +15542,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Tacti
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TriggerCondition_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_TriggerCondition_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPITriggerConditionType arg2 ;
   
@@ -15547,7 +15552,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Trigg
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TriggerCondition_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_TriggerCondition_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPITriggerConditionType result;
@@ -15559,7 +15564,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Trigg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TriggerPriceType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_TriggerPriceType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPITriggerPriceTypeType arg2 ;
   
@@ -15569,7 +15574,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Trigg
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_TriggerPriceType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderQryRsp_TriggerPriceType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   ITapTrade::TAPITriggerPriceTypeType result;
@@ -15581,7 +15586,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderQryRsp_Trigg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisOrderQryRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIHisOrderQryRsp() {
   void * jresult ;
   ITapTrade::TapAPIHisOrderQryRsp *result = 0 ;
   
@@ -15591,7 +15596,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisOrderQryRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisOrderQryRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIHisOrderQryRsp(void * jarg1) {
   ITapTrade::TapAPIHisOrderQryRsp *arg1 = (ITapTrade::TapAPIHisOrderQryRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIHisOrderQryRsp *)jarg1; 
@@ -15599,7 +15604,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisOrderQryRs
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   char *arg2 ;
   
@@ -15616,7 +15621,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_Accou
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   char *result = 0 ;
@@ -15628,7 +15633,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   char *arg2 ;
   
@@ -15645,7 +15650,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_Accou
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_AccountAttributeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_AccountAttributeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   char *result = 0 ;
@@ -15657,7 +15662,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_BeginDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_BeginDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   char *arg2 ;
   
@@ -15674,7 +15679,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_Begin
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_BeginDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_BeginDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   char *result = 0 ;
@@ -15686,7 +15691,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_Beg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_EndDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_EndDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   char *arg2 ;
   
@@ -15703,7 +15708,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_EndDa
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_EndDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_EndDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   char *result = 0 ;
@@ -15715,7 +15720,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_End
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_CountType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_CountType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -15725,7 +15730,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_Count
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_CountType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryReq_CountType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -15737,7 +15742,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryReq_Count
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisMatchQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIHisMatchQryReq() {
   void * jresult ;
   ITapTrade::TapAPIHisMatchQryReq *result = 0 ;
   
@@ -15747,7 +15752,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisMatchQryReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisMatchQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIHisMatchQryReq(void * jarg1) {
   ITapTrade::TapAPIHisMatchQryReq *arg1 = (ITapTrade::TapAPIHisMatchQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIHisMatchQryReq *)jarg1; 
@@ -15755,7 +15760,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisMatchQryRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_SettleDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_SettleDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15772,7 +15777,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Settl
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_SettleDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_SettleDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -15784,7 +15789,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Set
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_TradeDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_TradeDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15801,7 +15806,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Trade
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_TradeDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_TradeDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -15813,7 +15818,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Tra
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15830,7 +15835,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Accou
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -15842,7 +15847,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15859,7 +15864,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Excha
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -15871,7 +15876,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Exc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -15881,7 +15886,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Commo
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -15893,7 +15898,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Commo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15910,7 +15915,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Commo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -15922,7 +15927,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Com
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15939,7 +15944,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Contr
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -15951,7 +15956,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Con
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -15968,7 +15973,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Strik
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -15980,7 +15985,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Str
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -15990,7 +15995,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CallO
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -16002,7 +16007,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CallO
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIMatchSourceType arg2 ;
   
@@ -16012,7 +16017,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIMatchSourceType result;
@@ -16024,7 +16029,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -16034,7 +16039,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPISideType result;
@@ -16046,7 +16051,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_PositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_PositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -16056,7 +16061,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Posit
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_PositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_PositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -16068,7 +16073,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Posit
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_HedgeFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_HedgeFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIHedgeFlagType arg2 ;
   
@@ -16078,7 +16083,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Hedge
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_HedgeFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_HedgeFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIHedgeFlagType result;
@@ -16090,7 +16095,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Hedge
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16100,7 +16105,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16112,7 +16117,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Mat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -16122,7 +16127,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -16134,7 +16139,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16151,7 +16156,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Order
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16163,7 +16168,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Ord
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16180,7 +16185,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16192,7 +16197,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Mat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchStreamID_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchStreamID_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -16202,7 +16207,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchStreamID_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchStreamID_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -16214,7 +16219,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16231,7 +16236,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upper
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16243,7 +16248,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchCmbNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchCmbNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16260,7 +16265,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchCmbNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchCmbNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16272,7 +16277,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Mat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_ExchangeMatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_ExchangeMatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16289,7 +16294,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Excha
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_ExchangeMatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_ExchangeMatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16301,7 +16306,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Exc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchUpperStreamID_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchUpperStreamID_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -16311,7 +16316,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchUpperStreamID_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchUpperStreamID_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -16323,7 +16328,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CommodityCurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CommodityCurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16340,7 +16345,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Commo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CommodityCurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CommodityCurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16352,7 +16357,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Com
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CommodityCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CommodityCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16369,7 +16374,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Commo
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CommodityCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CommodityCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16381,7 +16386,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Com
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Turnover_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_Turnover_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16391,7 +16396,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Turno
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Turnover_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_Turnover_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16403,7 +16408,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Tur
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_PremiumIncome_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_PremiumIncome_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16413,7 +16418,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Premi
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_PremiumIncome_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_PremiumIncome_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16425,7 +16430,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Pre
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_PremiumPay_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_PremiumPay_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16435,7 +16440,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Premi
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_PremiumPay_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_PremiumPay_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16447,7 +16452,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Pre
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16457,7 +16462,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Accou
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16469,7 +16474,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountFeeCurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountFeeCurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16486,7 +16491,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Accou
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountFeeCurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountFeeCurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16498,7 +16503,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountFeeCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountFeeCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16515,7 +16520,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Accou
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountFeeCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountFeeCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16527,7 +16532,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_IsManualFee_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_IsManualFee_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -16537,7 +16542,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_IsMan
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_IsManualFee_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_IsManualFee_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -16549,7 +16554,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_IsMan
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountOtherFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountOtherFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16559,7 +16564,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Accou
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_AccountOtherFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_AccountOtherFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16571,7 +16576,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Acc
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16581,7 +16586,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upper
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16593,7 +16598,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperFeeCurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperFeeCurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16610,7 +16615,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upper
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperFeeCurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperFeeCurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16622,7 +16627,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperFeeCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperFeeCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16639,7 +16644,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upper
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperFeeCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperFeeCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16651,7 +16656,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_IsUpperManualFee_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_IsUpperManualFee_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -16661,7 +16666,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_IsUpp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_IsUpperManualFee_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_IsUpperManualFee_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -16673,7 +16678,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_IsUpp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperOtherFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperOtherFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16683,7 +16688,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upper
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperOtherFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperOtherFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16695,7 +16700,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16712,7 +16717,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Match
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_MatchDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_MatchDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16724,7 +16729,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Mat
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperMatchDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperMatchDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16741,7 +16746,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upper
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_UpperMatchDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_UpperMatchDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16753,7 +16758,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Upp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CloseProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CloseProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16763,7 +16768,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Close
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CloseProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CloseProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16775,7 +16780,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Clo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_ClosePrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_ClosePrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -16785,7 +16790,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Close
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_ClosePrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_ClosePrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -16797,7 +16802,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Clo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CloseQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CloseQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -16807,7 +16812,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Close
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_CloseQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_CloseQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -16819,7 +16824,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_SettleGroupNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_SettleGroupNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16836,7 +16841,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Settl
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_SettleGroupNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_SettleGroupNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16848,7 +16853,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Set
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_OperatorNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_OperatorNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16865,7 +16870,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Opera
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_OperatorNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_OperatorNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16877,7 +16882,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Ope
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_OperateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_OperateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *arg2 ;
   
@@ -16894,7 +16899,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Opera
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_OperateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisMatchQryRsp_OperateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   char *result = 0 ;
@@ -16906,7 +16911,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisMatchQryRsp_Ope
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisMatchQryRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIHisMatchQryRsp() {
   void * jresult ;
   ITapTrade::TapAPIHisMatchQryRsp *result = 0 ;
   
@@ -16916,7 +16921,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisMatchQryRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisMatchQryRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIHisMatchQryRsp(void * jarg1) {
   ITapTrade::TapAPIHisMatchQryRsp *arg1 = (ITapTrade::TapAPIHisMatchQryRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIHisMatchQryRsp *)jarg1; 
@@ -16924,7 +16929,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisMatchQryRs
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderProcessQryReq_Date_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderProcessQryReq_Date_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderProcessQryReq *arg1 = (ITapTrade::TapAPIHisOrderProcessQryReq *) 0 ;
   char *arg2 ;
   
@@ -16941,7 +16946,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderProcessQryRe
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderProcessQryReq_Date_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderProcessQryReq_Date_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderProcessQryReq *arg1 = (ITapTrade::TapAPIHisOrderProcessQryReq *) 0 ;
   char *result = 0 ;
@@ -16953,7 +16958,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderProcessQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderProcessQryReq_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderProcessQryReq_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisOrderProcessQryReq *arg1 = (ITapTrade::TapAPIHisOrderProcessQryReq *) 0 ;
   char *arg2 ;
   
@@ -16970,7 +16975,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderProcessQryRe
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderProcessQryReq_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisOrderProcessQryReq_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisOrderProcessQryReq *arg1 = (ITapTrade::TapAPIHisOrderProcessQryReq *) 0 ;
   char *result = 0 ;
@@ -16982,7 +16987,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisOrderProcessQry
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisOrderProcessQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIHisOrderProcessQryReq() {
   void * jresult ;
   ITapTrade::TapAPIHisOrderProcessQryReq *result = 0 ;
   
@@ -16992,7 +16997,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisOrderProces
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisOrderProcessQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIHisOrderProcessQryReq(void * jarg1) {
   ITapTrade::TapAPIHisOrderProcessQryReq *arg1 = (ITapTrade::TapAPIHisOrderProcessQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIHisOrderProcessQryReq *)jarg1; 
@@ -17000,7 +17005,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisOrderProce
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_SettleFlag_AutoSettle_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_SettleFlag_AutoSettle_get() {
   char jresult ;
   ITapTrade::TAPISettleFlagType result;
   
@@ -17010,7 +17015,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_SettleFlag_AutoSettle_get(
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_SettleFlagh_Manual_get() {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_SettleFlagh_Manual_get() {
   char jresult ;
   ITapTrade::TAPISettleFlagType result;
   
@@ -17020,7 +17025,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_SettleFlagh_Manual_get() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryReq *arg1 = (ITapTrade::TapAPIHisPositionQryReq *) 0 ;
   char *arg2 ;
   
@@ -17037,7 +17042,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_Ac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryReq *arg1 = (ITapTrade::TapAPIHisPositionQryReq *) 0 ;
   char *result = 0 ;
@@ -17049,7 +17054,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_Date_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryReq_Date_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryReq *arg1 = (ITapTrade::TapAPIHisPositionQryReq *) 0 ;
   char *arg2 ;
   
@@ -17066,7 +17071,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_Da
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_Date_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryReq_Date_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryReq *arg1 = (ITapTrade::TapAPIHisPositionQryReq *) 0 ;
   char *result = 0 ;
@@ -17078,7 +17083,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_SettleFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryReq_SettleFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisPositionQryReq *arg1 = (ITapTrade::TapAPIHisPositionQryReq *) 0 ;
   ITapTrade::TAPISettleFlagType arg2 ;
   
@@ -17088,7 +17093,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_Se
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_SettleFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryReq_SettleFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisPositionQryReq *arg1 = (ITapTrade::TapAPIHisPositionQryReq *) 0 ;
   ITapTrade::TAPISettleFlagType result;
@@ -17100,7 +17105,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryReq_Se
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisPositionQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIHisPositionQryReq() {
   void * jresult ;
   ITapTrade::TapAPIHisPositionQryReq *result = 0 ;
   
@@ -17110,7 +17115,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisPositionQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisPositionQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIHisPositionQryReq(void * jarg1) {
   ITapTrade::TapAPIHisPositionQryReq *arg1 = (ITapTrade::TapAPIHisPositionQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIHisPositionQryReq *)jarg1; 
@@ -17118,7 +17123,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisPositionQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_SettleDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_SettleDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17135,7 +17140,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Se
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_SettleDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_SettleDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17147,7 +17152,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_OpenDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_OpenDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17164,7 +17169,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Op
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_OpenDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_OpenDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17176,7 +17181,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17193,7 +17198,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Ac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17205,7 +17210,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17222,7 +17227,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Ex
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17234,7 +17239,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -17244,7 +17249,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Co
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -17256,7 +17261,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Co
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17273,7 +17278,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17285,7 +17290,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17302,7 +17307,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17314,7 +17319,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17331,7 +17336,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_St
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17343,7 +17348,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -17353,7 +17358,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Ca
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -17365,7 +17370,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Ca
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_MatchSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_MatchSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -17375,7 +17380,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Ma
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_MatchSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_MatchSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPISideType result;
@@ -17387,7 +17392,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Ma
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_HedgeFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_HedgeFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIHedgeFlagType arg2 ;
   
@@ -17397,7 +17402,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_He
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_HedgeFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_HedgeFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIHedgeFlagType result;
@@ -17409,7 +17414,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_He
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PositionPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PositionPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17419,7 +17424,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Po
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PositionPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PositionPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17431,7 +17436,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PositionQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PositionQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -17441,7 +17446,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Po
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PositionQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PositionQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -17453,7 +17458,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17470,7 +17475,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Or
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17482,7 +17487,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PositionNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PositionNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17499,7 +17504,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Po
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PositionNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PositionNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17511,7 +17516,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17528,7 +17533,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Up
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17540,7 +17545,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_CurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_CurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17557,7 +17562,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Cu
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_CurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_CurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17569,7 +17574,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Currency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_Currency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17586,7 +17591,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Cu
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Currency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_Currency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17598,7 +17603,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PreSettlePrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PreSettlePrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17608,7 +17613,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Pr
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PreSettlePrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PreSettlePrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17620,7 +17625,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_SettlePrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_SettlePrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17630,7 +17635,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Se
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_SettlePrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_SettlePrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17642,7 +17647,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PositionDProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PositionDProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17652,7 +17657,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Po
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_PositionDProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_PositionDProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17664,7 +17669,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_LMEPositionProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_LMEPositionProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17674,7 +17679,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_LM
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_LMEPositionProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_LMEPositionProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17686,7 +17691,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_OptionMarketValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_OptionMarketValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17696,7 +17701,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Op
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_OptionMarketValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_OptionMarketValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17708,7 +17713,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_AccountInitialMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_AccountInitialMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17718,7 +17723,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Ac
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_AccountInitialMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_AccountInitialMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17730,7 +17735,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_AccountMaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_AccountMaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17740,7 +17745,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Ac
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_AccountMaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_AccountMaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17752,7 +17757,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_UpperInitialMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_UpperInitialMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17762,7 +17767,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Up
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_UpperInitialMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_UpperInitialMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17774,7 +17779,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_UpperMaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_UpperMaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -17784,7 +17789,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Up
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_UpperMaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_UpperMaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -17796,7 +17801,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_SettleGroupNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_SettleGroupNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *arg2 ;
   
@@ -17813,7 +17818,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_Se
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_SettleGroupNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisPositionQryRsp_SettleGroupNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   char *result = 0 ;
@@ -17825,7 +17830,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisPositionQryRsp_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisPositionQryRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIHisPositionQryRsp() {
   void * jresult ;
   ITapTrade::TapAPIHisPositionQryRsp *result = 0 ;
   
@@ -17835,7 +17840,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisPositionQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisPositionQryRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIHisPositionQryRsp(void * jarg1) {
   ITapTrade::TapAPIHisPositionQryRsp *arg1 = (ITapTrade::TapAPIHisPositionQryRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIHisPositionQryRsp *)jarg1; 
@@ -17843,7 +17848,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisPositionQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   char *arg2 ;
   
@@ -17860,7 +17865,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_Ac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   char *result = 0 ;
@@ -17872,7 +17877,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   char *arg2 ;
   
@@ -17889,7 +17894,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_Ac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_AccountAttributeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_AccountAttributeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   char *result = 0 ;
@@ -17901,7 +17906,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_BeginDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_BeginDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   char *arg2 ;
   
@@ -17918,7 +17923,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_Be
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_BeginDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_BeginDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   char *result = 0 ;
@@ -17930,7 +17935,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_EndDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_EndDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   char *arg2 ;
   
@@ -17947,7 +17952,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_En
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_EndDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_EndDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   char *result = 0 ;
@@ -17959,7 +17964,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_CountType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_CountType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -17969,7 +17974,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_Co
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_CountType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryReq_CountType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -17981,7 +17986,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryReq_Co
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisDeliveryQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIHisDeliveryQryReq() {
   void * jresult ;
   ITapTrade::TapAPIHisDeliveryQryReq *result = 0 ;
   
@@ -17991,7 +17996,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisDeliveryQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisDeliveryQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIHisDeliveryQryReq(void * jarg1) {
   ITapTrade::TapAPIHisDeliveryQryReq *arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIHisDeliveryQryReq *)jarg1; 
@@ -17999,7 +18004,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisDeliveryQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18016,7 +18021,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_De
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18028,7 +18033,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OpenDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OpenDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18045,7 +18050,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Op
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OpenDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OpenDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18057,7 +18062,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18074,7 +18079,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18086,7 +18091,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18103,7 +18108,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ex
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18115,7 +18120,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -18125,7 +18130,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Co
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -18137,7 +18142,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Co
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18154,7 +18159,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18166,7 +18171,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18183,7 +18188,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18195,7 +18200,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18212,7 +18217,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_St
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18224,7 +18229,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -18234,7 +18239,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ca
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -18246,7 +18251,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ca
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_MatchSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_MatchSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIMatchSourceType arg2 ;
   
@@ -18256,7 +18261,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ma
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_MatchSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_MatchSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIMatchSourceType result;
@@ -18268,7 +18273,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ma
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OpenSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OpenSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -18278,7 +18283,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Op
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OpenSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OpenSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPISideType result;
@@ -18290,7 +18295,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Op
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OpenPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OpenPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18300,7 +18305,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Op
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OpenPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OpenPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18312,7 +18317,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18322,7 +18327,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_De
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18334,7 +18339,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -18344,7 +18349,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_De
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -18356,7 +18361,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_FrozenQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_FrozenQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -18366,7 +18371,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Fr
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_FrozenQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_FrozenQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -18378,7 +18383,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OpenNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OpenNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18395,7 +18400,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Op
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OpenNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OpenNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18407,7 +18412,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18424,7 +18429,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Up
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18436,7 +18441,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CommodityCurrencyGroupy_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CommodityCurrencyGroupy_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18453,7 +18458,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CommodityCurrencyGroupy_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CommodityCurrencyGroupy_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18465,7 +18470,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CommodityCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CommodityCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18482,7 +18487,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_CommodityCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_CommodityCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18494,7 +18499,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_PreSettlePrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_PreSettlePrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18504,7 +18509,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Pr
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_PreSettlePrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_PreSettlePrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18516,7 +18521,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryProfit_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryProfit_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18526,7 +18531,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_De
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryProfit_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryProfit_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18538,7 +18543,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountFrozenInitialMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountFrozenInitialMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18548,7 +18553,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ac
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountFrozenInitialMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountFrozenInitialMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18560,7 +18565,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountFrozenMaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountFrozenMaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18570,7 +18575,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ac
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountFrozenMaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountFrozenMaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18582,7 +18587,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperFrozenInitialMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperFrozenInitialMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18592,7 +18597,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Up
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperFrozenInitialMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperFrozenInitialMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18604,7 +18609,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperFrozenMaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperFrozenMaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18614,7 +18619,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Up
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperFrozenMaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperFrozenMaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18626,7 +18631,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountFeeCurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountFeeCurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18643,7 +18648,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountFeeCurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountFeeCurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18655,7 +18660,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountFeeCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountFeeCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18672,7 +18677,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountFeeCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountFeeCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18684,7 +18689,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountDeliveryFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountDeliveryFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18694,7 +18699,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Ac
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_AccountDeliveryFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_AccountDeliveryFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18706,7 +18711,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperFeeCurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperFeeCurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18723,7 +18728,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Up
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperFeeCurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperFeeCurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18735,7 +18740,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperFeeCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperFeeCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18752,7 +18757,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Up
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperFeeCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperFeeCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18764,7 +18769,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperDeliveryFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperDeliveryFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -18774,7 +18779,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Up
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_UpperDeliveryFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_UpperDeliveryFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -18786,7 +18791,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryMode_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryMode_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIDeliveryModeType arg2 ;
   
@@ -18796,7 +18801,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_De
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_DeliveryMode_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_DeliveryMode_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   ITapTrade::TAPIDeliveryModeType result;
@@ -18808,7 +18813,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_De
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OperatorNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OperatorNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18825,7 +18830,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Op
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OperatorNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OperatorNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18837,7 +18842,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OperateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OperateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18854,7 +18859,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Op
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_OperateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_OperateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18866,7 +18871,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_SettleGourpNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_SettleGourpNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *arg2 ;
   
@@ -18883,7 +18888,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_Se
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_SettleGourpNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIHisDeliveryQryRsp_SettleGourpNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   char *result = 0 ;
@@ -18895,7 +18900,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIHisDeliveryQryRsp_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisDeliveryQryRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIHisDeliveryQryRsp() {
   void * jresult ;
   ITapTrade::TapAPIHisDeliveryQryRsp *result = 0 ;
   
@@ -18905,7 +18910,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIHisDeliveryQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisDeliveryQryRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIHisDeliveryQryRsp(void * jarg1) {
   ITapTrade::TapAPIHisDeliveryQryRsp *arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIHisDeliveryQryRsp *)jarg1; 
@@ -18913,7 +18918,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIHisDeliveryQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_SerialID_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_SerialID_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -18923,7 +18928,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_SerialID_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_SerialID_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -18935,7 +18940,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashA
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   char *arg2 ;
   
@@ -18952,7 +18957,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   char *result = 0 ;
@@ -18964,7 +18969,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_AccountAttributeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   char *arg2 ;
   
@@ -18981,7 +18986,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_AccountAttributeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_AccountAttributeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   char *result = 0 ;
@@ -18993,7 +18998,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_BeginDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_BeginDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   char *arg2 ;
   
@@ -19010,7 +19015,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_BeginDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_BeginDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   char *result = 0 ;
@@ -19022,7 +19027,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_EndDate_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_EndDate_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   char *arg2 ;
   
@@ -19039,7 +19044,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryReq_EndDate_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryReq_EndDate_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   char *result = 0 ;
@@ -19051,7 +19056,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountCashAdjustQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAccountCashAdjustQryReq() {
   void * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryReq *result = 0 ;
   
@@ -19061,7 +19066,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountCashAdj
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountCashAdjustQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAccountCashAdjustQryReq(void * jarg1) {
   ITapTrade::TapAPIAccountCashAdjustQryReq *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAccountCashAdjustQryReq *)jarg1; 
@@ -19069,7 +19074,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountCashAd
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_Date_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_Date_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19086,7 +19091,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_Date_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_Date_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19098,7 +19103,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19115,7 +19120,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19127,7 +19132,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CashAdjustType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CashAdjustType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   ITapTrade::TAPICashAdjustTypeType arg2 ;
   
@@ -19137,7 +19142,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CashAdjustType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CashAdjustType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   ITapTrade::TAPICashAdjustTypeType result;
@@ -19149,7 +19154,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19166,7 +19171,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CurrencyGroupNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CurrencyGroupNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19178,7 +19183,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CurrencyNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CurrencyNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19195,7 +19200,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CurrencyNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CurrencyNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19207,7 +19212,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CashAdjustValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CashAdjustValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -19217,7 +19222,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CashAdjustValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CashAdjustValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -19229,7 +19234,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CashAdjustRemark_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CashAdjustRemark_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19246,7 +19251,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CashAdjustRemark_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CashAdjustRemark_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19258,7 +19263,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_OperateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_OperateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19275,7 +19280,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_OperateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_OperateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19287,7 +19292,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_OperatorNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_OperatorNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19304,7 +19309,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_OperatorNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_OperatorNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19316,7 +19321,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_AccountBank_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_AccountBank_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19333,7 +19338,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_AccountBank_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_AccountBank_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19345,7 +19350,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_BankAccount_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_BankAccount_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19362,7 +19367,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_BankAccount_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_BankAccount_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19374,7 +19379,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_AccountLWFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_AccountLWFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   ITapTrade::TAPIBankAccountLWFlagType arg2 ;
   
@@ -19384,7 +19389,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_AccountLWFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_AccountLWFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   ITapTrade::TAPIBankAccountLWFlagType result;
@@ -19396,7 +19401,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CompanyBank_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CompanyBank_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19413,7 +19418,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CompanyBank_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CompanyBank_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19425,7 +19430,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_InternalBankAccount_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_InternalBankAccount_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19442,7 +19447,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_InternalBankAccount_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_InternalBankAccount_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   char *result = 0 ;
@@ -19454,7 +19459,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CompanyLWFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CompanyLWFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   ITapTrade::TAPIBankAccountLWFlagType arg2 ;
   
@@ -19464,7 +19469,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQryRsp_CompanyLWFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountCashAdjustQryRsp_CompanyLWFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   ITapTrade::TAPIBankAccountLWFlagType result;
@@ -19476,7 +19481,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountCashAdjustQry
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountCashAdjustQryRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAccountCashAdjustQryRsp() {
   void * jresult ;
   ITapTrade::TapAPIAccountCashAdjustQryRsp *result = 0 ;
   
@@ -19486,7 +19491,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountCashAdj
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountCashAdjustQryRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAccountCashAdjustQryRsp(void * jarg1) {
   ITapTrade::TapAPIAccountCashAdjustQryRsp *arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAccountCashAdjustQryRsp *)jarg1; 
@@ -19494,7 +19499,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountCashAd
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryReq *arg1 = (ITapTrade::TapAPIAccountFeeRentQryReq *) 0 ;
   char *arg2 ;
   
@@ -19511,7 +19516,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountFeeRentQryReq *arg1 = (ITapTrade::TapAPIAccountFeeRentQryReq *) 0 ;
   char *result = 0 ;
@@ -19523,7 +19528,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryR
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountFeeRentQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAccountFeeRentQryReq() {
   void * jresult ;
   ITapTrade::TapAPIAccountFeeRentQryReq *result = 0 ;
   
@@ -19533,7 +19538,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountFeeRent
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountFeeRentQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAccountFeeRentQryReq(void * jarg1) {
   ITapTrade::TapAPIAccountFeeRentQryReq *arg1 = (ITapTrade::TapAPIAccountFeeRentQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAccountFeeRentQryReq *)jarg1; 
@@ -19541,7 +19546,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountFeeRen
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19558,7 +19563,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -19570,7 +19575,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19587,7 +19592,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -19599,7 +19604,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -19609,7 +19614,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -19621,7 +19626,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19638,7 +19643,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -19650,7 +19655,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_MatchSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_MatchSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPIMatchSourceType arg2 ;
   
@@ -19660,7 +19665,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_MatchSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_MatchSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPIMatchSourceType result;
@@ -19672,7 +19677,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CalculateMode_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CalculateMode_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPICalculateModeType arg2 ;
   
@@ -19682,7 +19687,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CalculateMode_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CalculateMode_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPICalculateModeType result;
@@ -19694,7 +19699,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19711,7 +19716,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -19723,7 +19728,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CurrencyNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CurrencyNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19740,7 +19745,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CurrencyNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CurrencyNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -19752,7 +19757,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_OpenCloseFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_OpenCloseFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -19762,7 +19767,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_OpenCloseFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_OpenCloseFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -19774,7 +19779,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CloseTodayFee_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CloseTodayFee_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -19784,7 +19789,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryRsp_CloseTodayFee_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountFeeRentQryRsp_CloseTodayFee_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -19796,7 +19801,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountFeeRentQryR
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountFeeRentQryRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAccountFeeRentQryRsp() {
   void * jresult ;
   ITapTrade::TapAPIAccountFeeRentQryRsp *result = 0 ;
   
@@ -19806,7 +19811,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountFeeRent
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountFeeRentQryRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAccountFeeRentQryRsp(void * jarg1) {
   ITapTrade::TapAPIAccountFeeRentQryRsp *arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAccountFeeRentQryRsp *)jarg1; 
@@ -19814,7 +19819,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountFeeRen
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryReq *arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *) 0 ;
   char *arg2 ;
   
@@ -19831,7 +19836,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryReq *arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *) 0 ;
   char *result = 0 ;
@@ -19843,7 +19848,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryReq_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryReq_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryReq *arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *) 0 ;
   char *arg2 ;
   
@@ -19860,7 +19865,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryReq_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryReq_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryReq *arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *) 0 ;
   char *result = 0 ;
@@ -19872,7 +19877,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryReq_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryReq_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryReq *arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -19882,7 +19887,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryReq_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryReq_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountMarginRentQryReq *arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -19894,7 +19899,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryReq_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryReq_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryReq *arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *) 0 ;
   char *arg2 ;
   
@@ -19911,7 +19916,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryReq_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryReq_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryReq *arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *) 0 ;
   char *result = 0 ;
@@ -19923,7 +19928,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountMarginRentQryReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAccountMarginRentQryReq() {
   void * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryReq *result = 0 ;
   
@@ -19933,7 +19938,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountMarginR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountMarginRentQryReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAccountMarginRentQryReq(void * jarg1) {
   ITapTrade::TapAPIAccountMarginRentQryReq *arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAccountMarginRentQryReq *)jarg1; 
@@ -19941,7 +19946,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountMargin
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19958,7 +19963,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -19970,7 +19975,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -19987,7 +19992,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -19999,7 +20004,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -20009,7 +20014,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -20021,7 +20026,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -20038,7 +20043,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -20050,7 +20055,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -20067,7 +20072,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -20079,7 +20084,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -20096,7 +20101,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -20108,7 +20113,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -20118,7 +20123,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -20130,7 +20135,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CalculateMode_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CalculateMode_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPICalculateModeType arg2 ;
   
@@ -20140,7 +20145,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CalculateMode_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CalculateMode_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPICalculateModeType result;
@@ -20152,7 +20157,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CurrencyGroupNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -20169,7 +20174,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CurrencyGroupNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CurrencyGroupNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -20181,7 +20186,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CurrencyNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CurrencyNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *arg2 ;
   
@@ -20198,7 +20203,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_CurrencyNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_CurrencyNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   char *result = 0 ;
@@ -20210,7 +20215,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_InitialMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_InitialMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -20220,7 +20225,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_InitialMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_InitialMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -20232,7 +20237,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_MaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_MaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -20242,7 +20247,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_MaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_MaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -20254,7 +20259,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_SellInitialMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_SellInitialMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -20264,7 +20269,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_SellInitialMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_SellInitialMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -20276,7 +20281,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_SellMaintenanceMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_SellMaintenanceMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -20286,7 +20291,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_SellMaintenanceMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_SellMaintenanceMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -20298,7 +20303,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_LockMargin_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_LockMargin_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -20308,7 +20313,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQry
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQryRsp_LockMargin_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIAccountMarginRentQryRsp_LockMargin_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -20320,7 +20325,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIAccountMarginRentQ
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountMarginRentQryRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIAccountMarginRentQryRsp() {
   void * jresult ;
   ITapTrade::TapAPIAccountMarginRentQryRsp *result = 0 ;
   
@@ -20330,7 +20335,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIAccountMarginR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountMarginRentQryRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIAccountMarginRentQryRsp(void * jarg1) {
   ITapTrade::TapAPIAccountMarginRentQryRsp *arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIAccountMarginRentQryRsp *)jarg1; 
@@ -20338,7 +20343,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIAccountMargin
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   char *arg2 ;
   
@@ -20355,7 +20360,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   char *result = 0 ;
@@ -20367,7 +20372,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -20377,7 +20382,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -20389,7 +20394,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   char *arg2 ;
   
@@ -20406,7 +20411,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   char *result = 0 ;
@@ -20418,7 +20423,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   char *arg2 ;
   
@@ -20435,7 +20440,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   char *result = 0 ;
@@ -20447,7 +20452,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   char *arg2 ;
   
@@ -20464,7 +20469,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   char *result = 0 ;
@@ -20476,7 +20481,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -20486,7 +20491,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -20498,7 +20503,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_OrderSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_OrderSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -20508,7 +20513,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_OrderSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_OrderSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   ITapTrade::TAPISideType result;
@@ -20520,7 +20525,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_OrderQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_OrderQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -20530,7 +20535,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNoti
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMarketNotice_OrderQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderQuoteMarketNotice_OrderQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -20542,7 +20547,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderQuoteMa
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderQuoteMarketNotice() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderQuoteMarketNotice() {
   void * jresult ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *result = 0 ;
   
@@ -20552,7 +20557,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderQuoteMark
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderQuoteMarketNotice(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderQuoteMarketNotice(void * jarg1) {
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderQuoteMarketNotice *)jarg1; 
@@ -20560,7 +20565,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderQuoteMar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -20577,7 +20582,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -20589,7 +20594,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -20606,7 +20611,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -20618,7 +20623,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -20628,7 +20633,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -20640,7 +20645,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -20657,7 +20662,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -20669,7 +20674,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -20686,7 +20691,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -20698,7 +20703,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -20715,7 +20720,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -20727,7 +20732,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -20737,7 +20742,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -20749,7 +20754,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIOrderTypeType arg2 ;
   
@@ -20759,7 +20764,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIOrderTypeType result;
@@ -20771,7 +20776,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_TimeInForce_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_TimeInForce_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPITimeInForceType arg2 ;
   
@@ -20781,7 +20786,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_TimeInForce_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_TimeInForce_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPITimeInForceType result;
@@ -20793,7 +20798,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ExpireTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ExpireTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -20810,7 +20815,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ExpireTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ExpireTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -20822,7 +20827,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIOrderSourceType arg2 ;
   
@@ -20832,7 +20837,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIOrderSourceType result;
@@ -20844,7 +20849,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_BuyPositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_BuyPositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -20854,7 +20859,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_BuyPositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_BuyPositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -20866,7 +20871,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_SellPositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_SellPositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -20876,7 +20881,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_SellPositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_SellPositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -20888,7 +20893,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_AddOneIsValid_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_AddOneIsValid_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -20898,7 +20903,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_AddOneIsValid_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_AddOneIsValid_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -20910,7 +20915,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderBuyPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderBuyPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -20920,7 +20925,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderBuyPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderBuyPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -20932,7 +20937,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderSellPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderSellPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -20942,7 +20947,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderSellPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderSellPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -20954,7 +20959,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderBuyQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderBuyQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -20964,7 +20969,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderBuyQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderBuyQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -20976,7 +20981,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketI
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderSellQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderSellQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -20986,7 +20991,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_OrderSellQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_OrderSellQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -20998,7 +21003,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketI
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ClientBuyOrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ClientBuyOrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -21015,7 +21020,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ClientBuyOrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ClientBuyOrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -21027,7 +21032,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ClientSellOrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ClientSellOrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -21044,7 +21049,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_ClientSellOrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_ClientSellOrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -21056,7 +21061,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_RefInt_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_RefInt_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -21066,7 +21071,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_RefInt_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_RefInt_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -21078,7 +21083,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_RefDouble_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_RefDouble_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -21088,7 +21093,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_RefDouble_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_RefDouble_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -21100,7 +21105,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_RefString_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_RefString_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -21117,7 +21122,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_RefString_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_RefString_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -21129,7 +21134,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_Remark_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_Remark_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *arg2 ;
   
@@ -21146,7 +21151,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertReq_Remark_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertReq_Remark_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   char *result = 0 ;
@@ -21158,7 +21163,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderMarketInsertReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderMarketInsertReq() {
   void * jresult ;
   ITapTrade::TapAPIOrderMarketInsertReq *result = 0 ;
   
@@ -21168,7 +21173,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderMarketIns
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderMarketInsertReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderMarketInsertReq(void * jarg1) {
   ITapTrade::TapAPIOrderMarketInsertReq *arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderMarketInsertReq *)jarg1; 
@@ -21176,7 +21181,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderMarketIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21193,7 +21198,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21205,7 +21210,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21222,7 +21227,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21234,7 +21239,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -21244,7 +21249,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -21256,7 +21261,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21273,7 +21278,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21285,7 +21290,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21302,7 +21307,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21314,7 +21319,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21331,7 +21336,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21343,7 +21348,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -21353,7 +21358,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -21365,7 +21370,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIOrderTypeType arg2 ;
   
@@ -21375,7 +21380,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIOrderTypeType result;
@@ -21387,7 +21392,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_TimeInForce_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_TimeInForce_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPITimeInForceType arg2 ;
   
@@ -21397,7 +21402,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_TimeInForce_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_TimeInForce_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPITimeInForceType result;
@@ -21409,7 +21414,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ExpireTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ExpireTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21426,7 +21431,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ExpireTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ExpireTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21438,7 +21443,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIOrderSourceType arg2 ;
   
@@ -21448,7 +21453,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIOrderSourceType result;
@@ -21460,7 +21465,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_BuyPositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_BuyPositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -21470,7 +21475,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_BuyPositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_BuyPositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -21482,7 +21487,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_SellPositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_SellPositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -21492,7 +21497,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_SellPositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_SellPositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -21504,7 +21509,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderBuyPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderBuyPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -21514,7 +21519,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderBuyPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderBuyPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -21526,7 +21531,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderSellPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderSellPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -21536,7 +21541,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderSellPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderSellPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -21548,7 +21553,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderBuyQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderBuyQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -21558,7 +21563,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderBuyQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderBuyQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -21570,7 +21575,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketI
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderSellQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderSellQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -21580,7 +21585,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderSellQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderSellQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -21592,7 +21597,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketI
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -21602,7 +21607,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -21614,7 +21619,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderBuyNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderBuyNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21631,7 +21636,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderBuyNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderBuyNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21643,7 +21648,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderSellNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderSellNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21660,7 +21665,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderSellNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderSellNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21672,7 +21677,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_AddOneIsValid_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_AddOneIsValid_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -21682,7 +21687,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_AddOneIsValid_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_AddOneIsValid_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -21694,7 +21699,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderMarketUserNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderMarketUserNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21711,7 +21716,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderMarketUserNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderMarketUserNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21723,7 +21728,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderMarketTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderMarketTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21740,7 +21745,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_OrderMarketTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_OrderMarketTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21752,7 +21757,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_RefInt_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_RefInt_set(void * jarg1, int jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -21762,7 +21767,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_RefInt_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_RefInt_get(void * jarg1) {
   int jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -21774,7 +21779,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_RefDouble_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_RefDouble_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -21784,7 +21789,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_RefDouble_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_RefDouble_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -21796,7 +21801,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_RefString_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_RefString_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21813,7 +21818,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_RefString_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_RefString_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21825,7 +21830,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientBuyOrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientBuyOrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21842,7 +21847,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientBuyOrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientBuyOrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21854,7 +21859,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientSellOrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientSellOrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21871,7 +21876,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientSellOrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientSellOrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21883,7 +21888,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ErrorCode_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ErrorCode_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -21893,7 +21898,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ErrorCode_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ErrorCode_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -21905,7 +21910,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketI
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ErrorText_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ErrorText_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21922,7 +21927,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ErrorText_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ErrorText_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21934,7 +21939,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientLocalIP_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientLocalIP_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21951,7 +21956,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientLocalIP_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientLocalIP_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21963,7 +21968,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientMac_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientMac_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -21980,7 +21985,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientMac_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientMac_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -21992,7 +21997,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientIP_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientIP_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -22009,7 +22014,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_ClientIP_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_ClientIP_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -22021,7 +22026,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_Remark_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_Remark_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *arg2 ;
   
@@ -22038,7 +22043,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertRsp_Remark_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketInsertRsp_Remark_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   char *result = 0 ;
@@ -22050,7 +22055,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketInsertR
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderMarketInsertRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderMarketInsertRsp() {
   void * jresult ;
   ITapTrade::TapAPIOrderMarketInsertRsp *result = 0 ;
   
@@ -22060,7 +22065,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderMarketIns
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderMarketInsertRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderMarketInsertRsp(void * jarg1) {
   ITapTrade::TapAPIOrderMarketInsertRsp *arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderMarketInsertRsp *)jarg1; 
@@ -22068,7 +22073,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderMarketIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketDeleteReq_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderMarketDeleteReq *arg1 = (ITapTrade::TapAPIOrderMarketDeleteReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -22078,7 +22083,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketDeleteReq_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderMarketDeleteReq *arg1 = (ITapTrade::TapAPIOrderMarketDeleteReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -22090,7 +22095,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq_OrderBuyNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketDeleteReq_OrderBuyNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketDeleteReq *arg1 = (ITapTrade::TapAPIOrderMarketDeleteReq *) 0 ;
   char *arg2 ;
   
@@ -22107,7 +22112,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq_OrderBuyNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketDeleteReq_OrderBuyNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketDeleteReq *arg1 = (ITapTrade::TapAPIOrderMarketDeleteReq *) 0 ;
   char *result = 0 ;
@@ -22119,7 +22124,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteR
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq_OrderSellNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketDeleteReq_OrderSellNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderMarketDeleteReq *arg1 = (ITapTrade::TapAPIOrderMarketDeleteReq *) 0 ;
   char *arg2 ;
   
@@ -22136,7 +22141,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteReq_OrderSellNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderMarketDeleteReq_OrderSellNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderMarketDeleteReq *arg1 = (ITapTrade::TapAPIOrderMarketDeleteReq *) 0 ;
   char *result = 0 ;
@@ -22148,7 +22153,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderMarketDeleteR
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderMarketDeleteReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderMarketDeleteReq() {
   void * jresult ;
   ITapTrade::TapAPIOrderMarketDeleteReq *result = 0 ;
   
@@ -22158,7 +22163,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderMarketDel
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderMarketDeleteReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderMarketDeleteReq(void * jarg1) {
   ITapTrade::TapAPIOrderMarketDeleteReq *arg1 = (ITapTrade::TapAPIOrderMarketDeleteReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderMarketDeleteReq *)jarg1; 
@@ -22166,7 +22171,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderMarketDe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveReq_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveReq_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalRemoveReq *arg1 = (ITapTrade::TapAPIOrderLocalRemoveReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -22176,7 +22181,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveReq_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveReq_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveReq_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalRemoveReq *arg1 = (ITapTrade::TapAPIOrderLocalRemoveReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -22188,7 +22193,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveReq_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveReq_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalRemoveReq *arg1 = (ITapTrade::TapAPIOrderLocalRemoveReq *) 0 ;
   char *arg2 ;
   
@@ -22205,7 +22210,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveReq_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveReq_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveReq_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalRemoveReq *arg1 = (ITapTrade::TapAPIOrderLocalRemoveReq *) 0 ;
   char *result = 0 ;
@@ -22217,7 +22222,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRe
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalRemoveReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderLocalRemoveReq() {
   void * jresult ;
   ITapTrade::TapAPIOrderLocalRemoveReq *result = 0 ;
   
@@ -22227,7 +22232,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalRemo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalRemoveReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderLocalRemoveReq(void * jarg1) {
   ITapTrade::TapAPIOrderLocalRemoveReq *arg1 = (ITapTrade::TapAPIOrderLocalRemoveReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderLocalRemoveReq *)jarg1; 
@@ -22235,7 +22240,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalRem
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_req_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveRsp_req_set(void * jarg1, void * jarg2) {
   ITapTrade::TapAPIOrderLocalRemoveRsp *arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *) 0 ;
   ITapTrade::TapAPIOrderLocalRemoveReq *arg2 = (ITapTrade::TapAPIOrderLocalRemoveReq *) 0 ;
   
@@ -22245,7 +22250,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_req_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveRsp_req_get(void * jarg1) {
   void * jresult ;
   ITapTrade::TapAPIOrderLocalRemoveRsp *arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *) 0 ;
   ITapTrade::TapAPIOrderLocalRemoveReq *result = 0 ;
@@ -22257,7 +22262,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRs
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_ClientLocalIP_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveRsp_ClientLocalIP_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalRemoveRsp *arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *) 0 ;
   char *arg2 ;
   
@@ -22274,7 +22279,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_ClientLocalIP_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveRsp_ClientLocalIP_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalRemoveRsp *arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *) 0 ;
   char *result = 0 ;
@@ -22286,7 +22291,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRs
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_ClientMac_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveRsp_ClientMac_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalRemoveRsp *arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *) 0 ;
   char *arg2 ;
   
@@ -22303,7 +22308,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_ClientMac_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveRsp_ClientMac_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalRemoveRsp *arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *) 0 ;
   char *result = 0 ;
@@ -22315,7 +22320,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRs
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_ClientIP_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveRsp_ClientIP_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalRemoveRsp *arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *) 0 ;
   char *arg2 ;
   
@@ -22332,7 +22337,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRsp_ClientIP_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalRemoveRsp_ClientIP_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalRemoveRsp *arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *) 0 ;
   char *result = 0 ;
@@ -22344,7 +22349,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalRemoveRs
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalRemoveRsp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderLocalRemoveRsp() {
   void * jresult ;
   ITapTrade::TapAPIOrderLocalRemoveRsp *result = 0 ;
   
@@ -22354,7 +22359,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalRemo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalRemoveRsp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderLocalRemoveRsp(void * jarg1) {
   ITapTrade::TapAPIOrderLocalRemoveRsp *arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderLocalRemoveRsp *)jarg1; 
@@ -22362,7 +22367,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalRem
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22379,7 +22384,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_A
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -22391,7 +22396,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22408,7 +22413,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_E
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -22420,7 +22425,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -22430,7 +22435,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_C
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -22442,7 +22447,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_C
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22459,7 +22464,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_C
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -22471,7 +22476,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22488,7 +22493,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_C
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -22500,7 +22505,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22517,7 +22522,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_S
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -22529,7 +22534,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -22539,7 +22544,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_C
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -22551,7 +22556,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_C
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_ContractNo2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_ContractNo2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22568,7 +22573,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_C
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_ContractNo2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_ContractNo2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -22580,7 +22585,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_StrikePrice2_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_StrikePrice2_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22597,7 +22602,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_S
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_StrikePrice2_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_StrikePrice2_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -22609,7 +22614,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_CallOrPutFlag2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_CallOrPutFlag2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -22619,7 +22624,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_C
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_CallOrPutFlag2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_CallOrPutFlag2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -22631,7 +22636,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_C
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIOrderTypeType arg2 ;
   
@@ -22641,7 +22646,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIOrderTypeType result;
@@ -22653,7 +22658,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderSource_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderSource_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIOrderSourceType arg2 ;
   
@@ -22663,7 +22668,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderSource_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderSource_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIOrderSourceType result;
@@ -22675,7 +22680,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_TimeInForce_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_TimeInForce_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPITimeInForceType arg2 ;
   
@@ -22685,7 +22690,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_T
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_TimeInForce_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_TimeInForce_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPITimeInForceType result;
@@ -22697,7 +22702,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_T
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_ExpireTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_ExpireTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22714,7 +22719,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_E
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_ExpireTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_ExpireTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -22726,7 +22731,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_IsRiskOrder_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_IsRiskOrder_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -22736,7 +22741,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_I
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_IsRiskOrder_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_IsRiskOrder_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -22748,7 +22753,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_I
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -22758,7 +22763,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPISideType result;
@@ -22770,7 +22775,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_PositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_PositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -22780,7 +22785,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_P
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_PositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_PositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -22792,7 +22797,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_P
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_PositionEffect2_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_PositionEffect2_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -22802,7 +22807,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_P
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_PositionEffect2_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_PositionEffect2_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -22814,7 +22819,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_P
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_InquiryNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_InquiryNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22831,7 +22836,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_I
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_InquiryNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_InquiryNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -22843,7 +22848,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_HedgeFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_HedgeFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIHedgeFlagType arg2 ;
   
@@ -22853,7 +22858,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_H
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_HedgeFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_HedgeFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIHedgeFlagType result;
@@ -22865,7 +22870,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_H
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -22875,7 +22880,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -22887,7 +22892,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderPrice2_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderPrice2_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -22897,7 +22902,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderPrice2_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderPrice2_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -22909,7 +22914,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_StopPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_StopPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -22919,7 +22924,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_S
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_StopPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_StopPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -22931,7 +22936,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -22941,7 +22946,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -22953,7 +22958,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMinQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMinQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -22963,7 +22968,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMinQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMinQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -22975,7 +22980,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -22992,7 +22997,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23004,7 +23009,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderExchangeSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderExchangeSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23021,7 +23026,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderExchangeSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderExchangeSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23033,7 +23038,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23050,7 +23055,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_U
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23062,7 +23067,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMatchPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMatchPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -23072,7 +23077,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMatchPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMatchPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -23084,7 +23089,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMatchPrice2_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMatchPrice2_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -23094,7 +23099,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMatchPrice2_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMatchPrice2_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -23106,7 +23111,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMatchQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMatchQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -23116,7 +23121,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMatchQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMatchQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -23128,7 +23133,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMatchQty2_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMatchQty2_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -23138,7 +23143,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderMatchQty2_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderMatchQty2_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -23150,7 +23155,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalIn
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderState_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderState_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIOrderStateType arg2 ;
   
@@ -23160,7 +23165,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_OrderState_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_OrderState_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIOrderStateType result;
@@ -23172,7 +23177,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_O
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_IsAddOne_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_IsAddOne_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -23182,7 +23187,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_I
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_IsAddOne_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalInputReq_IsAddOne_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -23194,7 +23199,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalInputReq_I
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalInputReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderLocalInputReq() {
   void * jresult ;
   ITapTrade::TapAPIOrderLocalInputReq *result = 0 ;
   
@@ -23204,7 +23209,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalInpu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalInputReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderLocalInputReq(void * jarg1) {
   ITapTrade::TapAPIOrderLocalInputReq *arg1 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderLocalInputReq *)jarg1; 
@@ -23212,7 +23217,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalInp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_req_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalModifyReq_req_set(void * jarg1, void * jarg2) {
   ITapTrade::TapAPIOrderLocalModifyReq *arg1 = (ITapTrade::TapAPIOrderLocalModifyReq *) 0 ;
   ITapTrade::TapAPIOrderLocalInputReq *arg2 = (ITapTrade::TapAPIOrderLocalInputReq *) 0 ;
   
@@ -23222,7 +23227,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_req_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalModifyReq_req_get(void * jarg1) {
   void * jresult ;
   ITapTrade::TapAPIOrderLocalModifyReq *arg1 = (ITapTrade::TapAPIOrderLocalModifyReq *) 0 ;
   ITapTrade::TapAPIOrderLocalInputReq *result = 0 ;
@@ -23234,7 +23239,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalModifyReq_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalModifyReq *arg1 = (ITapTrade::TapAPIOrderLocalModifyReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -23244,7 +23249,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalModifyReq_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalModifyReq *arg1 = (ITapTrade::TapAPIOrderLocalModifyReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -23256,7 +23261,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalModifyReq_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalModifyReq *arg1 = (ITapTrade::TapAPIOrderLocalModifyReq *) 0 ;
   char *arg2 ;
   
@@ -23273,7 +23278,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyReq_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalModifyReq_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalModifyReq *arg1 = (ITapTrade::TapAPIOrderLocalModifyReq *) 0 ;
   char *result = 0 ;
@@ -23285,7 +23290,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalModifyRe
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalModifyReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderLocalModifyReq() {
   void * jresult ;
   ITapTrade::TapAPIOrderLocalModifyReq *result = 0 ;
   
@@ -23295,7 +23300,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalModi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalModifyReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderLocalModifyReq(void * jarg1) {
   ITapTrade::TapAPIOrderLocalModifyReq *arg1 = (ITapTrade::TapAPIOrderLocalModifyReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderLocalModifyReq *)jarg1; 
@@ -23303,7 +23308,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalMod
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalTransferReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalTransferReq *arg1 = (ITapTrade::TapAPIOrderLocalTransferReq *) 0 ;
   char *arg2 ;
   
@@ -23320,7 +23325,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferRe
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalTransferReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalTransferReq *arg1 = (ITapTrade::TapAPIOrderLocalTransferReq *) 0 ;
   char *result = 0 ;
@@ -23332,7 +23337,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransfer
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferReq_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalTransferReq_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIOrderLocalTransferReq *arg1 = (ITapTrade::TapAPIOrderLocalTransferReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -23342,7 +23347,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferRe
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferReq_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalTransferReq_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIOrderLocalTransferReq *arg1 = (ITapTrade::TapAPIOrderLocalTransferReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -23354,7 +23359,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferReq_OrderNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalTransferReq_OrderNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIOrderLocalTransferReq *arg1 = (ITapTrade::TapAPIOrderLocalTransferReq *) 0 ;
   char *arg2 ;
   
@@ -23371,7 +23376,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferRe
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransferReq_OrderNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIOrderLocalTransferReq_OrderNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIOrderLocalTransferReq *arg1 = (ITapTrade::TapAPIOrderLocalTransferReq *) 0 ;
   char *result = 0 ;
@@ -23383,7 +23388,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIOrderLocalTransfer
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalTransferReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIOrderLocalTransferReq() {
   void * jresult ;
   ITapTrade::TapAPIOrderLocalTransferReq *result = 0 ;
   
@@ -23393,7 +23398,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIOrderLocalTran
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalTransferReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIOrderLocalTransferReq(void * jarg1) {
   ITapTrade::TapAPIOrderLocalTransferReq *arg1 = (ITapTrade::TapAPIOrderLocalTransferReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIOrderLocalTransferReq *)jarg1; 
@@ -23401,7 +23406,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIOrderLocalTra
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_AccountNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_AccountNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23418,7 +23423,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Ac
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_AccountNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_AccountNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23430,7 +23435,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_ExchangeNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_ExchangeNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23447,7 +23452,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Ex
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_ExchangeNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_ExchangeNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23459,7 +23464,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_CommodityType_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_CommodityType_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPICommodityType arg2 ;
   
@@ -23469,7 +23474,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Co
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_CommodityType_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_CommodityType_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPICommodityType result;
@@ -23481,7 +23486,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Co
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_CommodityNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_CommodityNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23498,7 +23503,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_CommodityNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_CommodityNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23510,7 +23515,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_ContractNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_ContractNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23527,7 +23532,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Co
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_ContractNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_ContractNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23539,7 +23544,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_StrikePrice_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_StrikePrice_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23556,7 +23561,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_St
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_StrikePrice_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_StrikePrice_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23568,7 +23573,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_CallOrPutFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_CallOrPutFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType arg2 ;
   
@@ -23578,7 +23583,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Ca
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_CallOrPutFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_CallOrPutFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPICallOrPutFlagType result;
@@ -23590,7 +23595,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Ca
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_MatchSide_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_MatchSide_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPISideType arg2 ;
   
@@ -23600,7 +23605,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Ma
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_MatchSide_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_MatchSide_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPISideType result;
@@ -23612,7 +23617,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Ma
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_PositionEffect_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_PositionEffect_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIPositionEffectType arg2 ;
   
@@ -23622,7 +23627,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Po
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_PositionEffect_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_PositionEffect_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIPositionEffectType result;
@@ -23634,7 +23639,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Po
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_HedgeFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_HedgeFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIHedgeFlagType arg2 ;
   
@@ -23644,7 +23649,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_He
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_HedgeFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_HedgeFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIHedgeFlagType result;
@@ -23656,7 +23661,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_He
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_MatchPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_MatchPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -23666,7 +23671,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Ma
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_MatchPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_MatchPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -23678,7 +23683,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_MatchQty_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_MatchQty_set(void * jarg1, unsigned int jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   
@@ -23688,7 +23693,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Ma
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_MatchQty_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_MatchQty_get(void * jarg1) {
   unsigned int jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIUINT32 result;
@@ -23700,7 +23705,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_OrderSystemNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_OrderSystemNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23717,7 +23722,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Or
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_OrderSystemNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_OrderSystemNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23729,7 +23734,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_UpperMatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_UpperMatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23746,7 +23751,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Up
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_UpperMatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_UpperMatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23758,7 +23763,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_MatchDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_MatchDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23775,7 +23780,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Ma
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_MatchDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_MatchDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23787,7 +23792,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_UpperMatchDateTime_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_UpperMatchDateTime_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23804,7 +23809,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Up
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_UpperMatchDateTime_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_UpperMatchDateTime_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23816,7 +23821,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_UpperNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_UpperNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23833,7 +23838,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Up
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_UpperNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_UpperNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23845,7 +23850,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_IsAddOne_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_IsAddOne_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -23855,7 +23860,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Is
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_IsAddOne_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_IsAddOne_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -23867,7 +23872,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Is
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_FeeCurrencyGroup_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_FeeCurrencyGroup_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23884,7 +23889,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Fe
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_FeeCurrencyGroup_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_FeeCurrencyGroup_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23896,7 +23901,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_FeeCurrency_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_FeeCurrency_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *arg2 ;
   
@@ -23913,7 +23918,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Fe
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_FeeCurrency_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_FeeCurrency_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   char *result = 0 ;
@@ -23925,7 +23930,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_FeeValue_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_FeeValue_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -23935,7 +23940,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Fe
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_FeeValue_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_FeeValue_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -23947,7 +23952,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_IsManualFee_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_IsManualFee_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIYNFLAG arg2 ;
   
@@ -23957,7 +23962,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Is
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_IsManualFee_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_IsManualFee_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIYNFLAG result;
@@ -23969,7 +23974,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Is
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_ClosePositionPrice_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_ClosePositionPrice_set(void * jarg1, double jarg2) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 arg2 ;
   
@@ -23979,7 +23984,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_Cl
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_ClosePositionPrice_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalInputReq_ClosePositionPrice_get(void * jarg1) {
   double jresult ;
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   ITapTrade::TAPIREAL64 result;
@@ -23991,7 +23996,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalInputReq_
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFillLocalInputReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIFillLocalInputReq() {
   void * jresult ;
   ITapTrade::TapAPIFillLocalInputReq *result = 0 ;
   
@@ -24001,7 +24006,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFillLocalInput
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFillLocalInputReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIFillLocalInputReq(void * jarg1) {
   ITapTrade::TapAPIFillLocalInputReq *arg1 = (ITapTrade::TapAPIFillLocalInputReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIFillLocalInputReq *)jarg1; 
@@ -24009,7 +24014,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFillLocalInpu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalRemoveReq_ServerFlag_set(void * jarg1, char jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalRemoveReq_ServerFlag_set(void * jarg1, char jarg2) {
   ITapTrade::TapAPIFillLocalRemoveReq *arg1 = (ITapTrade::TapAPIFillLocalRemoveReq *) 0 ;
   ITapTrade::TAPICHAR arg2 ;
   
@@ -24019,7 +24024,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalRemoveReq_S
 }
 
 
-SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalRemoveReq_ServerFlag_get(void * jarg1) {
+SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalRemoveReq_ServerFlag_get(void * jarg1) {
   char jresult ;
   ITapTrade::TapAPIFillLocalRemoveReq *arg1 = (ITapTrade::TapAPIFillLocalRemoveReq *) 0 ;
   ITapTrade::TAPICHAR result;
@@ -24031,7 +24036,7 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalRemoveReq_S
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalRemoveReq_MatchNo_set(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalRemoveReq_MatchNo_set(void * jarg1, char * jarg2) {
   ITapTrade::TapAPIFillLocalRemoveReq *arg1 = (ITapTrade::TapAPIFillLocalRemoveReq *) 0 ;
   char *arg2 ;
   
@@ -24048,7 +24053,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalRemoveReq_M
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalRemoveReq_MatchNo_get(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPIFillLocalRemoveReq_MatchNo_get(void * jarg1) {
   char * jresult ;
   ITapTrade::TapAPIFillLocalRemoveReq *arg1 = (ITapTrade::TapAPIFillLocalRemoveReq *) 0 ;
   char *result = 0 ;
@@ -24060,7 +24065,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_TapAPIFillLocalRemoveReq
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFillLocalRemoveReq() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPIFillLocalRemoveReq() {
   void * jresult ;
   ITapTrade::TapAPIFillLocalRemoveReq *result = 0 ;
   
@@ -24070,7 +24075,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_TapAPIFillLocalRemov
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFillLocalRemoveReq(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIFillLocalRemoveReq(void * jarg1) {
   ITapTrade::TapAPIFillLocalRemoveReq *arg1 = (ITapTrade::TapAPIFillLocalRemoveReq *) 0 ;
   
   arg1 = (ITapTrade::TapAPIFillLocalRemoveReq *)jarg1; 
@@ -24078,7 +24083,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_TapAPIFillLocalRemo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_get() {
   int jresult ;
   int result;
   
@@ -24088,7 +24093,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_USER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_USER_get() {
   int jresult ;
   int result;
   
@@ -24098,7 +24103,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_USER_get() 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_DDA_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_DDA_get() {
   int jresult ;
   int result;
   
@@ -24108,7 +24113,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_DDA_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_LICENSE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_LICENSE_get() {
   int jresult ;
   int result;
   
@@ -24118,7 +24123,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_LICENSE_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_MODULE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_MODULE_get() {
   int jresult ;
   int result;
   
@@ -24128,7 +24133,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_MODULE_get(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_FORCE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_FORCE_get() {
   int jresult ;
   int result;
   
@@ -24138,7 +24143,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_FORCE_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_STATE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_STATE_get() {
   int jresult ;
   int result;
   
@@ -24148,7 +24153,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_STATE_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_PASS_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_PASS_get() {
   int jresult ;
   int result;
   
@@ -24158,7 +24163,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_PASS_get() 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_RIGHT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_RIGHT_get() {
   int jresult ;
   int result;
   
@@ -24168,7 +24173,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_RIGHT_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_COUNT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_COUNT_get() {
   int jresult ;
   int result;
   
@@ -24178,7 +24183,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_COUNT_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_NOTIN_SERVERFLAGUSRES_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_NOTIN_SERVERFLAGUSRES_get() {
   int jresult ;
   int result;
   
@@ -24188,7 +24193,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_NOTIN_SERVE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_FREEZE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_FREEZE_get() {
   int jresult ;
   int result;
   
@@ -24198,7 +24203,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_FREEZE_get(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_TOFREEZE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_TOFREEZE_get() {
   int jresult ;
   int result;
   
@@ -24208,7 +24213,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_TOFREEZE_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_ACCOUNTSTATE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_ACCOUNTSTATE_get() {
   int jresult ;
   int result;
   
@@ -24218,7 +24223,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_ACCOUNTSTAT
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_SECCERTIFI_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_SECCERTIFI_get() {
   int jresult ;
   int result;
   
@@ -24228,7 +24233,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_SECCERTIFI_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_NOSECONDSET_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_NOSECONDSET_get() {
   int jresult ;
   int result;
   
@@ -24238,7 +24243,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_NOSECONDSET
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_NOTURSTHOST_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_NOTURSTHOST_get() {
   int jresult ;
   int result;
   
@@ -24248,7 +24253,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGIN_NOTURSTHOST
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPITAPIERROR_SECONDCERTIFICATION_FAIL_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPITAPIERROR_SECONDCERTIFICATION_FAIL_get() {
   int jresult ;
   int result;
   
@@ -24258,7 +24263,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPITAPIERROR_SECONDCERTIFI
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPITAPIERROR_SECONDCERTIFICATION_TIMEOVER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPITAPIERROR_SECONDCERTIFICATION_TIMEOVER_get() {
   int jresult ;
   int result;
   
@@ -24268,7 +24273,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPITAPIERROR_SECONDCERTIFI
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CONN_DATABASE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_CONN_DATABASE_get() {
   int jresult ;
   int result;
   
@@ -24278,7 +24283,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CONN_DATABASE_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_OPER_DATABASE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_OPER_DATABASE_get() {
   int jresult ;
   int result;
   
@@ -24288,7 +24293,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_OPER_DATABASE_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_NEED_ONETOONE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_NEED_ONETOONE_get() {
   int jresult ;
   int result;
   
@@ -24298,7 +24303,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_NEED_ONETOONE_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_EXIST_RELATEINFO_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_EXIST_RELATEINFO_get() {
   int jresult ;
   int result;
   
@@ -24308,7 +24313,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_EXIST_RELATEINFO_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_EXIST_RELATEINFOOFGROUP_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_EXIST_RELATEINFOOFGROUP_get() {
   int jresult ;
   int result;
   
@@ -24318,7 +24323,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_EXIST_RELATEINFOO
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_USERPASSWORD_MOD_SOURCE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_USERPASSWORD_MOD_SOURCE_get() {
   int jresult ;
   int result;
   
@@ -24328,7 +24333,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_USERPASSWORD_MOD_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_USERPASSWORD_MOD_SAME_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_USERPASSWORD_MOD_SAME_get() {
   int jresult ;
   int result;
   
@@ -24338,7 +24343,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_USERPASSWORD_MOD_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_USERPASSWORD_MOD_COMPLEXITY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_USERPASSWORD_MOD_COMPLEXITY_get() {
   int jresult ;
   int result;
   
@@ -24348,7 +24353,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_USERPASSWORD_MOD_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CURRENCY_ONLY_ONEBASE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_CURRENCY_ONLY_ONEBASE_get() {
   int jresult ;
   int result;
   
@@ -24358,7 +24363,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CURRENCY_ONLY_ONE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CURRENCY_ONLY_USDHKD_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_CURRENCY_ONLY_USDHKD_get() {
   int jresult ;
   int result;
   
@@ -24368,7 +24373,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CURRENCY_ONLY_USD
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ACCOUNT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_ACCOUNT_get() {
   int jresult ;
   int result;
   
@@ -24378,7 +24383,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ACCOU
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ACCOUNT_STATE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_ACCOUNT_STATE_get() {
   int jresult ;
   int result;
   
@@ -24388,7 +24393,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ACCOU
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_TRADECENT_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_TRADECENT_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24398,7 +24403,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_TRADE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_CONTRACT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_CONTRACT_get() {
   int jresult ;
   int result;
   
@@ -24408,7 +24413,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_CONTR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_LME_NOTREADY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_LME_NOTREADY_get() {
   int jresult ;
   int result;
   
@@ -24418,7 +24423,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_LME_N
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ERROR_ORDER_TYPE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_ERROR_ORDER_TYPE_get() {
   int jresult ;
   int result;
   
@@ -24428,7 +24433,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ERROR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_READY_TYPE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_READY_TYPE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24438,7 +24443,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_READY
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ORDER_TYPE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_ORDER_TYPE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24448,7 +24453,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ORDER
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_ACCOUNT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_NOTRADE_ACCOUNT_get() {
   int jresult ;
   int result;
   
@@ -24458,7 +24463,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_ACC
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_COM_GROUP_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_NOTRADE_COM_GROUP_get() {
   int jresult ;
   int result;
   
@@ -24468,7 +24473,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_COM
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_ACC_CONTRACT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_NOTRADE_ACC_CONTRACT_get() {
   int jresult ;
   int result;
   
@@ -24478,7 +24483,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_ACC
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_SYSTEM_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_NOTRADE_SYSTEM_get() {
   int jresult ;
   int result;
   
@@ -24488,7 +24493,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_SYS
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_ACCOUNT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_CLOSE_ACCOUNT_get() {
   int jresult ;
   int result;
   
@@ -24498,7 +24503,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_ACCOU
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_ACC_CONTRACT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_CLOSE_ACC_CONTRACT_get() {
   int jresult ;
   int result;
   
@@ -24508,7 +24513,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_ACC_C
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_SYSTEM_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_CLOSE_SYSTEM_get() {
   int jresult ;
   int result;
   
@@ -24518,7 +24523,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_SYSTE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_DAYS_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_CLOSE_DAYS_get() {
   int jresult ;
   int result;
   
@@ -24528,7 +24533,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_DAYS_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_RISK_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_NOTRADE_RISK_get() {
   int jresult ;
   int result;
   
@@ -24538,7 +24543,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTRADE_RIS
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_RISK_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_CLOSE_RISK_get() {
   int jresult ;
   int result;
   
@@ -24548,7 +24553,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_CLOSE_RISK_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_POSITIONMAX_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_POSITIONMAX_get() {
   int jresult ;
   int result;
   
@@ -24558,7 +24563,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_POSIT
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ONCEMAX_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_ONCEMAX_get() {
   int jresult ;
   int result;
   
@@ -24568,7 +24573,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_ONCEM
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_TRADEROUTE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_TRADEROUTE_get() {
   int jresult ;
   int result;
   
@@ -24578,7 +24583,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_TRADE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_IN_MOD_PRICE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_IN_MOD_PRICE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24588,7 +24593,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_IN_MOD_PRIC
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_IN_GIVEUP_POS_MAX_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_IN_GIVEUP_POS_MAX_get() {
   int jresult ;
   int result;
   
@@ -24598,7 +24603,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_IN_GIVEUP_P
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UPPERCHANNEL_NOT_LOGIN_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_UPPERCHANNEL_NOT_LOGIN_get() {
   int jresult ;
   int result;
   
@@ -24608,7 +24613,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UPPERCHANNEL_NOT_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UPPERCHANNEL_NOT_FOUND_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_UPPERCHANNEL_NOT_FOUND_get() {
   int jresult ;
   int result;
   
@@ -24618,7 +24623,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UPPERCHANNEL_NOT_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_NOTENOUGHFUND_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_NOTENOUGHFUND_get() {
   int jresult ;
   int result;
   
@@ -24628,7 +24633,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_NOTEN
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_FEE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_FEE_get() {
   int jresult ;
   int result;
   
@@ -24638,7 +24643,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_FEE_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_MARGIN_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_MARGIN_get() {
   int jresult ;
   int result;
   
@@ -24648,7 +24653,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_MARGI
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_BASENOFUND_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_BASENOFUND_get() {
   int jresult ;
   int result;
   
@@ -24658,7 +24663,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_BASEN
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_MARGINAMOUNT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_MARGINAMOUNT_get() {
   int jresult ;
   int result;
   
@@ -24668,7 +24673,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_MARGI
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_OPENRATIO_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_OPENRATIO_get() {
   int jresult ;
   int result;
   
@@ -24678,7 +24683,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_OPENR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_GROUP_OPENRATIO_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_GROUP_OPENRATIO_get() {
   int jresult ;
   int result;
   
@@ -24688,7 +24693,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_GROUP
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_RISKARRAY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_RISKARRAY_get() {
   int jresult ;
   int result;
   
@@ -24698,7 +24703,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_RISKA
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERDELETE_NOT_SYSNO_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERDELETE_NOT_SYSNO_get() {
   int jresult ;
   int result;
   
@@ -24708,7 +24713,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERDELETE_NOT_S
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERDELETE_NOT_STATE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERDELETE_NOT_STATE_get() {
   int jresult ;
   int result;
   
@@ -24718,7 +24723,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERDELETE_NOT_S
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERDELETE_NO_INPUT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERDELETE_NO_INPUT_get() {
   int jresult ;
   int result;
   
@@ -24728,7 +24733,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERDELETE_NO_IN
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_NOT_STATE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMODIFY_NOT_STATE_get() {
   int jresult ;
   int result;
   
@@ -24738,7 +24743,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_NOT_S
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_BACK_INPUT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMODIFY_BACK_INPUT_get() {
   int jresult ;
   int result;
   
@@ -24748,7 +24753,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_BACK_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_RISK_ORDER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMODIFY_RISK_ORDER_get() {
   int jresult ;
   int result;
   
@@ -24758,7 +24763,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_RISK_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_ERROR_QTY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMODIFY_ERROR_QTY_get() {
   int jresult ;
   int result;
   
@@ -24768,7 +24773,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_ERROR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_ERROR_READY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMODIFY_ERROR_READY_get() {
   int jresult ;
   int result;
   
@@ -24778,7 +24783,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMODIFY_ERROR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_CANNOTMOVE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINPUT_CANNOTMOVE_get() {
   int jresult ;
   int result;
   
@@ -24788,7 +24793,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_CANNOT
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_REPEAT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINPUT_REPEAT_get() {
   int jresult ;
   int result;
   
@@ -24798,7 +24803,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_REPEAT
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CONTRACT_QUOTE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_CONTRACT_QUOTE_get() {
   int jresult ;
   int result;
   
@@ -24808,7 +24813,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CONTRACT_QUOTE_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UPPER_ONCEMAX_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_UPPER_ONCEMAX_get() {
   int jresult ;
   int result;
   
@@ -24818,7 +24823,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UPPER_ONCEMAX_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UPPER_POSITIONMAX_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_UPPER_POSITIONMAX_get() {
   int jresult ;
   int result;
   
@@ -24828,7 +24833,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UPPER_POSITIONMAX
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_CLOSEMODE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINSERT_CLOSEMODE_get() {
   int jresult ;
   int result;
   
@@ -24838,7 +24843,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINSERT_CLOSE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CLOSE_ORDER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_CLOSE_ORDER_get() {
   int jresult ;
   int result;
   
@@ -24848,7 +24853,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CLOSE_ORDER_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CLOSE_MATCH_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_CLOSE_MATCH_get() {
   int jresult ;
   int result;
   
@@ -24858,7 +24863,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CLOSE_MATCH_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MOD_DEL_NO_ORDER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_MOD_DEL_NO_ORDER_get() {
   int jresult ;
   int result;
   
@@ -24868,7 +24873,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MOD_DEL_NO_ORDER_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MOD_DEL_GATEWAY_DISCON_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_MOD_DEL_GATEWAY_DISCON_get() {
   int jresult ;
   int result;
   
@@ -24878,7 +24883,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MOD_DEL_GATEWAY_D
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_REPEAT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_MATCHINPUT_REPEAT_get() {
   int jresult ;
   int result;
   
@@ -24888,7 +24893,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_REPEAT
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_NO_ORDER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_MATCHINPUT_NO_ORDER_get() {
   int jresult ;
   int result;
   
@@ -24898,7 +24903,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_NO_ORD
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_NO_CONTRACT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_MATCHINPUT_NO_CONTRACT_get() {
   int jresult ;
   int result;
   
@@ -24908,7 +24913,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_NO_CON
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_PARM_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_MATCHINPUT_PARM_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24918,7 +24923,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_PARM_E
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_OSTATE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_MATCHINPUT_OSTATE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24928,7 +24933,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHINPUT_OSTATE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHREMOVE_NO_MATCH_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_MATCHREMOVE_NO_MATCH_get() {
   int jresult ;
   int result;
   
@@ -24938,7 +24943,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHREMOVE_NO_MA
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHREMOVE_STATE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_MATCHREMOVE_STATE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24948,7 +24953,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_MATCHREMOVE_STATE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_STATE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINPUT_STATE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24958,7 +24963,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_STATE_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_MOD_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINPUT_MOD_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24968,7 +24973,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_MOD_ER
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERREMOVE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERREMOVE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24978,7 +24983,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERREMOVE_ERROR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_MOD_STATE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERINPUT_MOD_STATE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24988,7 +24993,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERINPUT_MOD_ST
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDEREXCHANGE_STATE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDEREXCHANGE_STATE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -24998,7 +25003,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDEREXCHANGE_STA
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERREMOVE_NOT_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERREMOVE_NOT_ERROR_get() {
   int jresult ;
   int result;
   
@@ -25008,7 +25013,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERREMOVE_NOT_E
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DELETE_NOTFOUND_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMARKET_DELETE_NOTFOUND_get() {
   int jresult ;
   int result;
   
@@ -25018,7 +25023,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DELET
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_ACCOUNT_NE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMARKET_DEL_ACCOUNT_NE_get() {
   int jresult ;
   int result;
   
@@ -25028,7 +25033,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_A
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_COMMODITY_NE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMARKET_DEL_COMMODITY_NE_get() {
   int jresult ;
   int result;
   
@@ -25038,7 +25043,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_C
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_CONTRACT_NE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMARKET_DEL_CONTRACT_NE_get() {
   int jresult ;
   int result;
   
@@ -25048,7 +25053,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_C
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_SIDE_EQ_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMARKET_DEL_SIDE_EQ_get() {
   int jresult ;
   int result;
   
@@ -25058,7 +25063,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_S
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_SIDE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMARKET_DEL_SIDE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -25068,7 +25073,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_DEL_S
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_OTHER_SIDE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERMARKET_OTHER_SIDE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -25078,7 +25083,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERMARKET_OTHER
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERACTIVATE_NOTFOUND_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERACTIVATE_NOTFOUND_ERROR_get() {
   int jresult ;
   int result;
   
@@ -25088,7 +25093,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERACTIVATE_NOT
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERACTIVATE_STATE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDERACTIVATE_STATE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -25098,7 +25103,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDERACTIVATE_STA
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_NOT_READY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_NOT_READY_get() {
   int jresult ;
   int result;
   
@@ -25108,7 +25113,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_NOT_READY_get(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_COMMODITY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_INVALID_COMMODITY_get() {
   int jresult ;
   int result;
   
@@ -25118,7 +25123,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_COMMOD
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_CONTRACT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_INVALID_CONTRACT_get() {
   int jresult ;
   int result;
   
@@ -25128,7 +25133,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_CONTRA
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_FIELD_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_INVALID_FIELD_get() {
   int jresult ;
   int result;
   
@@ -25138,7 +25143,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_FIELD_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_PRICE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_INVALID_PRICE_get() {
   int jresult ;
   int result;
   
@@ -25148,7 +25153,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_PRICE_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_VOLUME_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_INVALID_VOLUME_get() {
   int jresult ;
   int result;
   
@@ -25158,7 +25163,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_VOLUME
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_TYPE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_INVALID_TYPE_get() {
   int jresult ;
   int result;
   
@@ -25168,7 +25173,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_TYPE_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_MODE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_INVALID_MODE_get() {
   int jresult ;
   int result;
   
@@ -25178,7 +25183,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_INVALID_MODE_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_ORDER_NOT_EXIST_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_ORDER_NOT_EXIST_get() {
   int jresult ;
   int result;
   
@@ -25188,7 +25193,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_ORDER_NOT_EXIS
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_SEND_FAIL_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_SEND_FAIL_get() {
   int jresult ;
   int result;
   
@@ -25198,7 +25203,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_SEND_FAIL_get(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_REJ_BYUPPER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_GW_REJ_BYUPPER_get() {
   int jresult ;
   int result;
   
@@ -25208,7 +25213,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_GW_REJ_BYUPPER_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_MODULETYPEERR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_MODULETYPEERR_get() {
   int jresult ;
   int result;
   
@@ -25218,7 +25223,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_MODULE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_TOOMANYDATA_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_TOOMANYDATA_get() {
   int jresult ;
   int result;
   
@@ -25228,7 +25233,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_TOOMAN
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_NODATA_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_NODATA_get() {
   int jresult ;
   int result;
   
@@ -25238,7 +25243,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_NODATA
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROT_TRADEFRONT_NOUSER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROT_TRADEFRONT_NOUSER_get() {
   int jresult ;
   int result;
   
@@ -25248,7 +25253,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROT_TRADEFRONT_NOUSER
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_DISCONNECT_TRADE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_DISCONNECT_TRADE_get() {
   int jresult ;
   int result;
   
@@ -25258,7 +25263,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_DISCON
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_DISCONNECT_MANAGE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_DISCONNECT_MANAGE_get() {
   int jresult ;
   int result;
   
@@ -25268,7 +25273,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_DISCON
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_ACCOUNT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_ACCOUNT_get() {
   int jresult ;
   int result;
   
@@ -25278,7 +25283,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_ACCOUN
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_ORDER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_ORDER_get() {
   int jresult ;
   int result;
   
@@ -25288,7 +25293,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_ORDER_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_FREQUENCY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_FREQUENCY_get() {
   int jresult ;
   int result;
   
@@ -25298,7 +25303,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_FREQUE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_RUFUSE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_RUFUSE_get() {
   int jresult ;
   int result;
   
@@ -25308,7 +25313,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_RUFUSE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_SELFMATCH_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TRADEFRONT_SELFMATCH_get() {
   int jresult ;
   int result;
   
@@ -25318,7 +25323,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TRADEFRONT_SELFMA
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_SUCCEED_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_SUCCEED_get() {
   int jresult ;
   int result;
   
@@ -25328,7 +25333,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_SUCCEED_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ConnectFail_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ConnectFail_get() {
   int jresult ;
   int result;
   
@@ -25338,7 +25343,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ConnectFail_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LinkAuthFail_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LinkAuthFail_get() {
   int jresult ;
   int result;
   
@@ -25348,7 +25353,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LinkAuthFail_get(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_HostUnavailable_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_HostUnavailable_get() {
   int jresult ;
   int result;
   
@@ -25358,7 +25363,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_HostUnavailable_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_SendDataError_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_SendDataError_get() {
   int jresult ;
   int result;
   
@@ -25368,7 +25373,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_SendDataError_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TestIDError_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_TestIDError_get() {
   int jresult ;
   int result;
   
@@ -25378,7 +25383,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_TestIDError_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_NotReadyTestNetwork_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_NotReadyTestNetwork_get() {
   int jresult ;
   int result;
   
@@ -25388,7 +25393,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_NotReadyTestNetwo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CurTestNotOver_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_CurTestNotOver_get() {
   int jresult ;
   int result;
   
@@ -25398,7 +25403,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CurTestNotOver_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_NOFrontAvailable_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_NOFrontAvailable_get() {
   int jresult ;
   int result;
   
@@ -25408,7 +25413,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_NOFrontAvailable_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DataPathAvaiable_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DataPathAvaiable_get() {
   int jresult ;
   int result;
   
@@ -25418,7 +25423,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DataPathAvaiable_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RepeatLogin_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_RepeatLogin_get() {
   int jresult ;
   int result;
   
@@ -25428,7 +25433,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RepeatLogin_get()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_InnerError_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_InnerError_get() {
   int jresult ;
   int result;
   
@@ -25438,7 +25443,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_InnerError_get() 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LastReqNotFinish_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LastReqNotFinish_get() {
   int jresult ;
   int result;
   
@@ -25448,7 +25453,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LastReqNotFinish_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_InputValueError_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_InputValueError_get() {
   int jresult ;
   int result;
   
@@ -25458,7 +25463,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_InputValueError_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_AuthCode_Invalid_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_AuthCode_Invalid_get() {
   int jresult ;
   int result;
   
@@ -25468,7 +25473,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_AuthCode_Invalid_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_AuthCode_Expired_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_AuthCode_Expired_get() {
   int jresult ;
   int result;
   
@@ -25478,7 +25483,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_AuthCode_Expired_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_AuthCode_TypeNotMatch_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_AuthCode_TypeNotMatch_get() {
   int jresult ;
   int result;
   
@@ -25488,7 +25493,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_AuthCode_TypeNotM
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_API_NotReady_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_API_NotReady_get() {
   int jresult ;
   int result;
   
@@ -25498,7 +25503,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_API_NotReady_get(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UDP_LISTEN_FAILED_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_UDP_LISTEN_FAILED_get() {
   int jresult ;
   int result;
   
@@ -25508,7 +25513,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UDP_LISTEN_FAILED
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UDP_LISTENING_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_UDP_LISTENING_get() {
   int jresult ;
   int result;
   
@@ -25518,7 +25523,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_UDP_LISTENING_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_NotImplemented_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_NotImplemented_get() {
   int jresult ;
   int result;
   
@@ -25528,7 +25533,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_NotImplemented_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CallOneTimeOnly_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_CallOneTimeOnly_get() {
   int jresult ;
   int result;
   
@@ -25538,7 +25543,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CallOneTimeOnly_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_FREQUENCY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_FREQUENCY_get() {
   int jresult ;
   int result;
   
@@ -25548,7 +25553,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_FREQUENCY_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RENTQRY_TOOFAST_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_RENTQRY_TOOFAST_get() {
   int jresult ;
   int result;
   
@@ -25558,7 +25563,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RENTQRY_TOOFAST_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CALL_NOCONDITION_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_CALL_NOCONDITION_get() {
   int jresult ;
   int result;
   
@@ -25568,7 +25573,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_CALL_NOCONDITION_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTFOUND_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_NOTFOUND_get() {
   int jresult ;
   int result;
   
@@ -25578,7 +25583,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_NOTFOUND_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGPATH_EMPTY_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGPATH_EMPTY_get() {
   int jresult ;
   int result;
   
@@ -25588,7 +25593,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGPATH_EMPTY_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGPATH_FAILOPEN_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGPATH_FAILOPEN_get() {
   int jresult ;
   int result;
   
@@ -25598,7 +25603,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOGPATH_FAILOPEN_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_TRADER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_RIGHT_TRADER_get() {
   int jresult ;
   int result;
   
@@ -25608,7 +25613,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_TRADER_get(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_ORDERINPUT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_RIGHT_ORDERINPUT_get() {
   int jresult ;
   int result;
   
@@ -25618,7 +25623,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_ORDERINPUT_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_LOCALOPERATION_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_RIGHT_LOCALOPERATION_get() {
   int jresult ;
   int result;
   
@@ -25628,7 +25633,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_LOCALOPERAT
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_ORDERTRANSFER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_RIGHT_ORDERTRANSFER_get() {
   int jresult ;
   int result;
   
@@ -25638,7 +25643,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_ORDERTRANSF
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_FILLINPUT_SYSTEMNO_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_FILLINPUT_SYSTEMNO_get() {
   int jresult ;
   int result;
   
@@ -25648,7 +25653,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_FILLINPUT_SYSTEMN
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_FILLREMOVE_MATCHNO_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_FILLREMOVE_MATCHNO_get() {
   int jresult ;
   int result;
   
@@ -25658,7 +25663,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_FILLREMOVE_MATCHN
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_FILLREQMOVE_NOFUND_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_FILLREQMOVE_NOFUND_get() {
   int jresult ;
   int result;
   
@@ -25668,7 +25673,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_FILLREQMOVE_NOFUN
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOCALMODIFY_ACCOUNT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOCALMODIFY_ACCOUNT_get() {
   int jresult ;
   int result;
   
@@ -25678,7 +25683,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOCALMODIFY_ACCOU
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOCALTRANSFER_ACCOUNT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOCALTRANSFER_ACCOUNT_get() {
   int jresult ;
   int result;
   
@@ -25688,7 +25693,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_LOCALTRANSFER_ACC
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_PHONE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_PHONE_get() {
   int jresult ;
   int result;
   
@@ -25698,7 +25703,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_PHONE_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ERROR_CONTACT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ERROR_CONTACT_get() {
   int jresult ;
   int result;
   
@@ -25708,7 +25713,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ERROR_CONTACT_get
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ERROR_REJESTVERTIFICATE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ERROR_REJESTVERTIFICATE_get() {
   int jresult ;
   int result;
   
@@ -25718,7 +25723,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ERROR_REJESTVERTI
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_SETPASSWORD_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_RIGHT_SETPASSWORD_get() {
   int jresult ;
   int result;
   
@@ -25728,7 +25733,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RIGHT_SETPASSWORD
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RISK_OPERERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_RISK_OPERERROR_get() {
   int jresult ;
   int result;
   
@@ -25738,7 +25743,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_RISK_OPERERROR_ge
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_MODACCOUNT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_ORDER_MODACCOUNT_get() {
   int jresult ;
   int result;
   
@@ -25748,7 +25753,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_ORDER_MODACCOUNT_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_NULL_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_NULL_get() {
   int jresult ;
   int result;
   
@@ -25758,7 +25763,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_NULL_g
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIYNFLAG_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIYNFLAG_get() {
   int jresult ;
   int result;
   
@@ -25768,7 +25773,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIYN
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPILOGLEVEL_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPILOGLEVEL_get() {
   int jresult ;
   int result;
   
@@ -25778,7 +25783,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPILO
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICommodityType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPICommodityType_get() {
   int jresult ;
   int result;
   
@@ -25788,7 +25793,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICallOrPutFlagType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPICallOrPutFlagType_get() {
   int jresult ;
   int result;
   
@@ -25798,7 +25803,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBucketDateFlag_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIBucketDateFlag_get() {
   int jresult ;
   int result;
   
@@ -25808,7 +25813,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBu
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIHisQuoteType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIHisQuoteType_get() {
   int jresult ;
   int result;
   
@@ -25818,7 +25823,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIHi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIAccountType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIAccountType_get() {
   int jresult ;
   int result;
   
@@ -25828,7 +25833,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIAc
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIUserTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIUserTypeType_get() {
   int jresult ;
   int result;
   
@@ -25838,7 +25843,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIUs
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIAccountState_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIAccountState_get() {
   int jresult ;
   int result;
   
@@ -25848,7 +25853,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIAc
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIAccountFamilyType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIAccountFamilyType_get() {
   int jresult ;
   int result;
   
@@ -25858,7 +25863,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIAc
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOrderTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIOrderTypeType_get() {
   int jresult ;
   int result;
   
@@ -25868,7 +25873,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOrderSourceType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIOrderSourceType_get() {
   int jresult ;
   int result;
   
@@ -25878,7 +25883,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITimeInForceType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPITimeInForceType_get() {
   int jresult ;
   int result;
   
@@ -25888,7 +25893,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPISideType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPISideType_get() {
   int jresult ;
   int result;
   
@@ -25898,7 +25903,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPISi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIPositionEffectType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIPositionEffectType_get() {
   int jresult ;
   int result;
   
@@ -25908,7 +25913,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIPo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIHedgeFlagType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIHedgeFlagType_get() {
   int jresult ;
   int result;
   
@@ -25918,7 +25923,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIHe
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOrderStateType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIOrderStateType_get() {
   int jresult ;
   int result;
   
@@ -25928,7 +25933,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICalculateModeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPICalculateModeType_get() {
   int jresult ;
   int result;
   
@@ -25938,7 +25943,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMatchSourceType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIMatchSourceType_get() {
   int jresult ;
   int result;
   
@@ -25948,7 +25953,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOpenCloseModeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIOpenCloseModeType_get() {
   int jresult ;
   int result;
   
@@ -25958,7 +25963,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOp
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIFutureAlgType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIFutureAlgType_get() {
   int jresult ;
   int result;
   
@@ -25968,7 +25973,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIFu
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOptionAlgType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIOptionAlgType_get() {
   int jresult ;
   int result;
   
@@ -25978,7 +25983,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOp
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBankAccountLWFlagType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIBankAccountLWFlagType_get() {
   int jresult ;
   int result;
   
@@ -25988,7 +25993,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBankAccountStateType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIBankAccountStateType_get() {
   int jresult ;
   int result;
   
@@ -25998,7 +26003,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBankAccountSwapStateType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIBankAccountSwapStateType_get() {
   int jresult ;
   int result;
   
@@ -26008,7 +26013,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBankAccountTransferStateType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIBankAccountTransferStateType_get() {
   int jresult ;
   int result;
   
@@ -26018,7 +26023,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMarginCalculateModeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIMarginCalculateModeType_get() {
   int jresult ;
   int result;
   
@@ -26028,7 +26033,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOptionMarginCalculateModeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIOptionMarginCalculateModeType_get() {
   int jresult ;
   int result;
   
@@ -26038,7 +26043,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOp
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICmbDirectType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPICmbDirectType_get() {
   int jresult ;
   int result;
   
@@ -26048,7 +26053,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICm
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIDeliveryModeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIDeliveryModeType_get() {
   int jresult ;
   int result;
   
@@ -26058,7 +26063,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIDe
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIContractTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIContractTypeType_get() {
   int jresult ;
   int result;
   
@@ -26068,7 +26073,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIPartyTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIPartyTypeType_get() {
   int jresult ;
   int result;
   
@@ -26078,7 +26083,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIPa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIPartyCertificateTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIPartyCertificateTypeType_get() {
   int jresult ;
   int result;
   
@@ -26088,7 +26093,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIPa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMsgReceiverType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIMsgReceiverType_get() {
   int jresult ;
   int result;
   
@@ -26098,7 +26103,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMs
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMsgTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIMsgTypeType_get() {
   int jresult ;
   int result;
   
@@ -26108,7 +26113,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMs
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMsgLevelType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIMsgLevelType_get() {
   int jresult ;
   int result;
   
@@ -26118,7 +26123,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMs
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITransferDirectType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPITransferDirectType_get() {
   int jresult ;
   int result;
   
@@ -26128,7 +26133,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITransferStateType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPITransferStateType_get() {
   int jresult ;
   int result;
   
@@ -26138,7 +26143,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITransferTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPITransferTypeType_get() {
   int jresult ;
   int result;
   
@@ -26148,7 +26153,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITransferDeviceIDType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPITransferDeviceIDType_get() {
   int jresult ;
   int result;
   
@@ -26158,7 +26163,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITacticsTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPITacticsTypeType_get() {
   int jresult ;
   int result;
   
@@ -26168,7 +26173,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIORDERACT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIORDERACT_get() {
   int jresult ;
   int result;
   
@@ -26178,7 +26183,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBillTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIBillTypeType_get() {
   int jresult ;
   int result;
   
@@ -26188,7 +26193,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBillFileTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIBillFileTypeType_get() {
   int jresult ;
   int result;
   
@@ -26198,7 +26203,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIBi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOFFFlagType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIOFFFlagType_get() {
   int jresult ;
   int result;
   
@@ -26208,7 +26213,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOF
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICashAdjustTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPICashAdjustTypeType_get() {
   int jresult ;
   int result;
   
@@ -26218,7 +26223,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITriggerConditionType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPITriggerConditionType_get() {
   int jresult ;
   int result;
   
@@ -26228,7 +26233,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_get() {
   int jresult ;
   int result;
   
@@ -26238,7 +26243,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITradingStateType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPITradingStateType_get() {
   int jresult ;
   int result;
   
@@ -26248,7 +26253,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPITr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMarketLevelType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIMarketLevelType_get() {
   int jresult ;
   int result;
   
@@ -26258,7 +26263,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIMa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOrderQryTypeType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIOrderQryTypeType_get() {
   int jresult ;
   int result;
   
@@ -26268,7 +26273,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIOr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIClientID_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIClientID_get() {
   int jresult ;
   int result;
   
@@ -26278,7 +26283,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPICl
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_QryHisQuoteParam_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_QryHisQuoteParam_get() {
   int jresult ;
   int result;
   
@@ -26288,7 +26293,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_QryHis
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIIncludeNAN_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIIncludeNAN_get() {
   int jresult ;
   int result;
   
@@ -26298,7 +26303,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIIn
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIExpireTime_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIExpireTime_get() {
   int jresult ;
   int result;
   
@@ -26308,7 +26313,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIEx
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIPasswordType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPIPasswordType_get() {
   int jresult ;
   int result;
   
@@ -26318,7 +26323,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPIPa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPISettleFlagType_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_INPUTERROR_TAPISettleFlagType_get() {
   int jresult ;
   int result;
   
@@ -26328,7 +26333,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_INPUTERROR_TAPISe
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_CLOSE_INIT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_CLOSE_INIT_get() {
   int jresult ;
   int result;
   
@@ -26338,7 +26343,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_CLOSE_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_CLOSE_PASS_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_CLOSE_PASS_get() {
   int jresult ;
   int result;
   
@@ -26348,7 +26353,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_CLOSE_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_READ_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_READ_ERROR_get() {
   int jresult ;
   int result;
   
@@ -26358,7 +26363,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_READ_E
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_WRITE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_WRITE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -26368,7 +26373,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_WRITE_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_BUF_FULL_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_BUF_FULL_get() {
   int jresult ;
   int result;
   
@@ -26378,7 +26383,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_BUF_FU
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_IOCP_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_IOCP_ERROR_get() {
   int jresult ;
   int result;
   
@@ -26388,7 +26393,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_IOCP_E
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_PARSE_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_PARSE_ERROR_get() {
   int jresult ;
   int result;
   
@@ -26398,7 +26403,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_PARSE_
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_CONNECT_TIMEOUT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_CONNECT_TIMEOUT_get() {
   int jresult ;
   int result;
   
@@ -26408,7 +26413,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_CONNEC
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_INIT_ERROR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_INIT_ERROR_get() {
   int jresult ;
   int result;
   
@@ -26418,7 +26423,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_INIT_E
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_HAS_CONNECTED_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_HAS_CONNECTED_get() {
   int jresult ;
   int result;
   
@@ -26428,7 +26433,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_HAS_CO
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_HAS_EXIT_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_HAS_EXIT_get() {
   int jresult ;
   int result;
   
@@ -26438,7 +26443,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_HAS_EX
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_TRY_LATER_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_DISCONNECT_TRY_LATER_get() {
   int jresult ;
   int result;
   
@@ -26448,7 +26453,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_TAPIERROR_DISCONNECT_TRY_LA
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnConnect(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnConnect(void * jarg1) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   
   arg1 = (ITapTrade::ITapTradeAPINotify *)jarg1; 
@@ -26456,7 +26461,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnConne
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspLogin(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspLogin(void * jarg1, int jarg2, void * jarg3) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   ITapTrade::TapAPITradeLoginRspInfo *arg3 = (ITapTrade::TapAPITradeLoginRspInfo *) 0 ;
@@ -26468,7 +26473,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspLo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnContactInfo(void * jarg1, int jarg2, char jarg3, char * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRtnContactInfo(void * jarg1, int jarg2, char jarg3, char * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   ITapTrade::TAPIYNFLAG arg3 ;
@@ -26482,7 +26487,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnCo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspRequestVertificateCode(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspRequestVertificateCode(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26496,7 +26501,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnExpriationDate(void * jarg1, char * jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnExpriationDate(void * jarg1, char * jarg2, int jarg3) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   char *arg2 ;
   int arg3 ;
@@ -26508,7 +26513,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnExpri
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnAPIReady(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnAPIReady(void * jarg1, int jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -26518,7 +26523,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnAPIRe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnDisconnect(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnDisconnect(void * jarg1, int jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIINT32 arg2 ;
   
@@ -26528,7 +26533,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnDisco
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspChangePassword(void * jarg1, unsigned int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspChangePassword(void * jarg1, unsigned int jarg2, int jarg3) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26540,7 +26545,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspCh
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspAuthPassword(void * jarg1, unsigned int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspAuthPassword(void * jarg1, unsigned int jarg2, int jarg3) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26552,7 +26557,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspAu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspSetReservedInfo(void * jarg1, unsigned int jarg2, int jarg3, char * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspSetReservedInfo(void * jarg1, unsigned int jarg2, int jarg3, char * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26566,7 +26571,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspSe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryAccount(void * jarg1, unsigned int jarg2, unsigned int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryAccount(void * jarg1, unsigned int jarg2, unsigned int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIUINT32 arg3 ;
@@ -26582,7 +26587,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryFund(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryFund(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26598,7 +26603,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnFund(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRtnFund(void * jarg1, void * jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TapAPIFundData *arg2 = (ITapTrade::TapAPIFundData *) 0 ;
   
@@ -26608,7 +26613,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnFu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryExchange(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryExchange(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26624,7 +26629,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryCommodity(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryCommodity(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26640,7 +26645,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryContract(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryContract(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26656,7 +26661,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnContract(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRtnContract(void * jarg1, void * jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TapAPITradeContractInfo *arg2 = (ITapTrade::TapAPITradeContractInfo *) 0 ;
   
@@ -26666,7 +26671,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnCo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOrderAction(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspOrderAction(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26680,7 +26685,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnOrder(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRtnOrder(void * jarg1, void * jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TapAPIOrderInfoNotice *arg2 = (ITapTrade::TapAPIOrderInfoNotice *) 0 ;
   
@@ -26690,7 +26695,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnOr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryOrder(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryOrder(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26706,7 +26711,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryOrderProcess(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryOrderProcess(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26722,7 +26727,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryFill(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryFill(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26738,7 +26743,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnFill(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRtnFill(void * jarg1, void * jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TapAPIFillInfo *arg2 = (ITapTrade::TapAPIFillInfo *) 0 ;
   
@@ -26748,7 +26753,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnFi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryPosition(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryPosition(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26764,7 +26769,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnPosition(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRtnPosition(void * jarg1, void * jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TapAPIPositionInfo *arg2 = (ITapTrade::TapAPIPositionInfo *) 0 ;
   
@@ -26774,7 +26779,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnPo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryPositionSummary(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryPositionSummary(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26790,7 +26795,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnPositionSummary(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRtnPositionSummary(void * jarg1, void * jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TapAPIPositionSummary *arg2 = (ITapTrade::TapAPIPositionSummary *) 0 ;
   
@@ -26800,7 +26805,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnPo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnPositionProfit(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRtnPositionProfit(void * jarg1, void * jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TapAPIPositionProfitNotice *arg2 = (ITapTrade::TapAPIPositionProfitNotice *) 0 ;
   
@@ -26810,7 +26815,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnPo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryCurrency(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryCurrency(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26826,7 +26831,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryTradeMessage(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryTradeMessage(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26842,7 +26847,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnTradeMessage(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRtnTradeMessage(void * jarg1, void * jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TapAPITradeMessage *arg2 = (ITapTrade::TapAPITradeMessage *) 0 ;
   
@@ -26852,7 +26857,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRtnTr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryHisOrder(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryHisOrder(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26868,7 +26873,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryHisOrderProcess(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryHisOrderProcess(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26884,7 +26889,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryHisMatch(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryHisMatch(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26900,7 +26905,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryHisPosition(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryHisPosition(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26916,7 +26921,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryHisDelivery(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryHisDelivery(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26932,7 +26937,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryAccountCashAdjust(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryAccountCashAdjust(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26948,7 +26953,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryBill(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryBill(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26964,7 +26969,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryAccountFeeRent(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryAccountFeeRent(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26980,7 +26985,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQryAccountMarginRent(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryAccountMarginRent(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -26996,7 +27001,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspQr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspHKMarketOrderInsert(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspHKMarketOrderInsert(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -27010,7 +27015,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspHK
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspHKMarketOrderDelete(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspHKMarketOrderDelete(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -27024,7 +27029,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspHK
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnHKMarketQuoteNotice(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnHKMarketQuoteNotice(void * jarg1, void * jarg2) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TapAPIOrderQuoteMarketNotice *arg2 = (ITapTrade::TapAPIOrderQuoteMarketNotice *) 0 ;
   
@@ -27034,7 +27039,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnHKMar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOrderLocalRemove(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspOrderLocalRemove(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -27048,7 +27053,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOrderLocalInput(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspOrderLocalInput(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -27062,7 +27067,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOrderLocalModify(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspOrderLocalModify(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -27076,7 +27081,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOrderLocalTransfer(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspOrderLocalTransfer(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -27090,7 +27095,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspOr
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspFillLocalInput(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspFillLocalInput(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -27104,7 +27109,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspFi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspFillLocalRemove(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspFillLocalRemove(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
   ITapTrade::TAPIINT32 arg3 ;
@@ -27118,7 +27123,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_OnRspFi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_ITapTradeAPINotify() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_ITapTradeAPINotify() {
   void * jresult ;
   ITapTrade::ITapTradeAPINotify *result = 0 ;
   
@@ -27128,7 +27133,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_new_ITapTradeAPINotify()
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_ITapTradeAPINotify(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_ITapTradeAPINotify(void * jarg1) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   
   arg1 = (ITapTrade::ITapTradeAPINotify *)jarg1; 
@@ -27136,7 +27141,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_ITapTradeAPINotify(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_director_connect(void *objarg, SwigDirector_ITapTradeAPINotify::SWIG_Callback0_t callback0, SwigDirector_ITapTradeAPINotify::SWIG_Callback1_t callback1, SwigDirector_ITapTradeAPINotify::SWIG_Callback2_t callback2, SwigDirector_ITapTradeAPINotify::SWIG_Callback3_t callback3, SwigDirector_ITapTradeAPINotify::SWIG_Callback4_t callback4, SwigDirector_ITapTradeAPINotify::SWIG_Callback5_t callback5, SwigDirector_ITapTradeAPINotify::SWIG_Callback6_t callback6, SwigDirector_ITapTradeAPINotify::SWIG_Callback7_t callback7, SwigDirector_ITapTradeAPINotify::SWIG_Callback8_t callback8, SwigDirector_ITapTradeAPINotify::SWIG_Callback9_t callback9, SwigDirector_ITapTradeAPINotify::SWIG_Callback10_t callback10, SwigDirector_ITapTradeAPINotify::SWIG_Callback11_t callback11, SwigDirector_ITapTradeAPINotify::SWIG_Callback12_t callback12, SwigDirector_ITapTradeAPINotify::SWIG_Callback13_t callback13, SwigDirector_ITapTradeAPINotify::SWIG_Callback14_t callback14, SwigDirector_ITapTradeAPINotify::SWIG_Callback15_t callback15, SwigDirector_ITapTradeAPINotify::SWIG_Callback16_t callback16, SwigDirector_ITapTradeAPINotify::SWIG_Callback17_t callback17, SwigDirector_ITapTradeAPINotify::SWIG_Callback18_t callback18, SwigDirector_ITapTradeAPINotify::SWIG_Callback19_t callback19, SwigDirector_ITapTradeAPINotify::SWIG_Callback20_t callback20, SwigDirector_ITapTradeAPINotify::SWIG_Callback21_t callback21, SwigDirector_ITapTradeAPINotify::SWIG_Callback22_t callback22, SwigDirector_ITapTradeAPINotify::SWIG_Callback23_t callback23, SwigDirector_ITapTradeAPINotify::SWIG_Callback24_t callback24, SwigDirector_ITapTradeAPINotify::SWIG_Callback25_t callback25, SwigDirector_ITapTradeAPINotify::SWIG_Callback26_t callback26, SwigDirector_ITapTradeAPINotify::SWIG_Callback27_t callback27, SwigDirector_ITapTradeAPINotify::SWIG_Callback28_t callback28, SwigDirector_ITapTradeAPINotify::SWIG_Callback29_t callback29, SwigDirector_ITapTradeAPINotify::SWIG_Callback30_t callback30, SwigDirector_ITapTradeAPINotify::SWIG_Callback31_t callback31, SwigDirector_ITapTradeAPINotify::SWIG_Callback32_t callback32, SwigDirector_ITapTradeAPINotify::SWIG_Callback33_t callback33, SwigDirector_ITapTradeAPINotify::SWIG_Callback34_t callback34, SwigDirector_ITapTradeAPINotify::SWIG_Callback35_t callback35, SwigDirector_ITapTradeAPINotify::SWIG_Callback36_t callback36, SwigDirector_ITapTradeAPINotify::SWIG_Callback37_t callback37, SwigDirector_ITapTradeAPINotify::SWIG_Callback38_t callback38, SwigDirector_ITapTradeAPINotify::SWIG_Callback39_t callback39, SwigDirector_ITapTradeAPINotify::SWIG_Callback40_t callback40, SwigDirector_ITapTradeAPINotify::SWIG_Callback41_t callback41, SwigDirector_ITapTradeAPINotify::SWIG_Callback42_t callback42, SwigDirector_ITapTradeAPINotify::SWIG_Callback43_t callback43, SwigDirector_ITapTradeAPINotify::SWIG_Callback44_t callback44, SwigDirector_ITapTradeAPINotify::SWIG_Callback45_t callback45, SwigDirector_ITapTradeAPINotify::SWIG_Callback46_t callback46, SwigDirector_ITapTradeAPINotify::SWIG_Callback47_t callback47, SwigDirector_ITapTradeAPINotify::SWIG_Callback48_t callback48) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_director_connect(void *objarg, SwigDirector_ITapTradeAPINotify::SWIG_Callback0_t callback0, SwigDirector_ITapTradeAPINotify::SWIG_Callback1_t callback1, SwigDirector_ITapTradeAPINotify::SWIG_Callback2_t callback2, SwigDirector_ITapTradeAPINotify::SWIG_Callback3_t callback3, SwigDirector_ITapTradeAPINotify::SWIG_Callback4_t callback4, SwigDirector_ITapTradeAPINotify::SWIG_Callback5_t callback5, SwigDirector_ITapTradeAPINotify::SWIG_Callback6_t callback6, SwigDirector_ITapTradeAPINotify::SWIG_Callback7_t callback7, SwigDirector_ITapTradeAPINotify::SWIG_Callback8_t callback8, SwigDirector_ITapTradeAPINotify::SWIG_Callback9_t callback9, SwigDirector_ITapTradeAPINotify::SWIG_Callback10_t callback10, SwigDirector_ITapTradeAPINotify::SWIG_Callback11_t callback11, SwigDirector_ITapTradeAPINotify::SWIG_Callback12_t callback12, SwigDirector_ITapTradeAPINotify::SWIG_Callback13_t callback13, SwigDirector_ITapTradeAPINotify::SWIG_Callback14_t callback14, SwigDirector_ITapTradeAPINotify::SWIG_Callback15_t callback15, SwigDirector_ITapTradeAPINotify::SWIG_Callback16_t callback16, SwigDirector_ITapTradeAPINotify::SWIG_Callback17_t callback17, SwigDirector_ITapTradeAPINotify::SWIG_Callback18_t callback18, SwigDirector_ITapTradeAPINotify::SWIG_Callback19_t callback19, SwigDirector_ITapTradeAPINotify::SWIG_Callback20_t callback20, SwigDirector_ITapTradeAPINotify::SWIG_Callback21_t callback21, SwigDirector_ITapTradeAPINotify::SWIG_Callback22_t callback22, SwigDirector_ITapTradeAPINotify::SWIG_Callback23_t callback23, SwigDirector_ITapTradeAPINotify::SWIG_Callback24_t callback24, SwigDirector_ITapTradeAPINotify::SWIG_Callback25_t callback25, SwigDirector_ITapTradeAPINotify::SWIG_Callback26_t callback26, SwigDirector_ITapTradeAPINotify::SWIG_Callback27_t callback27, SwigDirector_ITapTradeAPINotify::SWIG_Callback28_t callback28, SwigDirector_ITapTradeAPINotify::SWIG_Callback29_t callback29, SwigDirector_ITapTradeAPINotify::SWIG_Callback30_t callback30, SwigDirector_ITapTradeAPINotify::SWIG_Callback31_t callback31, SwigDirector_ITapTradeAPINotify::SWIG_Callback32_t callback32, SwigDirector_ITapTradeAPINotify::SWIG_Callback33_t callback33, SwigDirector_ITapTradeAPINotify::SWIG_Callback34_t callback34, SwigDirector_ITapTradeAPINotify::SWIG_Callback35_t callback35, SwigDirector_ITapTradeAPINotify::SWIG_Callback36_t callback36, SwigDirector_ITapTradeAPINotify::SWIG_Callback37_t callback37, SwigDirector_ITapTradeAPINotify::SWIG_Callback38_t callback38, SwigDirector_ITapTradeAPINotify::SWIG_Callback39_t callback39, SwigDirector_ITapTradeAPINotify::SWIG_Callback40_t callback40, SwigDirector_ITapTradeAPINotify::SWIG_Callback41_t callback41, SwigDirector_ITapTradeAPINotify::SWIG_Callback42_t callback42, SwigDirector_ITapTradeAPINotify::SWIG_Callback43_t callback43, SwigDirector_ITapTradeAPINotify::SWIG_Callback44_t callback44, SwigDirector_ITapTradeAPINotify::SWIG_Callback45_t callback45, SwigDirector_ITapTradeAPINotify::SWIG_Callback46_t callback46, SwigDirector_ITapTradeAPINotify::SWIG_Callback47_t callback47, SwigDirector_ITapTradeAPINotify::SWIG_Callback48_t callback48) {
   ITapTrade::ITapTradeAPINotify *obj = (ITapTrade::ITapTradeAPINotify *)objarg;
   SwigDirector_ITapTradeAPINotify *director = dynamic_cast<SwigDirector_ITapTradeAPINotify *>(obj);
   if (director) {
@@ -27145,7 +27150,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPINotify_directo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_SetAPINotify(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_SetAPINotify(void * jarg1, void * jarg2) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::ITapTradeAPINotify *arg2 = (ITapTrade::ITapTradeAPINotify *) 0 ;
@@ -27159,7 +27164,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_SetAPINotify(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_SetHostAddress(void * jarg1, char * jarg2, unsigned short jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_SetHostAddress(void * jarg1, char * jarg2, unsigned short jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPICHAR *arg2 = (ITapTrade::TAPICHAR *) 0 ;
@@ -27175,7 +27180,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_SetHostAddress
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_Login(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_Login(void * jarg1, void * jarg2) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TapAPITradeLoginAuth *arg2 = (ITapTrade::TapAPITradeLoginAuth *) 0 ;
@@ -27189,7 +27194,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_Login(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_RequestVertificateCode(void * jarg1, int jarg2, char * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_RequestVertificateCode(void * jarg1, unsigned int * jarg2, char * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27205,7 +27210,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_RequestVertifi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_SetVertificateCode(void * jarg1, char * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_SetVertificateCode(void * jarg1, char * jarg2) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   char *arg2 ;
@@ -27219,7 +27224,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_SetVertificate
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_Disconnect(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_Disconnect(void * jarg1) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -27231,7 +27236,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_Disconnect(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_ChangePassword(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_ChangePassword(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27247,7 +27252,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_ChangePassword
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_AuthPassword(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_AuthPassword(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27263,7 +27268,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_AuthPassword(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_HaveCertainRight(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_HaveCertainRight(void * jarg1, int jarg2) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIRightIDType arg2 ;
@@ -27277,7 +27282,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_HaveCertainRig
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_SetReservedInfo(void * jarg1, int jarg2, char * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_SetReservedInfo(void * jarg1, unsigned int * jarg2, char * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27293,7 +27298,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_SetReservedInf
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryAccount(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryAccount(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27309,7 +27314,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryAccount(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryFund(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryFund(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27325,7 +27330,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryFund(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryExchange(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryExchange(void * jarg1, unsigned int * jarg2) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27339,7 +27344,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryExchange(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryCommodity(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryCommodity(void * jarg1, unsigned int * jarg2) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27353,7 +27358,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryCommodity(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryContract(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryContract(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27369,7 +27374,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryContract(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_InsertOrder(void * jarg1, int jarg2, char * jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_InsertOrder(void * jarg1, unsigned int * jarg2, char * jarg3, void * jarg4) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27387,7 +27392,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_InsertOrder(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_CancelOrder(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_CancelOrder(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27403,7 +27408,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_CancelOrder(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_AmendOrder(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_AmendOrder(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27419,7 +27424,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_AmendOrder(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_ActivateOrder(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_ActivateOrder(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27435,7 +27440,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_ActivateOrder(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryOrder(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryOrder(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27451,7 +27456,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryOrder(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryOrderProcess(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryOrderProcess(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27467,7 +27472,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryOrderProces
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryFill(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryFill(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27483,7 +27488,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryFill(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryPosition(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryPosition(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27499,7 +27504,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryPosition(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryPositionSummary(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryPositionSummary(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27515,7 +27520,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryPositionSum
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryCurrency(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryCurrency(void * jarg1, unsigned int * jarg2) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27529,7 +27534,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryCurrency(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryAccountCashAdjust(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryAccountCashAdjust(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27545,7 +27550,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryAccountCash
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryTradeMessage(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryTradeMessage(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27561,7 +27566,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryTradeMessag
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryBill(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryBill(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27577,7 +27582,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryBill(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisOrder(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryHisOrder(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27593,7 +27598,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisOrder(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisOrderProcess(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryHisOrderProcess(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27609,7 +27614,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisOrderPro
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisMatch(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryHisMatch(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27625,7 +27630,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisMatch(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisPosition(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryHisPosition(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27641,7 +27646,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisPosition
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisDelivery(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryHisDelivery(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27657,7 +27662,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryHisDelivery
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryAccountFeeRent(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryAccountFeeRent(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27673,7 +27678,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryAccountFeeR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryAccountMarginRent(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryAccountMarginRent(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27689,7 +27694,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_QryAccountMarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_InsertHKMarketOrder(void * jarg1, int jarg2, char * jarg3, char * jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_InsertHKMarketOrder(void * jarg1, unsigned int * jarg2, char * jarg3, char * jarg4, void * jarg5) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27709,7 +27714,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_InsertHKMarket
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_CancelHKMarketOrder(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_CancelHKMarketOrder(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27725,7 +27730,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_CancelHKMarket
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_OrderLocalRemove(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_OrderLocalRemove(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27741,7 +27746,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_OrderLocalRemo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_OrderLocalInput(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_OrderLocalInput(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27757,7 +27762,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_OrderLocalInpu
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_OrderLocalModify(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_OrderLocalModify(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27773,7 +27778,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_OrderLocalModi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_OrderLocalTransfer(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_OrderLocalTransfer(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27789,7 +27794,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_OrderLocalTran
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_FillLocalInput(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_FillLocalInput(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27805,7 +27810,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_FillLocalInput
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_FillLocalRemove(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_FillLocalRemove(void * jarg1, unsigned int * jarg2, void * jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
@@ -27821,7 +27826,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_ITapTradeAPI_FillLocalRemov
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_ITapTradeAPI(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_ITapTradeAPI(void * jarg1) {
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   
   arg1 = (ITapTrade::ITapTradeAPI *)jarg1; 
@@ -27829,21 +27834,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_delete_ITapTradeAPI(void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperAPI_CreateITapTradeAPI(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_CreateITapTradeAPI(void * jarg1, void * jarg2) {
   void * jresult ;
   ITapTrade::TapAPIApplicationInfo *arg1 = (ITapTrade::TapAPIApplicationInfo *) 0 ;
   ITapTrade::TAPIINT32 *arg2 = 0 ;
   ITapTrade::ITapTradeAPI *result = 0 ;
   
   arg1 = (ITapTrade::TapAPIApplicationInfo *)jarg1; 
-  arg2 = (ITapTrade::TAPIINT32 *)jarg2; 
+  arg2 = (ITapTrade::TAPIINT32 *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "ITapTrade::TAPIINT32 & type is null", 0);
+    return 0;
+  } 
   result = (ITapTrade::ITapTradeAPI *)CreateITapTradeAPI((ITapTrade::TapAPIApplicationInfo const *)arg1,*arg2);
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_FreeITapTradeAPI(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_FreeITapTradeAPI(void * jarg1) {
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   
   arg1 = (ITapTrade::ITapTradeAPI *)jarg1; 
@@ -27851,7 +27860,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperAPI_FreeITapTradeAPI(void * ja
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_GetITapTradeAPIVersion() {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_GetITapTradeAPIVersion() {
   char * jresult ;
   ITapTrade::TAPICHAR *result = 0 ;
   
@@ -27861,7 +27870,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_GetITapTradeAPIVersion()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_SetITapTradeAPIDataPath(char * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_SetITapTradeAPIDataPath(char * jarg1) {
   int jresult ;
   ITapTrade::TAPICHAR *arg1 = (ITapTrade::TAPICHAR *) 0 ;
   ITapTrade::TAPIINT32 result;
@@ -27873,7 +27882,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_SetITapTradeAPIDataPath(cha
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_SetITapTradeAPILogLevel(char jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_SetITapTradeAPILogLevel(char jarg1) {
   int jresult ;
   ITapTrade::TAPILOGLEVEL arg1 ;
   ITapTrade::TAPIINT32 result;
@@ -27885,7 +27894,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperAPI_SetITapTradeAPILogLevel(cha
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperAPI_GetITapErrorDescribe(int jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_GetITapErrorDescribe(int jarg1) {
   char * jresult ;
   ITapTrade::TAPIINT32 arg1 ;
   char *result = 0 ;

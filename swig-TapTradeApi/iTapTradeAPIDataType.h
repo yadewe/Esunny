@@ -1,7 +1,7 @@
 //该文件定义了TapTradeAPI 使用的数据类型和数据结构
 #ifndef ITAP_TRADE_API_DATA_TYPE_H
 #define ITAP_TRADE_API_DATA_TYPE_H
-#include "TapAPICommDef.h"
+#include "iTapAPICommDef.h"
 
 
 namespace ITapTrade
@@ -764,6 +764,7 @@ namespace ITapTrade
 	public:
 		TapAPINewOrder()
 		{
+			memset(this, 0, sizeof(TapAPINewOrder));
 			CallOrPutFlag = TAPI_CALLPUT_FLAG_NONE;
 			CallOrPutFlag2 = TAPI_CALLPUT_FLAG_NONE;
 			OrderSource = TAPI_ORDER_SOURCE_PROGRAM;
@@ -895,6 +896,7 @@ namespace ITapTrade
 	public:
 		TapAPIAmendOrder()
 		{
+			memset(this, 0, sizeof(TapAPIAmendOrder));
 		}
     };
 

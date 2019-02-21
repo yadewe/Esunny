@@ -19,20 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\TapAPICommDef.h" />
-    <ClInclude Include="..\TapAPIError.h" />
-    <ClInclude Include="..\TapTradeAPI.h" />
-    <ClInclude Include="..\TapTradeAPIDataType.h" />
-    <ClInclude Include="..\TapTradeWrapperAPI.h" />
+    <ClInclude Include="..\iTapAPICommDef.h" />
+    <ClInclude Include="..\iTapAPIError.h" />
+    <ClInclude Include="..\iTapTradeAPI.h" />
+    <ClInclude Include="..\iTapTradeAPIDataType.h" />
+    <ClInclude Include="..\TapTradeWrapperApi.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\TapTradeWrapperAPI.cpp" />
+    <ClCompile Include="..\TapTradeWrapperApi.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{815C9D39-EAC1-42B4-A302-FD64505836A3}</ProjectGuid>
+    <ProjectGuid>{9D71057E-C1CF-4DD4-82BF-43DE5F36B3C3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>TapTradeWrapperAPI</RootNamespace>
+    <RootNamespace>TapTradeWrapperApi</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -106,7 +106,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>TapTradeAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>iTapTradeAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

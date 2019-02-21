@@ -8,7 +8,7 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperAPI {
+namespace TapTradeWrapperApi {
 
 public class TapAPICloseQryReq : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;

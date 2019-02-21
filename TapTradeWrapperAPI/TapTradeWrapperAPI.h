@@ -15,7 +15,8 @@ class SwigDirector_ITapTradeAPINotify : public ITapTrade::ITapTradeAPINotify, pu
 
 public:
     SwigDirector_ITapTradeAPINotify();
-    virtual void TAP_CDECL OnConnect();
+	SwigDirector_ITapTradeAPINotify(ITapTradeAPINotify const &other);
+	virtual void TAP_CDECL OnConnect();
     virtual void TAP_CDECL OnRspLogin(ITapTrade::TAPIINT32 errorCode, ITapTrade::TapAPITradeLoginRspInfo const *loginRspInfo);
     virtual void TAP_CDECL OnRtnContactInfo(ITapTrade::TAPIINT32 errorCode, ITapTrade::TAPIYNFLAG isLast, ITapTrade::TAPISTR_40 const ContactInfo);
     virtual void TAP_CDECL OnRspRequestVertificateCode(ITapTrade::TAPIUINT32 sessionID, ITapTrade::TAPIINT32 errorCode, ITapTrade::TapAPIRequestVertificateCodeRsp const *rsp);
