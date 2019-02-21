@@ -7,4 +7,4 @@ VC++=》库目录=》$(SolutionDir)TapAPI\lib\windows;$(LibraryPath)
 c/c++=》预处理器=》预处理器定义=》_WINDLL;%(PreprocessorDefinitions)
 
 
-链接器=》输入=》附加依赖项=》TapTradeAPI.lib;%(AdditionalDependencies)
+链接器=》输入=》附加依赖项=》iTapTradeAPI.lib;%(AdditionalDependencies)
