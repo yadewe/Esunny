@@ -10,7 +10,7 @@
 
 namespace TapQuoteWrapperApi {
 
-public class TapAPIQuoteWhole : global::System.IDisposable {
+public partial class TapAPIQuoteWhole : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   protected bool swigCMemOwn;
 

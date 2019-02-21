@@ -29,6 +29,9 @@
 %array_class(double, doubleArray);
 %array_class(unsigned long long, longArray);
 
+%typemap(csclassmodifiers) TapAPIQuoteWhole "public partial class"
+
+
 /*
 %apply int { ITapTrade::TAPIUINT32 *sessionID }
 %typemap(cstype) ITapTrade::TAPIUINT32 *sessionID "out uint";
