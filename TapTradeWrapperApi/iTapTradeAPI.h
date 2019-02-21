@@ -34,7 +34,7 @@ namespace ITapTrade
 		* @attention	该回调返回成功，说明用户登录成功。但是不代表API准备完毕。
 		* @ingroup G_T_Login
 		*/
-		virtual void TAP_CDECL OnRspLogin(ITapTrade::TAPIINT32 errorCode, const ITapTrade::TapAPITradeLoginRspInfo *loginRspInfo) = 0;
+		virtual void TAP_CDECL OnRspLogin(TAPIINT32 errorCode, const ITapTrade::TapAPITradeLoginRspInfo *loginRspInfo) = 0;
 		/**
 		* @brief	二次认证联系方式通知。
 		* @details	登录完成后，如果需要二次认证（9.2.7后台），会收到联系方式的通知，可以选择通知消息的一个联系方式（邮箱或者电话）
