@@ -51,6 +51,7 @@
     <Compile Include="Wrapper\Quotes\ITapQuoteAPI.cs" />
     <Compile Include="Wrapper\Quotes\ITapQuoteAPINotify.cs" />
     <Compile Include="Wrapper\Quotes\longArray.cs" />
+    <Compile Include="Wrapper\Quotes\Partial\TapAPIQuoteWhole.cs" />
     <Compile Include="Wrapper\Quotes\SWIGTYPE_p_double.cs" />
     <Compile Include="Wrapper\Quotes\SWIGTYPE_p_unsigned_long_long.cs" />
     <Compile Include="Wrapper\Quotes\TapAPIApplicationInfo.cs" />

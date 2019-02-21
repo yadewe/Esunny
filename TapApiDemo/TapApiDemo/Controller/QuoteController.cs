@@ -8,7 +8,7 @@ using TapQuoteWrapperApi;
 
 namespace TapApiDemo
 {
-    public class QuoteController
+    public partial class QuoteController
     {
         public CTapQuoteAPINotify QuoteNotify = null;
         private ITapQuoteAPI m_api = null;
@@ -139,6 +139,7 @@ namespace TapApiDemo
                         CommodityType='F'
                        
                     });
+                    
                 }
             }
         }

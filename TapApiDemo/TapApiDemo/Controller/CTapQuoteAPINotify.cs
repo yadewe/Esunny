@@ -53,6 +53,7 @@ namespace TapApiDemo
             if (OnRspQryCommodityEvent != null)
             {
                 OnRspQryCommodityEvent(sessionID, errorCode, isLast, info);
+                Console.WriteLine($"交易所：{info.Commodity.ExchangeNo}，品种编号：{info.Commodity.CommodityNo}，品种名称：{info.CommodityEngName}");
             }
         }
 
@@ -90,12 +91,12 @@ namespace TapApiDemo
 
         public override void OnRtnQuote(TapAPIQuoteWhole info)
         {
-            doubleArray temp = doubleArray.frompointer(info.QAskPrice);
-            double test=temp.getitem(0);
-            double test1 = temp.getitem(1);
-            double test2 = temp.getitem(2);
-            double test3 = temp.getitem(3);
-            Console.WriteLine($"更新时间：{info.DateTimeStamp}，交易所：{info.Contract.Commodity.ExchangeNo}，品种：{info.Contract.Commodity.CommodityNo}，合约：{info.Contract.ContractNo1}，最后价格：{info.QLastPrice}，币种：{info.QImpliedBidQty}");
+            //doubleArray temp = doubleArray.frompointer(info.QAskPrice);
+            //double test=temp.getitem(0);
+            //double test1 = temp.getitem(1);
+            //double test2 = temp.getitem(2);
+            //double test3 = temp.getitem(3);
+            Console.WriteLine($"更新时间：{info.DateTimeStamp}，交易所：{info.Contract.Commodity.ExchangeNo}，品种：{info.Contract.Commodity.CommodityNo}，合约：{info.Contract.ContractNo1}，最后价格：{info.QLastPrice}，买1：{info.BidPrice[0]}");
         }
     }
 }
