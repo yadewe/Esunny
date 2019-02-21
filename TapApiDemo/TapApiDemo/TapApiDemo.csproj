@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CTapQuoteAPINotify.cs" />
+    <Compile Include="Controller\CTapTradeAPINotify.cs" />
     <Compile Include="Controller\QuoteController.cs" />
+    <Compile Include="Controller\TradeController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrapper\Quotes\doubleArray.cs" />
@@ -66,12 +68,77 @@
     <Compile Include="Wrapper\Quotes\TapAPIQuotLoginRspInfo.cs" />
     <Compile Include="Wrapper\Quotes\TapQuoteWrapperAPI.cs" />
     <Compile Include="Wrapper\Quotes\TapQuoteWrapperAPIPINVOKE.cs" />
+    <Compile Include="Wrapper\Trade\ITapTradeAPI.cs" />
+    <Compile Include="Wrapper\Trade\ITapTradeAPINotify.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountCashAdjustQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountCashAdjustQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountFeeRentQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountFeeRentQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountMarginRentQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountMarginRentQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAmendOrder.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIApplicationInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAuthPasswordReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIBillQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIBillQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIChangePasswordReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICloseInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICloseQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICommodity.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICommodityInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIContract.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICurrencyInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIExchangeInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFillInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFillLocalInputReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFillLocalRemoveReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFillQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFundData.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFundReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIHisDeliveryQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIHisDeliveryQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIHisMatchQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIHisMatchQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIHisOrderProcessQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIHisOrderQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIHisOrderQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIHisPositionQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIHisPositionQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPINewOrder.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderActionRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderCancelReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderInfoNotice.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderLocalInputReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderLocalModifyReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderLocalRemoveReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderLocalRemoveRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderLocalTransferReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderMarketDeleteReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderMarketInsertReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderMarketInsertRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderProcessQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderQuoteMarketNotice.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIPositionInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIPositionProfit.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIPositionProfitNotice.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIPositionQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIPositionSummary.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIRequestVertificateCodeRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPITradeContractInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPITradeLoginAuth.cs" />
+    <Compile Include="Wrapper\Trade\TapAPITradeLoginRspInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPITradeMessage.cs" />
+    <Compile Include="Wrapper\Trade\TapAPITradeMessageReq.cs" />
+    <Compile Include="Wrapper\Trade\TapTradeWrapperAPI.cs" />
+    <Compile Include="Wrapper\Trade\TapTradeWrapperAPIPINVOKE.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Wrapper\Trade\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
