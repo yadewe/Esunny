@@ -8,6 +8,13 @@ namespace TapApiDemo
 {
     public class CTapTradeAPINotify:ITapTradeAPINotify
     {
+        public enum TradeQryType
+        {
+            AccountNo,
+            Fund,
+            Order
+        }
+
         public override void OnConnect()
         {
         }
@@ -48,6 +55,16 @@ namespace TapApiDemo
         }
 
         public override void OnRspAuthPassword(uint sessionID, int errorCode)
+        {
+           
+        }
+
+        public override void OnRspSetReservedInfo(uint sessionID, int errorCode, string info)
+        {
+           
+        }
+
+        public override void OnRspOrderAction(uint sessionID, int errorCode, TapAPIOrderActionRsp info)
         {
            
         }
