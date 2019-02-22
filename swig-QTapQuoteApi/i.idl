@@ -1,0 +1,62 @@
+/* File : example.i */
+%module(directors="1") QTapQuoteApi
+%{
+#include "TapAPICommDef.h"  
+#include "TapQuoteAPIDataType.h" 
+#include "TapAPIError.h"  	
+#include "TapQuoteAPI.h"  
+%}
+
+/* turn on director wrapping Callback */
+%feature("director") ITapQuoteAPINotify;
+
+%include "csharp.swg"
+%include "carrays.i"
+%include "windows.i"
+%include "typemaps.i"
+%include "arrays_csharp.i"
+
+%apply unsigned int *INPUT  { TAPIUINT32 *sessionID}
+%apply unsigned int *OUTPUT { TAPIUINT32 *sessionID }; 
+
+%typemap(csin) TAPIUINT32 *sessionID %{out $csinput%} 
+%typemap(cstype) TAPIUINT32 *sessionID "out uint";
+
+%typemap(imtype) TAPIINT32 &iResult "out int"
+%typemap(csin) TAPIINT32 &iResult %{out $csinput%} 
+%typemap(cstype) TAPIINT32 &iResult "out int";
+
+%array_class(double, doubleArray);
+%array_class(unsigned long long, longArray);
+
+%typemap(csclassmodifiers) TapAPIQuoteWhole "public partial class"
+
+
+/*
+%apply int { ITapTrade::TAPIUINT32 *sessionID }
+%typemap(cstype) ITapTrade::TAPIUINT32 *sessionID "out uint";
+%apply unsigned int { TAPIUINT32 *sessionID }
+%typemap(cstype) TAPIUINT32 *sessionID "out uint"  
+*/
+
+/*
+%apply int { TAPIUINT32 *sessionID }
+%typemap(cstype) TAPIUINT32 *sessionID "out uint";
+*/
+
+/*
+%array_class(long, longArray);
+%apply double *{ TAPIQPRICE					QBidPrice[20] };
+%typemap(cstype) TAPIQPRICE					QBidPrice[20] "double[]";
+%apply double INPUT[]{ TAPIQPRICE					QBidPrice[20] };
+
+%apply double OUTPUT[]  {TAPIQPRICE					QBidPrice[20]};
+%apply int INPUT[]  {TAPIQVOLUME					QBidQty[20]};
+%apply double INPUT[]  {TAPIQPRICE					QAskPrice[20]};
+%apply int INPUT[]  {TAPIQVOLUME					QAskQty[20]};
+*/
+
+%include "TapAPICommDef.h"
+%include "TapQuoteAPIDataType.h"
+%include "TapAPIError.h"
+%include "TapQuoteAPI.h"
