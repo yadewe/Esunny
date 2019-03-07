@@ -32,7 +32,7 @@ public class ITapQuoteAPINotify : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_ITapQuoteAPINotify(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_ITapQuoteAPINotify(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -41,38 +41,38 @@ public class ITapQuoteAPINotify : global::System.IDisposable {
   }
 
   public virtual void OnRspLogin(int errorCode, TapAPIQuotLoginRspInfo info) {
-    TapQuoteWrapperAPIPINVOKE.ITapQuoteAPINotify_OnRspLogin(swigCPtr, errorCode, TapAPIQuotLoginRspInfo.getCPtr(info));
+    TapQuoteWrapperPINVOKE.ITapQuoteAPINotify_OnRspLogin(swigCPtr, errorCode, TapAPIQuotLoginRspInfo.getCPtr(info));
   }
 
   public virtual void OnAPIReady() {
-    TapQuoteWrapperAPIPINVOKE.ITapQuoteAPINotify_OnAPIReady(swigCPtr);
+    TapQuoteWrapperPINVOKE.ITapQuoteAPINotify_OnAPIReady(swigCPtr);
   }
 
   public virtual void OnDisconnect(int reasonCode) {
-    TapQuoteWrapperAPIPINVOKE.ITapQuoteAPINotify_OnDisconnect(swigCPtr, reasonCode);
+    TapQuoteWrapperPINVOKE.ITapQuoteAPINotify_OnDisconnect(swigCPtr, reasonCode);
   }
 
   public virtual void OnRspQryCommodity(uint sessionID, int errorCode, char isLast, TapAPIQuoteCommodityInfo info) {
-    TapQuoteWrapperAPIPINVOKE.ITapQuoteAPINotify_OnRspQryCommodity(swigCPtr, sessionID, errorCode, isLast, TapAPIQuoteCommodityInfo.getCPtr(info));
+    TapQuoteWrapperPINVOKE.ITapQuoteAPINotify_OnRspQryCommodity(swigCPtr, sessionID, errorCode, isLast, TapAPIQuoteCommodityInfo.getCPtr(info));
   }
 
   public virtual void OnRspQryContract(uint sessionID, int errorCode, char isLast, TapAPIQuoteContractInfo info) {
-    TapQuoteWrapperAPIPINVOKE.ITapQuoteAPINotify_OnRspQryContract(swigCPtr, sessionID, errorCode, isLast, TapAPIQuoteContractInfo.getCPtr(info));
+    TapQuoteWrapperPINVOKE.ITapQuoteAPINotify_OnRspQryContract(swigCPtr, sessionID, errorCode, isLast, TapAPIQuoteContractInfo.getCPtr(info));
   }
 
   public virtual void OnRspSubscribeQuote(uint sessionID, int errorCode, char isLast, TapAPIQuoteWhole info) {
-    TapQuoteWrapperAPIPINVOKE.ITapQuoteAPINotify_OnRspSubscribeQuote(swigCPtr, sessionID, errorCode, isLast, TapAPIQuoteWhole.getCPtr(info));
+    TapQuoteWrapperPINVOKE.ITapQuoteAPINotify_OnRspSubscribeQuote(swigCPtr, sessionID, errorCode, isLast, TapAPIQuoteWhole.getCPtr(info));
   }
 
   public virtual void OnRspUnSubscribeQuote(uint sessionID, int errorCode, char isLast, TapAPIContract info) {
-    TapQuoteWrapperAPIPINVOKE.ITapQuoteAPINotify_OnRspUnSubscribeQuote(swigCPtr, sessionID, errorCode, isLast, TapAPIContract.getCPtr(info));
+    TapQuoteWrapperPINVOKE.ITapQuoteAPINotify_OnRspUnSubscribeQuote(swigCPtr, sessionID, errorCode, isLast, TapAPIContract.getCPtr(info));
   }
 
   public virtual void OnRtnQuote(TapAPIQuoteWhole info) {
-    TapQuoteWrapperAPIPINVOKE.ITapQuoteAPINotify_OnRtnQuote(swigCPtr, TapAPIQuoteWhole.getCPtr(info));
+    TapQuoteWrapperPINVOKE.ITapQuoteAPINotify_OnRtnQuote(swigCPtr, TapAPIQuoteWhole.getCPtr(info));
   }
 
-  public ITapQuoteAPINotify() : this(TapQuoteWrapperAPIPINVOKE.new_ITapQuoteAPINotify(), true) {
+  public ITapQuoteAPINotify() : this(TapQuoteWrapperPINVOKE.new_ITapQuoteAPINotify(), true) {
     SwigDirectorConnect();
   }
 
@@ -93,7 +93,7 @@ public class ITapQuoteAPINotify : global::System.IDisposable {
       swigDelegate6 = new SwigDelegateITapQuoteAPINotify_6(SwigDirectorOnRspUnSubscribeQuote);
     if (SwigDerivedClassHasMethod("OnRtnQuote", swigMethodTypes7))
       swigDelegate7 = new SwigDelegateITapQuoteAPINotify_7(SwigDirectorOnRtnQuote);
-    TapQuoteWrapperAPIPINVOKE.ITapQuoteAPINotify_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7);
+    TapQuoteWrapperPINVOKE.ITapQuoteAPINotify_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes) {

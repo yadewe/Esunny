@@ -32,7 +32,7 @@ public class doubleArray : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_doubleArray(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_doubleArray(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -40,26 +40,26 @@ public class doubleArray : global::System.IDisposable {
     }
   }
 
-  public doubleArray(int nelements) : this(TapQuoteWrapperAPIPINVOKE.new_doubleArray(nelements), true) {
+  public doubleArray(int nelements) : this(TapQuoteWrapperPINVOKE.new_doubleArray(nelements), true) {
   }
 
   public double getitem(int index) {
-    double ret = TapQuoteWrapperAPIPINVOKE.doubleArray_getitem(swigCPtr, index);
+    double ret = TapQuoteWrapperPINVOKE.doubleArray_getitem(swigCPtr, index);
     return ret;
   }
 
   public void setitem(int index, double value) {
-    TapQuoteWrapperAPIPINVOKE.doubleArray_setitem(swigCPtr, index, value);
+    TapQuoteWrapperPINVOKE.doubleArray_setitem(swigCPtr, index, value);
   }
 
   public SWIGTYPE_p_double cast() {
-    global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.doubleArray_cast(swigCPtr);
+    global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.doubleArray_cast(swigCPtr);
     SWIGTYPE_p_double ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_double(cPtr, false);
     return ret;
   }
 
   public static doubleArray frompointer(SWIGTYPE_p_double t) {
-    global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.doubleArray_frompointer(SWIGTYPE_p_double.getCPtr(t));
+    global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.doubleArray_frompointer(SWIGTYPE_p_double.getCPtr(t));
     doubleArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new doubleArray(cPtr, false);
     return ret;
   }

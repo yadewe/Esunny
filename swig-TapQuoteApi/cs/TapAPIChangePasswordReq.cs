@@ -32,7 +32,7 @@ public class TapAPIChangePasswordReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_TapAPIChangePasswordReq(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_TapAPIChangePasswordReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,25 +42,25 @@ public class TapAPIChangePasswordReq : global::System.IDisposable {
 
   public string OldPassword {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIChangePasswordReq_OldPassword_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_OldPassword_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIChangePasswordReq_OldPassword_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_OldPassword_get(swigCPtr);
       return ret;
     } 
   }
 
   public string NewPassword {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIChangePasswordReq_NewPassword_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_NewPassword_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIChangePasswordReq_NewPassword_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_NewPassword_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIChangePasswordReq() : this(TapQuoteWrapperAPIPINVOKE.new_TapAPIChangePasswordReq(), true) {
+  public TapAPIChangePasswordReq() : this(TapQuoteWrapperPINVOKE.new_TapAPIChangePasswordReq(), true) {
   }
 
 }

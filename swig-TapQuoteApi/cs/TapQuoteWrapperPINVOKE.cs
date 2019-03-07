@@ -10,7 +10,7 @@
 
 namespace TapQuoteWrapperApi {
 
-class TapQuoteWrapperAPIPINVOKE {
+class TapQuoteWrapperPINVOKE {
 
   protected class SWIGExceptionHelper {
 
@@ -33,8 +33,8 @@ class TapQuoteWrapperAPIPINVOKE {
     static ExceptionArgumentDelegate argumentNullDelegate = new ExceptionArgumentDelegate(SetPendingArgumentNullException);
     static ExceptionArgumentDelegate argumentOutOfRangeDelegate = new ExceptionArgumentDelegate(SetPendingArgumentOutOfRangeException);
 
-    [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="SWIGRegisterExceptionCallbacks_TapQuoteWrapperAPI")]
-    public static extern void SWIGRegisterExceptionCallbacks_TapQuoteWrapperAPI(
+    [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="SWIGRegisterExceptionCallbacks_TapQuoteWrapper")]
+    public static extern void SWIGRegisterExceptionCallbacks_TapQuoteWrapper(
                                 ExceptionDelegate applicationDelegate,
                                 ExceptionDelegate arithmeticDelegate,
                                 ExceptionDelegate divideByZeroDelegate, 
@@ -47,8 +47,8 @@ class TapQuoteWrapperAPIPINVOKE {
                                 ExceptionDelegate overflowDelegate, 
                                 ExceptionDelegate systemExceptionDelegate);
 
-    [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="SWIGRegisterExceptionArgumentCallbacks_TapQuoteWrapperAPI")]
-    public static extern void SWIGRegisterExceptionCallbacksArgument_TapQuoteWrapperAPI(
+    [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="SWIGRegisterExceptionArgumentCallbacks_TapQuoteWrapper")]
+    public static extern void SWIGRegisterExceptionCallbacksArgument_TapQuoteWrapper(
                                 ExceptionArgumentDelegate argumentDelegate,
                                 ExceptionArgumentDelegate argumentNullDelegate,
                                 ExceptionArgumentDelegate argumentOutOfRangeDelegate);
@@ -102,7 +102,7 @@ class TapQuoteWrapperAPIPINVOKE {
     }
 
     static SWIGExceptionHelper() {
-      SWIGRegisterExceptionCallbacks_TapQuoteWrapperAPI(
+      SWIGRegisterExceptionCallbacks_TapQuoteWrapper(
                                 applicationDelegate,
                                 arithmeticDelegate,
                                 divideByZeroDelegate,
@@ -115,7 +115,7 @@ class TapQuoteWrapperAPIPINVOKE {
                                 overflowDelegate,
                                 systemDelegate);
 
-      SWIGRegisterExceptionCallbacksArgument_TapQuoteWrapperAPI(
+      SWIGRegisterExceptionCallbacksArgument_TapQuoteWrapper(
                                 argumentDelegate,
                                 argumentNullDelegate,
                                 argumentOutOfRangeDelegate);
@@ -143,7 +143,7 @@ class TapQuoteWrapperAPIPINVOKE {
       if (pendingException != null)
         throw new global::System.ApplicationException("FATAL: An earlier pending exception from unmanaged code was missed and thus not thrown (" + pendingException.ToString() + ")", e);
       pendingException = e;
-      lock(typeof(TapQuoteWrapperAPIPINVOKE)) {
+      lock(typeof(TapQuoteWrapperPINVOKE)) {
         numExceptionsPending++;
       }
     }
@@ -154,7 +154,7 @@ class TapQuoteWrapperAPIPINVOKE {
         if (pendingException != null) {
           e = pendingException;
           pendingException = null;
-          lock(typeof(TapQuoteWrapperAPIPINVOKE)) {
+          lock(typeof(TapQuoteWrapperPINVOKE)) {
             numExceptionsPending--;
           }
         }
@@ -169,22 +169,22 @@ class TapQuoteWrapperAPIPINVOKE {
     public delegate string SWIGStringDelegate(string message);
     static SWIGStringDelegate stringDelegate = new SWIGStringDelegate(CreateString);
 
-    [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="SWIGRegisterStringCallback_TapQuoteWrapperAPI")]
-    public static extern void SWIGRegisterStringCallback_TapQuoteWrapperAPI(SWIGStringDelegate stringDelegate);
+    [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="SWIGRegisterStringCallback_TapQuoteWrapper")]
+    public static extern void SWIGRegisterStringCallback_TapQuoteWrapper(SWIGStringDelegate stringDelegate);
 
     static string CreateString(string cString) {
       return cString;
     }
 
     static SWIGStringHelper() {
-      SWIGRegisterStringCallback_TapQuoteWrapperAPI(stringDelegate);
+      SWIGRegisterStringCallback_TapQuoteWrapper(stringDelegate);
     }
   }
 
   static protected SWIGStringHelper swigStringHelper = new SWIGStringHelper();
 
 
-  static TapQuoteWrapperAPIPINVOKE() {
+  static TapQuoteWrapperPINVOKE() {
   }
 
 
@@ -275,6 +275,12 @@ class TapQuoteWrapperAPIPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPI_COMMODITY_TYPE_PRT_get")]
   public static extern char TAPI_COMMODITY_TYPE_PRT_get();
 
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPI_COMMODITY_TYPE_BLT_get")]
+  public static extern char TAPI_COMMODITY_TYPE_BLT_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPI_COMMODITY_TYPE_BRT_get")]
+  public static extern char TAPI_COMMODITY_TYPE_BRT_get();
+
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPI_COMMODITY_TYPE_DIRECTFOREX_get")]
   public static extern char TAPI_COMMODITY_TYPE_DIRECTFOREX_get();
 
@@ -292,6 +298,12 @@ class TapQuoteWrapperAPIPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPI_COMMODITY_TYPE_SPOT_TRADINGDEFER_get")]
   public static extern char TAPI_COMMODITY_TYPE_SPOT_TRADINGDEFER_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPI_COMMODITY_TYPE_FUTURE_LOCK_get")]
+  public static extern char TAPI_COMMODITY_TYPE_FUTURE_LOCK_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPI_COMMODITY_TYPE_EFP_get")]
+  public static extern char TAPI_COMMODITY_TYPE_EFP_get();
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPI_CALLPUT_FLAG_CALL_get")]
   public static extern char TAPI_CALLPUT_FLAG_CALL_get();
@@ -1214,6 +1226,21 @@ class TapQuoteWrapperAPIPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_LOGIN_NO_ACCOUNT_get")]
   public static extern int TAPIERROR_LOGIN_NO_ACCOUNT_get();
 
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_LOGIN_NO_JGT_get")]
+  public static extern int TAPIERROR_LOGIN_NO_JGT_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_LOGIN_ERROR_TIMES_get")]
+  public static extern int TAPIERROR_LOGIN_ERROR_TIMES_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_LOGIN_ERROR_AUTHTYPE_get")]
+  public static extern int TAPIERROR_LOGIN_ERROR_AUTHTYPE_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_LOGIN_ERROR_AUTHEXPIRED_get")]
+  public static extern int TAPIERROR_LOGIN_ERROR_AUTHEXPIRED_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_LOGIN_ERROR_PASSWDEXPIRED_get")]
+  public static extern int TAPIERROR_LOGIN_ERROR_PASSWDEXPIRED_get();
+
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_USERINFO_QRY_get")]
   public static extern int TAPIERROR_USERINFO_QRY_get();
 
@@ -1258,6 +1285,24 @@ class TapQuoteWrapperAPIPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDERINSERT_ACCOUNT_get")]
   public static extern int TAPIERROR_ORDERINSERT_ACCOUNT_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDERINSERT_ACCOUNT_STATE_get")]
+  public static extern int TAPIERROR_ORDERINSERT_ACCOUNT_STATE_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDERINSERT_SIDE_TRADE_get")]
+  public static extern int TAPIERROR_ORDERINSERT_SIDE_TRADE_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDERINSERT_OPTIONS_TRADE_get")]
+  public static extern int TAPIERROR_ORDERINSERT_OPTIONS_TRADE_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDERINSERT_COMMODITY_TRADE_get")]
+  public static extern int TAPIERROR_ORDERINSERT_COMMODITY_TRADE_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDERINSERT_OPEN_RIGHT_get")]
+  public static extern int TAPIERROR_ORDERINSERT_OPEN_RIGHT_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDERINSERT_RISK_CHECK_get")]
+  public static extern int TAPIERROR_ORDERINSERT_RISK_CHECK_get();
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDERINSERT_CONTRACT_get")]
   public static extern int TAPIERROR_ORDERINSERT_CONTRACT_get();
@@ -1375,6 +1420,18 @@ class TapQuoteWrapperAPIPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDERMAXOPENVOL_NO_PERMIT_get")]
   public static extern int TAPIERROR_ORDERMAXOPENVOL_NO_PERMIT_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDER_QTY_NO_PERMIT_get")]
+  public static extern int TAPIERROR_ORDER_QTY_NO_PERMIT_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDER_APPLY_NO_PERMIT_get")]
+  public static extern int TAPIERROR_ORDER_APPLY_NO_PERMIT_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDER_FREQ_OVERRUN_get")]
+  public static extern int TAPIERROR_ORDER_FREQ_OVERRUN_get();
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_COMB_NO_SIDEORHEDGE_get")]
+  public static extern int TAPIERROR_COMB_NO_SIDEORHEDGE_get();
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TAPIERROR_ORDER_FREQUENCY_get")]
   public static extern int TAPIERROR_ORDER_FREQUENCY_get();

@@ -32,7 +32,7 @@ public class TapAPIApplicationInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_TapAPIApplicationInfo(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_TapAPIApplicationInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,25 +42,25 @@ public class TapAPIApplicationInfo : global::System.IDisposable {
 
   public string AuthCode {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIApplicationInfo_AuthCode_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIApplicationInfo_AuthCode_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIApplicationInfo_AuthCode_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIApplicationInfo_AuthCode_get(swigCPtr);
       return ret;
     } 
   }
 
   public string KeyOperationLogPath {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIApplicationInfo_KeyOperationLogPath_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIApplicationInfo_KeyOperationLogPath_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIApplicationInfo_KeyOperationLogPath_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIApplicationInfo_KeyOperationLogPath_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIApplicationInfo() : this(TapQuoteWrapperAPIPINVOKE.new_TapAPIApplicationInfo(), true) {
+  public TapAPIApplicationInfo() : this(TapQuoteWrapperPINVOKE.new_TapAPIApplicationInfo(), true) {
   }
 
 }

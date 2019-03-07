@@ -32,7 +32,7 @@ public class TapAPIQuotLoginRspInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_TapAPIQuotLoginRspInfo(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_TapAPIQuotLoginRspInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,135 +42,135 @@ public class TapAPIQuotLoginRspInfo : global::System.IDisposable {
 
   public string UserNo {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_UserNo_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_UserNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_UserNo_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_UserNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public int UserType {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_UserType_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_UserType_set(swigCPtr, value);
     } 
     get {
-      int ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_UserType_get(swigCPtr);
+      int ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_UserType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string UserName {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_UserName_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_UserName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_UserName_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_UserName_get(swigCPtr);
       return ret;
     } 
   }
 
   public string QuoteTempPassword {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_QuoteTempPassword_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_QuoteTempPassword_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_QuoteTempPassword_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_QuoteTempPassword_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ReservedInfo {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_ReservedInfo_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_ReservedInfo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_ReservedInfo_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_ReservedInfo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string LastLoginIP {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastLoginIP_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastLoginIP_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastLoginIP_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastLoginIP_get(swigCPtr);
       return ret;
     } 
   }
 
   public uint LastLoginProt {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastLoginProt_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastLoginProt_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastLoginProt_get(swigCPtr);
+      uint ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastLoginProt_get(swigCPtr);
       return ret;
     } 
   }
 
   public string LastLoginTime {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastLoginTime_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastLoginTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastLoginTime_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastLoginTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string LastLogoutTime {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastLogoutTime_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastLogoutTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastLogoutTime_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastLogoutTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string TradeDate {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_TradeDate_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_TradeDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_TradeDate_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_TradeDate_get(swigCPtr);
       return ret;
     } 
   }
 
   public string LastSettleTime {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastSettleTime_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastSettleTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_LastSettleTime_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_LastSettleTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string StartTime {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_StartTime_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_StartTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_StartTime_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_StartTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string InitTime {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_InitTime_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_InitTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuotLoginRspInfo_InitTime_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuotLoginRspInfo_InitTime_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIQuotLoginRspInfo() : this(TapQuoteWrapperAPIPINVOKE.new_TapAPIQuotLoginRspInfo(), true) {
+  public TapAPIQuotLoginRspInfo() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuotLoginRspInfo(), true) {
   }
 
 }

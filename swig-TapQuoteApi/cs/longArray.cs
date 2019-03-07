@@ -32,7 +32,7 @@ public class longArray : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_longArray(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_longArray(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -40,26 +40,26 @@ public class longArray : global::System.IDisposable {
     }
   }
 
-  public longArray(int nelements) : this(TapQuoteWrapperAPIPINVOKE.new_longArray(nelements), true) {
+  public longArray(int nelements) : this(TapQuoteWrapperPINVOKE.new_longArray(nelements), true) {
   }
 
   public ulong getitem(int index) {
-    ulong ret = TapQuoteWrapperAPIPINVOKE.longArray_getitem(swigCPtr, index);
+    ulong ret = TapQuoteWrapperPINVOKE.longArray_getitem(swigCPtr, index);
     return ret;
   }
 
   public void setitem(int index, ulong value) {
-    TapQuoteWrapperAPIPINVOKE.longArray_setitem(swigCPtr, index, value);
+    TapQuoteWrapperPINVOKE.longArray_setitem(swigCPtr, index, value);
   }
 
   public SWIGTYPE_p_unsigned_long_long cast() {
-    global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.longArray_cast(swigCPtr);
+    global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.longArray_cast(swigCPtr);
     SWIGTYPE_p_unsigned_long_long ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_unsigned_long_long(cPtr, false);
     return ret;
   }
 
   public static longArray frompointer(SWIGTYPE_p_unsigned_long_long t) {
-    global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.longArray_frompointer(SWIGTYPE_p_unsigned_long_long.getCPtr(t));
+    global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.longArray_frompointer(SWIGTYPE_p_unsigned_long_long.getCPtr(t));
     longArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new longArray(cPtr, false);
     return ret;
   }

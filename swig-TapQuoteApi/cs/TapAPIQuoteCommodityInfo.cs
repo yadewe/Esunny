@@ -32,7 +32,7 @@ public class TapAPIQuoteCommodityInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_TapAPIQuoteCommodityInfo(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_TapAPIQuoteCommodityInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,10 +42,10 @@ public class TapAPIQuoteCommodityInfo : global::System.IDisposable {
 
   public TapAPICommodity Commodity {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_Commodity_set(swigCPtr, TapAPICommodity.getCPtr(value));
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_Commodity_set(swigCPtr, TapAPICommodity.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_Commodity_get(swigCPtr);
+      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_Commodity_get(swigCPtr);
       TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
       return ret;
     } 
@@ -53,90 +53,90 @@ public class TapAPIQuoteCommodityInfo : global::System.IDisposable {
 
   public string CommodityName {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityName_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityName_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityName_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityEngName {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityEngName_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityEngName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityEngName_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityEngName_get(swigCPtr);
       return ret;
     } 
   }
 
   public double ContractSize {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_ContractSize_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_ContractSize_set(swigCPtr, value);
     } 
     get {
-      double ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_ContractSize_get(swigCPtr);
+      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_ContractSize_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CommodityTickSize {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityTickSize_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityTickSize_set(swigCPtr, value);
     } 
     get {
-      double ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityTickSize_get(swigCPtr);
+      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityTickSize_get(swigCPtr);
       return ret;
     } 
   }
 
   public int CommodityDenominator {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityDenominator_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityDenominator_set(swigCPtr, value);
     } 
     get {
-      int ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityDenominator_get(swigCPtr);
+      int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityDenominator_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CmbDirect {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CmbDirect_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CmbDirect_set(swigCPtr, value);
     } 
     get {
-      char ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CmbDirect_get(swigCPtr);
+      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CmbDirect_get(swigCPtr);
       return ret;
     } 
   }
 
   public int CommodityContractLen {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityContractLen_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityContractLen_set(swigCPtr, value);
     } 
     get {
-      int ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_CommodityContractLen_get(swigCPtr);
+      int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityContractLen_get(swigCPtr);
       return ret;
     } 
   }
 
   public char IsDST {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_IsDST_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_IsDST_set(swigCPtr, value);
     } 
     get {
-      char ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_IsDST_get(swigCPtr);
+      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_IsDST_get(swigCPtr);
       return ret;
     } 
   }
 
   public TapAPICommodity RelateCommodity1 {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity1_set(swigCPtr, TapAPICommodity.getCPtr(value));
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity1_set(swigCPtr, TapAPICommodity.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity1_get(swigCPtr);
+      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity1_get(swigCPtr);
       TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
       return ret;
     } 
@@ -144,16 +144,16 @@ public class TapAPIQuoteCommodityInfo : global::System.IDisposable {
 
   public TapAPICommodity RelateCommodity2 {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity2_set(swigCPtr, TapAPICommodity.getCPtr(value));
+      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity2_set(swigCPtr, TapAPICommodity.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity2_get(swigCPtr);
+      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity2_get(swigCPtr);
       TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
       return ret;
     } 
   }
 
-  public TapAPIQuoteCommodityInfo() : this(TapQuoteWrapperAPIPINVOKE.new_TapAPIQuoteCommodityInfo(), true) {
+  public TapAPIQuoteCommodityInfo() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteCommodityInfo(), true) {
   }
 
 }

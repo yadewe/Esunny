@@ -32,7 +32,7 @@ public class TapAPIExchangeInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_TapAPIExchangeInfo(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_TapAPIExchangeInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,25 +42,25 @@ public class TapAPIExchangeInfo : global::System.IDisposable {
 
   public string ExchangeNo {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIExchangeInfo_ExchangeNo_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIExchangeInfo_ExchangeNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIExchangeInfo_ExchangeNo_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIExchangeInfo_ExchangeNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ExchangeName {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIExchangeInfo_ExchangeName_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIExchangeInfo_ExchangeName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIExchangeInfo_ExchangeName_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIExchangeInfo_ExchangeName_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIExchangeInfo() : this(TapQuoteWrapperAPIPINVOKE.new_TapAPIExchangeInfo(), true) {
+  public TapAPIExchangeInfo() : this(TapQuoteWrapperPINVOKE.new_TapAPIExchangeInfo(), true) {
   }
 
 }
