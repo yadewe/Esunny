@@ -32,7 +32,7 @@ public class TapAPIOrderLocalTransferReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIOrderLocalTransferReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIOrderLocalTransferReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,35 +42,35 @@ public class TapAPIOrderLocalTransferReq : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalTransferReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalTransferReq_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalTransferReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalTransferReq_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char ServerFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalTransferReq_ServerFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalTransferReq_ServerFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalTransferReq_ServerFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalTransferReq_ServerFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OrderNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalTransferReq_OrderNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalTransferReq_OrderNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalTransferReq_OrderNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalTransferReq_OrderNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIOrderLocalTransferReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIOrderLocalTransferReq(), true) {
+  public TapAPIOrderLocalTransferReq() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderLocalTransferReq(), true) {
   }
 
 }

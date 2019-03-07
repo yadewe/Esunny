@@ -32,7 +32,7 @@ public class TapAPIAccountCashAdjustQryRsp : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIAccountCashAdjustQryRsp(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIAccountCashAdjustQryRsp(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,155 +42,155 @@ public class TapAPIAccountCashAdjustQryRsp : global::System.IDisposable {
 
   public string Date {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_Date_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_Date_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_Date_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_Date_get(swigCPtr);
       return ret;
     } 
   }
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CashAdjustType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CurrencyGroupNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CurrencyGroupNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CurrencyGroupNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CurrencyGroupNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CurrencyGroupNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CurrencyNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CurrencyNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CurrencyNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CurrencyNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CurrencyNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CashAdjustValue {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustValue_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustValue_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustValue_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustValue_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CashAdjustRemark {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustRemark_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustRemark_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustRemark_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CashAdjustRemark_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OperateTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_OperateTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_OperateTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_OperateTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_OperateTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OperatorNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_OperatorNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_OperatorNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_OperatorNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_OperatorNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string AccountBank {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountBank_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountBank_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountBank_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountBank_get(swigCPtr);
       return ret;
     } 
   }
 
   public string BankAccount {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_BankAccount_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_BankAccount_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_BankAccount_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_BankAccount_get(swigCPtr);
       return ret;
     } 
   }
 
   public char AccountLWFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountLWFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountLWFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountLWFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_AccountLWFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CompanyBank {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CompanyBank_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CompanyBank_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CompanyBank_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CompanyBank_get(swigCPtr);
       return ret;
     } 
   }
 
   public string InternalBankAccount {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_InternalBankAccount_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_InternalBankAccount_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_InternalBankAccount_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_InternalBankAccount_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CompanyLWFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CompanyLWFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CompanyLWFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountCashAdjustQryRsp_CompanyLWFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAccountCashAdjustQryRsp_CompanyLWFlag_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIAccountCashAdjustQryRsp() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIAccountCashAdjustQryRsp(), true) {
+  public TapAPIAccountCashAdjustQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountCashAdjustQryRsp(), true) {
   }
 
 }

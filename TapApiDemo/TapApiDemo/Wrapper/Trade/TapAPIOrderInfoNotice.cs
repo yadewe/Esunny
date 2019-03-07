@@ -32,7 +32,7 @@ public class TapAPIOrderInfoNotice : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIOrderInfoNotice(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIOrderInfoNotice(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,36 +42,36 @@ public class TapAPIOrderInfoNotice : global::System.IDisposable {
 
   public uint SessionID {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderInfoNotice_SessionID_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderInfoNotice_SessionID_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderInfoNotice_SessionID_get(swigCPtr);
+      uint ret = TapTradeWrapperPINVOKE.TapAPIOrderInfoNotice_SessionID_get(swigCPtr);
       return ret;
     } 
   }
 
   public uint ErrorCode {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderInfoNotice_ErrorCode_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderInfoNotice_ErrorCode_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderInfoNotice_ErrorCode_get(swigCPtr);
+      uint ret = TapTradeWrapperPINVOKE.TapAPIOrderInfoNotice_ErrorCode_get(swigCPtr);
       return ret;
     } 
   }
 
   public TapAPIOrderInfo OrderInfo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderInfoNotice_OrderInfo_set(swigCPtr, TapAPIOrderInfo.getCPtr(value));
+      TapTradeWrapperPINVOKE.TapAPIOrderInfoNotice_OrderInfo_set(swigCPtr, TapAPIOrderInfo.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.TapAPIOrderInfoNotice_OrderInfo_get(swigCPtr);
+      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIOrderInfoNotice_OrderInfo_get(swigCPtr);
       TapAPIOrderInfo ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(cPtr, false);
       return ret;
     } 
   }
 
-  public TapAPIOrderInfoNotice() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIOrderInfoNotice(), true) {
+  public TapAPIOrderInfoNotice() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderInfoNotice(), true) {
   }
 
 }

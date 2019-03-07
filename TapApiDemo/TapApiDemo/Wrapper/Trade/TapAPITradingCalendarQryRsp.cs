@@ -10,20 +10,20 @@
 
 namespace TapTradeWrapperApi {
 
-public class TapAPIAccountMarginRentQryReq : global::System.IDisposable {
+public class TapAPITradingCalendarQryRsp : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   protected bool swigCMemOwn;
 
-  internal TapAPIAccountMarginRentQryReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
+  internal TapAPITradingCalendarQryRsp(global::System.IntPtr cPtr, bool cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountMarginRentQryReq obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPITradingCalendarQryRsp obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  ~TapAPIAccountMarginRentQryReq() {
+  ~TapAPITradingCalendarQryRsp() {
     Dispose();
   }
 
@@ -32,7 +32,7 @@ public class TapAPIAccountMarginRentQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIAccountMarginRentQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPITradingCalendarQryRsp(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -40,47 +40,47 @@ public class TapAPIAccountMarginRentQryReq : global::System.IDisposable {
     }
   }
 
-  public string AccountNo {
+  public string CurrTradeDate {
     set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradingCalendarQryRsp_CurrTradeDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradingCalendarQryRsp_CurrTradeDate_get(swigCPtr);
       return ret;
     } 
   }
 
-  public string ExchangeNo {
+  public string LastSettlementDate {
     set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_ExchangeNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradingCalendarQryRsp_LastSettlementDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_ExchangeNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradingCalendarQryRsp_LastSettlementDate_get(swigCPtr);
       return ret;
     } 
   }
 
-  public char CommodityType {
+  public string PromptDate {
     set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradingCalendarQryRsp_PromptDate_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityType_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradingCalendarQryRsp_PromptDate_get(swigCPtr);
       return ret;
     } 
   }
 
-  public string CommodityNo {
+  public string LastPromptDate {
     set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradingCalendarQryRsp_LastPromptDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradingCalendarQryRsp_LastPromptDate_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIAccountMarginRentQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountMarginRentQryReq(), true) {
+  public TapAPITradingCalendarQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPITradingCalendarQryRsp(), true) {
   }
 
 }

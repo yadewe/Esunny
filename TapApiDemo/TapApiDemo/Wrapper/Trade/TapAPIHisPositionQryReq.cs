@@ -32,7 +32,7 @@ public class TapAPIHisPositionQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIHisPositionQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIHisPositionQryReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,35 +42,35 @@ public class TapAPIHisPositionQryReq : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisPositionQryReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisPositionQryReq_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIHisPositionQryReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIHisPositionQryReq_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string Date {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisPositionQryReq_Date_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisPositionQryReq_Date_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIHisPositionQryReq_Date_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIHisPositionQryReq_Date_get(swigCPtr);
       return ret;
     } 
   }
 
   public char SettleFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisPositionQryReq_SettleFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisPositionQryReq_SettleFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIHisPositionQryReq_SettleFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIHisPositionQryReq_SettleFlag_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIHisPositionQryReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIHisPositionQryReq(), true) {
+  public TapAPIHisPositionQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIHisPositionQryReq(), true) {
   }
 
 }

@@ -32,7 +32,7 @@ public class TapAPIAccQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIAccQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIAccQryReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -40,7 +40,7 @@ public class TapAPIAccQryReq : global::System.IDisposable {
     }
   }
 
-  public TapAPIAccQryReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIAccQryReq(), true) {
+  public TapAPIAccQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAccQryReq(), true) {
   }
 
 }

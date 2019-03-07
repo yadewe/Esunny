@@ -32,7 +32,7 @@ public class ITapTradeAPI : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_ITapTradeAPI(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_ITapTradeAPI(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -41,217 +41,227 @@ public class ITapTradeAPI : global::System.IDisposable {
   }
 
   public virtual int SetAPINotify(ITapTradeAPINotify pSpi) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_SetAPINotify(swigCPtr, ITapTradeAPINotify.getCPtr(pSpi));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetAPINotify(swigCPtr, ITapTradeAPINotify.getCPtr(pSpi));
+    return ret;
+  }
+
+  public virtual int SetHostAddress(string IP, ushort port, bool bSSL) {
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetHostAddress__SWIG_0(swigCPtr, IP, port, bSSL);
     return ret;
   }
 
   public virtual int SetHostAddress(string IP, ushort port) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_SetHostAddress(swigCPtr, IP, port);
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetHostAddress__SWIG_1(swigCPtr, IP, port);
     return ret;
   }
 
   public virtual int Login(TapAPITradeLoginAuth loginAuth) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_Login(swigCPtr, TapAPITradeLoginAuth.getCPtr(loginAuth));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_Login(swigCPtr, TapAPITradeLoginAuth.getCPtr(loginAuth));
     return ret;
   }
 
   public virtual int RequestVertificateCode(out uint sessionID, string ContactInfo) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_RequestVertificateCode(swigCPtr, out sessionID, ContactInfo);
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_RequestVertificateCode(swigCPtr, out sessionID, ContactInfo);
     return ret;
   }
 
   public virtual int SetVertificateCode(string VertificateCode) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_SetVertificateCode(swigCPtr, VertificateCode);
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetVertificateCode(swigCPtr, VertificateCode);
     return ret;
   }
 
   public virtual int Disconnect() {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_Disconnect(swigCPtr);
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_Disconnect(swigCPtr);
     return ret;
   }
 
   public virtual int ChangePassword(out uint sessionID, TapAPIChangePasswordReq req) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_ChangePassword(swigCPtr, out sessionID, TapAPIChangePasswordReq.getCPtr(req));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_ChangePassword(swigCPtr, out sessionID, TapAPIChangePasswordReq.getCPtr(req));
     return ret;
   }
 
   public virtual int AuthPassword(out uint sessionID, TapAPIAuthPasswordReq req) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_AuthPassword(swigCPtr, out sessionID, TapAPIAuthPasswordReq.getCPtr(req));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_AuthPassword(swigCPtr, out sessionID, TapAPIAuthPasswordReq.getCPtr(req));
     return ret;
   }
 
   public virtual int HaveCertainRight(int rightID) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_HaveCertainRight(swigCPtr, rightID);
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_HaveCertainRight(swigCPtr, rightID);
+    return ret;
+  }
+
+  public virtual int QryTradingDate(out uint sessionID) {
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryTradingDate(swigCPtr, out sessionID);
     return ret;
   }
 
   public virtual int SetReservedInfo(out uint sessionID, string info) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_SetReservedInfo(swigCPtr, out sessionID, info);
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetReservedInfo(swigCPtr, out sessionID, info);
     return ret;
   }
 
   public virtual int QryAccount(out uint sessionID, TapAPIAccQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryAccount(swigCPtr, out sessionID, TapAPIAccQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccount(swigCPtr, out sessionID, TapAPIAccQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryFund(out uint sessionID, TapAPIFundReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryFund(swigCPtr, out sessionID, TapAPIFundReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryFund(swigCPtr, out sessionID, TapAPIFundReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryExchange(out uint sessionID) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryExchange(swigCPtr, out sessionID);
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryExchange(swigCPtr, out sessionID);
     return ret;
   }
 
   public virtual int QryCommodity(out uint sessionID) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryCommodity(swigCPtr, out sessionID);
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryCommodity(swigCPtr, out sessionID);
     return ret;
   }
 
   public virtual int QryContract(out uint sessionID, TapAPICommodity qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryContract(swigCPtr, out sessionID, TapAPICommodity.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryContract(swigCPtr, out sessionID, TapAPICommodity.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int InsertOrder(out uint sessionID, string ClientOrderNo, TapAPINewOrder order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_InsertOrder(swigCPtr, out sessionID, ClientOrderNo, TapAPINewOrder.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_InsertOrder(swigCPtr, out sessionID, ClientOrderNo, TapAPINewOrder.getCPtr(order));
     return ret;
   }
 
   public virtual int CancelOrder(out uint sessionID, TapAPIOrderCancelReq order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_CancelOrder(swigCPtr, out sessionID, TapAPIOrderCancelReq.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_CancelOrder(swigCPtr, out sessionID, TapAPIOrderCancelReq.getCPtr(order));
     return ret;
   }
 
   public virtual int AmendOrder(out uint sessionID, TapAPIAmendOrder order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_AmendOrder(swigCPtr, out sessionID, TapAPIAmendOrder.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_AmendOrder(swigCPtr, out sessionID, TapAPIAmendOrder.getCPtr(order));
     return ret;
   }
 
   public virtual int ActivateOrder(out uint sessionID, TapAPIOrderCancelReq order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_ActivateOrder(swigCPtr, out sessionID, TapAPIOrderCancelReq.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_ActivateOrder(swigCPtr, out sessionID, TapAPIOrderCancelReq.getCPtr(order));
     return ret;
   }
 
   public virtual int QryOrder(out uint sessionID, TapAPIOrderQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryOrder(swigCPtr, out sessionID, TapAPIOrderQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryOrder(swigCPtr, out sessionID, TapAPIOrderQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryOrderProcess(out uint sessionID, TapAPIOrderProcessQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryOrderProcess(swigCPtr, out sessionID, TapAPIOrderProcessQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryOrderProcess(swigCPtr, out sessionID, TapAPIOrderProcessQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryFill(out uint sessionID, TapAPIFillQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryFill(swigCPtr, out sessionID, TapAPIFillQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryFill(swigCPtr, out sessionID, TapAPIFillQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryPosition(out uint sessionID, TapAPIPositionQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryPosition(swigCPtr, out sessionID, TapAPIPositionQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryPosition(swigCPtr, out sessionID, TapAPIPositionQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryPositionSummary(out uint sessionID, TapAPIPositionQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryPositionSummary(swigCPtr, out sessionID, TapAPIPositionQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryPositionSummary(swigCPtr, out sessionID, TapAPIPositionQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryCurrency(out uint sessionID) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryCurrency(swigCPtr, out sessionID);
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryCurrency(swigCPtr, out sessionID);
     return ret;
   }
 
   public virtual int QryAccountCashAdjust(out uint sessionID, TapAPIAccountCashAdjustQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryAccountCashAdjust(swigCPtr, out sessionID, TapAPIAccountCashAdjustQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccountCashAdjust(swigCPtr, out sessionID, TapAPIAccountCashAdjustQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryTradeMessage(out uint sessionID, TapAPITradeMessageReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryTradeMessage(swigCPtr, out sessionID, TapAPITradeMessageReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryTradeMessage(swigCPtr, out sessionID, TapAPITradeMessageReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryBill(out uint sessionID, TapAPIBillQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryBill(swigCPtr, out sessionID, TapAPIBillQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryBill(swigCPtr, out sessionID, TapAPIBillQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryHisOrder(out uint sessionID, TapAPIHisOrderQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryHisOrder(swigCPtr, out sessionID, TapAPIHisOrderQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisOrder(swigCPtr, out sessionID, TapAPIHisOrderQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryHisOrderProcess(out uint sessionID, TapAPIHisOrderProcessQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryHisOrderProcess(swigCPtr, out sessionID, TapAPIHisOrderProcessQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisOrderProcess(swigCPtr, out sessionID, TapAPIHisOrderProcessQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryHisMatch(out uint sessionID, TapAPIHisMatchQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryHisMatch(swigCPtr, out sessionID, TapAPIHisMatchQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisMatch(swigCPtr, out sessionID, TapAPIHisMatchQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryHisPosition(out uint sessionID, TapAPIHisPositionQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryHisPosition(swigCPtr, out sessionID, TapAPIHisPositionQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisPosition(swigCPtr, out sessionID, TapAPIHisPositionQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryHisDelivery(out uint sessionID, TapAPIHisDeliveryQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryHisDelivery(swigCPtr, out sessionID, TapAPIHisDeliveryQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisDelivery(swigCPtr, out sessionID, TapAPIHisDeliveryQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryAccountFeeRent(out uint sessionID, TapAPIAccountFeeRentQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryAccountFeeRent(swigCPtr, out sessionID, TapAPIAccountFeeRentQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccountFeeRent(swigCPtr, out sessionID, TapAPIAccountFeeRentQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int QryAccountMarginRent(out uint sessionID, TapAPIAccountMarginRentQryReq qryReq) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_QryAccountMarginRent(swigCPtr, out sessionID, TapAPIAccountMarginRentQryReq.getCPtr(qryReq));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccountMarginRent(swigCPtr, out sessionID, TapAPIAccountMarginRentQryReq.getCPtr(qryReq));
     return ret;
   }
 
   public virtual int InsertHKMarketOrder(out uint sessionID, string ClientBuyOrderNo, string ClientSellOrderNo, TapAPIOrderMarketInsertReq order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_InsertHKMarketOrder(swigCPtr, out sessionID, ClientBuyOrderNo, ClientSellOrderNo, TapAPIOrderMarketInsertReq.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_InsertHKMarketOrder(swigCPtr, out sessionID, ClientBuyOrderNo, ClientSellOrderNo, TapAPIOrderMarketInsertReq.getCPtr(order));
     return ret;
   }
 
   public virtual int CancelHKMarketOrder(out uint sessionID, TapAPIOrderMarketDeleteReq order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_CancelHKMarketOrder(swigCPtr, out sessionID, TapAPIOrderMarketDeleteReq.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_CancelHKMarketOrder(swigCPtr, out sessionID, TapAPIOrderMarketDeleteReq.getCPtr(order));
     return ret;
   }
 
   public virtual int OrderLocalRemove(out uint sessionID, TapAPIOrderLocalRemoveReq order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_OrderLocalRemove(swigCPtr, out sessionID, TapAPIOrderLocalRemoveReq.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalRemove(swigCPtr, out sessionID, TapAPIOrderLocalRemoveReq.getCPtr(order));
     return ret;
   }
 
   public virtual int OrderLocalInput(out uint sessionID, TapAPIOrderLocalInputReq order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_OrderLocalInput(swigCPtr, out sessionID, TapAPIOrderLocalInputReq.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalInput(swigCPtr, out sessionID, TapAPIOrderLocalInputReq.getCPtr(order));
     return ret;
   }
 
   public virtual int OrderLocalModify(out uint sessionID, TapAPIOrderLocalModifyReq order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_OrderLocalModify(swigCPtr, out sessionID, TapAPIOrderLocalModifyReq.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalModify(swigCPtr, out sessionID, TapAPIOrderLocalModifyReq.getCPtr(order));
     return ret;
   }
 
   public virtual int OrderLocalTransfer(out uint sessionID, TapAPIOrderLocalTransferReq order) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_OrderLocalTransfer(swigCPtr, out sessionID, TapAPIOrderLocalTransferReq.getCPtr(order));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalTransfer(swigCPtr, out sessionID, TapAPIOrderLocalTransferReq.getCPtr(order));
     return ret;
   }
 
   public virtual int FillLocalInput(out uint sessionID, TapAPIFillLocalInputReq fill) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_FillLocalInput(swigCPtr, out sessionID, TapAPIFillLocalInputReq.getCPtr(fill));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_FillLocalInput(swigCPtr, out sessionID, TapAPIFillLocalInputReq.getCPtr(fill));
     return ret;
   }
 
   public virtual int FillLocalRemove(out uint sessionID, TapAPIFillLocalRemoveReq fill) {
-    int ret = TapTradeWrapperAPIPINVOKE.ITapTradeAPI_FillLocalRemove(swigCPtr, out sessionID, TapAPIFillLocalRemoveReq.getCPtr(fill));
+    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_FillLocalRemove(swigCPtr, out sessionID, TapAPIFillLocalRemoveReq.getCPtr(fill));
     return ret;
   }
 

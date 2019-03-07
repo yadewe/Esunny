@@ -32,7 +32,7 @@ public class TapAPIHisDeliveryQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIHisDeliveryQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIHisDeliveryQryReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,55 +42,55 @@ public class TapAPIHisDeliveryQryReq : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string AccountAttributeNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_AccountAttributeNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_AccountAttributeNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_AccountAttributeNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_AccountAttributeNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string BeginDate {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_BeginDate_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_BeginDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_BeginDate_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_BeginDate_get(swigCPtr);
       return ret;
     } 
   }
 
   public string EndDate {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_EndDate_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_EndDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_EndDate_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_EndDate_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CountType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_CountType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_CountType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIHisDeliveryQryReq_CountType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIHisDeliveryQryReq_CountType_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIHisDeliveryQryReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIHisDeliveryQryReq(), true) {
+  public TapAPIHisDeliveryQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIHisDeliveryQryReq(), true) {
   }
 
 }

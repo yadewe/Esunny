@@ -32,7 +32,7 @@ public class TapAPITradeLoginRspInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPITradeLoginRspInfo(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPITradeLoginRspInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,125 +42,125 @@ public class TapAPITradeLoginRspInfo : global::System.IDisposable {
 
   public string UserNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_UserNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_UserNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_UserNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_UserNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public int UserType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_UserType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_UserType_set(swigCPtr, value);
     } 
     get {
-      int ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_UserType_get(swigCPtr);
+      int ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_UserType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string UserName {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_UserName_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_UserName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_UserName_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_UserName_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ReservedInfo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_ReservedInfo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_ReservedInfo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_ReservedInfo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_ReservedInfo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string LastLoginIP {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastLoginIP_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastLoginIP_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastLoginIP_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastLoginIP_get(swigCPtr);
       return ret;
     } 
   }
 
   public uint LastLoginProt {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastLoginProt_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastLoginProt_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastLoginProt_get(swigCPtr);
+      uint ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastLoginProt_get(swigCPtr);
       return ret;
     } 
   }
 
   public string LastLoginTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastLoginTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastLoginTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastLoginTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastLoginTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string LastLogoutTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastLogoutTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastLogoutTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastLogoutTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastLogoutTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string TradeDate {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_TradeDate_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_TradeDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_TradeDate_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_TradeDate_get(swigCPtr);
       return ret;
     } 
   }
 
   public string LastSettleTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastSettleTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastSettleTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_LastSettleTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_LastSettleTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string StartTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_StartTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_StartTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_StartTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_StartTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string InitTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_InitTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_InitTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginRspInfo_InitTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginRspInfo_InitTime_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPITradeLoginRspInfo() : this(TapTradeWrapperAPIPINVOKE.new_TapAPITradeLoginRspInfo(), true) {
+  public TapAPITradeLoginRspInfo() : this(TapTradeWrapperPINVOKE.new_TapAPITradeLoginRspInfo(), true) {
   }
 
 }

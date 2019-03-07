@@ -32,7 +32,7 @@ public class TapAPIFillLocalRemoveReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIFillLocalRemoveReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIFillLocalRemoveReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,25 +42,25 @@ public class TapAPIFillLocalRemoveReq : global::System.IDisposable {
 
   public char ServerFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillLocalRemoveReq_ServerFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillLocalRemoveReq_ServerFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFillLocalRemoveReq_ServerFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFillLocalRemoveReq_ServerFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public string MatchNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillLocalRemoveReq_MatchNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillLocalRemoveReq_MatchNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFillLocalRemoveReq_MatchNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFillLocalRemoveReq_MatchNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIFillLocalRemoveReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIFillLocalRemoveReq(), true) {
+  public TapAPIFillLocalRemoveReq() : this(TapTradeWrapperPINVOKE.new_TapAPIFillLocalRemoveReq(), true) {
   }
 
 }

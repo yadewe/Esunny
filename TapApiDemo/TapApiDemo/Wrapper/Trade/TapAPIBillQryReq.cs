@@ -32,7 +32,7 @@ public class TapAPIBillQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIBillQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIBillQryReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,45 +42,45 @@ public class TapAPIBillQryReq : global::System.IDisposable {
 
   public string UserNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIBillQryReq_UserNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIBillQryReq_UserNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIBillQryReq_UserNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIBillQryReq_UserNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char BillType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIBillQryReq_BillType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIBillQryReq_BillType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIBillQryReq_BillType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIBillQryReq_BillType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string BillDate {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIBillQryReq_BillDate_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIBillQryReq_BillDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIBillQryReq_BillDate_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIBillQryReq_BillDate_get(swigCPtr);
       return ret;
     } 
   }
 
   public char BillFileType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIBillQryReq_BillFileType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIBillQryReq_BillFileType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIBillQryReq_BillFileType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIBillQryReq_BillFileType_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIBillQryReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIBillQryReq(), true) {
+  public TapAPIBillQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIBillQryReq(), true) {
   }
 
 }

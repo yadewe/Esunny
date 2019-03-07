@@ -32,7 +32,7 @@ public class TapAPICurrencyInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPICurrencyInfo(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPICurrencyInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,65 +42,65 @@ public class TapAPICurrencyInfo : global::System.IDisposable {
 
   public string CurrencyNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_CurrencyNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_CurrencyNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CurrencyGroupNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_CurrencyGroupNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyGroupNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_CurrencyGroupNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyGroupNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public double TradeRate {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_TradeRate_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_TradeRate_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate_get(swigCPtr);
       return ret;
     } 
   }
 
   public double TradeRate2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_TradeRate2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate2_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_TradeRate2_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate2_get(swigCPtr);
       return ret;
     } 
   }
 
   public char FutureAlg {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_FutureAlg_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_FutureAlg_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_FutureAlg_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_FutureAlg_get(swigCPtr);
       return ret;
     } 
   }
 
   public char OptionAlg {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_OptionAlg_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_OptionAlg_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICurrencyInfo_OptionAlg_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_OptionAlg_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPICurrencyInfo() : this(TapTradeWrapperAPIPINVOKE.new_TapAPICurrencyInfo(), true) {
+  public TapAPICurrencyInfo() : this(TapTradeWrapperPINVOKE.new_TapAPICurrencyInfo(), true) {
   }
 
 }

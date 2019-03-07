@@ -32,7 +32,7 @@ public class TapAPITradeLoginAuth : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPITradeLoginAuth(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPITradeLoginAuth(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,45 +42,45 @@ public class TapAPITradeLoginAuth : global::System.IDisposable {
 
   public string UserNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginAuth_UserNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginAuth_UserNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginAuth_UserNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginAuth_UserNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char ISModifyPassword {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginAuth_ISModifyPassword_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginAuth_ISModifyPassword_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginAuth_ISModifyPassword_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPITradeLoginAuth_ISModifyPassword_get(swigCPtr);
       return ret;
     } 
   }
 
   public string Password {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginAuth_Password_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginAuth_Password_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginAuth_Password_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginAuth_Password_get(swigCPtr);
       return ret;
     } 
   }
 
   public string NewPassword {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeLoginAuth_NewPassword_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeLoginAuth_NewPassword_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeLoginAuth_NewPassword_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeLoginAuth_NewPassword_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPITradeLoginAuth() : this(TapTradeWrapperAPIPINVOKE.new_TapAPITradeLoginAuth(), true) {
+  public TapAPITradeLoginAuth() : this(TapTradeWrapperPINVOKE.new_TapAPITradeLoginAuth(), true) {
   }
 
 }

@@ -32,7 +32,7 @@ public class TapAPIContract : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIContract(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIContract(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,10 +42,10 @@ public class TapAPIContract : global::System.IDisposable {
 
   public TapAPICommodity Commodity {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIContract_Commodity_set(swigCPtr, TapAPICommodity.getCPtr(value));
+      TapTradeWrapperPINVOKE.TapAPIContract_Commodity_set(swigCPtr, TapAPICommodity.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.TapAPIContract_Commodity_get(swigCPtr);
+      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIContract_Commodity_get(swigCPtr);
       TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
       return ret;
     } 
@@ -53,65 +53,65 @@ public class TapAPIContract : global::System.IDisposable {
 
   public string ContractNo1 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIContract_ContractNo1_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIContract_ContractNo1_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIContract_ContractNo1_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIContract_ContractNo1_get(swigCPtr);
       return ret;
     } 
   }
 
   public string StrikePrice1 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIContract_StrikePrice1_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIContract_StrikePrice1_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIContract_StrikePrice1_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIContract_StrikePrice1_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CallOrPutFlag1 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIContract_CallOrPutFlag1_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIContract_CallOrPutFlag1_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIContract_CallOrPutFlag1_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIContract_CallOrPutFlag1_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ContractNo2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIContract_ContractNo2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIContract_ContractNo2_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIContract_ContractNo2_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIContract_ContractNo2_get(swigCPtr);
       return ret;
     } 
   }
 
   public string StrikePrice2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIContract_StrikePrice2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIContract_StrikePrice2_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIContract_StrikePrice2_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIContract_StrikePrice2_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CallOrPutFlag2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIContract_CallOrPutFlag2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIContract_CallOrPutFlag2_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIContract_CallOrPutFlag2_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIContract_CallOrPutFlag2_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIContract() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIContract(), true) {
+  public TapAPIContract() : this(TapTradeWrapperPINVOKE.new_TapAPIContract(), true) {
   }
 
 }

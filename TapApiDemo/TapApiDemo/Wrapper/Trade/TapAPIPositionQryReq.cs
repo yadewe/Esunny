@@ -32,7 +32,7 @@ public class TapAPIPositionQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIPositionQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIPositionQryReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,15 +42,15 @@ public class TapAPIPositionQryReq : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIPositionQryReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIPositionQryReq_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIPositionQryReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIPositionQryReq_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIPositionQryReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIPositionQryReq(), true) {
+  public TapAPIPositionQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIPositionQryReq(), true) {
   }
 
 }

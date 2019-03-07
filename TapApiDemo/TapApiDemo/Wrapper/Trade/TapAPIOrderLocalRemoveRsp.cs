@@ -32,7 +32,7 @@ public class TapAPIOrderLocalRemoveRsp : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIOrderLocalRemoveRsp(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIOrderLocalRemoveRsp(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,10 +42,10 @@ public class TapAPIOrderLocalRemoveRsp : global::System.IDisposable {
 
   public TapAPIOrderLocalRemoveReq req {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalRemoveRsp_req_set(swigCPtr, TapAPIOrderLocalRemoveReq.getCPtr(value));
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_req_set(swigCPtr, TapAPIOrderLocalRemoveReq.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalRemoveRsp_req_get(swigCPtr);
+      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_req_get(swigCPtr);
       TapAPIOrderLocalRemoveReq ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIOrderLocalRemoveReq(cPtr, false);
       return ret;
     } 
@@ -53,35 +53,35 @@ public class TapAPIOrderLocalRemoveRsp : global::System.IDisposable {
 
   public string ClientLocalIP {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalRemoveRsp_ClientLocalIP_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientLocalIP_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalRemoveRsp_ClientLocalIP_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientLocalIP_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ClientMac {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalRemoveRsp_ClientMac_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientMac_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalRemoveRsp_ClientMac_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientMac_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ClientIP {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalRemoveRsp_ClientIP_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientIP_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalRemoveRsp_ClientIP_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientIP_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIOrderLocalRemoveRsp() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIOrderLocalRemoveRsp(), true) {
+  public TapAPIOrderLocalRemoveRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderLocalRemoveRsp(), true) {
   }
 
 }

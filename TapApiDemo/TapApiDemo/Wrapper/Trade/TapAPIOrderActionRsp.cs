@@ -32,7 +32,7 @@ public class TapAPIOrderActionRsp : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIOrderActionRsp(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIOrderActionRsp(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,26 +42,26 @@ public class TapAPIOrderActionRsp : global::System.IDisposable {
 
   public char ActionType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderActionRsp_ActionType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderActionRsp_ActionType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderActionRsp_ActionType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIOrderActionRsp_ActionType_get(swigCPtr);
       return ret;
     } 
   }
 
   public TapAPIOrderInfo OrderInfo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderActionRsp_OrderInfo_set(swigCPtr, TapAPIOrderInfo.getCPtr(value));
+      TapTradeWrapperPINVOKE.TapAPIOrderActionRsp_OrderInfo_set(swigCPtr, TapAPIOrderInfo.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.TapAPIOrderActionRsp_OrderInfo_get(swigCPtr);
+      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIOrderActionRsp_OrderInfo_get(swigCPtr);
       TapAPIOrderInfo ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(cPtr, false);
       return ret;
     } 
   }
 
-  public TapAPIOrderActionRsp() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIOrderActionRsp(), true) {
+  public TapAPIOrderActionRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderActionRsp(), true) {
   }
 
 }

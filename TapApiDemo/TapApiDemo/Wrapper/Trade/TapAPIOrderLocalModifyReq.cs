@@ -32,7 +32,7 @@ public class TapAPIOrderLocalModifyReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIOrderLocalModifyReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIOrderLocalModifyReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,10 +42,10 @@ public class TapAPIOrderLocalModifyReq : global::System.IDisposable {
 
   public TapAPIOrderLocalInputReq req {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalModifyReq_req_set(swigCPtr, TapAPIOrderLocalInputReq.getCPtr(value));
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalModifyReq_req_set(swigCPtr, TapAPIOrderLocalInputReq.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalModifyReq_req_get(swigCPtr);
+      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIOrderLocalModifyReq_req_get(swigCPtr);
       TapAPIOrderLocalInputReq ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIOrderLocalInputReq(cPtr, false);
       return ret;
     } 
@@ -53,25 +53,25 @@ public class TapAPIOrderLocalModifyReq : global::System.IDisposable {
 
   public char ServerFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalModifyReq_ServerFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalModifyReq_ServerFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalModifyReq_ServerFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalModifyReq_ServerFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OrderNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalModifyReq_OrderNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderLocalModifyReq_OrderNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderLocalModifyReq_OrderNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalModifyReq_OrderNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIOrderLocalModifyReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIOrderLocalModifyReq(), true) {
+  public TapAPIOrderLocalModifyReq() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderLocalModifyReq(), true) {
   }
 
 }

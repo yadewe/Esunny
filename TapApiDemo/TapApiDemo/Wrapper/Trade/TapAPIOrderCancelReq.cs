@@ -32,7 +32,7 @@ public class TapAPIOrderCancelReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIOrderCancelReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIOrderCancelReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,55 +42,55 @@ public class TapAPIOrderCancelReq : global::System.IDisposable {
 
   public int RefInt {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_RefInt_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefInt_set(swigCPtr, value);
     } 
     get {
-      int ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_RefInt_get(swigCPtr);
+      int ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefInt_get(swigCPtr);
       return ret;
     } 
   }
 
   public double RefDouble {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_RefDouble_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefDouble_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_RefDouble_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefDouble_get(swigCPtr);
       return ret;
     } 
   }
 
   public string RefString {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_RefString_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefString_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_RefString_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefString_get(swigCPtr);
       return ret;
     } 
   }
 
   public char ServerFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_ServerFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_ServerFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_ServerFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_ServerFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OrderNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_OrderNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_OrderNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderCancelReq_OrderNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_OrderNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIOrderCancelReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIOrderCancelReq(), true) {
+  public TapAPIOrderCancelReq() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderCancelReq(), true) {
   }
 
 }

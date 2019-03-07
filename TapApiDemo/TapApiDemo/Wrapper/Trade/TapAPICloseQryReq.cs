@@ -32,7 +32,7 @@ public class TapAPICloseQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPICloseQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPICloseQryReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,45 +42,45 @@ public class TapAPICloseQryReq : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICloseQryReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICloseQryReq_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICloseQryReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICloseQryReq_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ExchangeNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICloseQryReq_ExchangeNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICloseQryReq_ExchangeNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICloseQryReq_ExchangeNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICloseQryReq_ExchangeNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CommodityType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICloseQryReq_CommodityType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICloseQryReq_CommodityType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICloseQryReq_CommodityType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICloseQryReq_CommodityType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICloseQryReq_CommodityNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICloseQryReq_CommodityNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICloseQryReq_CommodityNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICloseQryReq_CommodityNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPICloseQryReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPICloseQryReq(), true) {
+  public TapAPICloseQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPICloseQryReq(), true) {
   }
 
 }

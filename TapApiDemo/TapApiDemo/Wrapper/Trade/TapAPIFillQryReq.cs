@@ -32,7 +32,7 @@ public class TapAPIFillQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIFillQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIFillQryReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,155 +42,155 @@ public class TapAPIFillQryReq : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ExchangeNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_ExchangeNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_ExchangeNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_ExchangeNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_ExchangeNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CommodityType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_CommodityType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_CommodityType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_CommodityType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_CommodityType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_CommodityNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_CommodityNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_CommodityNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_CommodityNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ContractNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_ContractNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_ContractNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_ContractNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_ContractNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string StrikePrice {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_StrikePrice_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_StrikePrice_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_StrikePrice_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_StrikePrice_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CallOrPutFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_CallOrPutFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_CallOrPutFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_CallOrPutFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_CallOrPutFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public char MatchSource {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_MatchSource_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_MatchSource_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_MatchSource_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_MatchSource_get(swigCPtr);
       return ret;
     } 
   }
 
   public char MatchSide {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_MatchSide_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_MatchSide_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_MatchSide_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_MatchSide_get(swigCPtr);
       return ret;
     } 
   }
 
   public char PositionEffect {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_PositionEffect_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_PositionEffect_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_PositionEffect_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_PositionEffect_get(swigCPtr);
       return ret;
     } 
   }
 
   public char ServerFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_ServerFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_ServerFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_ServerFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_ServerFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OrderNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_OrderNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_OrderNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_OrderNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_OrderNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string UpperNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_UpperNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_UpperNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_UpperNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_UpperNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char IsDeleted {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_IsDeleted_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_IsDeleted_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_IsDeleted_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_IsDeleted_get(swigCPtr);
       return ret;
     } 
   }
 
   public char IsAddOne {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_IsAddOne_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFillQryReq_IsAddOne_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFillQryReq_IsAddOne_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFillQryReq_IsAddOne_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIFillQryReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIFillQryReq(), true) {
+  public TapAPIFillQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIFillQryReq(), true) {
   }
 
 }

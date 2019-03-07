@@ -32,7 +32,7 @@ public class TapAPIAmendOrder : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIAmendOrder(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIAmendOrder(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,10 +42,10 @@ public class TapAPIAmendOrder : global::System.IDisposable {
 
   public TapAPINewOrder ReqData {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAmendOrder_ReqData_set(swigCPtr, TapAPINewOrder.getCPtr(value));
+      TapTradeWrapperPINVOKE.TapAPIAmendOrder_ReqData_set(swigCPtr, TapAPINewOrder.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.TapAPIAmendOrder_ReqData_get(swigCPtr);
+      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIAmendOrder_ReqData_get(swigCPtr);
       TapAPINewOrder ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPINewOrder(cPtr, false);
       return ret;
     } 
@@ -53,25 +53,25 @@ public class TapAPIAmendOrder : global::System.IDisposable {
 
   public char ServerFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAmendOrder_ServerFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAmendOrder_ServerFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAmendOrder_ServerFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAmendOrder_ServerFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OrderNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAmendOrder_OrderNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAmendOrder_OrderNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAmendOrder_OrderNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAmendOrder_OrderNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIAmendOrder() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIAmendOrder(), true) {
+  public TapAPIAmendOrder() : this(TapTradeWrapperPINVOKE.new_TapAPIAmendOrder(), true) {
   }
 
 }

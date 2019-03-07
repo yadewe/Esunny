@@ -32,7 +32,7 @@ public class TapAPITradeMessage : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPITradeMessage(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPITradeMessage(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,115 +42,115 @@ public class TapAPITradeMessage : global::System.IDisposable {
 
   public uint SerialID {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_SerialID_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_SerialID_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_SerialID_get(swigCPtr);
+      uint ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_SerialID_get(swigCPtr);
       return ret;
     } 
   }
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string TMsgValidDateTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgValidDateTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgValidDateTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgValidDateTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgValidDateTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public string TMsgTitle {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgTitle_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgTitle_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgTitle_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgTitle_get(swigCPtr);
       return ret;
     } 
   }
 
   public string TMsgContent {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgContent_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgContent_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgContent_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgContent_get(swigCPtr);
       return ret;
     } 
   }
 
   public char TMsgType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgType_get(swigCPtr);
       return ret;
     } 
   }
 
   public char TMsgLevel {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgLevel_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgLevel_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_TMsgLevel_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgLevel_get(swigCPtr);
       return ret;
     } 
   }
 
   public char IsSendBySMS {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_IsSendBySMS_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendBySMS_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_IsSendBySMS_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendBySMS_get(swigCPtr);
       return ret;
     } 
   }
 
   public char IsSendByEMail {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_IsSendByEMail_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendByEMail_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_IsSendByEMail_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendByEMail_get(swigCPtr);
       return ret;
     } 
   }
 
   public string Sender {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_Sender_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_Sender_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_Sender_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_Sender_get(swigCPtr);
       return ret;
     } 
   }
 
   public string SendDateTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_SendDateTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPITradeMessage_SendDateTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPITradeMessage_SendDateTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_SendDateTime_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPITradeMessage() : this(TapTradeWrapperAPIPINVOKE.new_TapAPITradeMessage(), true) {
+  public TapAPITradeMessage() : this(TapTradeWrapperPINVOKE.new_TapAPITradeMessage(), true) {
   }
 
 }

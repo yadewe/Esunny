@@ -32,7 +32,7 @@ public class TapAPIPositionProfitNotice : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIPositionProfitNotice(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIPositionProfitNotice(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,26 +42,26 @@ public class TapAPIPositionProfitNotice : global::System.IDisposable {
 
   public char IsLast {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIPositionProfitNotice_IsLast_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_IsLast_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIPositionProfitNotice_IsLast_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_IsLast_get(swigCPtr);
       return ret;
     } 
   }
 
   public TapAPIPositionProfit Data {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIPositionProfitNotice_Data_set(swigCPtr, TapAPIPositionProfit.getCPtr(value));
+      TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_Data_set(swigCPtr, TapAPIPositionProfit.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.TapAPIPositionProfitNotice_Data_get(swigCPtr);
+      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_Data_get(swigCPtr);
       TapAPIPositionProfit ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIPositionProfit(cPtr, false);
       return ret;
     } 
   }
 
-  public TapAPIPositionProfitNotice() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIPositionProfitNotice(), true) {
+  public TapAPIPositionProfitNotice() : this(TapTradeWrapperPINVOKE.new_TapAPIPositionProfitNotice(), true) {
   }
 
 }

@@ -32,7 +32,7 @@ public class TapAPIAccountInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIAccountInfo(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIAccountInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,75 +42,75 @@ public class TapAPIAccountInfo : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char AccountType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountType_get(swigCPtr);
       return ret;
     } 
   }
 
   public char AccountState {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountState_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountState_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountState_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountState_get(swigCPtr);
       return ret;
     } 
   }
 
   public char AccountTradeRight {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountTradeRight_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountTradeRight_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountTradeRight_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountTradeRight_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityGroupNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_CommodityGroupNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountInfo_CommodityGroupNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_CommodityGroupNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_CommodityGroupNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string AccountShortName {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountShortName_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountShortName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountShortName_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountShortName_get(swigCPtr);
       return ret;
     } 
   }
 
   public string AccountEnShortName {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountEnShortName_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountEnShortName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountInfo_AccountEnShortName_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountEnShortName_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIAccountInfo() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIAccountInfo(), true) {
+  public TapAPIAccountInfo() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountInfo(), true) {
   }
 
 }

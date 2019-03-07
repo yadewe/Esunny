@@ -32,7 +32,7 @@ public class TapAPIFundData : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIFundData(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIFundData(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,415 +42,415 @@ public class TapAPIFundData : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFundData_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CurrencyGroupNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_CurrencyGroupNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_CurrencyGroupNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_CurrencyGroupNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFundData_CurrencyGroupNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CurrencyNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_CurrencyNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_CurrencyNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_CurrencyNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFundData_CurrencyNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public double TradeRate {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_TradeRate_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_TradeRate_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_TradeRate_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_TradeRate_get(swigCPtr);
       return ret;
     } 
   }
 
   public char FutureAlg {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_FutureAlg_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_FutureAlg_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_FutureAlg_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFundData_FutureAlg_get(swigCPtr);
       return ret;
     } 
   }
 
   public char OptionAlg {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_OptionAlg_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_OptionAlg_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_OptionAlg_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIFundData_OptionAlg_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PreBalance {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreBalance_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_PreBalance_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreBalance_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_PreBalance_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PreUnExpProfit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreUnExpProfit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_PreUnExpProfit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreUnExpProfit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_PreUnExpProfit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PreLMEPositionProfit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreLMEPositionProfit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_PreLMEPositionProfit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreLMEPositionProfit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_PreLMEPositionProfit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PreEquity {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreEquity_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_PreEquity_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreEquity_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_PreEquity_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PreAvailable1 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreAvailable1_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_PreAvailable1_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreAvailable1_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_PreAvailable1_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PreMarketEquity {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreMarketEquity_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_PreMarketEquity_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_PreMarketEquity_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_PreMarketEquity_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CashInValue {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_CashInValue_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_CashInValue_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_CashInValue_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_CashInValue_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CashOutValue {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_CashOutValue_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_CashOutValue_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_CashOutValue_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_CashOutValue_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CashAdjustValue {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_CashAdjustValue_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_CashAdjustValue_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_CashAdjustValue_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_CashAdjustValue_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CashPledged {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_CashPledged_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_CashPledged_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_CashPledged_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_CashPledged_get(swigCPtr);
       return ret;
     } 
   }
 
   public double FrozenFee {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_FrozenFee_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_FrozenFee_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_FrozenFee_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_FrozenFee_get(swigCPtr);
       return ret;
     } 
   }
 
   public double FrozenDeposit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_FrozenDeposit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_FrozenDeposit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_FrozenDeposit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_FrozenDeposit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double AccountFee {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_AccountFee_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_AccountFee_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_AccountFee_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_AccountFee_get(swigCPtr);
       return ret;
     } 
   }
 
   public double SwapInValue {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_SwapInValue_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_SwapInValue_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_SwapInValue_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_SwapInValue_get(swigCPtr);
       return ret;
     } 
   }
 
   public double SwapOutValue {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_SwapOutValue_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_SwapOutValue_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_SwapOutValue_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_SwapOutValue_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PremiumIncome {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_PremiumIncome_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_PremiumIncome_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_PremiumIncome_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_PremiumIncome_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PremiumPay {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_PremiumPay_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_PremiumPay_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_PremiumPay_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_PremiumPay_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CloseProfit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_CloseProfit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_CloseProfit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_CloseProfit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_CloseProfit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double FrozenFund {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_FrozenFund_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_FrozenFund_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_FrozenFund_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_FrozenFund_get(swigCPtr);
       return ret;
     } 
   }
 
   public double UnExpProfit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_UnExpProfit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_UnExpProfit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_UnExpProfit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_UnExpProfit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double ExpProfit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_ExpProfit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_ExpProfit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_ExpProfit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_ExpProfit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PositionProfit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_PositionProfit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_PositionProfit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_PositionProfit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_PositionProfit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double LmePositionProfit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_LmePositionProfit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_LmePositionProfit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_LmePositionProfit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_LmePositionProfit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double OptionMarketValue {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_OptionMarketValue_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_OptionMarketValue_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_OptionMarketValue_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_OptionMarketValue_get(swigCPtr);
       return ret;
     } 
   }
 
   public double AccountIntialMargin {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_AccountIntialMargin_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_AccountIntialMargin_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_AccountIntialMargin_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_AccountIntialMargin_get(swigCPtr);
       return ret;
     } 
   }
 
   public double AccountMaintenanceMargin {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_AccountMaintenanceMargin_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_AccountMaintenanceMargin_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_AccountMaintenanceMargin_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_AccountMaintenanceMargin_get(swigCPtr);
       return ret;
     } 
   }
 
   public double UpperInitalMargin {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_UpperInitalMargin_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_UpperInitalMargin_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_UpperInitalMargin_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_UpperInitalMargin_get(swigCPtr);
       return ret;
     } 
   }
 
   public double UpperMaintenanceMargin {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_UpperMaintenanceMargin_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_UpperMaintenanceMargin_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_UpperMaintenanceMargin_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_UpperMaintenanceMargin_get(swigCPtr);
       return ret;
     } 
   }
 
   public double Discount {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_Discount_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_Discount_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_Discount_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_Discount_get(swigCPtr);
       return ret;
     } 
   }
 
   public double Balance {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_Balance_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_Balance_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_Balance_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_Balance_get(swigCPtr);
       return ret;
     } 
   }
 
   public double Equity {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_Equity_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_Equity_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_Equity_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_Equity_get(swigCPtr);
       return ret;
     } 
   }
 
   public double Available {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_Available_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_Available_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_Available_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_Available_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CanDraw {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_CanDraw_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_CanDraw_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_CanDraw_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_CanDraw_get(swigCPtr);
       return ret;
     } 
   }
 
   public double MarketEquity {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_MarketEquity_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_MarketEquity_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_MarketEquity_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_MarketEquity_get(swigCPtr);
       return ret;
     } 
   }
 
   public double AuthMoney {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundData_AuthMoney_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundData_AuthMoney_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIFundData_AuthMoney_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIFundData_AuthMoney_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIFundData() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIFundData(), true) {
+  public TapAPIFundData() : this(TapTradeWrapperPINVOKE.new_TapAPIFundData(), true) {
   }
 
 }

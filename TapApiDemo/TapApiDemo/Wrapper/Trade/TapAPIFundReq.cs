@@ -32,7 +32,7 @@ public class TapAPIFundReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIFundReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIFundReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,15 +42,15 @@ public class TapAPIFundReq : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIFundReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIFundReq_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIFundReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIFundReq_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIFundReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIFundReq(), true) {
+  public TapAPIFundReq() : this(TapTradeWrapperPINVOKE.new_TapAPIFundReq(), true) {
   }
 
 }

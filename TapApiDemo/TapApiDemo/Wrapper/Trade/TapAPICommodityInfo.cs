@@ -32,7 +32,7 @@ public class TapAPICommodityInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPICommodityInfo(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPICommodityInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,245 +42,245 @@ public class TapAPICommodityInfo : global::System.IDisposable {
 
   public string ExchangeNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_ExchangeNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_ExchangeNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_ExchangeNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_ExchangeNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CommodityType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityName {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityName_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityName_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityName_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityEngName {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityEngName_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityEngName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityEngName_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityEngName_get(swigCPtr);
       return ret;
     } 
   }
 
   public string RelateExchangeNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateExchangeNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateExchangeNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateExchangeNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateExchangeNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char RelateCommodityType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateCommodityType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateCommodityType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateCommodityType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateCommodityType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string RelateCommodityNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateCommodityNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateCommodityNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateCommodityNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateCommodityNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string RelateExchangeNo2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateExchangeNo2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateExchangeNo2_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateExchangeNo2_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateExchangeNo2_get(swigCPtr);
       return ret;
     } 
   }
 
   public char RelateCommodityType2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateCommodityType2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateCommodityType2_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateCommodityType2_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateCommodityType2_get(swigCPtr);
       return ret;
     } 
   }
 
   public string RelateCommodityNo2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateCommodityNo2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateCommodityNo2_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_RelateCommodityNo2_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_RelateCommodityNo2_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CurrencyGroupNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CurrencyGroupNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_CurrencyGroupNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CurrencyGroupNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_CurrencyGroupNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string TradeCurrency {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_TradeCurrency_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_TradeCurrency_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_TradeCurrency_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_TradeCurrency_get(swigCPtr);
       return ret;
     } 
   }
 
   public double ContractSize {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_ContractSize_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_ContractSize_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_ContractSize_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_ContractSize_get(swigCPtr);
       return ret;
     } 
   }
 
   public char OpenCloseMode {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_OpenCloseMode_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_OpenCloseMode_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_OpenCloseMode_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_OpenCloseMode_get(swigCPtr);
       return ret;
     } 
   }
 
   public double StrikePriceTimes {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_StrikePriceTimes_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_StrikePriceTimes_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_StrikePriceTimes_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_StrikePriceTimes_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CommodityTickSize {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityTickSize_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityTickSize_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityTickSize_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityTickSize_get(swigCPtr);
       return ret;
     } 
   }
 
   public int CommodityDenominator {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityDenominator_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityDenominator_set(swigCPtr, value);
     } 
     get {
-      int ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityDenominator_get(swigCPtr);
+      int ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityDenominator_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CmbDirect {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CmbDirect_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_CmbDirect_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CmbDirect_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_CmbDirect_get(swigCPtr);
       return ret;
     } 
   }
 
   public char DeliveryMode {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_DeliveryMode_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_DeliveryMode_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_DeliveryMode_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_DeliveryMode_get(swigCPtr);
       return ret;
     } 
   }
 
   public int DeliveryDays {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_DeliveryDays_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_DeliveryDays_set(swigCPtr, value);
     } 
     get {
-      int ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_DeliveryDays_get(swigCPtr);
+      int ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_DeliveryDays_get(swigCPtr);
       return ret;
     } 
   }
 
   public string AddOneTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_AddOneTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_AddOneTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_AddOneTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_AddOneTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public int CommodityTimeZone {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityTimeZone_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityTimeZone_set(swigCPtr, value);
     } 
     get {
-      int ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_CommodityTimeZone_get(swigCPtr);
+      int ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_CommodityTimeZone_get(swigCPtr);
       return ret;
     } 
   }
 
   public char IsAddOne {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_IsAddOne_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPICommodityInfo_IsAddOne_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPICommodityInfo_IsAddOne_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPICommodityInfo_IsAddOne_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPICommodityInfo() : this(TapTradeWrapperAPIPINVOKE.new_TapAPICommodityInfo(), true) {
+  public TapAPICommodityInfo() : this(TapTradeWrapperPINVOKE.new_TapAPICommodityInfo(), true) {
   }
 
 }

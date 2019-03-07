@@ -32,7 +32,7 @@ public class TapAPINewOrder : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPINewOrder(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPINewOrder(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,355 +42,355 @@ public class TapAPINewOrder : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ExchangeNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ExchangeNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_ExchangeNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ExchangeNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_ExchangeNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CommodityType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_CommodityType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_CommodityType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_CommodityType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_CommodityType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_CommodityNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_CommodityNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_CommodityNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_CommodityNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ContractNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ContractNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_ContractNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ContractNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_ContractNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string StrikePrice {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_StrikePrice_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_StrikePrice_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_StrikePrice_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_StrikePrice_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CallOrPutFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_CallOrPutFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_CallOrPutFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_CallOrPutFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_CallOrPutFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ContractNo2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ContractNo2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_ContractNo2_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ContractNo2_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_ContractNo2_get(swigCPtr);
       return ret;
     } 
   }
 
   public string StrikePrice2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_StrikePrice2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_StrikePrice2_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_StrikePrice2_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_StrikePrice2_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CallOrPutFlag2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_CallOrPutFlag2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_CallOrPutFlag2_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_CallOrPutFlag2_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_CallOrPutFlag2_get(swigCPtr);
       return ret;
     } 
   }
 
   public char OrderType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_OrderType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_OrderType_get(swigCPtr);
       return ret;
     } 
   }
 
   public char OrderSource {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderSource_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_OrderSource_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderSource_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_OrderSource_get(swigCPtr);
       return ret;
     } 
   }
 
   public char TimeInForce {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_TimeInForce_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_TimeInForce_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_TimeInForce_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_TimeInForce_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ExpireTime {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ExpireTime_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_ExpireTime_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ExpireTime_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_ExpireTime_get(swigCPtr);
       return ret;
     } 
   }
 
   public char IsRiskOrder {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_IsRiskOrder_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_IsRiskOrder_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_IsRiskOrder_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_IsRiskOrder_get(swigCPtr);
       return ret;
     } 
   }
 
   public char OrderSide {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderSide_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_OrderSide_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderSide_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_OrderSide_get(swigCPtr);
       return ret;
     } 
   }
 
   public char PositionEffect {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_PositionEffect_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_PositionEffect_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_PositionEffect_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_PositionEffect_get(swigCPtr);
       return ret;
     } 
   }
 
   public char PositionEffect2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_PositionEffect2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_PositionEffect2_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_PositionEffect2_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_PositionEffect2_get(swigCPtr);
       return ret;
     } 
   }
 
   public string InquiryNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_InquiryNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_InquiryNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_InquiryNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_InquiryNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char HedgeFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_HedgeFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_HedgeFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_HedgeFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_HedgeFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public double OrderPrice {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderPrice_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_OrderPrice_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderPrice_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPINewOrder_OrderPrice_get(swigCPtr);
       return ret;
     } 
   }
 
   public double OrderPrice2 {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderPrice2_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_OrderPrice2_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderPrice2_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPINewOrder_OrderPrice2_get(swigCPtr);
       return ret;
     } 
   }
 
   public double StopPrice {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_StopPrice_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_StopPrice_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_StopPrice_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPINewOrder_StopPrice_get(swigCPtr);
       return ret;
     } 
   }
 
   public uint OrderQty {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderQty_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_OrderQty_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderQty_get(swigCPtr);
+      uint ret = TapTradeWrapperPINVOKE.TapAPINewOrder_OrderQty_get(swigCPtr);
       return ret;
     } 
   }
 
   public uint OrderMinQty {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderMinQty_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_OrderMinQty_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_OrderMinQty_get(swigCPtr);
+      uint ret = TapTradeWrapperPINVOKE.TapAPINewOrder_OrderMinQty_get(swigCPtr);
       return ret;
     } 
   }
 
   public uint MinClipSize {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_MinClipSize_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_MinClipSize_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_MinClipSize_get(swigCPtr);
+      uint ret = TapTradeWrapperPINVOKE.TapAPINewOrder_MinClipSize_get(swigCPtr);
       return ret;
     } 
   }
 
   public uint MaxClipSize {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_MaxClipSize_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_MaxClipSize_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_MaxClipSize_get(swigCPtr);
+      uint ret = TapTradeWrapperPINVOKE.TapAPINewOrder_MaxClipSize_get(swigCPtr);
       return ret;
     } 
   }
 
   public int RefInt {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_RefInt_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_RefInt_set(swigCPtr, value);
     } 
     get {
-      int ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_RefInt_get(swigCPtr);
+      int ret = TapTradeWrapperPINVOKE.TapAPINewOrder_RefInt_get(swigCPtr);
       return ret;
     } 
   }
 
   public double RefDouble {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_RefDouble_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_RefDouble_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_RefDouble_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPINewOrder_RefDouble_get(swigCPtr);
       return ret;
     } 
   }
 
   public string RefString {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_RefString_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_RefString_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_RefString_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_RefString_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ClientID {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ClientID_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_ClientID_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_ClientID_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPINewOrder_ClientID_get(swigCPtr);
       return ret;
     } 
   }
 
   public char TacticsType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_TacticsType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_TacticsType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_TacticsType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_TacticsType_get(swigCPtr);
       return ret;
     } 
   }
 
   public char TriggerCondition {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_TriggerCondition_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_TriggerCondition_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_TriggerCondition_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_TriggerCondition_get(swigCPtr);
       return ret;
     } 
   }
 
   public char TriggerPriceType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_TriggerPriceType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_TriggerPriceType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_TriggerPriceType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_TriggerPriceType_get(swigCPtr);
       return ret;
     } 
   }
 
   public char AddOneIsValid {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPINewOrder_AddOneIsValid_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPINewOrder_AddOneIsValid_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPINewOrder_AddOneIsValid_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPINewOrder_AddOneIsValid_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPINewOrder() : this(TapTradeWrapperAPIPINVOKE.new_TapAPINewOrder(), true) {
+  public TapAPINewOrder() : this(TapTradeWrapperPINVOKE.new_TapAPINewOrder(), true) {
   }
 
 }

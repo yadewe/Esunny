@@ -32,7 +32,7 @@ public class TapAPIPositionProfit : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIPositionProfit(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIPositionProfit(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,65 +42,65 @@ public class TapAPIPositionProfit : global::System.IDisposable {
 
   public string PositionNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_PositionNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIPositionProfit_PositionNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_PositionNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIPositionProfit_PositionNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public uint PositionStreamId {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_PositionStreamId_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIPositionProfit_PositionStreamId_set(swigCPtr, value);
     } 
     get {
-      uint ret = TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_PositionStreamId_get(swigCPtr);
+      uint ret = TapTradeWrapperPINVOKE.TapAPIPositionProfit_PositionStreamId_get(swigCPtr);
       return ret;
     } 
   }
 
   public double PositionProfit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_PositionProfit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIPositionProfit_PositionProfit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_PositionProfit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIPositionProfit_PositionProfit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double LMEPositionProfit {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_LMEPositionProfit_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIPositionProfit_LMEPositionProfit_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_LMEPositionProfit_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIPositionProfit_LMEPositionProfit_get(swigCPtr);
       return ret;
     } 
   }
 
   public double OptionMarketValue {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_OptionMarketValue_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIPositionProfit_OptionMarketValue_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_OptionMarketValue_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIPositionProfit_OptionMarketValue_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CalculatePrice {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_CalculatePrice_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIPositionProfit_CalculatePrice_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIPositionProfit_CalculatePrice_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIPositionProfit_CalculatePrice_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIPositionProfit() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIPositionProfit(), true) {
+  public TapAPIPositionProfit() : this(TapTradeWrapperPINVOKE.new_TapAPIPositionProfit(), true) {
   }
 
 }

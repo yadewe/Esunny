@@ -32,7 +32,7 @@ public class TapAPIAuthPasswordReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIAuthPasswordReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIAuthPasswordReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,35 +42,35 @@ public class TapAPIAuthPasswordReq : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAuthPasswordReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAuthPasswordReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char PasswordType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAuthPasswordReq_PasswordType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_PasswordType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAuthPasswordReq_PasswordType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_PasswordType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string Password {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAuthPasswordReq_Password_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_Password_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAuthPasswordReq_Password_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_Password_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIAuthPasswordReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIAuthPasswordReq(), true) {
+  public TapAPIAuthPasswordReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAuthPasswordReq(), true) {
   }
 
 }

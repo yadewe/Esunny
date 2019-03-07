@@ -32,7 +32,7 @@ public class TapAPIOrderMarketDeleteReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIOrderMarketDeleteReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIOrderMarketDeleteReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,35 +42,35 @@ public class TapAPIOrderMarketDeleteReq : global::System.IDisposable {
 
   public char ServerFlag {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderMarketDeleteReq_ServerFlag_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_ServerFlag_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderMarketDeleteReq_ServerFlag_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_ServerFlag_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OrderBuyNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderMarketDeleteReq_OrderBuyNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderBuyNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderMarketDeleteReq_OrderBuyNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderBuyNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OrderSellNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIOrderMarketDeleteReq_OrderSellNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderSellNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIOrderMarketDeleteReq_OrderSellNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderSellNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIOrderMarketDeleteReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIOrderMarketDeleteReq(), true) {
+  public TapAPIOrderMarketDeleteReq() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderMarketDeleteReq(), true) {
   }
 
 }

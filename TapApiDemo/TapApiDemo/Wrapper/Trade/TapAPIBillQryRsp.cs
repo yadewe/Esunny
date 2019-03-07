@@ -32,7 +32,7 @@ public class TapAPIBillQryRsp : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIBillQryRsp(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIBillQryRsp(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,10 +42,10 @@ public class TapAPIBillQryRsp : global::System.IDisposable {
 
   public TapAPIBillQryReq Reqdata {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIBillQryRsp_Reqdata_set(swigCPtr, TapAPIBillQryReq.getCPtr(value));
+      TapTradeWrapperPINVOKE.TapAPIBillQryRsp_Reqdata_set(swigCPtr, TapAPIBillQryReq.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapTradeWrapperAPIPINVOKE.TapAPIBillQryRsp_Reqdata_get(swigCPtr);
+      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIBillQryRsp_Reqdata_get(swigCPtr);
       TapAPIBillQryReq ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIBillQryReq(cPtr, false);
       return ret;
     } 
@@ -53,25 +53,25 @@ public class TapAPIBillQryRsp : global::System.IDisposable {
 
   public int BillLen {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIBillQryRsp_BillLen_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillLen_set(swigCPtr, value);
     } 
     get {
-      int ret = TapTradeWrapperAPIPINVOKE.TapAPIBillQryRsp_BillLen_get(swigCPtr);
+      int ret = TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillLen_get(swigCPtr);
       return ret;
     } 
   }
 
   public string BillText {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIBillQryRsp_BillText_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillText_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIBillQryRsp_BillText_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillText_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIBillQryRsp() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIBillQryRsp(), true) {
+  public TapAPIBillQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIBillQryRsp(), true) {
   }
 
 }

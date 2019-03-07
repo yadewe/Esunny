@@ -32,7 +32,7 @@ public class TapAPIAccountFeeRentQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIAccountFeeRentQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIAccountFeeRentQryReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,15 +42,15 @@ public class TapAPIAccountFeeRentQryReq : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryReq_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryReq_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryReq_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryReq_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIAccountFeeRentQryReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIAccountFeeRentQryReq(), true) {
+  public TapAPIAccountFeeRentQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountFeeRentQryReq(), true) {
   }
 
 }

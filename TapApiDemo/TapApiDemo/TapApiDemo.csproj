@@ -133,12 +133,17 @@
     <Compile Include="Wrapper\Trade\TapAPITradeLoginRspInfo.cs" />
     <Compile Include="Wrapper\Trade\TapAPITradeMessage.cs" />
     <Compile Include="Wrapper\Trade\TapAPITradeMessageReq.cs" />
-    <Compile Include="Wrapper\Trade\TapTradeWrapperAPI.cs" />
-    <Compile Include="Wrapper\Trade\TapTradeWrapperAPIPINVOKE.cs" />
+    <Compile Include="Wrapper\Trade\TapAPITradingCalendarQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapTradeWrapper.cs" />
+    <Compile Include="Wrapper\Trade\TapTradeWrapperPINVOKE.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

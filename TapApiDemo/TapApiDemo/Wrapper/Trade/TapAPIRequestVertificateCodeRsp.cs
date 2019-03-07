@@ -32,7 +32,7 @@ public class TapAPIRequestVertificateCodeRsp : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIRequestVertificateCodeRsp(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIRequestVertificateCodeRsp(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,25 +42,25 @@ public class TapAPIRequestVertificateCodeRsp : global::System.IDisposable {
 
   public string SecondSerialID {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIRequestVertificateCodeRsp_SecondSerialID_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIRequestVertificateCodeRsp_SecondSerialID_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIRequestVertificateCodeRsp_SecondSerialID_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIRequestVertificateCodeRsp_SecondSerialID_get(swigCPtr);
       return ret;
     } 
   }
 
   public int Effective {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIRequestVertificateCodeRsp_Effective_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIRequestVertificateCodeRsp_Effective_set(swigCPtr, value);
     } 
     get {
-      int ret = TapTradeWrapperAPIPINVOKE.TapAPIRequestVertificateCodeRsp_Effective_get(swigCPtr);
+      int ret = TapTradeWrapperPINVOKE.TapAPIRequestVertificateCodeRsp_Effective_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIRequestVertificateCodeRsp() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIRequestVertificateCodeRsp(), true) {
+  public TapAPIRequestVertificateCodeRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIRequestVertificateCodeRsp(), true) {
   }
 
 }

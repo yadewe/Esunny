@@ -32,7 +32,7 @@ public class TapAPIAccountFeeRentQryRsp : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIAccountFeeRentQryRsp(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIAccountFeeRentQryRsp(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,105 +42,105 @@ public class TapAPIAccountFeeRentQryRsp : global::System.IDisposable {
 
   public string AccountNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_AccountNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_AccountNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_AccountNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_AccountNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ExchangeNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_ExchangeNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_ExchangeNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_ExchangeNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_ExchangeNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CommodityType {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityType_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityType_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char MatchSource {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_MatchSource_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_MatchSource_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_MatchSource_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_MatchSource_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CalculateMode {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CalculateMode_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CalculateMode_set(swigCPtr, value);
     } 
     get {
-      char ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CalculateMode_get(swigCPtr);
+      char ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CalculateMode_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CurrencyGroupNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CurrencyNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public double OpenCloseFee {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_OpenCloseFee_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_OpenCloseFee_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_OpenCloseFee_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_OpenCloseFee_get(swigCPtr);
       return ret;
     } 
   }
 
   public double CloseTodayFee {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CloseTodayFee_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CloseTodayFee_set(swigCPtr, value);
     } 
     get {
-      double ret = TapTradeWrapperAPIPINVOKE.TapAPIAccountFeeRentQryRsp_CloseTodayFee_get(swigCPtr);
+      double ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CloseTodayFee_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIAccountFeeRentQryRsp() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIAccountFeeRentQryRsp(), true) {
+  public TapAPIAccountFeeRentQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountFeeRentQryRsp(), true) {
   }
 
 }

@@ -32,7 +32,7 @@ public class TapAPIHisOrderProcessQryReq : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapTradeWrapperAPIPINVOKE.delete_TapAPIHisOrderProcessQryReq(swigCPtr);
+          TapTradeWrapperPINVOKE.delete_TapAPIHisOrderProcessQryReq(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,25 +42,25 @@ public class TapAPIHisOrderProcessQryReq : global::System.IDisposable {
 
   public string Date {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisOrderProcessQryReq_Date_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_Date_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIHisOrderProcessQryReq_Date_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_Date_get(swigCPtr);
       return ret;
     } 
   }
 
   public string OrderNo {
     set {
-      TapTradeWrapperAPIPINVOKE.TapAPIHisOrderProcessQryReq_OrderNo_set(swigCPtr, value);
+      TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_OrderNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapTradeWrapperAPIPINVOKE.TapAPIHisOrderProcessQryReq_OrderNo_get(swigCPtr);
+      string ret = TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_OrderNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIHisOrderProcessQryReq() : this(TapTradeWrapperAPIPINVOKE.new_TapAPIHisOrderProcessQryReq(), true) {
+  public TapAPIHisOrderProcessQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIHisOrderProcessQryReq(), true) {
   }
 
 }
