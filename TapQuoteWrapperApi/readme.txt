@@ -1,7 +1,7 @@
 
 VC++=》包含目录-》$(SolutionDir)TapAPI;$(IncludePath)
 
-VC++=》库目录=》$(SolutionDir)TapAPI\lib\windows;$(LibraryPath)
+VC++=》库目录=》$(SolutionDir)TapAPI\lib;$(LibraryPath)
 
 
 c/c++=》预处理器=》预处理器定义=》_WINDLL;%(PreprocessorDefinitions)
