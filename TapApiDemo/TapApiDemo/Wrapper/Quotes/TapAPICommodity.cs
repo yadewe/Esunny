@@ -32,7 +32,7 @@ public class TapAPICommodity : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_TapAPICommodity(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_TapAPICommodity(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,35 +42,35 @@ public class TapAPICommodity : global::System.IDisposable {
 
   public string ExchangeNo {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPICommodity_ExchangeNo_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPICommodity_ExchangeNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPICommodity_ExchangeNo_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPICommodity_ExchangeNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char CommodityType {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPICommodity_CommodityType_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPICommodity_CommodityType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapQuoteWrapperAPIPINVOKE.TapAPICommodity_CommodityType_get(swigCPtr);
+      char ret = TapQuoteWrapperPINVOKE.TapAPICommodity_CommodityType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string CommodityNo {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPICommodity_CommodityNo_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPICommodity_CommodityNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPICommodity_CommodityNo_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPICommodity_CommodityNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPICommodity() : this(TapQuoteWrapperAPIPINVOKE.new_TapAPICommodity(), true) {
+  public TapAPICommodity() : this(TapQuoteWrapperPINVOKE.new_TapAPICommodity(), true) {
   }
 
 }

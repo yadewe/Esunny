@@ -32,7 +32,7 @@ public class TapAPIQuoteLoginAuth : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_TapAPIQuoteLoginAuth(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_TapAPIQuoteLoginAuth(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,75 +42,75 @@ public class TapAPIQuoteLoginAuth : global::System.IDisposable {
 
   public string UserNo {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_UserNo_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_UserNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_UserNo_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_UserNo_get(swigCPtr);
       return ret;
     } 
   }
 
   public char ISModifyPassword {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_ISModifyPassword_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISModifyPassword_set(swigCPtr, value);
     } 
     get {
-      char ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_ISModifyPassword_get(swigCPtr);
+      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISModifyPassword_get(swigCPtr);
       return ret;
     } 
   }
 
   public string Password {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_Password_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_Password_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_Password_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_Password_get(swigCPtr);
       return ret;
     } 
   }
 
   public string NewPassword {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_NewPassword_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_NewPassword_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_NewPassword_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_NewPassword_get(swigCPtr);
       return ret;
     } 
   }
 
   public string QuoteTempPassword {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_QuoteTempPassword_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_QuoteTempPassword_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_QuoteTempPassword_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_QuoteTempPassword_get(swigCPtr);
       return ret;
     } 
   }
 
   public char ISDDA {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_ISDDA_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISDDA_set(swigCPtr, value);
     } 
     get {
-      char ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_ISDDA_get(swigCPtr);
+      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISDDA_get(swigCPtr);
       return ret;
     } 
   }
 
   public string DDASerialNo {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_DDASerialNo_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_DDASerialNo_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteLoginAuth_DDASerialNo_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_DDASerialNo_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIQuoteLoginAuth() : this(TapQuoteWrapperAPIPINVOKE.new_TapAPIQuoteLoginAuth(), true) {
+  public TapAPIQuoteLoginAuth() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteLoginAuth(), true) {
   }
 
 }

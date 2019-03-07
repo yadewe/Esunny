@@ -66,8 +66,8 @@
     <Compile Include="Wrapper\Quotes\TapAPIQuoteLoginAuth.cs" />
     <Compile Include="Wrapper\Quotes\TapAPIQuoteWhole.cs" />
     <Compile Include="Wrapper\Quotes\TapAPIQuotLoginRspInfo.cs" />
-    <Compile Include="Wrapper\Quotes\TapQuoteWrapperAPI.cs" />
-    <Compile Include="Wrapper\Quotes\TapQuoteWrapperAPIPINVOKE.cs" />
+    <Compile Include="Wrapper\Quotes\TapQuoteWrapper.cs" />
+    <Compile Include="Wrapper\Quotes\TapQuoteWrapperPINVOKE.cs" />
     <Compile Include="Wrapper\Trade\ITapTradeAPI.cs" />
     <Compile Include="Wrapper\Trade\ITapTradeAPINotify.cs" />
     <Compile Include="Wrapper\Trade\TapAPIAccountCashAdjustQryReq.cs" />

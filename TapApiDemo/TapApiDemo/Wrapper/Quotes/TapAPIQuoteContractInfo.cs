@@ -32,7 +32,7 @@ public class TapAPIQuoteContractInfo : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          TapQuoteWrapperAPIPINVOKE.delete_TapAPIQuoteContractInfo(swigCPtr);
+          TapQuoteWrapperPINVOKE.delete_TapAPIQuoteContractInfo(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -42,10 +42,10 @@ public class TapAPIQuoteContractInfo : global::System.IDisposable {
 
   public TapAPIContract Contract {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_Contract_set(swigCPtr, TapAPIContract.getCPtr(value));
+      TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_Contract_set(swigCPtr, TapAPIContract.getCPtr(value));
     } 
     get {
-      global::System.IntPtr cPtr = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_Contract_get(swigCPtr);
+      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_Contract_get(swigCPtr);
       TapAPIContract ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIContract(cPtr, false);
       return ret;
     } 
@@ -53,65 +53,65 @@ public class TapAPIQuoteContractInfo : global::System.IDisposable {
 
   public char ContractType {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_ContractType_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_ContractType_set(swigCPtr, value);
     } 
     get {
-      char ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_ContractType_get(swigCPtr);
+      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_ContractType_get(swigCPtr);
       return ret;
     } 
   }
 
   public string QuoteUnderlyingContract {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_QuoteUnderlyingContract_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_QuoteUnderlyingContract_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_QuoteUnderlyingContract_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_QuoteUnderlyingContract_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ContractName {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_ContractName_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_ContractName_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_ContractName_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_ContractName_get(swigCPtr);
       return ret;
     } 
   }
 
   public string ContractExpDate {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_ContractExpDate_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_ContractExpDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_ContractExpDate_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_ContractExpDate_get(swigCPtr);
       return ret;
     } 
   }
 
   public string LastTradeDate {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_LastTradeDate_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_LastTradeDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_LastTradeDate_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_LastTradeDate_get(swigCPtr);
       return ret;
     } 
   }
 
   public string FirstNoticeDate {
     set {
-      TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_FirstNoticeDate_set(swigCPtr, value);
+      TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_FirstNoticeDate_set(swigCPtr, value);
     } 
     get {
-      string ret = TapQuoteWrapperAPIPINVOKE.TapAPIQuoteContractInfo_FirstNoticeDate_get(swigCPtr);
+      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteContractInfo_FirstNoticeDate_get(swigCPtr);
       return ret;
     } 
   }
 
-  public TapAPIQuoteContractInfo() : this(TapQuoteWrapperAPIPINVOKE.new_TapAPIQuoteContractInfo(), true) {
+  public TapAPIQuoteContractInfo() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteContractInfo(), true) {
   }
 
 }
