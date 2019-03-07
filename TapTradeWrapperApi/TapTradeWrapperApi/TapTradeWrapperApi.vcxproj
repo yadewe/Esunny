@@ -19,14 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\iTapAPICommDef.h" />
-    <ClInclude Include="..\iTapAPIError.h" />
-    <ClInclude Include="..\iTapTradeAPI.h" />
-    <ClInclude Include="..\iTapTradeAPIDataType.h" />
-    <ClInclude Include="..\TapTradeWrapperApi.h" />
+    <ClInclude Include="..\..\swig-TapTradeApi\TapTradeWrapperApi.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\TapTradeWrapperApi.cpp" />
+    <ClCompile Include="..\..\swig-TapTradeApi\TapTradeWrapperApi.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -83,7 +79,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)TapAPI;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)TapAPI\lib\windows;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)TapAPI\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>

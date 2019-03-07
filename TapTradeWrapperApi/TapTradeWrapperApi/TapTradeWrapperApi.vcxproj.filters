@@ -11,24 +11,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\TapTradeWrapperApi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\iTapAPICommDef.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\iTapAPIError.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\iTapTradeAPI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\iTapTradeAPIDataType.h">
+    <ClInclude Include="..\..\swig-TapTradeApi\TapTradeWrapperApi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\TapTradeWrapperApi.cpp">
+    <ClCompile Include="..\..\swig-TapTradeApi\TapTradeWrapperApi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
