@@ -244,7 +244,7 @@ static void SWIGUNUSED SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpExcepti
 #ifdef __cplusplus
 extern "C" 
 #endif
-SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_TapTradeWrapperAPI(
+SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_TapTradeWrapper(
                                                 SWIG_CSharpExceptionCallback_t applicationCallback,
                                                 SWIG_CSharpExceptionCallback_t arithmeticCallback,
                                                 SWIG_CSharpExceptionCallback_t divideByZeroCallback, 
@@ -272,7 +272,7 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_TapTradeWrapperAPI(
 #ifdef __cplusplus
 extern "C" 
 #endif
-SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_TapTradeWrapperAPI(
+SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_TapTradeWrapper(
                                                 SWIG_CSharpExceptionArgumentCallback_t argumentCallback,
                                                 SWIG_CSharpExceptionArgumentCallback_t argumentNullCallback,
                                                 SWIG_CSharpExceptionArgumentCallback_t argumentOutOfRangeCallback) {
@@ -290,7 +290,7 @@ static SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
 #ifdef __cplusplus
 extern "C" 
 #endif
-SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_TapTradeWrapperAPI(SWIG_CSharpStringHelperCallback callback) {
+SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_TapTradeWrapper(SWIG_CSharpStringHelperCallback callback) {
   SWIG_csharp_string_callback = callback;
 }
 
@@ -363,10 +363,10 @@ namespace Swig {
 
 	/* 在包装代码中包含头文件 */
 
-#include "iTapAPICommDef.h"  
-#include "iTapTradeAPIDataType.h" 
-#include "iTapAPIError.h"  	
-#include "iTapTradeAPI.h"  
+#include "../TapTradeWrapperApi/TapApi/include/iTapAPICommDef.h"  
+#include "../TapTradeWrapperApi/TapApi/include/iTapTradeAPIDataType.h" 
+#include "../TapTradeWrapperApi/TapApi/include/iTapAPIError.h"  	
+#include "../TapTradeWrapperApi/TapApi/include/iTapTradeAPI.h"  
 
 
 
@@ -489,6 +489,21 @@ void SwigDirector_ITapTradeAPINotify::OnRspAuthPassword(ITapTrade::TAPIUINT32 se
     jsessionID = sessionID;
     jerrorCode = errorCode;
     swig_callbackOnRspAuthPassword(jsessionID, jerrorCode);
+  }
+}
+
+void SwigDirector_ITapTradeAPINotify::OnRspQryTradingDate(ITapTrade::TAPIUINT32 sessionID, ITapTrade::TAPIINT32 errorCode, ITapTrade::TapAPITradingCalendarQryRsp const *info) {
+  unsigned int jsessionID  ;
+  int jerrorCode  ;
+  void * jinfo = 0 ;
+  
+  if (!swig_callbackOnRspQryTradingDate) {
+    throw Swig::DirectorPureVirtualException("ITapTrade::ITapTradeAPINotify::OnRspQryTradingDate");
+  } else {
+    jsessionID = sessionID;
+    jerrorCode = errorCode;
+    jinfo = (void *) info; 
+    swig_callbackOnRspQryTradingDate(jsessionID, jerrorCode, jinfo);
   }
 }
 
@@ -1098,7 +1113,7 @@ void SwigDirector_ITapTradeAPINotify::OnRspFillLocalRemove(ITapTrade::TAPIUINT32
   }
 }
 
-void SwigDirector_ITapTradeAPINotify::swig_connect_director(SWIG_Callback0_t callbackOnConnect, SWIG_Callback1_t callbackOnRspLogin, SWIG_Callback2_t callbackOnRtnContactInfo, SWIG_Callback3_t callbackOnRspRequestVertificateCode, SWIG_Callback4_t callbackOnExpriationDate, SWIG_Callback5_t callbackOnAPIReady, SWIG_Callback6_t callbackOnDisconnect, SWIG_Callback7_t callbackOnRspChangePassword, SWIG_Callback8_t callbackOnRspAuthPassword, SWIG_Callback9_t callbackOnRspSetReservedInfo, SWIG_Callback10_t callbackOnRspQryAccount, SWIG_Callback11_t callbackOnRspQryFund, SWIG_Callback12_t callbackOnRtnFund, SWIG_Callback13_t callbackOnRspQryExchange, SWIG_Callback14_t callbackOnRspQryCommodity, SWIG_Callback15_t callbackOnRspQryContract, SWIG_Callback16_t callbackOnRtnContract, SWIG_Callback17_t callbackOnRspOrderAction, SWIG_Callback18_t callbackOnRtnOrder, SWIG_Callback19_t callbackOnRspQryOrder, SWIG_Callback20_t callbackOnRspQryOrderProcess, SWIG_Callback21_t callbackOnRspQryFill, SWIG_Callback22_t callbackOnRtnFill, SWIG_Callback23_t callbackOnRspQryPosition, SWIG_Callback24_t callbackOnRtnPosition, SWIG_Callback25_t callbackOnRspQryPositionSummary, SWIG_Callback26_t callbackOnRtnPositionSummary, SWIG_Callback27_t callbackOnRtnPositionProfit, SWIG_Callback28_t callbackOnRspQryCurrency, SWIG_Callback29_t callbackOnRspQryTradeMessage, SWIG_Callback30_t callbackOnRtnTradeMessage, SWIG_Callback31_t callbackOnRspQryHisOrder, SWIG_Callback32_t callbackOnRspQryHisOrderProcess, SWIG_Callback33_t callbackOnRspQryHisMatch, SWIG_Callback34_t callbackOnRspQryHisPosition, SWIG_Callback35_t callbackOnRspQryHisDelivery, SWIG_Callback36_t callbackOnRspQryAccountCashAdjust, SWIG_Callback37_t callbackOnRspQryBill, SWIG_Callback38_t callbackOnRspQryAccountFeeRent, SWIG_Callback39_t callbackOnRspQryAccountMarginRent, SWIG_Callback40_t callbackOnRspHKMarketOrderInsert, SWIG_Callback41_t callbackOnRspHKMarketOrderDelete, SWIG_Callback42_t callbackOnHKMarketQuoteNotice, SWIG_Callback43_t callbackOnRspOrderLocalRemove, SWIG_Callback44_t callbackOnRspOrderLocalInput, SWIG_Callback45_t callbackOnRspOrderLocalModify, SWIG_Callback46_t callbackOnRspOrderLocalTransfer, SWIG_Callback47_t callbackOnRspFillLocalInput, SWIG_Callback48_t callbackOnRspFillLocalRemove) {
+void SwigDirector_ITapTradeAPINotify::swig_connect_director(SWIG_Callback0_t callbackOnConnect, SWIG_Callback1_t callbackOnRspLogin, SWIG_Callback2_t callbackOnRtnContactInfo, SWIG_Callback3_t callbackOnRspRequestVertificateCode, SWIG_Callback4_t callbackOnExpriationDate, SWIG_Callback5_t callbackOnAPIReady, SWIG_Callback6_t callbackOnDisconnect, SWIG_Callback7_t callbackOnRspChangePassword, SWIG_Callback8_t callbackOnRspAuthPassword, SWIG_Callback9_t callbackOnRspQryTradingDate, SWIG_Callback10_t callbackOnRspSetReservedInfo, SWIG_Callback11_t callbackOnRspQryAccount, SWIG_Callback12_t callbackOnRspQryFund, SWIG_Callback13_t callbackOnRtnFund, SWIG_Callback14_t callbackOnRspQryExchange, SWIG_Callback15_t callbackOnRspQryCommodity, SWIG_Callback16_t callbackOnRspQryContract, SWIG_Callback17_t callbackOnRtnContract, SWIG_Callback18_t callbackOnRspOrderAction, SWIG_Callback19_t callbackOnRtnOrder, SWIG_Callback20_t callbackOnRspQryOrder, SWIG_Callback21_t callbackOnRspQryOrderProcess, SWIG_Callback22_t callbackOnRspQryFill, SWIG_Callback23_t callbackOnRtnFill, SWIG_Callback24_t callbackOnRspQryPosition, SWIG_Callback25_t callbackOnRtnPosition, SWIG_Callback26_t callbackOnRspQryPositionSummary, SWIG_Callback27_t callbackOnRtnPositionSummary, SWIG_Callback28_t callbackOnRtnPositionProfit, SWIG_Callback29_t callbackOnRspQryCurrency, SWIG_Callback30_t callbackOnRspQryTradeMessage, SWIG_Callback31_t callbackOnRtnTradeMessage, SWIG_Callback32_t callbackOnRspQryHisOrder, SWIG_Callback33_t callbackOnRspQryHisOrderProcess, SWIG_Callback34_t callbackOnRspQryHisMatch, SWIG_Callback35_t callbackOnRspQryHisPosition, SWIG_Callback36_t callbackOnRspQryHisDelivery, SWIG_Callback37_t callbackOnRspQryAccountCashAdjust, SWIG_Callback38_t callbackOnRspQryBill, SWIG_Callback39_t callbackOnRspQryAccountFeeRent, SWIG_Callback40_t callbackOnRspQryAccountMarginRent, SWIG_Callback41_t callbackOnRspHKMarketOrderInsert, SWIG_Callback42_t callbackOnRspHKMarketOrderDelete, SWIG_Callback43_t callbackOnHKMarketQuoteNotice, SWIG_Callback44_t callbackOnRspOrderLocalRemove, SWIG_Callback45_t callbackOnRspOrderLocalInput, SWIG_Callback46_t callbackOnRspOrderLocalModify, SWIG_Callback47_t callbackOnRspOrderLocalTransfer, SWIG_Callback48_t callbackOnRspFillLocalInput, SWIG_Callback49_t callbackOnRspFillLocalRemove) {
   swig_callbackOnConnect = callbackOnConnect;
   swig_callbackOnRspLogin = callbackOnRspLogin;
   swig_callbackOnRtnContactInfo = callbackOnRtnContactInfo;
@@ -1108,6 +1123,7 @@ void SwigDirector_ITapTradeAPINotify::swig_connect_director(SWIG_Callback0_t cal
   swig_callbackOnDisconnect = callbackOnDisconnect;
   swig_callbackOnRspChangePassword = callbackOnRspChangePassword;
   swig_callbackOnRspAuthPassword = callbackOnRspAuthPassword;
+  swig_callbackOnRspQryTradingDate = callbackOnRspQryTradingDate;
   swig_callbackOnRspSetReservedInfo = callbackOnRspSetReservedInfo;
   swig_callbackOnRspQryAccount = callbackOnRspQryAccount;
   swig_callbackOnRspQryFund = callbackOnRspQryFund;
@@ -1160,6 +1176,7 @@ void SwigDirector_ITapTradeAPINotify::swig_init_callbacks() {
   swig_callbackOnDisconnect = 0;
   swig_callbackOnRspChangePassword = 0;
   swig_callbackOnRspAuthPassword = 0;
+  swig_callbackOnRspQryTradingDate = 0;
   swig_callbackOnRspSetReservedInfo = 0;
   swig_callbackOnRspQryAccount = 0;
   swig_callbackOnRspQryFund = 0;
@@ -24078,6 +24095,140 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPIFillLocalRemo
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradingCalendarQryRsp_CurrTradeDate_set(void * jarg1, char * jarg2) {
+  ITapTrade::TapAPITradingCalendarQryRsp *arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  char *arg2 ;
+  
+  arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg1; 
+  arg2 = (char *)jarg2; 
+  {
+    if(arg2) {
+      strncpy((char*)arg1->CurrTradeDate, (const char *)arg2, 11-1);
+      arg1->CurrTradeDate[11-1] = 0;
+    } else {
+      arg1->CurrTradeDate[0] = 0;
+    }
+  }
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradingCalendarQryRsp_CurrTradeDate_get(void * jarg1) {
+  char * jresult ;
+  ITapTrade::TapAPITradingCalendarQryRsp *arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg1; 
+  result = (char *) ((arg1)->CurrTradeDate);
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradingCalendarQryRsp_LastSettlementDate_set(void * jarg1, char * jarg2) {
+  ITapTrade::TapAPITradingCalendarQryRsp *arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  char *arg2 ;
+  
+  arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg1; 
+  arg2 = (char *)jarg2; 
+  {
+    if(arg2) {
+      strncpy((char*)arg1->LastSettlementDate, (const char *)arg2, 11-1);
+      arg1->LastSettlementDate[11-1] = 0;
+    } else {
+      arg1->LastSettlementDate[0] = 0;
+    }
+  }
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradingCalendarQryRsp_LastSettlementDate_get(void * jarg1) {
+  char * jresult ;
+  ITapTrade::TapAPITradingCalendarQryRsp *arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg1; 
+  result = (char *) ((arg1)->LastSettlementDate);
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradingCalendarQryRsp_PromptDate_set(void * jarg1, char * jarg2) {
+  ITapTrade::TapAPITradingCalendarQryRsp *arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  char *arg2 ;
+  
+  arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg1; 
+  arg2 = (char *)jarg2; 
+  {
+    if(arg2) {
+      strncpy((char*)arg1->PromptDate, (const char *)arg2, 11-1);
+      arg1->PromptDate[11-1] = 0;
+    } else {
+      arg1->PromptDate[0] = 0;
+    }
+  }
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradingCalendarQryRsp_PromptDate_get(void * jarg1) {
+  char * jresult ;
+  ITapTrade::TapAPITradingCalendarQryRsp *arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg1; 
+  result = (char *) ((arg1)->PromptDate);
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradingCalendarQryRsp_LastPromptDate_set(void * jarg1, char * jarg2) {
+  ITapTrade::TapAPITradingCalendarQryRsp *arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  char *arg2 ;
+  
+  arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg1; 
+  arg2 = (char *)jarg2; 
+  {
+    if(arg2) {
+      strncpy((char*)arg1->LastPromptDate, (const char *)arg2, 11-1);
+      arg1->LastPromptDate[11-1] = 0;
+    } else {
+      arg1->LastPromptDate[0] = 0;
+    }
+  }
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapTradeWrapperApi_TapAPITradingCalendarQryRsp_LastPromptDate_get(void * jarg1) {
+  char * jresult ;
+  ITapTrade::TapAPITradingCalendarQryRsp *arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg1; 
+  result = (char *) ((arg1)->LastPromptDate);
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapTradeWrapperApi_new_TapAPITradingCalendarQryRsp() {
+  void * jresult ;
+  ITapTrade::TapAPITradingCalendarQryRsp *result = 0 ;
+  
+  result = (ITapTrade::TapAPITradingCalendarQryRsp *)new ITapTrade::TapAPITradingCalendarQryRsp();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_TapAPITradingCalendarQryRsp(void * jarg1) {
+  ITapTrade::TapAPITradingCalendarQryRsp *arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  
+  arg1 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg1; 
+  delete arg1;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_TAPIERROR_LOGIN_get() {
   int jresult ;
   int result;
@@ -26552,6 +26703,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspAu
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspQryTradingDate(void * jarg1, unsigned int jarg2, int jarg3, void * jarg4) {
+  ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
+  ITapTrade::TAPIUINT32 arg2 ;
+  ITapTrade::TAPIINT32 arg3 ;
+  ITapTrade::TapAPITradingCalendarQryRsp *arg4 = (ITapTrade::TapAPITradingCalendarQryRsp *) 0 ;
+  
+  arg1 = (ITapTrade::ITapTradeAPINotify *)jarg1; 
+  arg2 = (ITapTrade::TAPIUINT32)jarg2; 
+  arg3 = (ITapTrade::TAPIINT32)jarg3; 
+  arg4 = (ITapTrade::TapAPITradingCalendarQryRsp *)jarg4; 
+  (arg1)->OnRspQryTradingDate(arg2,arg3,(ITapTrade::TapAPITradingCalendarQryRsp const *)arg4);
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_OnRspSetReservedInfo(void * jarg1, unsigned int jarg2, int jarg3, char * jarg4) {
   ITapTrade::ITapTradeAPINotify *arg1 = (ITapTrade::ITapTradeAPINotify *) 0 ;
   ITapTrade::TAPIUINT32 arg2 ;
@@ -27136,11 +27301,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_delete_ITapTradeAPINotify(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_director_connect(void *objarg, SwigDirector_ITapTradeAPINotify::SWIG_Callback0_t callback0, SwigDirector_ITapTradeAPINotify::SWIG_Callback1_t callback1, SwigDirector_ITapTradeAPINotify::SWIG_Callback2_t callback2, SwigDirector_ITapTradeAPINotify::SWIG_Callback3_t callback3, SwigDirector_ITapTradeAPINotify::SWIG_Callback4_t callback4, SwigDirector_ITapTradeAPINotify::SWIG_Callback5_t callback5, SwigDirector_ITapTradeAPINotify::SWIG_Callback6_t callback6, SwigDirector_ITapTradeAPINotify::SWIG_Callback7_t callback7, SwigDirector_ITapTradeAPINotify::SWIG_Callback8_t callback8, SwigDirector_ITapTradeAPINotify::SWIG_Callback9_t callback9, SwigDirector_ITapTradeAPINotify::SWIG_Callback10_t callback10, SwigDirector_ITapTradeAPINotify::SWIG_Callback11_t callback11, SwigDirector_ITapTradeAPINotify::SWIG_Callback12_t callback12, SwigDirector_ITapTradeAPINotify::SWIG_Callback13_t callback13, SwigDirector_ITapTradeAPINotify::SWIG_Callback14_t callback14, SwigDirector_ITapTradeAPINotify::SWIG_Callback15_t callback15, SwigDirector_ITapTradeAPINotify::SWIG_Callback16_t callback16, SwigDirector_ITapTradeAPINotify::SWIG_Callback17_t callback17, SwigDirector_ITapTradeAPINotify::SWIG_Callback18_t callback18, SwigDirector_ITapTradeAPINotify::SWIG_Callback19_t callback19, SwigDirector_ITapTradeAPINotify::SWIG_Callback20_t callback20, SwigDirector_ITapTradeAPINotify::SWIG_Callback21_t callback21, SwigDirector_ITapTradeAPINotify::SWIG_Callback22_t callback22, SwigDirector_ITapTradeAPINotify::SWIG_Callback23_t callback23, SwigDirector_ITapTradeAPINotify::SWIG_Callback24_t callback24, SwigDirector_ITapTradeAPINotify::SWIG_Callback25_t callback25, SwigDirector_ITapTradeAPINotify::SWIG_Callback26_t callback26, SwigDirector_ITapTradeAPINotify::SWIG_Callback27_t callback27, SwigDirector_ITapTradeAPINotify::SWIG_Callback28_t callback28, SwigDirector_ITapTradeAPINotify::SWIG_Callback29_t callback29, SwigDirector_ITapTradeAPINotify::SWIG_Callback30_t callback30, SwigDirector_ITapTradeAPINotify::SWIG_Callback31_t callback31, SwigDirector_ITapTradeAPINotify::SWIG_Callback32_t callback32, SwigDirector_ITapTradeAPINotify::SWIG_Callback33_t callback33, SwigDirector_ITapTradeAPINotify::SWIG_Callback34_t callback34, SwigDirector_ITapTradeAPINotify::SWIG_Callback35_t callback35, SwigDirector_ITapTradeAPINotify::SWIG_Callback36_t callback36, SwigDirector_ITapTradeAPINotify::SWIG_Callback37_t callback37, SwigDirector_ITapTradeAPINotify::SWIG_Callback38_t callback38, SwigDirector_ITapTradeAPINotify::SWIG_Callback39_t callback39, SwigDirector_ITapTradeAPINotify::SWIG_Callback40_t callback40, SwigDirector_ITapTradeAPINotify::SWIG_Callback41_t callback41, SwigDirector_ITapTradeAPINotify::SWIG_Callback42_t callback42, SwigDirector_ITapTradeAPINotify::SWIG_Callback43_t callback43, SwigDirector_ITapTradeAPINotify::SWIG_Callback44_t callback44, SwigDirector_ITapTradeAPINotify::SWIG_Callback45_t callback45, SwigDirector_ITapTradeAPINotify::SWIG_Callback46_t callback46, SwigDirector_ITapTradeAPINotify::SWIG_Callback47_t callback47, SwigDirector_ITapTradeAPINotify::SWIG_Callback48_t callback48) {
+SWIGEXPORT void SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPINotify_director_connect(void *objarg, SwigDirector_ITapTradeAPINotify::SWIG_Callback0_t callback0, SwigDirector_ITapTradeAPINotify::SWIG_Callback1_t callback1, SwigDirector_ITapTradeAPINotify::SWIG_Callback2_t callback2, SwigDirector_ITapTradeAPINotify::SWIG_Callback3_t callback3, SwigDirector_ITapTradeAPINotify::SWIG_Callback4_t callback4, SwigDirector_ITapTradeAPINotify::SWIG_Callback5_t callback5, SwigDirector_ITapTradeAPINotify::SWIG_Callback6_t callback6, SwigDirector_ITapTradeAPINotify::SWIG_Callback7_t callback7, SwigDirector_ITapTradeAPINotify::SWIG_Callback8_t callback8, SwigDirector_ITapTradeAPINotify::SWIG_Callback9_t callback9, SwigDirector_ITapTradeAPINotify::SWIG_Callback10_t callback10, SwigDirector_ITapTradeAPINotify::SWIG_Callback11_t callback11, SwigDirector_ITapTradeAPINotify::SWIG_Callback12_t callback12, SwigDirector_ITapTradeAPINotify::SWIG_Callback13_t callback13, SwigDirector_ITapTradeAPINotify::SWIG_Callback14_t callback14, SwigDirector_ITapTradeAPINotify::SWIG_Callback15_t callback15, SwigDirector_ITapTradeAPINotify::SWIG_Callback16_t callback16, SwigDirector_ITapTradeAPINotify::SWIG_Callback17_t callback17, SwigDirector_ITapTradeAPINotify::SWIG_Callback18_t callback18, SwigDirector_ITapTradeAPINotify::SWIG_Callback19_t callback19, SwigDirector_ITapTradeAPINotify::SWIG_Callback20_t callback20, SwigDirector_ITapTradeAPINotify::SWIG_Callback21_t callback21, SwigDirector_ITapTradeAPINotify::SWIG_Callback22_t callback22, SwigDirector_ITapTradeAPINotify::SWIG_Callback23_t callback23, SwigDirector_ITapTradeAPINotify::SWIG_Callback24_t callback24, SwigDirector_ITapTradeAPINotify::SWIG_Callback25_t callback25, SwigDirector_ITapTradeAPINotify::SWIG_Callback26_t callback26, SwigDirector_ITapTradeAPINotify::SWIG_Callback27_t callback27, SwigDirector_ITapTradeAPINotify::SWIG_Callback28_t callback28, SwigDirector_ITapTradeAPINotify::SWIG_Callback29_t callback29, SwigDirector_ITapTradeAPINotify::SWIG_Callback30_t callback30, SwigDirector_ITapTradeAPINotify::SWIG_Callback31_t callback31, SwigDirector_ITapTradeAPINotify::SWIG_Callback32_t callback32, SwigDirector_ITapTradeAPINotify::SWIG_Callback33_t callback33, SwigDirector_ITapTradeAPINotify::SWIG_Callback34_t callback34, SwigDirector_ITapTradeAPINotify::SWIG_Callback35_t callback35, SwigDirector_ITapTradeAPINotify::SWIG_Callback36_t callback36, SwigDirector_ITapTradeAPINotify::SWIG_Callback37_t callback37, SwigDirector_ITapTradeAPINotify::SWIG_Callback38_t callback38, SwigDirector_ITapTradeAPINotify::SWIG_Callback39_t callback39, SwigDirector_ITapTradeAPINotify::SWIG_Callback40_t callback40, SwigDirector_ITapTradeAPINotify::SWIG_Callback41_t callback41, SwigDirector_ITapTradeAPINotify::SWIG_Callback42_t callback42, SwigDirector_ITapTradeAPINotify::SWIG_Callback43_t callback43, SwigDirector_ITapTradeAPINotify::SWIG_Callback44_t callback44, SwigDirector_ITapTradeAPINotify::SWIG_Callback45_t callback45, SwigDirector_ITapTradeAPINotify::SWIG_Callback46_t callback46, SwigDirector_ITapTradeAPINotify::SWIG_Callback47_t callback47, SwigDirector_ITapTradeAPINotify::SWIG_Callback48_t callback48, SwigDirector_ITapTradeAPINotify::SWIG_Callback49_t callback49) {
   ITapTrade::ITapTradeAPINotify *obj = (ITapTrade::ITapTradeAPINotify *)objarg;
   SwigDirector_ITapTradeAPINotify *director = dynamic_cast<SwigDirector_ITapTradeAPINotify *>(obj);
   if (director) {
-    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback22, callback23, callback24, callback25, callback26, callback27, callback28, callback29, callback30, callback31, callback32, callback33, callback34, callback35, callback36, callback37, callback38, callback39, callback40, callback41, callback42, callback43, callback44, callback45, callback46, callback47, callback48);
+    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback22, callback23, callback24, callback25, callback26, callback27, callback28, callback29, callback30, callback31, callback32, callback33, callback34, callback35, callback36, callback37, callback38, callback39, callback40, callback41, callback42, callback43, callback44, callback45, callback46, callback47, callback48, callback49);
   }
 }
 
@@ -27159,7 +27324,25 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_SetAPINotify(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_SetHostAddress(void * jarg1, char * jarg2, unsigned short jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_SetHostAddress__SWIG_0(void * jarg1, char * jarg2, unsigned short jarg3, unsigned int jarg4) {
+  int jresult ;
+  ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
+  ITapTrade::TAPICHAR *arg2 = (ITapTrade::TAPICHAR *) 0 ;
+  ITapTrade::TAPIUINT16 arg3 ;
+  bool arg4 ;
+  ITapTrade::TAPIINT32 result;
+  
+  arg1 = (ITapTrade::ITapTradeAPI *)jarg1; 
+  arg2 = (ITapTrade::TAPICHAR *)jarg2; 
+  arg3 = (ITapTrade::TAPIUINT16)jarg3; 
+  arg4 = jarg4 ? true : false; 
+  result = (ITapTrade::TAPIINT32)(arg1)->SetHostAddress((ITapTrade::TAPICHAR const *)arg2,arg3,arg4);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_SetHostAddress__SWIG_1(void * jarg1, char * jarg2, unsigned short jarg3) {
   int jresult ;
   ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
   ITapTrade::TAPICHAR *arg2 = (ITapTrade::TAPICHAR *) 0 ;
@@ -27272,6 +27455,20 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_HaveCertainRig
   arg1 = (ITapTrade::ITapTradeAPI *)jarg1; 
   arg2 = (ITapTrade::TAPIRightIDType)jarg2; 
   result = (ITapTrade::TAPIINT32)(arg1)->HaveCertainRight(arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TapTradeWrapperApi_ITapTradeAPI_QryTradingDate(void * jarg1, unsigned int * jarg2) {
+  int jresult ;
+  ITapTrade::ITapTradeAPI *arg1 = (ITapTrade::ITapTradeAPI *) 0 ;
+  ITapTrade::TAPIUINT32 *arg2 = (ITapTrade::TAPIUINT32 *) 0 ;
+  ITapTrade::TAPIINT32 result;
+  
+  arg1 = (ITapTrade::ITapTradeAPI *)jarg1; 
+  arg2 = (ITapTrade::TAPIUINT32 *)jarg2; 
+  result = (ITapTrade::TAPIINT32)(arg1)->QryTradingDate(arg2);
   jresult = result; 
   return jresult;
 }

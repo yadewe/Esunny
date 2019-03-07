@@ -1,12 +1,12 @@
-%module(directors="1") TapTradeWrapperAPI
+%module(directors="1") TapTradeWrapper
 
 %{
 	/* 在包装代码中包含头文件 */
 
-#include "iTapAPICommDef.h"  
-#include "iTapTradeAPIDataType.h" 
-#include "iTapAPIError.h"  	
-#include "iTapTradeAPI.h"  
+#include "../TapTradeWrapperApi/TapApi/include/iTapAPICommDef.h"  
+#include "../TapTradeWrapperApi/TapApi/include/iTapTradeAPIDataType.h" 
+#include "../TapTradeWrapperApi/TapApi/include/iTapAPIError.h"  	
+#include "../TapTradeWrapperApi/TapApi/include/iTapTradeAPI.h"  
 %}
 /* turn on director wrapping Callback */
 %feature("director") ITapTradeAPINotify;
@@ -31,8 +31,8 @@
 
 %apply char *{ ITapTrade::TAPISTR_50 * };
 
-%include "iTapAPICommDef.h"
-%include "iTapTradeAPIDataType.h"
-%include "iTapAPIError.h"
-%include "iTapTradeAPI.h"
+%include "../TapTradeWrapperApi/TapApi/include/iTapAPICommDef.h"
+%include "../TapTradeWrapperApi/TapApi/include/iTapTradeAPIDataType.h"
+%include "../TapTradeWrapperApi/TapApi/include/iTapAPIError.h"
+%include "../TapTradeWrapperApi/TapApi/include/iTapTradeAPI.h"
 
