@@ -1,10 +1,10 @@
 /* File : example.i */
 %module(directors="1") QTapQuoteApi
 %{
-#include "../QTapTradeWrapperApi/TapApi/include/TapAPICommDef.h"  
-#include "../QTapTradeWrapperApi/TapApi/include/TapQuoteAPIDataType.h" 
-#include "../QTapTradeWrapperApi/TapApi/include/TapAPIError.h"  	
-#include "../QTapTradeWrapperApi/TapApi/include/TapQuoteAPI.h"  
+#include "../QTapQuoteWrapperApi/TapApi/include/TapAPICommDef.h"  
+#include "../QTapQuoteWrapperApi/TapApi/include/TapQuoteAPIDataType.h" 
+#include "../QTapQuoteWrapperApi/TapApi/include/TapAPIError.h"  	
+#include "../QTapQuoteWrapperApi/TapApi/include/TapQuoteAPI.h"  
 %}
 
 /* turn on director wrapping Callback */
@@ -56,7 +56,7 @@
 %apply int INPUT[]  {TAPIQVOLUME					QAskQty[20]};
 */
 
-%include "../QTapTradeWrapperApi/TapApi/include/TapAPICommDef.h"
-%include "../QTapTradeWrapperApi/TapApi/include/TapQuoteAPIDataType.h"
-%include "../QTapTradeWrapperApi/TapApi/include/TapAPIError.h"
-%include "../QTapTradeWrapperApi/TapApi/include/TapQuoteAPI.h"
+%include "../QTapQuoteWrapperApi/TapApi/include/TapAPICommDef.h"
+%include "../QTapQuoteWrapperApi/TapApi/include/TapQuoteAPIDataType.h"
+%include "../QTapQuoteWrapperApi/TapApi/include/TapAPIError.h"
+%include "../QTapQuoteWrapperApi/TapApi/include/TapQuoteAPI.h"
