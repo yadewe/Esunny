@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CTapQuoteAPINotify.cs" />
+    <Compile Include="Controller\CTapTradeAPINotify.cs" />
     <Compile Include="Controller\QuoteController.cs" />
+    <Compile Include="Controller\TradeController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrapper\Quote\doubleArray.cs" />

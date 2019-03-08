@@ -12,7 +12,7 @@ namespace QTapApiDemo
         static void Main(string[] args)
         {
             var m_QuoteCtrl = new QuoteController();
-            //var m_TradeCtrl = new TradeController();
+            var m_TradeCtrl = new TradeController();
             m_QuoteCtrl.OnRspLoginEvent += M_QuoteCtrl_OnRspLoginEvent;
             m_QuoteCtrl.OnDisconnectEvent += M_QuoteCtrl_OnDisconnectEvent;
             int iInitAPIRst = m_QuoteCtrl.InitQuoteAPI();
@@ -38,14 +38,14 @@ namespace QTapApiDemo
                     Console.WriteLine("登陆参数有误");
                 }
             }
-            //iInitAPIRst = m_TradeCtrl.InitTradeAPI();
-            //if (iInitAPIRst == 0)
-            //{
-            //    if (!m_TradeCtrl.Login("", 8383, "Q466281988", "723233"))
-            //    {
-            //        Console.WriteLine("登录失败");
-            //    }
-            //}
+            iInitAPIRst = m_TradeCtrl.InitTradeAPI();
+            if (iInitAPIRst == 0)
+            {
+                if (!m_TradeCtrl.Login("", 6060, "Q466281988", "723233"))
+                {
+                    Console.WriteLine("登录失败");
+                }
+            }
             Console.Read();
         }
 
