@@ -10,3 +10,6 @@ c/c++=》语言=》符合模式=》是 (/permissive-)
 
 
 链接器=》输入=》附加依赖项=》TapQuoteAPI.lib;%(AdditionalDependencies)
+
+
+头文件中virtual void 替换为 virtual void TAP_CDECL
