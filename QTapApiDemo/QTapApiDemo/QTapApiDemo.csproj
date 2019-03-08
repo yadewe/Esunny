@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FD85B31-BA0C-4078-B754-51E510951988}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>QTapApiDemo</RootNamespace>
+    <AssemblyName>QTapApiDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\CTapQuoteAPINotify.cs" />
+    <Compile Include="Controller\QuoteController.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wrapper\Quote\doubleArray.cs" />
+    <Compile Include="Wrapper\Quote\ITapQuoteAPI.cs" />
+    <Compile Include="Wrapper\Quote\ITapQuoteAPINotify.cs" />
+    <Compile Include="Wrapper\Quote\longArray.cs" />
+    <Compile Include="Wrapper\Quote\QTapQuoteApi.cs" />
+    <Compile Include="Wrapper\Quote\QTapQuoteApiPINVOKE.cs" />
+    <Compile Include="Wrapper\Quote\SWIGTYPE_p_double.cs" />
+    <Compile Include="Wrapper\Quote\SWIGTYPE_p_unsigned_long_long.cs" />
+    <Compile Include="Wrapper\Quote\TapAPIApplicationInfo.cs" />
+    <Compile Include="Wrapper\Quote\TapAPIChangePasswordReq.cs" />
+    <Compile Include="Wrapper\Quote\TapAPICommodity.cs" />
+    <Compile Include="Wrapper\Quote\TapAPIContract.cs" />
+    <Compile Include="Wrapper\Quote\TapAPIExchangeInfo.cs" />
+    <Compile Include="Wrapper\Quote\TapAPIQuoteCommodityInfo.cs" />
+    <Compile Include="Wrapper\Quote\TapAPIQuoteContractInfo.cs" />
+    <Compile Include="Wrapper\Quote\TapAPIQuoteLoginAuth.cs" />
+    <Compile Include="Wrapper\Quote\TapAPIQuoteWhole.cs" />
+    <Compile Include="Wrapper\Quote\TapAPIQuotLoginRspInfo.cs" />
+    <Compile Include="Wrapper\Trade\ITapTradeAPI.cs" />
+    <Compile Include="Wrapper\Trade\ITapTradeAPINotify.cs" />
+    <Compile Include="Wrapper\Trade\QTapTradeApi.cs" />
+    <Compile Include="Wrapper\Trade\QTapTradeApiPINVOKE.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountRentInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccountRentQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAccQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIAmendOrder.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIApplicationInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIChangePasswordReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICloseInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICloseQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICommodity.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICommodityInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICommodityOrderTimeInForceQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPICommodityOrderTypeQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIContract.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIDeepQuoteInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIDeepQuoteQryRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIExchangeInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIExchangeStateInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIExchangeStateInfoNotice.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIExchangeStateInfoQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFillInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFillQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFundData.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIFundReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPINewOrder.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderActionRsp.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderCancelReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderInfoNotice.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderProcessQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIOrderQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIPositionInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIPositionProfit.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIPositionProfitNotice.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIPositionQryReq.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIReqQuoteNotice.cs" />
+    <Compile Include="Wrapper\Trade\TapAPITradeContractInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPITradeLoginAuth.cs" />
+    <Compile Include="Wrapper\Trade\TapAPITradeLoginRspInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIUpperChannelInfo.cs" />
+    <Compile Include="Wrapper\Trade\TapAPIUpperChannelQryReq.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
