@@ -1,0 +1,38 @@
+%module(directors="1") QTapTradeApi
+
+%{
+	/* 在包装代码中包含头文件 */
+
+#include "../QTapTradeWrapperApi/TapApi/include/TapAPICommDef.h"  
+#include "../QTapTradeWrapperApi/TapApi/include/TapTradeAPIDataType.h" 
+#include "../QTapTradeWrapperApi/TapApi/include/TapAPIError.h"  	
+#include "../QTapTradeWrapperApi/TapApi/include/TapTradeAPI.h"  
+%}
+/* turn on director wrapping Callback */
+%feature("director") ITapTradeAPINotify;
+
+/* 解析头文件生成包装代码 */
+
+%include "csharp.swg"
+%include "carrays.i"
+%include "windows.i"
+%include "typemaps.i"
+%include "arrays_csharp.i"
+
+%typemap(imtype) TAPIINT32 &iResult "out int"
+%typemap(csin) TAPIINT32 &iResult %{out $csinput%} 
+%typemap(cstype) TAPIINT32 &iResult "out int";
+
+%apply unsigned int *INPUT  { TAPIUINT32 *sessionID}
+%apply unsigned int *OUTPUT { TAPIUINT32 *sessionID }; 
+
+%typemap(csin) TAPIUINT32 *sessionID %{out $csinput%} 
+%typemap(cstype) TAPIUINT32 *sessionID "out uint";
+
+%apply char *{ TAPISTR_50 * };
+
+%include "../QTapTradeWrapperApi/TapApi/include/TapAPICommDef.h"
+%include "../QTapTradeWrapperApi/TapApi/include/TapTradeAPIDataType.h"
+%include "../QTapTradeWrapperApi/TapApi/include/TapAPIError.h"
+%include "../QTapTradeWrapperApi/TapApi/include/TapTradeAPI.h"
+
