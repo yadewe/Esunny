@@ -261,50 +261,6 @@ public partial class TapAPIQuoteWhole : global::System.IDisposable {
     } 
   }
 
-  public SWIGTYPE_p_double QBidPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidPrice_set(swigCPtr, SWIGTYPE_p_double.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidPrice_get(swigCPtr);
-      SWIGTYPE_p_double ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_double(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public SWIGTYPE_p_unsigned_long_long QBidQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidQty_set(swigCPtr, SWIGTYPE_p_unsigned_long_long.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidQty_get(swigCPtr);
-      SWIGTYPE_p_unsigned_long_long ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_unsigned_long_long(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public SWIGTYPE_p_double QAskPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskPrice_set(swigCPtr, SWIGTYPE_p_double.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskPrice_get(swigCPtr);
-      SWIGTYPE_p_double ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_double(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public SWIGTYPE_p_unsigned_long_long QAskQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskQty_set(swigCPtr, SWIGTYPE_p_unsigned_long_long.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskQty_get(swigCPtr);
-      SWIGTYPE_p_unsigned_long_long ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_unsigned_long_long(cPtr, false);
-      return ret;
-    } 
-  }
-
   public double QImpliedBidPrice {
     set {
       TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedBidPrice_set(swigCPtr, value);
@@ -514,6 +470,42 @@ public partial class TapAPIQuoteWhole : global::System.IDisposable {
       TapAPIContract ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIContract(cPtr, false);
       return ret;
     } 
+  }
+
+  public int QBidPriceSize() {
+    int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidPriceSize(swigCPtr);
+    return ret;
+  }
+
+  public void GetQBidPrice(double[] array1, int size) {
+    TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQBidPrice(swigCPtr, array1, size);
+  }
+
+  public int QBidQtySize() {
+    int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidQtySize(swigCPtr);
+    return ret;
+  }
+
+  public void GetQBidQty(ulong[] array2, int size) {
+    TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQBidQty(swigCPtr, array2, size);
+  }
+
+  public int QAskPriceSize() {
+    int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskPriceSize(swigCPtr);
+    return ret;
+  }
+
+  public void GetQAskPrice(double[] array1, int size) {
+    TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQAskPrice(swigCPtr, array1, size);
+  }
+
+  public int QAskQtySize() {
+    int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskQtySize(swigCPtr);
+    return ret;
+  }
+
+  public void GetQAskQty(ulong[] array2, int size) {
+    TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQAskQty(swigCPtr, array2, size);
   }
 
   public TapAPIQuoteWhole() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteWhole(), true) {
