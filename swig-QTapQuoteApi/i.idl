@@ -1,6 +1,7 @@
 /* File : example.i */
 %module(directors="1") QTapQuoteApi
 %{
+#include "../VCH/stdexcept"
 #include "../QTapQuoteWrapperApi/TapApi/include/TapAPICommDef.h"  
 #include "../QTapQuoteWrapperApi/TapApi/include/TapQuoteAPIDataType.h" 
 #include "../QTapQuoteWrapperApi/TapApi/include/TapAPIError.h"  	
@@ -16,6 +17,71 @@
 %include "typemaps.i"
 %include "arrays_csharp.i"
 
+%apply double OUTPUT[] { double* array1};
+
+%apply unsigned long long OUTPUT[] { unsigned long long* array2};
+
+%ignore TapAPIQuoteWhole::QBidPrice;
+%ignore TapAPIQuoteWhole::QBidQty;
+%ignore TapAPIQuoteWhole::QAskPrice;
+%ignore TapAPIQuoteWhole::QAskQty;
+%extend TapAPIQuoteWhole
+{
+	#define countof(arr) sizeof(arr) / sizeof(arr[0])
+public:
+	int QBidPriceSize()
+	{
+		return countof($self->QBidPrice);
+	}
+
+	void GetQBidPrice(double* array1, int size)
+	{
+		auto sourceSize = countof($self->QBidPrice);
+		if (size < sourceSize)
+		std::runtime_error("Initialize target array to appropriate size: "+ sourceSize);
+		std::memcpy(reinterpret_cast<void*>(&array1[0]), reinterpret_cast<void*>(&$self->QBidPrice[0]), sizeof(double)*sourceSize);
+	}
+	
+	int QBidQtySize()
+	{
+		return countof($self->QBidQty);
+	}
+
+	void GetQBidQty(unsigned long long* array2, int size)
+	{
+		auto sourceSize = countof($self->QBidQty);
+		if (size < sourceSize)
+		std::runtime_error("Initialize target array to appropriate size: "+ sourceSize);
+		std::memcpy(reinterpret_cast<void*>(&array2[0]), reinterpret_cast<void*>(&$self->QBidQty[0]), sizeof(unsigned long long)*sourceSize);
+	}
+	
+	int QAskPriceSize()
+	{
+		return countof($self->QAskPrice);
+	}
+
+	void GetQAskPrice(double* array1, int size)
+	{
+		auto sourceSize = countof($self->QAskPrice);
+		if (size < sourceSize)
+		std::runtime_error("Initialize target array to appropriate size: "+ sourceSize);
+		std::memcpy(reinterpret_cast<void*>(&array1[0]), reinterpret_cast<void*>(&$self->QAskPrice[0]), sizeof(double)*sourceSize);
+	}
+	
+	int QAskQtySize()
+	{
+		return countof($self->QAskQty);
+	}
+
+	void GetQAskQty(unsigned long long* array2, int size)
+	{
+		auto sourceSize = countof($self->QAskQty);
+		if (size < sourceSize)
+		std::runtime_error("Initialize target array to appropriate size: "+ sourceSize);
+		std::memcpy(reinterpret_cast<void*>(&array2[0]), reinterpret_cast<void*>(&$self->QAskQty[0]), sizeof(unsigned long long)*sourceSize);
+	}
+}
+
 %apply unsigned int *INPUT  { TAPIUINT32 *sessionID}
 %apply unsigned int *OUTPUT { TAPIUINT32 *sessionID }; 
 
@@ -26,11 +92,13 @@
 %typemap(csin) TAPIINT32 &iResult %{out $csinput%} 
 %typemap(cstype) TAPIINT32 &iResult "out int";
 
-%array_class(double, doubleArray);
-%array_class(unsigned long long, longArray);
-
 %typemap(csclassmodifiers) TapAPIQuoteWhole "public partial class"
 
+
+/*
+%array_class(double, doubleArray);
+%array_class(unsigned long long, longArray);
+*/
 
 /*
 %apply int { ITapTrade::TAPIUINT32 *sessionID }
