@@ -361,53 +361,48 @@ namespace Swig {
 }
 
 
+#include "../VCH/stdexcept"
 #include "../TapQuoteWrapperApi/TapApi/include/TapAPICommDef.h"  
 #include "../TapQuoteWrapperApi/TapApi/include/TapQuoteAPIDataType.h" 
 #include "../TapQuoteWrapperApi/TapApi/include/TapAPIError.h"  	
 #include "../TapQuoteWrapperApi/TapApi/include/TapQuoteAPI.h"  
 
-
-typedef double doubleArray;
-
-SWIGINTERN doubleArray *new_doubleArray(int nelements){
-  return new double[nelements]();
-}
-SWIGINTERN void delete_doubleArray(doubleArray *self){
-  delete [] self;
-}
-SWIGINTERN double doubleArray_getitem(doubleArray *self,int index){
-  return self[index];
-}
-SWIGINTERN void doubleArray_setitem(doubleArray *self,int index,double value){
-  self[index] = value;
-}
-SWIGINTERN double *doubleArray_cast(doubleArray *self){
-  return self;
-}
-SWIGINTERN doubleArray *doubleArray_frompointer(double *t){
-  return (doubleArray *) t;
-}
-
-typedef unsigned long long longArray;
-
-SWIGINTERN longArray *new_longArray(int nelements){
-  return new unsigned long long[nelements]();
-}
-SWIGINTERN void delete_longArray(longArray *self){
-  delete [] self;
-}
-SWIGINTERN unsigned long long longArray_getitem(longArray *self,int index){
-  return self[index];
-}
-SWIGINTERN void longArray_setitem(longArray *self,int index,unsigned long long value){
-  self[index] = value;
-}
-SWIGINTERN unsigned long long *longArray_cast(longArray *self){
-  return self;
-}
-SWIGINTERN longArray *longArray_frompointer(unsigned long long *t){
-  return (longArray *) t;
-}
+SWIGINTERN int TapAPIQuoteWhole_QBidPriceSize(TapAPIQuoteWhole *self){
+		return sizeof(self->QBidPrice) / sizeof(self->QBidPrice[0]);
+	}
+SWIGINTERN void TapAPIQuoteWhole_GetQBidPrice(TapAPIQuoteWhole *self,double *array1,int size){
+		auto sourceSize = sizeof(self->QBidPrice) / sizeof(self->QBidPrice[0]);
+		if (size < sourceSize)
+		std::runtime_error("Initialize target array to appropriate size: "+ sourceSize);
+		std::memcpy(reinterpret_cast<void*>(&array1[0]), reinterpret_cast<void*>(&self->QBidPrice[0]), sizeof(double)*sourceSize);
+	}
+SWIGINTERN int TapAPIQuoteWhole_QBidQtySize(TapAPIQuoteWhole *self){
+		return sizeof(self->QBidQty) / sizeof(self->QBidQty[0]);
+	}
+SWIGINTERN void TapAPIQuoteWhole_GetQBidQty(TapAPIQuoteWhole *self,unsigned long long *array2,int size){
+		auto sourceSize = sizeof(self->QBidQty) / sizeof(self->QBidQty[0]);
+		if (size < sourceSize)
+		std::runtime_error("Initialize target array to appropriate size: "+ sourceSize);
+		std::memcpy(reinterpret_cast<void*>(&array2[0]), reinterpret_cast<void*>(&self->QBidQty[0]), sizeof(unsigned long long)*sourceSize);
+	}
+SWIGINTERN int TapAPIQuoteWhole_QAskPriceSize(TapAPIQuoteWhole *self){
+		return sizeof(self->QAskPrice) / sizeof(self->QAskPrice[0]);
+	}
+SWIGINTERN void TapAPIQuoteWhole_GetQAskPrice(TapAPIQuoteWhole *self,double *array1,int size){
+		auto sourceSize = sizeof(self->QAskPrice) / sizeof(self->QAskPrice[0]);
+		if (size < sourceSize)
+		std::runtime_error("Initialize target array to appropriate size: "+ sourceSize);
+		std::memcpy(reinterpret_cast<void*>(&array1[0]), reinterpret_cast<void*>(&self->QAskPrice[0]), sizeof(double)*sourceSize);
+	}
+SWIGINTERN int TapAPIQuoteWhole_QAskQtySize(TapAPIQuoteWhole *self){
+		return sizeof(self->QAskQty) / sizeof(self->QAskQty[0]);
+	}
+SWIGINTERN void TapAPIQuoteWhole_GetQAskQty(TapAPIQuoteWhole *self,unsigned long long *array2,int size){
+		auto sourceSize = sizeof(self->QAskQty) / sizeof(self->QAskQty[0]);
+		if (size < sourceSize)
+		std::runtime_error("Initialize target array to appropriate size: "+ sourceSize);
+		std::memcpy(reinterpret_cast<void*>(&array2[0]), reinterpret_cast<void*>(&self->QAskQty[0]), sizeof(unsigned long long)*sourceSize);
+	}
 
 
 /* ---------------------------------------------------
@@ -557,146 +552,6 @@ void SwigDirector_ITapQuoteAPINotify::swig_init_callbacks() {
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_new_doubleArray(int jarg1) {
-  void * jresult ;
-  int arg1 ;
-  doubleArray *result = 0 ;
-  
-  arg1 = (int)jarg1; 
-  result = (doubleArray *)new_doubleArray(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_delete_doubleArray(void * jarg1) {
-  doubleArray *arg1 = (doubleArray *) 0 ;
-  
-  arg1 = (doubleArray *)jarg1; 
-  delete_doubleArray(arg1);
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_TapQuoteWrapperApi_doubleArray_getitem(void * jarg1, int jarg2) {
-  double jresult ;
-  doubleArray *arg1 = (doubleArray *) 0 ;
-  int arg2 ;
-  double result;
-  
-  arg1 = (doubleArray *)jarg1; 
-  arg2 = (int)jarg2; 
-  result = (double)doubleArray_getitem(arg1,arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_doubleArray_setitem(void * jarg1, int jarg2, double jarg3) {
-  doubleArray *arg1 = (doubleArray *) 0 ;
-  int arg2 ;
-  double arg3 ;
-  
-  arg1 = (doubleArray *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (double)jarg3; 
-  doubleArray_setitem(arg1,arg2,arg3);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_doubleArray_cast(void * jarg1) {
-  void * jresult ;
-  doubleArray *arg1 = (doubleArray *) 0 ;
-  double *result = 0 ;
-  
-  arg1 = (doubleArray *)jarg1; 
-  result = (double *)doubleArray_cast(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_doubleArray_frompointer(void * jarg1) {
-  void * jresult ;
-  double *arg1 = (double *) 0 ;
-  doubleArray *result = 0 ;
-  
-  arg1 = (double *)jarg1; 
-  result = (doubleArray *)doubleArray_frompointer(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_new_longArray(int jarg1) {
-  void * jresult ;
-  int arg1 ;
-  longArray *result = 0 ;
-  
-  arg1 = (int)jarg1; 
-  result = (longArray *)new_longArray(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_delete_longArray(void * jarg1) {
-  longArray *arg1 = (longArray *) 0 ;
-  
-  arg1 = (longArray *)jarg1; 
-  delete_longArray(arg1);
-}
-
-
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_TapQuoteWrapperApi_longArray_getitem(void * jarg1, int jarg2) {
-  unsigned long long jresult ;
-  longArray *arg1 = (longArray *) 0 ;
-  int arg2 ;
-  unsigned long long result;
-  
-  arg1 = (longArray *)jarg1; 
-  arg2 = (int)jarg2; 
-  result = (unsigned long long)longArray_getitem(arg1,arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_longArray_setitem(void * jarg1, int jarg2, unsigned long long jarg3) {
-  longArray *arg1 = (longArray *) 0 ;
-  int arg2 ;
-  unsigned long long arg3 ;
-  
-  arg1 = (longArray *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (unsigned long long)jarg3; 
-  longArray_setitem(arg1,arg2,arg3);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_longArray_cast(void * jarg1) {
-  void * jresult ;
-  longArray *arg1 = (longArray *) 0 ;
-  unsigned long long *result = 0 ;
-  
-  arg1 = (longArray *)jarg1; 
-  result = (unsigned long long *)longArray_cast(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_longArray_frompointer(void * jarg1) {
-  void * jresult ;
-  unsigned long long *arg1 = (unsigned long long *) 0 ;
-  longArray *result = 0 ;
-  
-  arg1 = (unsigned long long *)jarg1; 
-  result = (longArray *)longArray_frompointer(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
 
 SWIGEXPORT char SWIGSTDCALL CSharp_TapQuoteWrapperApi_APIYNFLAG_YES_get() {
   char jresult ;
@@ -3091,110 +2946,6 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteW
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidPrice_set(void * jarg1, void * jarg2) {
-  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
-  TAPIQPRICE *arg2 ;
-  
-  arg1 = (TapAPIQuoteWhole *)jarg1; 
-  arg2 = (TAPIQPRICE *)jarg2; 
-  {
-    size_t ii;
-    TAPIQPRICE *b = (TAPIQPRICE *) arg1->QBidPrice;
-    for (ii = 0; ii < (size_t)20; ii++) b[ii] = *((TAPIQPRICE *) arg2 + ii);
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidPrice_get(void * jarg1) {
-  void * jresult ;
-  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
-  TAPIQPRICE *result = 0 ;
-  
-  arg1 = (TapAPIQuoteWhole *)jarg1; 
-  result = (TAPIQPRICE *)(TAPIQPRICE *) ((arg1)->QBidPrice);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidQty_set(void * jarg1, void * jarg2) {
-  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
-  TAPIQVOLUME *arg2 ;
-  
-  arg1 = (TapAPIQuoteWhole *)jarg1; 
-  arg2 = (TAPIQVOLUME *)jarg2; 
-  {
-    size_t ii;
-    TAPIQVOLUME *b = (TAPIQVOLUME *) arg1->QBidQty;
-    for (ii = 0; ii < (size_t)20; ii++) b[ii] = *((TAPIQVOLUME *) arg2 + ii);
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidQty_get(void * jarg1) {
-  void * jresult ;
-  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
-  TAPIQVOLUME *result = 0 ;
-  
-  arg1 = (TapAPIQuoteWhole *)jarg1; 
-  result = (TAPIQVOLUME *)(TAPIQVOLUME *) ((arg1)->QBidQty);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskPrice_set(void * jarg1, void * jarg2) {
-  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
-  TAPIQPRICE *arg2 ;
-  
-  arg1 = (TapAPIQuoteWhole *)jarg1; 
-  arg2 = (TAPIQPRICE *)jarg2; 
-  {
-    size_t ii;
-    TAPIQPRICE *b = (TAPIQPRICE *) arg1->QAskPrice;
-    for (ii = 0; ii < (size_t)20; ii++) b[ii] = *((TAPIQPRICE *) arg2 + ii);
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskPrice_get(void * jarg1) {
-  void * jresult ;
-  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
-  TAPIQPRICE *result = 0 ;
-  
-  arg1 = (TapAPIQuoteWhole *)jarg1; 
-  result = (TAPIQPRICE *)(TAPIQPRICE *) ((arg1)->QAskPrice);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskQty_set(void * jarg1, void * jarg2) {
-  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
-  TAPIQVOLUME *arg2 ;
-  
-  arg1 = (TapAPIQuoteWhole *)jarg1; 
-  arg2 = (TAPIQVOLUME *)jarg2; 
-  {
-    size_t ii;
-    TAPIQVOLUME *b = (TAPIQVOLUME *) arg1->QAskQty;
-    for (ii = 0; ii < (size_t)20; ii++) b[ii] = *((TAPIQVOLUME *) arg2 + ii);
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskQty_get(void * jarg1) {
-  void * jresult ;
-  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
-  TAPIQVOLUME *result = 0 ;
-  
-  arg1 = (TapAPIQuoteWhole *)jarg1; 
-  result = (TAPIQVOLUME *)(TAPIQVOLUME *) ((arg1)->QAskQty);
-  jresult = result; 
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QImpliedBidPrice_set(void * jarg1, double jarg2) {
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
   TAPIQPRICE arg2 ;
@@ -3654,6 +3405,110 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_Underly
   result = (TapAPIContract *)& ((arg1)->UnderlyContract);
   jresult = (void *)result; 
   return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidPriceSize(void * jarg1) {
+  int jresult ;
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  int result;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  result = (int)TapAPIQuoteWhole_QBidPriceSize(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_GetQBidPrice(void * jarg1, double* jarg2, int jarg3) {
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  double *arg2 = (double *) 0 ;
+  int arg3 ;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  arg2 = jarg2;
+  arg3 = (int)jarg3; 
+  TapAPIQuoteWhole_GetQBidPrice(arg1,arg2,arg3);
+  
+  
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidQtySize(void * jarg1) {
+  int jresult ;
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  int result;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  result = (int)TapAPIQuoteWhole_QBidQtySize(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_GetQBidQty(void * jarg1, unsigned long long* jarg2, int jarg3) {
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  unsigned long long *arg2 = (unsigned long long *) 0 ;
+  int arg3 ;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  arg2 = jarg2;
+  arg3 = (int)jarg3; 
+  TapAPIQuoteWhole_GetQBidQty(arg1,arg2,arg3);
+  
+  
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskPriceSize(void * jarg1) {
+  int jresult ;
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  int result;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  result = (int)TapAPIQuoteWhole_QAskPriceSize(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_GetQAskPrice(void * jarg1, double* jarg2, int jarg3) {
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  double *arg2 = (double *) 0 ;
+  int arg3 ;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  arg2 = jarg2;
+  arg3 = (int)jarg3; 
+  TapAPIQuoteWhole_GetQAskPrice(arg1,arg2,arg3);
+  
+  
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskQtySize(void * jarg1) {
+  int jresult ;
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  int result;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  result = (int)TapAPIQuoteWhole_QAskQtySize(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_GetQAskQty(void * jarg1, unsigned long long* jarg2, int jarg3) {
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  unsigned long long *arg2 = (unsigned long long *) 0 ;
+  int arg3 ;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  arg2 = jarg2;
+  arg3 = (int)jarg3; 
+  TapAPIQuoteWhole_GetQAskQty(arg1,arg2,arg3);
+  
+  
 }
 
 
