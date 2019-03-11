@@ -188,42 +188,6 @@ class TapQuoteWrapperPINVOKE {
   }
 
 
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_new_doubleArray")]
-  public static extern global::System.IntPtr new_doubleArray(int jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_delete_doubleArray")]
-  public static extern void delete_doubleArray(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_doubleArray_getitem")]
-  public static extern double doubleArray_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_doubleArray_setitem")]
-  public static extern void doubleArray_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, double jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_doubleArray_cast")]
-  public static extern global::System.IntPtr doubleArray_cast(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_doubleArray_frompointer")]
-  public static extern global::System.IntPtr doubleArray_frompointer(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_new_longArray")]
-  public static extern global::System.IntPtr new_longArray(int jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_delete_longArray")]
-  public static extern void delete_longArray(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_longArray_getitem")]
-  public static extern ulong longArray_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_longArray_setitem")]
-  public static extern void longArray_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, ulong jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_longArray_cast")]
-  public static extern global::System.IntPtr longArray_cast(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_longArray_frompointer")]
-  public static extern global::System.IntPtr longArray_frompointer(global::System.Runtime.InteropServices.HandleRef jarg1);
-
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_APIYNFLAG_YES_get")]
   public static extern char APIYNFLAG_YES_get();
 
@@ -824,30 +788,6 @@ class TapQuoteWrapperPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QLastQty_get")]
   public static extern ulong TapAPIQuoteWhole_QLastQty_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidPrice_set")]
-  public static extern void TapAPIQuoteWhole_QBidPrice_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidPrice_get")]
-  public static extern global::System.IntPtr TapAPIQuoteWhole_QBidPrice_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidQty_set")]
-  public static extern void TapAPIQuoteWhole_QBidQty_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidQty_get")]
-  public static extern global::System.IntPtr TapAPIQuoteWhole_QBidQty_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskPrice_set")]
-  public static extern void TapAPIQuoteWhole_QAskPrice_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskPrice_get")]
-  public static extern global::System.IntPtr TapAPIQuoteWhole_QAskPrice_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskQty_set")]
-  public static extern void TapAPIQuoteWhole_QAskQty_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskQty_get")]
-  public static extern global::System.IntPtr TapAPIQuoteWhole_QAskQty_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QImpliedBidPrice_set")]
   public static extern void TapAPIQuoteWhole_QImpliedBidPrice_set(global::System.Runtime.InteropServices.HandleRef jarg1, double jarg2);
 
@@ -973,6 +913,30 @@ class TapQuoteWrapperPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_UnderlyContract_get")]
   public static extern global::System.IntPtr TapAPIQuoteWhole_UnderlyContract_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidPriceSize")]
+  public static extern int TapAPIQuoteWhole_QBidPriceSize(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_GetQBidPrice")]
+  public static extern void TapAPIQuoteWhole_GetQBidPrice(global::System.Runtime.InteropServices.HandleRef jarg1, [global::System.Runtime.InteropServices.Out, global::System.Runtime.InteropServices.MarshalAs(global::System.Runtime.InteropServices.UnmanagedType.LPArray)]double[] jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QBidQtySize")]
+  public static extern int TapAPIQuoteWhole_QBidQtySize(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_GetQBidQty")]
+  public static extern void TapAPIQuoteWhole_GetQBidQty(global::System.Runtime.InteropServices.HandleRef jarg1, [global::System.Runtime.InteropServices.Out, global::System.Runtime.InteropServices.MarshalAs(global::System.Runtime.InteropServices.UnmanagedType.LPArray)]ulong[] jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskPriceSize")]
+  public static extern int TapAPIQuoteWhole_QAskPriceSize(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_GetQAskPrice")]
+  public static extern void TapAPIQuoteWhole_GetQAskPrice(global::System.Runtime.InteropServices.HandleRef jarg1, [global::System.Runtime.InteropServices.Out, global::System.Runtime.InteropServices.MarshalAs(global::System.Runtime.InteropServices.UnmanagedType.LPArray)]double[] jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_QAskQtySize")]
+  public static extern int TapAPIQuoteWhole_QAskQtySize(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_TapAPIQuoteWhole_GetQAskQty")]
+  public static extern void TapAPIQuoteWhole_GetQAskQty(global::System.Runtime.InteropServices.HandleRef jarg1, [global::System.Runtime.InteropServices.Out, global::System.Runtime.InteropServices.MarshalAs(global::System.Runtime.InteropServices.UnmanagedType.LPArray)]ulong[] jarg2, int jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("TapQuoteWrapperApi.dll", EntryPoint="CSharp_TapQuoteWrapperApi_new_TapAPIQuoteWhole")]
   public static extern global::System.IntPtr new_TapAPIQuoteWhole();

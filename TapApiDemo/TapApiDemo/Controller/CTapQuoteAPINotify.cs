@@ -96,7 +96,9 @@ namespace TapApiDemo
             //double test1 = temp.getitem(1);
             //double test2 = temp.getitem(2);
             //double test3 = temp.getitem(3);
-            Console.WriteLine($"更新时间：{info.DateTimeStamp}，交易所：{info.Contract.Commodity.ExchangeNo}，品种：{info.Contract.Commodity.CommodityNo}，合约：{info.Contract.ContractNo1}，最后价格：{info.QLastPrice}，买1：{info.BidPrice[0]}");
+            var bidPrice = new double[5];
+            info.GetQBidPrice(bidPrice, 5);
+            Console.WriteLine($"更新时间：{info.DateTimeStamp}，交易所：{info.Contract.Commodity.ExchangeNo}，品种：{info.Contract.Commodity.CommodityNo}，合约：{info.Contract.ContractNo1}，最后价格：{info.QLastPrice}，买1：{bidPrice[0]}");
         }
     }
 }
