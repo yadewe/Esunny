@@ -41,7 +41,7 @@ namespace QTapApiDemo
             iInitAPIRst = m_TradeCtrl.InitTradeAPI();
             if (iInitAPIRst == 0)
             {
-                if (!m_TradeCtrl.Login("", 6060, "Q466281988", "723233"))
+                if (!m_TradeCtrl.Login("", 6060, "Q466281988", "119573"))
                 {
                     Console.WriteLine("登录失败");
                 }

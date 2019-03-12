@@ -55,7 +55,9 @@ namespace QTapApiDemo
             loginInfo.UserNo = username;
             loginInfo.Password = password;
             loginInfo.ISModifyPassword = 'N';
-            return (0 == m_api.Login(loginInfo));
+            loginInfo.ISDDA = 'N';
+            var t = m_api.Login(loginInfo);
+            return (0 == t);
         }
 
         private void InitEventHandler()
