@@ -74,6 +74,7 @@ namespace TapApiDemo
         {
             m_api.QryAccount(out m_sessionID, null);
             m_api.QryOrder(out m_sessionID, null);
+            m_api.QryExchange(out m_sessionID);
         }
 
         private void TradeNotify_OnRspLoginEvent(int errorCode, TapAPITradeLoginRspInfo loginRspInfo)
