@@ -8,16 +8,16 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapQuoteWrapperApi
+namespace TapQuoteWrapperApi
 {
 
-    public class QTapQuoteApi
+    public class TapQuoteWrapper
     {
         public static char APIYNFLAG_YES
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.APIYNFLAG_YES_get();
+                char ret = TapQuoteWrapperPINVOKE.APIYNFLAG_YES_get();
                 return ret;
             }
         }
@@ -26,7 +26,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.APIYNFLAG_NO_get();
+                char ret = TapQuoteWrapperPINVOKE.APIYNFLAG_NO_get();
                 return ret;
             }
         }
@@ -35,7 +35,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.APILOGLEVEL_NONE_get();
+                char ret = TapQuoteWrapperPINVOKE.APILOGLEVEL_NONE_get();
                 return ret;
             }
         }
@@ -44,7 +44,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.APILOGLEVEL_ERROR_get();
+                char ret = TapQuoteWrapperPINVOKE.APILOGLEVEL_ERROR_get();
                 return ret;
             }
         }
@@ -53,7 +53,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.APILOGLEVEL_WARNING_get();
+                char ret = TapQuoteWrapperPINVOKE.APILOGLEVEL_WARNING_get();
                 return ret;
             }
         }
@@ -62,7 +62,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.APILOGLEVEL_DEBUG_get();
+                char ret = TapQuoteWrapperPINVOKE.APILOGLEVEL_DEBUG_get();
                 return ret;
             }
         }
@@ -71,7 +71,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_NONE_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_NONE_get();
                 return ret;
             }
         }
@@ -80,7 +80,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_SPOT_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_SPOT_get();
                 return ret;
             }
         }
@@ -89,7 +89,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_FUTURES_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_FUTURES_get();
                 return ret;
             }
         }
@@ -98,7 +98,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_OPTION_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_OPTION_get();
                 return ret;
             }
         }
@@ -107,7 +107,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_SPREAD_MONTH_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_SPREAD_MONTH_get();
                 return ret;
             }
         }
@@ -116,7 +116,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_SPREAD_COMMODITY_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_SPREAD_COMMODITY_get();
                 return ret;
             }
         }
@@ -125,7 +125,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_BUL_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_BUL_get();
                 return ret;
             }
         }
@@ -134,7 +134,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_BER_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_BER_get();
                 return ret;
             }
         }
@@ -143,7 +143,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_STD_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_STD_get();
                 return ret;
             }
         }
@@ -152,7 +152,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_STG_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_STG_get();
                 return ret;
             }
         }
@@ -161,7 +161,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_PRT_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_PRT_get();
                 return ret;
             }
         }
@@ -170,7 +170,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_BLT_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_BLT_get();
                 return ret;
             }
         }
@@ -179,7 +179,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_BRT_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_BRT_get();
                 return ret;
             }
         }
@@ -188,7 +188,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_DIRECTFOREX_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_DIRECTFOREX_get();
                 return ret;
             }
         }
@@ -197,7 +197,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_INDIRECTFOREX_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_INDIRECTFOREX_get();
                 return ret;
             }
         }
@@ -206,7 +206,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_CROSSFOREX_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_CROSSFOREX_get();
                 return ret;
             }
         }
@@ -215,7 +215,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_INDEX_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_INDEX_get();
                 return ret;
             }
         }
@@ -224,7 +224,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_STOCK_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_STOCK_get();
                 return ret;
             }
         }
@@ -233,7 +233,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_SPOT_TRADINGDEFER_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_SPOT_TRADINGDEFER_get();
                 return ret;
             }
         }
@@ -242,7 +242,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_FUTURE_LOCK_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_FUTURE_LOCK_get();
                 return ret;
             }
         }
@@ -251,7 +251,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_COMMODITY_TYPE_EFP_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_COMMODITY_TYPE_EFP_get();
                 return ret;
             }
         }
@@ -260,7 +260,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_CALLPUT_FLAG_CALL_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_CALLPUT_FLAG_CALL_get();
                 return ret;
             }
         }
@@ -269,7 +269,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_CALLPUT_FLAG_PUT_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_CALLPUT_FLAG_PUT_get();
                 return ret;
             }
         }
@@ -278,7 +278,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                char ret = QTapQuoteApiPINVOKE.TAPI_CALLPUT_FLAG_NONE_get();
+                char ret = TapQuoteWrapperPINVOKE.TAPI_CALLPUT_FLAG_NONE_get();
                 return ret;
             }
         }
@@ -287,7 +287,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SUCCEED_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SUCCEED_get();
                 return ret;
             }
         }
@@ -296,7 +296,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ConnectFail_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ConnectFail_get();
                 return ret;
             }
         }
@@ -305,7 +305,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LinkAuthFail_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LinkAuthFail_get();
                 return ret;
             }
         }
@@ -314,7 +314,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_HostUnavailable_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_HostUnavailable_get();
                 return ret;
             }
         }
@@ -323,7 +323,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SendDataError_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SendDataError_get();
                 return ret;
             }
         }
@@ -332,7 +332,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_TestIDError_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_TestIDError_get();
                 return ret;
             }
         }
@@ -341,7 +341,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_NotReadyTestNetwork_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_NotReadyTestNetwork_get();
                 return ret;
             }
         }
@@ -350,7 +350,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_CurTestNotOver_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_CurTestNotOver_get();
                 return ret;
             }
         }
@@ -359,7 +359,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_NOFrontAvailable_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_NOFrontAvailable_get();
                 return ret;
             }
         }
@@ -368,7 +368,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DataPathAvaiable_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DataPathAvaiable_get();
                 return ret;
             }
         }
@@ -377,7 +377,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_RepeatLogin_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_RepeatLogin_get();
                 return ret;
             }
         }
@@ -386,7 +386,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_InnerError_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_InnerError_get();
                 return ret;
             }
         }
@@ -395,7 +395,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LastReqNotFinish_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LastReqNotFinish_get();
                 return ret;
             }
         }
@@ -404,7 +404,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_InputValueError_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_InputValueError_get();
                 return ret;
             }
         }
@@ -413,7 +413,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_AuthCode_Invalid_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_AuthCode_Invalid_get();
                 return ret;
             }
         }
@@ -422,7 +422,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_AuthCode_Expired_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_AuthCode_Expired_get();
                 return ret;
             }
         }
@@ -431,7 +431,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_AuthCode_TypeNotMatch_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_AuthCode_TypeNotMatch_get();
                 return ret;
             }
         }
@@ -440,7 +440,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_API_NotReady_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_API_NotReady_get();
                 return ret;
             }
         }
@@ -449,7 +449,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_UDP_LISTEN_FAILED_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_UDP_LISTEN_FAILED_get();
                 return ret;
             }
         }
@@ -458,7 +458,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_UDP_LISTENING_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_UDP_LISTENING_get();
                 return ret;
             }
         }
@@ -467,7 +467,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_NotImplemented_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_NotImplemented_get();
                 return ret;
             }
         }
@@ -476,7 +476,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_CallOneTimeOnly_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_CallOneTimeOnly_get();
                 return ret;
             }
         }
@@ -485,7 +485,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_Frequently_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_Frequently_get();
                 return ret;
             }
         }
@@ -494,7 +494,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_NULL_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_NULL_get();
                 return ret;
             }
         }
@@ -503,7 +503,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIYNFLAG_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIYNFLAG_get();
                 return ret;
             }
         }
@@ -512,7 +512,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPILOGLEVEL_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPILOGLEVEL_get();
                 return ret;
             }
         }
@@ -521,7 +521,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPICommodityType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPICommodityType_get();
                 return ret;
             }
         }
@@ -530,7 +530,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPICallOrPutFlagType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPICallOrPutFlagType_get();
                 return ret;
             }
         }
@@ -539,7 +539,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountType_get();
                 return ret;
             }
         }
@@ -548,7 +548,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountState_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountState_get();
                 return ret;
             }
         }
@@ -557,7 +557,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountFamilyType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountFamilyType_get();
                 return ret;
             }
         }
@@ -566,7 +566,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderTypeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderTypeType_get();
                 return ret;
             }
         }
@@ -575,7 +575,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderSourceType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderSourceType_get();
                 return ret;
             }
         }
@@ -584,7 +584,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPITimeInForceType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPITimeInForceType_get();
                 return ret;
             }
         }
@@ -593,7 +593,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPISideType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPISideType_get();
                 return ret;
             }
         }
@@ -602,7 +602,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIPositionEffectType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIPositionEffectType_get();
                 return ret;
             }
         }
@@ -611,7 +611,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIHedgeFlagType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIHedgeFlagType_get();
                 return ret;
             }
         }
@@ -620,7 +620,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderStateType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderStateType_get();
                 return ret;
             }
         }
@@ -629,7 +629,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPICalculateModeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPICalculateModeType_get();
                 return ret;
             }
         }
@@ -638,7 +638,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIMatchSourceType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIMatchSourceType_get();
                 return ret;
             }
         }
@@ -647,7 +647,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOpenCloseModeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIOpenCloseModeType_get();
                 return ret;
             }
         }
@@ -656,7 +656,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIFutureAlgType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIFutureAlgType_get();
                 return ret;
             }
         }
@@ -665,7 +665,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOptionAlgType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIOptionAlgType_get();
                 return ret;
             }
         }
@@ -674,7 +674,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIBankAccountLWFlagType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIBankAccountLWFlagType_get();
                 return ret;
             }
         }
@@ -683,7 +683,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIMarginCalculateModeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIMarginCalculateModeType_get();
                 return ret;
             }
         }
@@ -692,7 +692,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOptionMarginCalculateModeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIOptionMarginCalculateModeType_get();
                 return ret;
             }
         }
@@ -701,7 +701,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPICmbDirectType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPICmbDirectType_get();
                 return ret;
             }
         }
@@ -710,7 +710,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIDeliveryModeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIDeliveryModeType_get();
                 return ret;
             }
         }
@@ -719,7 +719,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIContractTypeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIContractTypeType_get();
                 return ret;
             }
         }
@@ -728,7 +728,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPITacticsTypeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPITacticsTypeType_get();
                 return ret;
             }
         }
@@ -737,7 +737,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIORDERACT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIORDERACT_get();
                 return ret;
             }
         }
@@ -746,7 +746,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPITriggerConditionType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPITriggerConditionType_get();
                 return ret;
             }
         }
@@ -755,7 +755,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_get();
                 return ret;
             }
         }
@@ -764,7 +764,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPITradingStateType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPITradingStateType_get();
                 return ret;
             }
         }
@@ -773,7 +773,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIMarketLevelType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIMarketLevelType_get();
                 return ret;
             }
         }
@@ -782,7 +782,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderQryTypeType_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderQryTypeType_get();
                 return ret;
             }
         }
@@ -791,7 +791,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_CLOSE_INIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_CLOSE_INIT_get();
                 return ret;
             }
         }
@@ -800,7 +800,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_CLOSE_PASS_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_CLOSE_PASS_get();
                 return ret;
             }
         }
@@ -809,7 +809,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_READ_ERROR_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_READ_ERROR_get();
                 return ret;
             }
         }
@@ -818,7 +818,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_WRITE_ERROR_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_WRITE_ERROR_get();
                 return ret;
             }
         }
@@ -827,7 +827,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_BUF_FULL_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_BUF_FULL_get();
                 return ret;
             }
         }
@@ -836,7 +836,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_IOCP_ERROR_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_IOCP_ERROR_get();
                 return ret;
             }
         }
@@ -845,7 +845,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_PARSE_ERROR_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_PARSE_ERROR_get();
                 return ret;
             }
         }
@@ -854,7 +854,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_CONNECT_TIMEOUT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_CONNECT_TIMEOUT_get();
                 return ret;
             }
         }
@@ -863,7 +863,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_INIT_ERROR_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_INIT_ERROR_get();
                 return ret;
             }
         }
@@ -872,7 +872,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_HAS_CONNECTED_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_HAS_CONNECTED_get();
                 return ret;
             }
         }
@@ -881,7 +881,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_HAS_EXIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_HAS_EXIT_get();
                 return ret;
             }
         }
@@ -890,7 +890,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_TRY_LATER_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_TRY_LATER_get();
                 return ret;
             }
         }
@@ -899,7 +899,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_DISCONNECT_HEARTBEAT_FAILED_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_DISCONNECT_HEARTBEAT_FAILED_get();
                 return ret;
             }
         }
@@ -908,7 +908,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_get();
                 return ret;
             }
         }
@@ -917,7 +917,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_USER_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_USER_get();
                 return ret;
             }
         }
@@ -926,7 +926,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_DDA_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_DDA_get();
                 return ret;
             }
         }
@@ -935,7 +935,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_LICENSE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_LICENSE_get();
                 return ret;
             }
         }
@@ -944,7 +944,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_MODULE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_MODULE_get();
                 return ret;
             }
         }
@@ -953,7 +953,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_FORCE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_FORCE_get();
                 return ret;
             }
         }
@@ -962,7 +962,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_STATE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_STATE_get();
                 return ret;
             }
         }
@@ -971,7 +971,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_PASS_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_PASS_get();
                 return ret;
             }
         }
@@ -980,7 +980,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_RIGHT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_RIGHT_get();
                 return ret;
             }
         }
@@ -989,7 +989,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_COUNT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_COUNT_get();
                 return ret;
             }
         }
@@ -998,7 +998,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_NOTIN_SERVERFLAGUSRES_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_NOTIN_SERVERFLAGUSRES_get();
                 return ret;
             }
         }
@@ -1007,7 +1007,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_USER_EXPIRED_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_USER_EXPIRED_get();
                 return ret;
             }
         }
@@ -1016,7 +1016,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_NO_ACCOUNT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_NO_ACCOUNT_get();
                 return ret;
             }
         }
@@ -1025,7 +1025,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_NO_JGT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_NO_JGT_get();
                 return ret;
             }
         }
@@ -1034,7 +1034,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_ERROR_TIMES_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_ERROR_TIMES_get();
                 return ret;
             }
         }
@@ -1043,7 +1043,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_ERROR_AUTHTYPE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_ERROR_AUTHTYPE_get();
                 return ret;
             }
         }
@@ -1052,7 +1052,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_ERROR_AUTHEXPIRED_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_ERROR_AUTHEXPIRED_get();
                 return ret;
             }
         }
@@ -1061,7 +1061,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_LOGIN_ERROR_PASSWDEXPIRED_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_LOGIN_ERROR_PASSWDEXPIRED_get();
                 return ret;
             }
         }
@@ -1070,7 +1070,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_USERINFO_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_USERINFO_QRY_get();
                 return ret;
             }
         }
@@ -1079,7 +1079,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_USERALLRIGHT_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_USERALLRIGHT_QRY_get();
                 return ret;
             }
         }
@@ -1088,7 +1088,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_USERALLACCOUNT_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_USERALLACCOUNT_QRY_get();
                 return ret;
             }
         }
@@ -1097,7 +1097,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_USERPASSWORD_MOD_get();
                 return ret;
             }
         }
@@ -1106,7 +1106,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_SOURCE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_USERPASSWORD_MOD_SOURCE_get();
                 return ret;
             }
         }
@@ -1115,7 +1115,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_SAME_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_USERPASSWORD_MOD_SAME_get();
                 return ret;
             }
         }
@@ -1124,7 +1124,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_COMPLEXITY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_USERPASSWORD_MOD_COMPLEXITY_get();
                 return ret;
             }
         }
@@ -1133,7 +1133,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ACCOUNTINFO_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ACCOUNTINFO_QRY_get();
                 return ret;
             }
         }
@@ -1142,7 +1142,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_TRADENO_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_TRADENO_QRY_get();
                 return ret;
             }
         }
@@ -1151,7 +1151,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_CONTRACTINFO_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_CONTRACTINFO_QRY_get();
                 return ret;
             }
         }
@@ -1160,7 +1160,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SPECIALOPTIONFUTURE_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SPECIALOPTIONFUTURE_QRY_get();
                 return ret;
             }
         }
@@ -1169,7 +1169,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_COMMODITYORDERTYPE_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_COMMODITYORDERTYPE_QRY_get();
                 return ret;
             }
         }
@@ -1178,7 +1178,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERTIMEINFORCE_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERTIMEINFORCE_QRY_get();
                 return ret;
             }
         }
@@ -1187,7 +1187,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_USER_ORDER_FREQUENCE_QRY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_USER_ORDER_FREQUENCE_QRY_get();
                 return ret;
             }
         }
@@ -1196,7 +1196,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_ACCOUNT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_ACCOUNT_get();
                 return ret;
             }
         }
@@ -1205,7 +1205,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_ACCOUNT_STATE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_ACCOUNT_STATE_get();
                 return ret;
             }
         }
@@ -1214,7 +1214,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_SIDE_TRADE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_SIDE_TRADE_get();
                 return ret;
             }
         }
@@ -1223,7 +1223,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_OPTIONS_TRADE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_OPTIONS_TRADE_get();
                 return ret;
             }
         }
@@ -1232,7 +1232,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_COMMODITY_TRADE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_COMMODITY_TRADE_get();
                 return ret;
             }
         }
@@ -1241,7 +1241,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_OPEN_RIGHT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_OPEN_RIGHT_get();
                 return ret;
             }
         }
@@ -1250,7 +1250,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_RISK_CHECK_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_RISK_CHECK_get();
                 return ret;
             }
         }
@@ -1259,7 +1259,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_CONTRACT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_CONTRACT_get();
                 return ret;
             }
         }
@@ -1268,7 +1268,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_TRADEROUTE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_TRADEROUTE_get();
                 return ret;
             }
         }
@@ -1277,7 +1277,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_POSITIONMAX_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_POSITIONMAX_get();
                 return ret;
             }
         }
@@ -1286,7 +1286,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDER_NOTRADE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDER_NOTRADE_get();
                 return ret;
             }
         }
@@ -1295,7 +1295,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDER_CLOSE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDER_CLOSE_get();
                 return ret;
             }
         }
@@ -1304,7 +1304,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_NOTENOUGHFUND_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_NOTENOUGHFUND_get();
                 return ret;
             }
         }
@@ -1313,7 +1313,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_ORDERTYPE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_ORDERTYPE_get();
                 return ret;
             }
         }
@@ -1322,7 +1322,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_TIMEINFORCE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_TIMEINFORCE_get();
                 return ret;
             }
         }
@@ -1331,7 +1331,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_NO_TACTICS_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_NO_TACTICS_get();
                 return ret;
             }
         }
@@ -1340,7 +1340,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_POSITION_CANNOT_CLOSE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_POSITION_CANNOT_CLOSE_get();
                 return ret;
             }
         }
@@ -1349,7 +1349,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_AUTOCHECK_FAIL_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_AUTOCHECK_FAIL_get();
                 return ret;
             }
         }
@@ -1358,7 +1358,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_LME_NOTREADY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_LME_NOTREADY_get();
                 return ret;
             }
         }
@@ -1367,7 +1367,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_CLOSEMODE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_CLOSEMODE_get();
                 return ret;
             }
         }
@@ -1376,7 +1376,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND_get();
                 return ret;
             }
         }
@@ -1385,7 +1385,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SWAP_CONTRACT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SWAP_CONTRACT_get();
                 return ret;
             }
         }
@@ -1394,7 +1394,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_USERNO_NOTHAS_ACCOUNT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_USERNO_NOTHAS_ACCOUNT_get();
                 return ret;
             }
         }
@@ -1403,7 +1403,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_UPPERCHANNEL_BROKEN_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_UPPERCHANNEL_BROKEN_get();
                 return ret;
             }
         }
@@ -1412,7 +1412,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_UPPERCHANNEL_NOT_EXIST_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_UPPERCHANNEL_NOT_EXIST_get();
                 return ret;
             }
         }
@@ -1421,7 +1421,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERDELETE_NOT_SYSNO_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERDELETE_NOT_SYSNO_get();
                 return ret;
             }
         }
@@ -1430,7 +1430,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERDELETE_NOT_STATE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERDELETE_NOT_STATE_get();
                 return ret;
             }
         }
@@ -1439,7 +1439,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERACTIVE_NOT_STATE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERACTIVE_NOT_STATE_get();
                 return ret;
             }
         }
@@ -1448,7 +1448,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERCHECK_NOT_STATE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERCHECK_NOT_STATE_get();
                 return ret;
             }
         }
@@ -1457,7 +1457,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERCHECK_FAIL_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERCHECK_FAIL_get();
                 return ret;
             }
         }
@@ -1466,7 +1466,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERMODIFY_NOT_STATE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERMODIFY_NOT_STATE_get();
                 return ret;
             }
         }
@@ -1475,7 +1475,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERMODIFY_BACK_INPUT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERMODIFY_BACK_INPUT_get();
                 return ret;
             }
         }
@@ -1484,7 +1484,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_FEE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_FEE_get();
                 return ret;
             }
         }
@@ -1493,7 +1493,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERINSERT_MARGIN_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERINSERT_MARGIN_get();
                 return ret;
             }
         }
@@ -1502,7 +1502,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDER_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDER_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1511,7 +1511,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_RSPQUOTE_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_RSPQUOTE_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1520,7 +1520,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1529,7 +1529,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_TRADENO_NOT_FIND_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_TRADENO_NOT_FIND_get();
                 return ret;
             }
         }
@@ -1538,7 +1538,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDER_NO_CLOSE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDER_NO_CLOSE_get();
                 return ret;
             }
         }
@@ -1547,7 +1547,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_QRY_QUOTE_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_QRY_QUOTE_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1556,7 +1556,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_EXPIREDATE_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_EXPIREDATE_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1565,7 +1565,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_CMB_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_CMB_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1574,7 +1574,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERSERVER_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERSERVER_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1583,7 +1583,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_POSITION_CANNOT_EXEC_OR_ABANDON_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_POSITION_CANNOT_EXEC_OR_ABANDON_get();
                 return ret;
             }
         }
@@ -1592,7 +1592,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERCHECK_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERCHECK_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1601,7 +1601,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDERMAXOPENVOL_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDERMAXOPENVOL_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1610,7 +1610,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDER_QTY_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDER_QTY_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1619,7 +1619,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDER_APPLY_NO_PERMIT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDER_APPLY_NO_PERMIT_get();
                 return ret;
             }
         }
@@ -1628,7 +1628,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDER_FREQ_OVERRUN_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDER_FREQ_OVERRUN_get();
                 return ret;
             }
         }
@@ -1637,7 +1637,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_COMB_NO_SIDEORHEDGE_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_COMB_NO_SIDEORHEDGE_get();
                 return ret;
             }
         }
@@ -1646,7 +1646,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDER_FREQUENCY_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDER_FREQUENCY_get();
                 return ret;
             }
         }
@@ -1655,7 +1655,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_ORDER_QUERYING_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_ORDER_QUERYING_get();
                 return ret;
             }
         }
@@ -1664,7 +1664,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_MAX_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_MAX_get();
                 return ret;
             }
         }
@@ -1673,7 +1673,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_EXCHANGE_MAX_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_EXCHANGE_MAX_get();
                 return ret;
             }
         }
@@ -1682,7 +1682,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_NO_RIGHT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_NO_RIGHT_get();
                 return ret;
             }
         }
@@ -1691,7 +1691,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_NO_EXCHANGE_RIGHT_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_NO_EXCHANGE_RIGHT_get();
                 return ret;
             }
         }
@@ -1700,7 +1700,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_COMMODITY_NOT_EXIST_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_COMMODITY_NOT_EXIST_get();
                 return ret;
             }
         }
@@ -1709,7 +1709,7 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_CONTRACT_MAY_NOT_EXIST_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_CONTRACT_MAY_NOT_EXIST_get();
                 return ret;
             }
         }
@@ -1718,11 +1718,10 @@ namespace QTapQuoteWrapperApi
         {
             get
             {
-                int ret = QTapQuoteApiPINVOKE.TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL_get();
+                int ret = TapQuoteWrapperPINVOKE.TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL_get();
                 return ret;
             }
         }
-
         /// <summary>
         /// 创建TapQuoteAPI的接口对象。创建整个行情API的接口
         /// </summary>
@@ -1731,28 +1730,26 @@ namespace QTapQuoteWrapperApi
         /// <returns>NULL	创建失败。!NULL	实现了ITapQuoteAPI接口的对象</returns>
         public static ITapQuoteAPI CreateTapQuoteAPI(TapAPIApplicationInfo appInfo, out int iResult)
         {
-            global::System.IntPtr cPtr = QTapQuoteApiPINVOKE.CreateTapQuoteAPI(TapAPIApplicationInfo.getCPtr(appInfo), out iResult);
+            global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.CreateTapQuoteAPI(TapAPIApplicationInfo.getCPtr(appInfo), out iResult);
             ITapQuoteAPI ret = (cPtr == global::System.IntPtr.Zero) ? null : new ITapQuoteAPI(cPtr, false);
-            if (QTapQuoteApiPINVOKE.SWIGPendingException.Pending) throw QTapQuoteApiPINVOKE.SWIGPendingException.Retrieve();
+            if (TapQuoteWrapperPINVOKE.SWIGPendingException.Pending) throw TapQuoteWrapperPINVOKE.SWIGPendingException.Retrieve();
             return ret;
         }
-
         /// <summary>
         /// 销毁通过CreateTapQuoteAPI函数创建的ITapQuoteAPI对象。
         /// </summary>
         /// <param name="apiObj">ITapQuoteAPI对象</param>
         public static void FreeTapQuoteAPI(ITapQuoteAPI apiObj)
         {
-            QTapQuoteApiPINVOKE.FreeTapQuoteAPI(ITapQuoteAPI.getCPtr(apiObj));
+            TapQuoteWrapperPINVOKE.FreeTapQuoteAPI(ITapQuoteAPI.getCPtr(apiObj));
         }
-
         /// <summary>
         /// 获取TapQuoteAPI的版本信息
         /// </summary>
         /// <returns>TapQuoteAPI的版本信息</returns>
         public static string GetTapQuoteAPIVersion()
         {
-            string ret = QTapQuoteApiPINVOKE.GetTapQuoteAPIVersion();
+            string ret = TapQuoteWrapperPINVOKE.GetTapQuoteAPIVersion();
             return ret;
         }
         /// <summary>
@@ -1764,7 +1761,7 @@ namespace QTapQuoteWrapperApi
         /// <returns>0 成功 非0 错误码</returns>
         public static int SetTapQuoteAPIDataPath(string path)
         {
-            int ret = QTapQuoteApiPINVOKE.SetTapQuoteAPIDataPath(path);
+            int ret = TapQuoteWrapperPINVOKE.SetTapQuoteAPIDataPath(path);
             return ret;
         }
         /// <summary>
@@ -1776,7 +1773,7 @@ namespace QTapQuoteWrapperApi
         /// <returns>0 成功 非0 错误码</returns>
         public static int SetTapQuoteAPILogLevel(char level)
         {
-            int ret = QTapQuoteApiPINVOKE.SetTapQuoteAPILogLevel(level);
+            int ret = TapQuoteWrapperPINVOKE.SetTapQuoteAPILogLevel(level);
             return ret;
         }
 
