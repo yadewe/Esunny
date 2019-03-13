@@ -8,112 +8,160 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapQuoteWrapperApi {
+namespace QTapQuoteWrapperApi
+{
 
-public class TapAPIQuoteContractInfo : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
+    /// <summary>
+    /// 行情合约信息
+    /// </summary>
+    public class TapAPIQuoteContractInfo : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-  internal TapAPIQuoteContractInfo(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIQuoteContractInfo obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIQuoteContractInfo() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapQuoteApiPINVOKE.delete_TapAPIQuoteContractInfo(swigCPtr);
+        internal TapAPIQuoteContractInfo(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIQuoteContractInfo obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIQuoteContractInfo()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapQuoteApiPINVOKE.delete_TapAPIQuoteContractInfo(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 合约
+        /// </summary>
+        public TapAPIContract Contract
+        {
+            set
+            {
+                QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_Contract_set(swigCPtr, TapAPIContract.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_Contract_get(swigCPtr);
+                TapAPIContract ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIContract(cPtr, false);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 合约类型,'1'表示交易行情合约,'2'表示行情合约
+        /// </summary>
+        public char ContractType
+        {
+            set
+            {
+                QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 行情真实合约
+        /// </summary>
+        public string QuoteUnderlyingContract
+        {
+            set
+            {
+                QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_QuoteUnderlyingContract_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_QuoteUnderlyingContract_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 合约名称
+        /// </summary>
+        public string ContractName
+        {
+            set
+            {
+                QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractName_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractName_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 合约到期日	
+        /// </summary>
+        public string ContractExpDate
+        {
+            set
+            {
+                QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractExpDate_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractExpDate_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 最后交易日
+        /// </summary>
+        public string LastTradeDate
+        {
+            set
+            {
+                QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_LastTradeDate_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_LastTradeDate_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 首次通知日
+        /// </summary>
+        public string FirstNoticeDate
+        {
+            set
+            {
+                QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_FirstNoticeDate_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_FirstNoticeDate_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIQuoteContractInfo() : this(QTapQuoteApiPINVOKE.new_TapAPIQuoteContractInfo(), true)
+        {
+        }
+
     }
-  }
-
-  public TapAPIContract Contract {
-    set {
-      QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_Contract_set(swigCPtr, TapAPIContract.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_Contract_get(swigCPtr);
-      TapAPIContract ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIContract(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public char ContractType {
-    set {
-      QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string QuoteUnderlyingContract {
-    set {
-      QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_QuoteUnderlyingContract_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_QuoteUnderlyingContract_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ContractName {
-    set {
-      QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractName_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractName_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ContractExpDate {
-    set {
-      QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractExpDate_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_ContractExpDate_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string LastTradeDate {
-    set {
-      QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_LastTradeDate_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_LastTradeDate_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string FirstNoticeDate {
-    set {
-      QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_FirstNoticeDate_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapQuoteApiPINVOKE.TapAPIQuoteContractInfo_FirstNoticeDate_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIQuoteContractInfo() : this(QTapQuoteApiPINVOKE.new_TapAPIQuoteContractInfo(), true) {
-  }
-
-}
 
 }

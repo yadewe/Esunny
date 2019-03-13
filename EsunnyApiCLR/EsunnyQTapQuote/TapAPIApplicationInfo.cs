@@ -8,61 +8,85 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapQuoteWrapperApi {
+namespace QTapQuoteWrapperApi
+{
 
-public class TapAPIApplicationInfo : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
+    /// <summary>
+    /// Application信息
+    /// </summary>
+    public class TapAPIApplicationInfo : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-  internal TapAPIApplicationInfo(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIApplicationInfo obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIApplicationInfo() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapQuoteApiPINVOKE.delete_TapAPIApplicationInfo(swigCPtr);
+        internal TapAPIApplicationInfo(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIApplicationInfo obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIApplicationInfo()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapQuoteApiPINVOKE.delete_TapAPIApplicationInfo(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+
+        /// <summary>
+        /// 授权码
+        /// </summary>
+        public string AuthCode
+        {
+            set
+            {
+                QTapQuoteApiPINVOKE.TapAPIApplicationInfo_AuthCode_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapQuoteApiPINVOKE.TapAPIApplicationInfo_AuthCode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 关键操作日志路径
+        /// </summary>
+        public string KeyOperationLogPath
+        {
+            set
+            {
+                QTapQuoteApiPINVOKE.TapAPIApplicationInfo_KeyOperationLogPath_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapQuoteApiPINVOKE.TapAPIApplicationInfo_KeyOperationLogPath_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIApplicationInfo() : this(QTapQuoteApiPINVOKE.new_TapAPIApplicationInfo(), true)
+        {
+        }
+
     }
-  }
-
-  public string AuthCode {
-    set {
-      QTapQuoteApiPINVOKE.TapAPIApplicationInfo_AuthCode_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapQuoteApiPINVOKE.TapAPIApplicationInfo_AuthCode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string KeyOperationLogPath {
-    set {
-      QTapQuoteApiPINVOKE.TapAPIApplicationInfo_KeyOperationLogPath_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapQuoteApiPINVOKE.TapAPIApplicationInfo_KeyOperationLogPath_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIApplicationInfo() : this(QTapQuoteApiPINVOKE.new_TapAPIApplicationInfo(), true) {
-  }
-
-}
 
 }
