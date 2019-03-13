@@ -8,111 +8,158 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapQuoteWrapperApi {
+namespace TapQuoteWrapperApi
+{
+    /// <summary>
+    /// 登录认证信息
+    /// </summary>
+    public class TapAPIQuoteLoginAuth : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIQuoteLoginAuth : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIQuoteLoginAuth(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIQuoteLoginAuth obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIQuoteLoginAuth() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapQuoteWrapperPINVOKE.delete_TapAPIQuoteLoginAuth(swigCPtr);
+        internal TapAPIQuoteLoginAuth(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIQuoteLoginAuth obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIQuoteLoginAuth()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapQuoteWrapperPINVOKE.delete_TapAPIQuoteLoginAuth(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 用户名
+        /// </summary>
+        public string UserNo
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_UserNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_UserNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 是否修改密码，'Y'表示是，'N'表示否
+        /// </summary>
+        public char ISModifyPassword
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISModifyPassword_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISModifyPassword_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 用户密码
+        /// </summary>
+        public string Password
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_Password_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_Password_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 新密码，如果设置了修改密码则需要填写此字段
+        /// </summary>
+        public string NewPassword
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_NewPassword_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_NewPassword_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 行情临时密码
+        /// </summary>
+        public string QuoteTempPassword
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_QuoteTempPassword_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_QuoteTempPassword_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 是否需要动态认证，'Y'表示是，'N'表示否
+        /// </summary>
+        public char ISDDA
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISDDA_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISDDA_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        ///  动态认证码
+        /// </summary>
+        public string DDASerialNo
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_DDASerialNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_DDASerialNo_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIQuoteLoginAuth() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteLoginAuth(), true)
+        {
+        }
+
     }
-  }
-
-  public string UserNo {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_UserNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_UserNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char ISModifyPassword {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISModifyPassword_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISModifyPassword_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string Password {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_Password_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_Password_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string NewPassword {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_NewPassword_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_NewPassword_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string QuoteTempPassword {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_QuoteTempPassword_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_QuoteTempPassword_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char ISDDA {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISDDA_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_ISDDA_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string DDASerialNo {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_DDASerialNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteLoginAuth_DDASerialNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIQuoteLoginAuth() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteLoginAuth(), true) {
-  }
-
-}
 
 }

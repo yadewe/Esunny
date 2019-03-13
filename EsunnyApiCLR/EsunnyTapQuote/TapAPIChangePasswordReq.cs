@@ -8,61 +8,83 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapQuoteWrapperApi {
+namespace TapQuoteWrapperApi
+{
+    /// <summary>
+    /// –ﬁ∏ƒ√‹¬Î«Î«Û
+    /// </summary>
+    public class TapAPIChangePasswordReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIChangePasswordReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIChangePasswordReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIChangePasswordReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIChangePasswordReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapQuoteWrapperPINVOKE.delete_TapAPIChangePasswordReq(swigCPtr);
+        internal TapAPIChangePasswordReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIChangePasswordReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIChangePasswordReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapQuoteWrapperPINVOKE.delete_TapAPIChangePasswordReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// æ…√‹¬Î
+        /// </summary>
+        public string OldPassword
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_OldPassword_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_OldPassword_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// –¬√‹¬Î
+        /// </summary>
+        public string NewPassword
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_NewPassword_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_NewPassword_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIChangePasswordReq() : this(TapQuoteWrapperPINVOKE.new_TapAPIChangePasswordReq(), true)
+        {
+        }
+
     }
-  }
-
-  public string OldPassword {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_OldPassword_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_OldPassword_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string NewPassword {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_NewPassword_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIChangePasswordReq_NewPassword_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIChangePasswordReq() : this(TapQuoteWrapperPINVOKE.new_TapAPIChangePasswordReq(), true) {
-  }
-
-}
 
 }

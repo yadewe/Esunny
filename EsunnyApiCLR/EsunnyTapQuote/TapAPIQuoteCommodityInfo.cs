@@ -8,154 +8,221 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapQuoteWrapperApi {
+namespace TapQuoteWrapperApi
+{
+    /// <summary>
+    /// 品种信息
+    /// </summary>
+    public class TapAPIQuoteCommodityInfo : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIQuoteCommodityInfo : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIQuoteCommodityInfo(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIQuoteCommodityInfo obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIQuoteCommodityInfo() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapQuoteWrapperPINVOKE.delete_TapAPIQuoteCommodityInfo(swigCPtr);
+        internal TapAPIQuoteCommodityInfo(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIQuoteCommodityInfo obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIQuoteCommodityInfo()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapQuoteWrapperPINVOKE.delete_TapAPIQuoteCommodityInfo(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 品种
+        /// </summary>
+        public TapAPICommodity Commodity
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_Commodity_set(swigCPtr, TapAPICommodity.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_Commodity_get(swigCPtr);
+                TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种名称,GBK编码格式
+        /// </summary>
+        public string CommodityName
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityName_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityName_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种英文名称
+        /// </summary>
+        public string CommodityEngName
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityEngName_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityEngName_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 每手乘数
+        /// </summary>
+        public double ContractSize
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_ContractSize_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_ContractSize_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 最小变动价位
+        /// </summary>
+        public double CommodityTickSize
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityTickSize_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityTickSize_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 报价分母
+        /// </summary>
+        public int CommodityDenominator
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityDenominator_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityDenominator_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 组合方向
+        /// </summary>
+        public char CmbDirect
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CmbDirect_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CmbDirect_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种合约年限
+        /// </summary>
+        public int CommodityContractLen
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityContractLen_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityContractLen_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 是否夏令时,'Y'为是,'N'为否
+        /// </summary>
+        public char IsDST
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_IsDST_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_IsDST_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 关联品种1
+        /// </summary>
+        public TapAPICommodity RelateCommodity1
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity1_set(swigCPtr, TapAPICommodity.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity1_get(swigCPtr);
+                TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 关联品种2
+        /// </summary>
+        public TapAPICommodity RelateCommodity2
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity2_set(swigCPtr, TapAPICommodity.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity2_get(swigCPtr);
+                TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
+                return ret;
+            }
+        }
+
+        public TapAPIQuoteCommodityInfo() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteCommodityInfo(), true)
+        {
+        }
+
     }
-  }
-
-  public TapAPICommodity Commodity {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_Commodity_set(swigCPtr, TapAPICommodity.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_Commodity_get(swigCPtr);
-      TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public string CommodityName {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityName_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityName_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityEngName {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityEngName_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityEngName_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double ContractSize {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_ContractSize_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_ContractSize_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double CommodityTickSize {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityTickSize_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityTickSize_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int CommodityDenominator {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityDenominator_set(swigCPtr, value);
-    } 
-    get {
-      int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityDenominator_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CmbDirect {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CmbDirect_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CmbDirect_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int CommodityContractLen {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityContractLen_set(swigCPtr, value);
-    } 
-    get {
-      int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_CommodityContractLen_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char IsDST {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_IsDST_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_IsDST_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPICommodity RelateCommodity1 {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity1_set(swigCPtr, TapAPICommodity.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity1_get(swigCPtr);
-      TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public TapAPICommodity RelateCommodity2 {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity2_set(swigCPtr, TapAPICommodity.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteCommodityInfo_RelateCommodity2_get(swigCPtr);
-      TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public TapAPIQuoteCommodityInfo() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteCommodityInfo(), true) {
-  }
-
-}
 
 }

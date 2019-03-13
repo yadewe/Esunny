@@ -8,509 +8,760 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapQuoteWrapperApi {
+namespace TapQuoteWrapperApi
+{
+    /// <summary>
+    /// 行情全文
+    /// </summary>
+    public partial class TapAPIQuoteWhole : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public partial class TapAPIQuoteWhole : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIQuoteWhole(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIQuoteWhole obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIQuoteWhole() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapQuoteWrapperPINVOKE.delete_TapAPIQuoteWhole(swigCPtr);
+        internal TapAPIQuoteWhole(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIQuoteWhole obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIQuoteWhole()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapQuoteWrapperPINVOKE.delete_TapAPIQuoteWhole(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 合约
+        /// </summary>
+        public TapAPIContract Contract
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_Contract_set(swigCPtr, TapAPIContract.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_Contract_get(swigCPtr);
+                TapAPIContract ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIContract(cPtr, false);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 币种编号
+        /// </summary>
+        public string CurrencyNo
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_CurrencyNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_CurrencyNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易状态。1,集合竞价;2,集合竞价撮合;3,连续交易;4,交易暂停;5,闭市
+        /// </summary>
+        public char TradingState
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_TradingState_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_TradingState_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 时间戳
+        /// </summary>
+        public string DateTimeStamp
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_DateTimeStamp_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_DateTimeStamp_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 昨收盘价
+        /// </summary>
+        public double QPreClosingPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreClosingPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreClosingPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 昨结算价
+        /// </summary>
+        public double QPreSettlePrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreSettlePrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreSettlePrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 昨持仓量
+        /// </summary>
+        public ulong QPrePositionQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPrePositionQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPrePositionQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 开盘价
+        /// </summary>
+        public double QOpeningPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QOpeningPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QOpeningPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 最新价
+        /// </summary>
+        public double QLastPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLastPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLastPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 最高价
+        /// </summary>
+        public double QHighPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHighPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHighPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 最低价
+        /// </summary>
+        public double QLowPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLowPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLowPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 历史最高价
+        /// </summary>
+        public double QHisHighPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHisHighPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHisHighPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 历史最低价
+        /// </summary>
+        public double QHisLowPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHisLowPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHisLowPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 涨停价
+        /// </summary>
+        public double QLimitUpPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLimitUpPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLimitUpPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 跌停价
+        /// </summary>
+        public double QLimitDownPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLimitDownPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLimitDownPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 当日总成交量
+        /// </summary>
+        public ulong QTotalQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 当日成交金额
+        /// </summary>
+        public double QTotalTurnover
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalTurnover_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalTurnover_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 持仓量
+        /// </summary>
+        public ulong QPositionQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPositionQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPositionQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 均价
+        /// </summary>
+        public double QAveragePrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAveragePrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAveragePrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 收盘价
+        /// </summary>
+        public double QClosingPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QClosingPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QClosingPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 结算价
+        /// </summary>
+        public double QSettlePrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QSettlePrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QSettlePrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 新成交量
+        /// </summary>
+        public ulong QLastQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLastQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLastQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 隐含买价
+        /// </summary>
+        public double QImpliedBidPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedBidPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedBidPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 隐含买量
+        /// </summary>
+        public ulong QImpliedBidQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedBidQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedBidQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 隐含卖价
+        /// </summary>
+        public double QImpliedAskPrice
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedAskPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedAskPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 隐含卖量
+        /// </summary>
+        public ulong QImpliedAskQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedAskQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedAskQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 昨虚实度
+        /// </summary>
+        public double QPreDelta
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreDelta_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreDelta_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 今虚实度
+        /// </summary>
+        public double QCurrDelta
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QCurrDelta_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QCurrDelta_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 内盘量
+        /// </summary>
+        public ulong QInsideQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QInsideQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QInsideQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 外盘量
+        /// </summary>
+        public ulong QOutsideQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QOutsideQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QOutsideQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 换手率
+        /// </summary>
+        public double QTurnoverRate
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTurnoverRate_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTurnoverRate_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 五日均量
+        /// </summary>
+        public ulong Q5DAvgQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_Q5DAvgQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_Q5DAvgQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 市盈率
+        /// </summary>
+        public double QPERatio
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPERatio_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPERatio_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 总市值
+        /// </summary>
+        public double QTotalValue
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalValue_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalValue_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 流通市值
+        /// </summary>
+        public double QNegotiableValue
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QNegotiableValue_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QNegotiableValue_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 持仓走势
+        /// </summary>
+        public long QPositionTrend
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPositionTrend_set(swigCPtr, value);
+            }
+            get
+            {
+                long ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPositionTrend_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 涨速
+        /// </summary>
+        public double QChangeSpeed
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeSpeed_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeSpeed_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 涨幅
+        /// </summary>
+        public double QChangeRate
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeRate_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeRate_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 涨跌值
+        /// </summary>
+        public double QChangeValue
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeValue_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeValue_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        ///  振幅
+        /// </summary>
+        public double QSwing
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QSwing_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QSwing_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委买总量
+        /// </summary>
+        public ulong QTotalBidQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalBidQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalBidQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委卖总量
+        /// </summary>
+        public ulong QTotalAskQty
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalAskQty_set(swigCPtr, value);
+            }
+            get
+            {
+                ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalAskQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 拟合约对应的真实合约
+        /// </summary>
+        public TapAPIContract UnderlyContract
+        {
+            set
+            {
+                TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_UnderlyContract_set(swigCPtr, TapAPIContract.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_UnderlyContract_get(swigCPtr);
+                TapAPIContract ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIContract(cPtr, false);
+                return ret;
+            }
+        }
+
+        public int QBidPriceSize()
+        {
+            int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidPriceSize(swigCPtr);
+            return ret;
+        }
+        /// <summary>
+        /// 买价1-20档
+        /// </summary>
+        /// <param name="array1"></param>
+        /// <param name="size"></param>
+        public void GetQBidPrice(double[] array1, int size)
+        {
+            TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQBidPrice(swigCPtr, array1, size);
+        }
+
+        public int QBidQtySize()
+        {
+            int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidQtySize(swigCPtr);
+            return ret;
+        }
+        /// <summary>
+        /// 买量1-20档
+        /// </summary>
+        /// <param name="array2"></param>
+        /// <param name="size"></param>
+        public void GetQBidQty(ulong[] array2, int size)
+        {
+            TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQBidQty(swigCPtr, array2, size);
+        }
+
+        public int QAskPriceSize()
+        {
+            int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskPriceSize(swigCPtr);
+            return ret;
+        }
+        /// <summary>
+        /// 卖价1-20档
+        /// </summary>
+        /// <param name="array1"></param>
+        /// <param name="size"></param>
+        public void GetQAskPrice(double[] array1, int size)
+        {
+            TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQAskPrice(swigCPtr, array1, size);
+        }
+
+        public int QAskQtySize()
+        {
+            int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskQtySize(swigCPtr);
+            return ret;
+        }
+        /// <summary>
+        /// 卖量1-20档
+        /// </summary>
+        /// <param name="array2"></param>
+        /// <param name="size"></param>
+        public void GetQAskQty(ulong[] array2, int size)
+        {
+            TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQAskQty(swigCPtr, array2, size);
+        }
+
+        public TapAPIQuoteWhole() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteWhole(), true)
+        {
+        }
+
     }
-  }
-
-  public TapAPIContract Contract {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_Contract_set(swigCPtr, TapAPIContract.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_Contract_get(swigCPtr);
-      TapAPIContract ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIContract(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public string CurrencyNo {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_CurrencyNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_CurrencyNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char TradingState {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_TradingState_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_TradingState_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string DateTimeStamp {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_DateTimeStamp_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_DateTimeStamp_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QPreClosingPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreClosingPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreClosingPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QPreSettlePrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreSettlePrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreSettlePrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QPrePositionQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPrePositionQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPrePositionQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QOpeningPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QOpeningPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QOpeningPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QLastPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLastPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLastPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QHighPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHighPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHighPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QLowPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLowPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLowPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QHisHighPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHisHighPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHisHighPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QHisLowPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHisLowPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QHisLowPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QLimitUpPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLimitUpPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLimitUpPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QLimitDownPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLimitDownPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLimitDownPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QTotalQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QTotalTurnover {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalTurnover_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalTurnover_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QPositionQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPositionQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPositionQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QAveragePrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAveragePrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAveragePrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QClosingPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QClosingPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QClosingPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QSettlePrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QSettlePrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QSettlePrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QLastQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLastQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QLastQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QImpliedBidPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedBidPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedBidPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QImpliedBidQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedBidQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedBidQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QImpliedAskPrice {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedAskPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedAskPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QImpliedAskQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedAskQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QImpliedAskQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QPreDelta {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreDelta_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPreDelta_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QCurrDelta {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QCurrDelta_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QCurrDelta_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QInsideQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QInsideQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QInsideQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QOutsideQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QOutsideQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QOutsideQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QTurnoverRate {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTurnoverRate_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTurnoverRate_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong Q5DAvgQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_Q5DAvgQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_Q5DAvgQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QPERatio {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPERatio_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPERatio_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QTotalValue {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalValue_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalValue_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QNegotiableValue {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QNegotiableValue_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QNegotiableValue_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public long QPositionTrend {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPositionTrend_set(swigCPtr, value);
-    } 
-    get {
-      long ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QPositionTrend_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QChangeSpeed {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeSpeed_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeSpeed_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QChangeRate {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeRate_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeRate_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QChangeValue {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeValue_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QChangeValue_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double QSwing {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QSwing_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QSwing_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QTotalBidQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalBidQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalBidQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public ulong QTotalAskQty {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalAskQty_set(swigCPtr, value);
-    } 
-    get {
-      ulong ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QTotalAskQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIContract UnderlyContract {
-    set {
-      TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_UnderlyContract_set(swigCPtr, TapAPIContract.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_UnderlyContract_get(swigCPtr);
-      TapAPIContract ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIContract(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public int QBidPriceSize() {
-    int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidPriceSize(swigCPtr);
-    return ret;
-  }
-
-  public void GetQBidPrice(double[] array1, int size) {
-    TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQBidPrice(swigCPtr, array1, size);
-  }
-
-  public int QBidQtySize() {
-    int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QBidQtySize(swigCPtr);
-    return ret;
-  }
-
-  public void GetQBidQty(ulong[] array2, int size) {
-    TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQBidQty(swigCPtr, array2, size);
-  }
-
-  public int QAskPriceSize() {
-    int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskPriceSize(swigCPtr);
-    return ret;
-  }
-
-  public void GetQAskPrice(double[] array1, int size) {
-    TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQAskPrice(swigCPtr, array1, size);
-  }
-
-  public int QAskQtySize() {
-    int ret = TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_QAskQtySize(swigCPtr);
-    return ret;
-  }
-
-  public void GetQAskQty(ulong[] array2, int size) {
-    TapQuoteWrapperPINVOKE.TapAPIQuoteWhole_GetQAskQty(swigCPtr, array2, size);
-  }
-
-  public TapAPIQuoteWhole() : this(TapQuoteWrapperPINVOKE.new_TapAPIQuoteWhole(), true) {
-  }
-
-}
 
 }
