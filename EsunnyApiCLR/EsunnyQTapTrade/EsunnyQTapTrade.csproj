@@ -42,7 +42,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ITapTradeAPI.cs" />
+    <Compile Include="ITapTradeAPINotify.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QTapTradeApi.cs" />
+    <Compile Include="QTapTradeApiPINVOKE.cs" />
+    <Compile Include="TapAPIAccountInfo.cs" />
+    <Compile Include="TapAPIAccountRentInfo.cs" />
+    <Compile Include="TapAPIAccountRentQryReq.cs" />
+    <Compile Include="TapAPIAccQryReq.cs" />
+    <Compile Include="TapAPIAmendOrder.cs" />
+    <Compile Include="TapAPIApplicationInfo.cs" />
+    <Compile Include="TapAPIChangePasswordReq.cs" />
+    <Compile Include="TapAPICloseInfo.cs" />
+    <Compile Include="TapAPICloseQryReq.cs" />
+    <Compile Include="TapAPICommodity.cs" />
+    <Compile Include="TapAPICommodityInfo.cs" />
+    <Compile Include="TapAPICommodityOrderTimeInForceQryRsp.cs" />
+    <Compile Include="TapAPICommodityOrderTypeQryRsp.cs" />
+    <Compile Include="TapAPIContract.cs" />
+    <Compile Include="TapAPIDeepQuoteInfo.cs" />
+    <Compile Include="TapAPIDeepQuoteQryRsp.cs" />
+    <Compile Include="TapAPIExchangeInfo.cs" />
+    <Compile Include="TapAPIExchangeStateInfo.cs" />
+    <Compile Include="TapAPIExchangeStateInfoNotice.cs" />
+    <Compile Include="TapAPIExchangeStateInfoQryReq.cs" />
+    <Compile Include="TapAPIFillInfo.cs" />
+    <Compile Include="TapAPIFillQryReq.cs" />
+    <Compile Include="TapAPIFundData.cs" />
+    <Compile Include="TapAPIFundReq.cs" />
+    <Compile Include="TapAPINewOrder.cs" />
+    <Compile Include="TapAPIOrderActionRsp.cs" />
+    <Compile Include="TapAPIOrderCancelReq.cs" />
+    <Compile Include="TapAPIOrderInfo.cs" />
+    <Compile Include="TapAPIOrderInfoNotice.cs" />
+    <Compile Include="TapAPIOrderProcessQryReq.cs" />
+    <Compile Include="TapAPIOrderQryReq.cs" />
+    <Compile Include="TapAPIPositionInfo.cs" />
+    <Compile Include="TapAPIPositionProfit.cs" />
+    <Compile Include="TapAPIPositionProfitNotice.cs" />
+    <Compile Include="TapAPIPositionQryReq.cs" />
+    <Compile Include="TapAPIReqQuoteNotice.cs" />
+    <Compile Include="TapAPITradeContractInfo.cs" />
+    <Compile Include="TapAPITradeLoginAuth.cs" />
+    <Compile Include="TapAPITradeLoginRspInfo.cs" />
+    <Compile Include="TapAPIUpperChannelInfo.cs" />
+    <Compile Include="TapAPIUpperChannelQryReq.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
