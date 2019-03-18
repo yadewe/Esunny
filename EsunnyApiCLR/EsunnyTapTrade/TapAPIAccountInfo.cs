@@ -8,111 +8,158 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 资金账号信息
+    /// </summary>
+    public class TapAPIAccountInfo : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIAccountInfo : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIAccountInfo(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountInfo obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIAccountInfo() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIAccountInfo(swigCPtr);
+        internal TapAPIAccountInfo(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountInfo obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIAccountInfo()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIAccountInfo(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 资金账号
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 账号类型
+        /// </summary>
+        public char AccountType
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 账号状态
+        /// </summary>
+        public char AccountState
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountState_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountState_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易状态
+        /// </summary>
+        public char AccountTradeRight
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountTradeRight_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountTradeRight_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 可交易品种组.
+        /// </summary>
+        public string CommodityGroupNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountInfo_CommodityGroupNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_CommodityGroupNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 账号简称
+        /// </summary>
+        public string AccountShortName
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountShortName_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountShortName_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 账号英文简称
+        /// </summary>
+        public string AccountEnShortName
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountEnShortName_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountEnShortName_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIAccountInfo() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountInfo(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char AccountType {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char AccountState {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountState_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountState_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char AccountTradeRight {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountTradeRight_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountTradeRight_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityGroupNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountInfo_CommodityGroupNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_CommodityGroupNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string AccountShortName {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountShortName_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountShortName_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string AccountEnShortName {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountEnShortName_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountInfo_AccountEnShortName_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIAccountInfo() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountInfo(), true) {
-  }
-
-}
 
 }

@@ -8,191 +8,278 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户账户保证金计算参数查询应答
+    /// </summary>
+    public class TapAPIAccountMarginRentQryRsp : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIAccountMarginRentQryRsp : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIAccountMarginRentQryRsp(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountMarginRentQryRsp obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIAccountMarginRentQryRsp() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIAccountMarginRentQryRsp(swigCPtr);
+        internal TapAPIAccountMarginRentQryRsp(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountMarginRentQryRsp obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIAccountMarginRentQryRsp()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIAccountMarginRentQryRsp(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 客户资金账号
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易所编号
+        /// </summary>
+        public string ExchangeNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_ExchangeNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_ExchangeNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型
+        /// </summary>
+        public char CommodityType
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CommodityType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CommodityType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种编号
+        /// </summary>
+        public string CommodityNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CommodityNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CommodityNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 合约
+        /// </summary>
+        public string ContractNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_ContractNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_ContractNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 执行价
+        /// </summary>
+        public string StrikePrice
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_StrikePrice_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_StrikePrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 看涨看跌
+        /// </summary>
+        public char CallOrPutFlag
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CallOrPutFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CallOrPutFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 计算方式
+        /// </summary>
+        public char CalculateMode
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CalculateMode_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CalculateMode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 币种组号
+        /// </summary>
+        public string CurrencyGroupNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CurrencyGroupNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CurrencyGroupNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 币种号
+        /// </summary>
+        public string CurrencyNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CurrencyNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CurrencyNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 初始保证金
+        /// </summary>
+        public double InitialMargin
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_InitialMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_InitialMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 维持保证金
+        /// </summary>
+        public double MaintenanceMargin
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_MaintenanceMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_MaintenanceMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 初始保证金
+        /// </summary>
+        public double SellInitialMargin
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_SellInitialMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_SellInitialMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 维持保证金
+        /// </summary>
+        public double SellMaintenanceMargin
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_SellMaintenanceMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_SellMaintenanceMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 冻结保证金
+        /// </summary>
+        public double LockMargin
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_LockMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_LockMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIAccountMarginRentQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountMarginRentQryRsp(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ExchangeNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_ExchangeNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_ExchangeNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CommodityType {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CommodityType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CommodityType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CommodityNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CommodityNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ContractNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_ContractNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_ContractNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string StrikePrice {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_StrikePrice_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_StrikePrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CallOrPutFlag {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CallOrPutFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CallOrPutFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CalculateMode {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CalculateMode_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CalculateMode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CurrencyGroupNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CurrencyGroupNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CurrencyGroupNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CurrencyNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CurrencyNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_CurrencyNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double InitialMargin {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_InitialMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_InitialMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double MaintenanceMargin {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_MaintenanceMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_MaintenanceMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellInitialMargin {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_SellInitialMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_SellInitialMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellMaintenanceMargin {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_SellMaintenanceMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_SellMaintenanceMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double LockMargin {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_LockMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryRsp_LockMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIAccountMarginRentQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountMarginRentQryRsp(), true) {
-  }
-
-}
 
 }

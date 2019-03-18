@@ -8,51 +8,68 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户账户手续费计算参数查询请求结构
+    /// </summary>
+    public class TapAPIAccountFeeRentQryReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIAccountFeeRentQryReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIAccountFeeRentQryReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountFeeRentQryReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIAccountFeeRentQryReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIAccountFeeRentQryReq(swigCPtr);
+        internal TapAPIAccountFeeRentQryReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountFeeRentQryReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIAccountFeeRentQryReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIAccountFeeRentQryReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// AccountNo;
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryReq_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryReq_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIAccountFeeRentQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountFeeRentQryReq(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryReq_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryReq_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIAccountFeeRentQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountFeeRentQryReq(), true) {
-  }
-
-}
 
 }

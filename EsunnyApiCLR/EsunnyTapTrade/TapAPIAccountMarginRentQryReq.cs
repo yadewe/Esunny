@@ -8,81 +8,113 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户账户保证金计算参数查询结构
+    /// </summary>
+    public class TapAPIAccountMarginRentQryReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIAccountMarginRentQryReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIAccountMarginRentQryReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountMarginRentQryReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIAccountMarginRentQryReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIAccountMarginRentQryReq(swigCPtr);
+        internal TapAPIAccountMarginRentQryReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountMarginRentQryReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIAccountMarginRentQryReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIAccountMarginRentQryReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 客户资金账号
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易所编号
+        /// </summary>
+        public string ExchangeNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_ExchangeNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_ExchangeNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型
+        /// </summary>
+        public char CommodityType
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种编号
+        /// </summary>
+        public string CommodityNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityNo_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIAccountMarginRentQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountMarginRentQryReq(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ExchangeNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_ExchangeNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_ExchangeNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CommodityType {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountMarginRentQryReq_CommodityNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIAccountMarginRentQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountMarginRentQryReq(), true) {
-  }
-
-}
 
 }

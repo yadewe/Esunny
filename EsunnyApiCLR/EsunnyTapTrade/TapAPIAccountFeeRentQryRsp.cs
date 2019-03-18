@@ -8,141 +8,203 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户账户手续费计算参数查询应答结构
+    /// </summary>
+    public class TapAPIAccountFeeRentQryRsp : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIAccountFeeRentQryRsp : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIAccountFeeRentQryRsp(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountFeeRentQryRsp obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIAccountFeeRentQryRsp() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIAccountFeeRentQryRsp(swigCPtr);
+        internal TapAPIAccountFeeRentQryRsp(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountFeeRentQryRsp obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIAccountFeeRentQryRsp()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIAccountFeeRentQryRsp(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 客户资金账号
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易所编号
+        /// </summary>
+        public string ExchangeNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_ExchangeNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_ExchangeNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型
+        /// </summary>
+        public char CommodityType
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种编号
+        /// </summary>
+        public string CommodityNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 成交来源
+        /// </summary>
+        public char MatchSource
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_MatchSource_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_MatchSource_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 计算方式
+        /// </summary>
+        public char CalculateMode
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CalculateMode_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CalculateMode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 币种组号
+        /// </summary>
+        public string CurrencyGroupNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 币种号
+        /// </summary>
+        public string CurrencyNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 开仓费用
+        /// </summary>
+        public double OpenCloseFee
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_OpenCloseFee_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_OpenCloseFee_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 平今费用
+        /// </summary>
+        public double CloseTodayFee
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CloseTodayFee_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CloseTodayFee_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIAccountFeeRentQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountFeeRentQryRsp(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ExchangeNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_ExchangeNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_ExchangeNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CommodityType {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CommodityNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char MatchSource {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_MatchSource_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_MatchSource_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CalculateMode {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CalculateMode_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CalculateMode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CurrencyGroupNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyGroupNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CurrencyNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CurrencyNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double OpenCloseFee {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_OpenCloseFee_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_OpenCloseFee_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double CloseTodayFee {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CloseTodayFee_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIAccountFeeRentQryRsp_CloseTodayFee_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIAccountFeeRentQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIAccountFeeRentQryRsp(), true) {
-  }
-
-}
 
 }
