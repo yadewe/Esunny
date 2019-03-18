@@ -8,72 +8,99 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户账单查询应答结构
+    /// </summary>
+    public class TapAPIBillQryRsp : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIBillQryRsp : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIBillQryRsp(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIBillQryRsp obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIBillQryRsp() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIBillQryRsp(swigCPtr);
+        internal TapAPIBillQryRsp(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIBillQryRsp obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIBillQryRsp()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIBillQryRsp(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 客户账单查询请求结构
+        /// </summary>
+        public TapAPIBillQryReq Reqdata
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIBillQryRsp_Reqdata_set(swigCPtr, TapAPIBillQryReq.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIBillQryRsp_Reqdata_get(swigCPtr);
+                TapAPIBillQryReq ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIBillQryReq(cPtr, false);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 账单长度
+        /// </summary>
+        public int BillLen
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillLen_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillLen_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 变长账单内容，长度由BillLen指定
+        /// </summary>
+        public string BillText
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillText_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillText_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIBillQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIBillQryRsp(), true)
+        {
+        }
+
     }
-  }
-
-  public TapAPIBillQryReq Reqdata {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIBillQryRsp_Reqdata_set(swigCPtr, TapAPIBillQryReq.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIBillQryRsp_Reqdata_get(swigCPtr);
-      TapAPIBillQryReq ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIBillQryReq(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public int BillLen {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillLen_set(swigCPtr, value);
-    } 
-    get {
-      int ret = TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillLen_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string BillText {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillText_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIBillQryRsp_BillText_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIBillQryRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIBillQryRsp(), true) {
-  }
-
-}
 
 }

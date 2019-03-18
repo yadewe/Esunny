@@ -8,71 +8,98 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 认证密码请求
+    /// </summary>
+    public class TapAPIAuthPasswordReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIAuthPasswordReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIAuthPasswordReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAuthPasswordReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIAuthPasswordReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIAuthPasswordReq(swigCPtr);
+        internal TapAPIAuthPasswordReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAuthPasswordReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIAuthPasswordReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIAuthPasswordReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 客户账号
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 密码类型
+        /// </summary>
+        public char PasswordType
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_PasswordType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_PasswordType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 账户密码
+        /// </summary>
+        public string Password
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_Password_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_Password_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIAuthPasswordReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAuthPasswordReq(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char PasswordType {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_PasswordType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_PasswordType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string Password {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_Password_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIAuthPasswordReq_Password_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIAuthPasswordReq() : this(TapTradeWrapperPINVOKE.new_TapAPIAuthPasswordReq(), true) {
-  }
-
-}
 
 }
