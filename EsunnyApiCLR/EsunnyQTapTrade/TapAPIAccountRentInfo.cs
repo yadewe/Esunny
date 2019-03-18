@@ -8,351 +8,518 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户最终费率信息结构
+    /// </summary>
+    public class TapAPIAccountRentInfo : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIAccountRentInfo : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIAccountRentInfo(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountRentInfo obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIAccountRentInfo() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPIAccountRentInfo(swigCPtr);
+        internal TapAPIAccountRentInfo(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIAccountRentInfo obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIAccountRentInfo()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPIAccountRentInfo(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 资金账户
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易所编码
+        /// </summary>
+        public string ExchangeNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ExchangeNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ExchangeNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型
+        /// </summary>
+        public char CommodityType
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CommodityType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CommodityType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种编号
+        /// </summary>
+        public string CommodityNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CommodityNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CommodityNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 合约代码 
+        /// </summary>
+        public string ContractNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ContractNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ContractNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 成交来源 
+        /// </summary>
+        public char MatchSource
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_MatchSource_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_MatchSource_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 币种编号
+        /// </summary>
+        public string CurrencyNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CurrencyNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CurrencyNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 手续费计算方式 
+        /// </summary>
+        public char FeeMode
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_FeeMode_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_FeeMode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 开仓手续费按金额
+        /// </summary>
+        public double OpenTurnover
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_OpenTurnover_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_OpenTurnover_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 平仓手续费按金额
+        /// </summary>
+        public double ClosedTurnover
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ClosedTurnover_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ClosedTurnover_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 平今手续费按金额
+        /// </summary>
+        public double CloseNewTurnover
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CloseNewTurnover_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CloseNewTurnover_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 开仓手续费按手数
+        /// </summary>
+        public double OpenVolume
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_OpenVolume_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_OpenVolume_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 平仓手续费按手数
+        /// </summary>
+        public double ClosedVolume
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ClosedVolume_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ClosedVolume_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 平今手续费按手数
+        /// </summary>
+        public double CloseNewVolume
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CloseNewVolume_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CloseNewVolume_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 保证金计算方式
+        /// </summary>
+        public char MarginMode
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_MarginMode_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_MarginMode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买投机初始保证金
+        /// </summary>
+        public double BuyTInitMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyTInitMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyTInitMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖投机初始保证金
+        /// </summary>
+        public double SellTInitMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellTInitMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellTInitMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买保值初始保证金
+        /// </summary>
+        public double BuyBInitMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyBInitMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyBInitMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖保值初始保证金
+        /// </summary>
+        public double SellBInitMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellBInitMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellBInitMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买套利初始保证金
+        /// </summary>
+        public double BuyLInitMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyLInitMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyLInitMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖套利初始保证金
+        /// </summary>
+        public double SellLInitMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellLInitMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellLInitMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买做市商初始保证金
+        /// </summary>
+        public double BuyMInitMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyMInitMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyMInitMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖做市商初始保证金
+        /// </summary>
+        public double SellMInitMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellMInitMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellMInitMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买投机维持保证金
+        /// </summary>
+        public double BuyTMaintMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyTMaintMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyTMaintMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖投机维持保证金
+        /// </summary>
+        public double SellTMaintMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellTMaintMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellTMaintMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买保值维持保证金
+        /// </summary>
+        public double BuyBMaintMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyBMaintMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyBMaintMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖保值维持保证金
+        /// </summary>
+        public double SellBMaintMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellBMaintMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellBMaintMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买套利维持保证金
+        /// </summary>
+        public double BuyLMaintMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyLMaintMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyLMaintMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖套利维持保证金
+        /// </summary>
+        public double SellLMaintMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellLMaintMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellLMaintMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买做市商维持保证金
+        /// </summary>
+        public double BuyMMaintMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyMMaintMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyMMaintMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖做市商维持保证金
+        /// </summary>
+        public double SellMMaintMargin
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellMMaintMargin_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellMMaintMargin_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIAccountRentInfo() : this(QTapTradeApiPINVOKE.new_TapAPIAccountRentInfo(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ExchangeNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ExchangeNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ExchangeNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CommodityType {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CommodityType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CommodityType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CommodityNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CommodityNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ContractNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ContractNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ContractNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char MatchSource {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_MatchSource_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_MatchSource_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CurrencyNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CurrencyNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CurrencyNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char FeeMode {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_FeeMode_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_FeeMode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double OpenTurnover {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_OpenTurnover_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_OpenTurnover_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double ClosedTurnover {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ClosedTurnover_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ClosedTurnover_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double CloseNewTurnover {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CloseNewTurnover_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CloseNewTurnover_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double OpenVolume {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_OpenVolume_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_OpenVolume_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double ClosedVolume {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ClosedVolume_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_ClosedVolume_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double CloseNewVolume {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CloseNewVolume_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_CloseNewVolume_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char MarginMode {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_MarginMode_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_MarginMode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double BuyTInitMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyTInitMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyTInitMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellTInitMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellTInitMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellTInitMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double BuyBInitMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyBInitMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyBInitMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellBInitMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellBInitMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellBInitMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double BuyLInitMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyLInitMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyLInitMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellLInitMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellLInitMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellLInitMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double BuyMInitMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyMInitMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyMInitMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellMInitMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellMInitMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellMInitMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double BuyTMaintMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyTMaintMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyTMaintMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellTMaintMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellTMaintMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellTMaintMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double BuyBMaintMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyBMaintMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyBMaintMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellBMaintMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellBMaintMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellBMaintMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double BuyLMaintMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyLMaintMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyLMaintMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellLMaintMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellLMaintMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellLMaintMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double BuyMMaintMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyMMaintMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_BuyMMaintMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double SellMMaintMargin {
-    set {
-      QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellMMaintMargin_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIAccountRentInfo_SellMMaintMargin_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIAccountRentInfo() : this(QTapTradeApiPINVOKE.new_TapAPIAccountRentInfo(), true) {
-  }
-
-}
 
 }

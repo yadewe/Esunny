@@ -8,2457 +8,3205 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
-
-public class QTapTradeApi {
-  public static char APIYNFLAG_YES {
-    get {
-      char ret = QTapTradeApiPINVOKE.APIYNFLAG_YES_get();
-      return ret;
-    } 
-  }
-
-  public static char APIYNFLAG_NO {
-    get {
-      char ret = QTapTradeApiPINVOKE.APIYNFLAG_NO_get();
-      return ret;
-    } 
-  }
-
-  public static char APILOGLEVEL_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.APILOGLEVEL_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char APILOGLEVEL_ERROR {
-    get {
-      char ret = QTapTradeApiPINVOKE.APILOGLEVEL_ERROR_get();
-      return ret;
-    } 
-  }
-
-  public static char APILOGLEVEL_WARNING {
-    get {
-      char ret = QTapTradeApiPINVOKE.APILOGLEVEL_WARNING_get();
-      return ret;
-    } 
-  }
-
-  public static char APILOGLEVEL_DEBUG {
-    get {
-      char ret = QTapTradeApiPINVOKE.APILOGLEVEL_DEBUG_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_SPOT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_SPOT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_FUTURES {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_FUTURES_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_OPTION {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_OPTION_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_SPREAD_MONTH {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_SPREAD_MONTH_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_SPREAD_COMMODITY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_SPREAD_COMMODITY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_BUL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_BUL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_BER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_BER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_STD {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_STD_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_STG {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_STG_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_PRT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_PRT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_BLT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_BLT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_BRT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_BRT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_DIRECTFOREX {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_DIRECTFOREX_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_INDIRECTFOREX {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_INDIRECTFOREX_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_CROSSFOREX {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_CROSSFOREX_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_INDEX {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_INDEX_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_STOCK {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_STOCK_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_SPOT_TRADINGDEFER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_SPOT_TRADINGDEFER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_FUTURE_LOCK {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_FUTURE_LOCK_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_COMMODITY_TYPE_EFP {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_EFP_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CALLPUT_FLAG_CALL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CALLPUT_FLAG_CALL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CALLPUT_FLAG_PUT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CALLPUT_FLAG_PUT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CALLPUT_FLAG_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CALLPUT_FLAG_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ACCOUNT_TYPE_PERSON {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_TYPE_PERSON_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ACCOUNT_TYPE_ORGANIZATION {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_TYPE_ORGANIZATION_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_RIGHT_ORDER_DEL {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_ORDER_DEL_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_RIGHT_ORDER_CHECK {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_ORDER_CHECK_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_RIGHT_ONLY_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_ONLY_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_RIGHT_ONLY_OPEN {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_ONLY_OPEN_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_RIGHT_SHFE_QUOTE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_SHFE_QUOTE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_USERTYPE_CLIENT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_CLIENT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_USERTYPE_BROKER {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_BROKER_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_USERTYPE_TRADER {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_TRADER_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_USERTYPE_RISK {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_RISK_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_USERTYPE_MANAGER {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_MANAGER_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPI_USERTYPE_QUOTE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_QUOTE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ACCOUNT_STATE_NORMAL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_STATE_NORMAL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ACCOUNT_STATE_CANCEL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_STATE_CANCEL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ACCOUNT_STATE_SLEEP {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_STATE_SLEEP_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ACCOUNT_FAMILYTYPE_NOMAL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_FAMILYTYPE_NOMAL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ACCOUNT_FAMILYTYPE_CHILD {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_FAMILYTYPE_CHILD_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_MARKET {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_MARKET_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_LIMIT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_LIMIT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_STOP_MARKET {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_STOP_MARKET_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_STOP_LIMIT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_STOP_LIMIT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_OPT_EXEC {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_OPT_EXEC_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_OPT_ABANDON {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_OPT_ABANDON_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_REQQUOT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_REQQUOT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_RSPQUOT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_RSPQUOT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_SWAP {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_SWAP_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_COMB {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_COMB_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_UNCOMB {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_UNCOMB_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_PROFIT_MARKET {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_PROFIT_MARKET_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_PROFIT_LIMIT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_PROFIT_LIMIT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_HEDGE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_HEDGE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_OPTION_AUTO_CLOSE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_OPTION_AUTO_CLOSE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_FUTURE_AUTO_CLOSE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_FUTURE_AUTO_CLOSE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_MARKET_POSITION_KEEP {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_MARKET_POSITION_KEEP_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TYPE_OPTION_AUTOEXEC_ABAND {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_OPTION_AUTOEXEC_ABAND_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_SELF_ETRADER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_SELF_ETRADER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_PROXY_ETRADER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_PROXY_ETRADER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_JTRADER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_JTRADER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_MANUAL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_MANUAL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_CARRY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_CARRY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_PROGRAM {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_PROGRAM_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_DELIVERY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_DELIVERY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_ABANDON {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_ABANDON_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_CHANNEL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_CHANNEL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_SOURCE_ESUNNY_API {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_ESUNNY_API_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TIMEINFORCE_GFD {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_GFD_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TIMEINFORCE_GTC {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_GTC_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TIMEINFORCE_GTD {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_GTD_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TIMEINFORCE_FAK {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_FAK_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_TIMEINFORCE_FOK {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_FOK_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_SIDE_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_SIDE_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_SIDE_BUY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_SIDE_BUY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_SIDE_SELL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_SIDE_SELL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_SIDE_ALL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_SIDE_ALL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_PositionEffect_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_PositionEffect_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_PositionEffect_OPEN {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_PositionEffect_OPEN_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_PositionEffect_COVER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_PositionEffect_COVER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_PositionEffect_COVER_TODAY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_PositionEffect_COVER_TODAY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_HEDGEFLAG_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_HEDGEFLAG_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_HEDGEFLAG_T {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_HEDGEFLAG_T_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_HEDGEFLAG_B {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_HEDGEFLAG_B_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_HEDGEFLAG_L {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_HEDGEFLAG_L_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_SUBMIT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_SUBMIT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_ACCEPT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_ACCEPT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_TRIGGERING {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_TRIGGERING_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_EXCTRIGGERING {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_EXCTRIGGERING_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_QUEUED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_QUEUED_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_PARTFINISHED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_PARTFINISHED_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_FINISHED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_FINISHED_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_CANCELING {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_CANCELING_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_MODIFYING {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_MODIFYING_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_CANCELED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_CANCELED_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_LEFTDELETED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_LEFTDELETED_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_FAIL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_FAIL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_DELETED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_DELETED_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_SUPPENDED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_SUPPENDED_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_DELETEDFOREXPIRE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_DELETEDFOREXPIRE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_EFFECT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_EFFECT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_STATE_APPLY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_APPLY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CALCULATE_MODE_PERCENTAGE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CALCULATE_MODE_PERCENTAGE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CALCULATE_MODE_QUOTA {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CALCULATE_MODE_QUOTA_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CALCULATE_MODE_ABSOLUTE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CALCULATE_MODE_ABSOLUTE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_ALL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_ALL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_SELF_ETRADER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_SELF_ETRADER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_PROXY_ETRADER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_PROXY_ETRADER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_JTRADER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_JTRADER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_MANUAL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_MANUAL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_CARRY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_CARRY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_PROGRAM {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_PROGRAM_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_DELIVERY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_DELIVERY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_ABANDON {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_ABANDON_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_CHANNEL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_CHANNEL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_MATCH_SOURCE_ESUNNY_API {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_ESUNNY_API_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CLOSE_MODE_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CLOSE_MODE_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CLOSE_MODE_UNFINISHED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CLOSE_MODE_UNFINISHED_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CLOSE_MODE_OPENCOVER {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CLOSE_MODE_OPENCOVER_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CLOSE_MODE_CLOSETODAY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CLOSE_MODE_CLOSETODAY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_FUTURES_ALG_ZHUBI {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_FUTURES_ALG_ZHUBI_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_FUTURES_ALG_DINGSHI {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_FUTURES_ALG_DINGSHI_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_OPTION_ALG_FUTURES {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_OPTION_ALG_FUTURES_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_OPTION_ALG_OPTION {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_OPTION_ALG_OPTION_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_LWFlag_L {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_LWFlag_L_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_LWFlag_W {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_LWFlag_W_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_DEPOSITCALCULATE_MODE_FEN {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_DEPOSITCALCULATE_MODE_FEN_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_DEPOSITCALCULATE_MODE_SUO {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_DEPOSITCALCULATE_MODE_SUO_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CMB_DIRECT_FIRST {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CMB_DIRECT_FIRST_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CMB_DIRECT_SECOND {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CMB_DIRECT_SECOND_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_DELIVERY_MODE_GOODS {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_GOODS_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_DELIVERY_MODE_CASH {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_CASH_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_DELIVERY_MODE_EXECUTE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_EXECUTE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_DELIVERY_MODE_ABANDON {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_ABANDON_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_DELIVERY_MODE_HKF {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_HKF_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CONTRACT_TYPE_TRADEQUOTE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CONTRACT_TYPE_TRADEQUOTE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_CONTRACT_TYPE_QUOTE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_CONTRACT_TYPE_QUOTE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TACTICS_TYPE_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TACTICS_TYPE_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TACTICS_TYPE_READY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TACTICS_TYPE_READY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TACTICS_TYPE_ATUO {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TACTICS_TYPE_ATUO_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TACTICS_TYPE_CONDITION {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TACTICS_TYPE_CONDITION_get();
-      return ret;
-    } 
-  }
-
-  public static char APIORDER_INSERT {
-    get {
-      char ret = QTapTradeApiPINVOKE.APIORDER_INSERT_get();
-      return ret;
-    } 
-  }
-
-  public static char APIORDER_MODIFY {
-    get {
-      char ret = QTapTradeApiPINVOKE.APIORDER_MODIFY_get();
-      return ret;
-    } 
-  }
-
-  public static char APIORDER_DELETE {
-    get {
-      char ret = QTapTradeApiPINVOKE.APIORDER_DELETE_get();
-      return ret;
-    } 
-  }
-
-  public static char APIORDER_SUSPEND {
-    get {
-      char ret = QTapTradeApiPINVOKE.APIORDER_SUSPEND_get();
-      return ret;
-    } 
-  }
-
-  public static char APIORDER_ACTIVATE {
-    get {
-      char ret = QTapTradeApiPINVOKE.APIORDER_ACTIVATE_get();
-      return ret;
-    } 
-  }
-
-  public static char APIORDER_SYSTEM_DELETE {
-    get {
-      char ret = QTapTradeApiPINVOKE.APIORDER_SYSTEM_DELETE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRIGGER_CONDITION_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_CONDITION_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRIGGER_CONDITION_GREAT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_CONDITION_GREAT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRIGGER_CONDITION_LITTLE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_CONDITION_LITTLE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRIGGER_PRICE_NONE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_PRICE_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRIGGER_PRICE_BUY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_PRICE_BUY_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRIGGER_PRICE_SELL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_PRICE_SELL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRIGGER_PRICE_LAST {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_PRICE_LAST_get();
-      return ret;
-    } 
-  }
-
-  public static byte TAPI_MARKET_LEVEL_0 {
-    get {
-      byte ret = QTapTradeApiPINVOKE.TAPI_MARKET_LEVEL_0_get();
-      return ret;
-    } 
-  }
-
-  public static byte TAPI_MARKET_LEVEL_1 {
-    get {
-      byte ret = QTapTradeApiPINVOKE.TAPI_MARKET_LEVEL_1_get();
-      return ret;
-    } 
-  }
-
-  public static byte TAPI_MARKET_LEVEL_5 {
-    get {
-      byte ret = QTapTradeApiPINVOKE.TAPI_MARKET_LEVEL_5_get();
-      return ret;
-    } 
-  }
-
-  public static byte TAPI_MARKET_LEVEL_10 {
-    get {
-      byte ret = QTapTradeApiPINVOKE.TAPI_MARKET_LEVEL_10_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_BID {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_BID_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_MATCH {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_MATCH_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_CONTINUOUS {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_CONTINUOUS_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_PAUSED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_PAUSED_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_CLOSE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_CLOSE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_DEALLAST {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_DEALLAST_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_GWDISCONNECT {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_GWDISCONNECT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_UNKNOWN {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_UNKNOWN_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_INITIALIZE {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_INITIALIZE_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_TRADE_STATE_READY {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_READY_get();
-      return ret;
-    } 
-  }
-
-  public static uint TAPI_NOTICE_IGNORE_NONE {
-    get {
-      uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_NONE_get();
-      return ret;
-    } 
-  }
-
-  public static uint TAPI_NOTICE_IGNORE_ALL {
-    get {
-      uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_ALL_get();
-      return ret;
-    } 
-  }
-
-  public static uint TAPI_NOTICE_IGNORE_FUND {
-    get {
-      uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_FUND_get();
-      return ret;
-    } 
-  }
-
-  public static uint TAPI_NOTICE_IGNORE_ORDER {
-    get {
-      uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_ORDER_get();
-      return ret;
-    } 
-  }
-
-  public static uint TAPI_NOTICE_IGNORE_FILL {
-    get {
-      uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_FILL_get();
-      return ret;
-    } 
-  }
-
-  public static uint TAPI_NOTICE_IGNORE_POSITION {
-    get {
-      uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_POSITION_get();
-      return ret;
-    } 
-  }
-
-  public static uint TAPI_NOTICE_IGNORE_CLOSE {
-    get {
-      uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_CLOSE_get();
-      return ret;
-    } 
-  }
-
-  public static uint TAPI_NOTICE_IGNORE_POSITIONPROFIT {
-    get {
-      uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_POSITIONPROFIT_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_QRY_TYPE_ALL {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_QRY_TYPE_ALL_get();
-      return ret;
-    } 
-  }
-
-  public static char TAPI_ORDER_QRY_TYPE_UNENDED {
-    get {
-      char ret = QTapTradeApiPINVOKE.TAPI_ORDER_QRY_TYPE_UNENDED_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SUCCEED {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SUCCEED_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ConnectFail {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ConnectFail_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LinkAuthFail {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LinkAuthFail_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_HostUnavailable {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_HostUnavailable_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SendDataError {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SendDataError_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_TestIDError {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_TestIDError_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_NotReadyTestNetwork {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_NotReadyTestNetwork_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_CurTestNotOver {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_CurTestNotOver_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_NOFrontAvailable {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_NOFrontAvailable_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DataPathAvaiable {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DataPathAvaiable_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_RepeatLogin {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_RepeatLogin_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_InnerError {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_InnerError_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LastReqNotFinish {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LastReqNotFinish_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_InputValueError {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_InputValueError_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_AuthCode_Invalid {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_AuthCode_Invalid_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_AuthCode_Expired {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_AuthCode_Expired_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_AuthCode_TypeNotMatch {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_AuthCode_TypeNotMatch_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_API_NotReady {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_API_NotReady_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_UDP_LISTEN_FAILED {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_UDP_LISTEN_FAILED_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_UDP_LISTENING {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_UDP_LISTENING_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_NotImplemented {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_NotImplemented_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_CallOneTimeOnly {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_CallOneTimeOnly_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_Frequently {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_Frequently_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_NULL {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_NULL_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIYNFLAG {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIYNFLAG_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPILOGLEVEL {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPILOGLEVEL_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPICommodityType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPICommodityType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPICallOrPutFlagType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPICallOrPutFlagType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIAccountType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIAccountState {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountState_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIAccountFamilyType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountFamilyType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIOrderTypeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderTypeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIOrderSourceType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderSourceType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPITimeInForceType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITimeInForceType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPISideType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPISideType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIPositionEffectType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIPositionEffectType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIHedgeFlagType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIHedgeFlagType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIOrderStateType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderStateType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPICalculateModeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPICalculateModeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIMatchSourceType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIMatchSourceType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIOpenCloseModeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOpenCloseModeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIFutureAlgType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIFutureAlgType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIOptionAlgType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOptionAlgType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIBankAccountLWFlagType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIBankAccountLWFlagType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIMarginCalculateModeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIMarginCalculateModeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIOptionMarginCalculateModeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOptionMarginCalculateModeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPICmbDirectType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPICmbDirectType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIDeliveryModeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIDeliveryModeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIContractTypeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIContractTypeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPITacticsTypeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITacticsTypeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIORDERACT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIORDERACT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPITriggerConditionType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITriggerConditionType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPITradingStateType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITradingStateType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIMarketLevelType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIMarketLevelType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_INPUTERROR_TAPIOrderQryTypeType {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderQryTypeType_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_CLOSE_INIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_CLOSE_INIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_CLOSE_PASS {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_CLOSE_PASS_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_READ_ERROR {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_READ_ERROR_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_WRITE_ERROR {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_WRITE_ERROR_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_BUF_FULL {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_BUF_FULL_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_IOCP_ERROR {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_IOCP_ERROR_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_PARSE_ERROR {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_PARSE_ERROR_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_CONNECT_TIMEOUT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_CONNECT_TIMEOUT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_INIT_ERROR {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_INIT_ERROR_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_HAS_CONNECTED {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_HAS_CONNECTED_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_HAS_EXIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_HAS_EXIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_TRY_LATER {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_TRY_LATER_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_DISCONNECT_HEARTBEAT_FAILED {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_HEARTBEAT_FAILED_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_USER {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_USER_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_DDA {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_DDA_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_LICENSE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_LICENSE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_MODULE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_MODULE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_FORCE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_FORCE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_STATE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_STATE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_PASS {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_PASS_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_RIGHT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_RIGHT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_COUNT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_COUNT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_NOTIN_SERVERFLAGUSRES {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_NOTIN_SERVERFLAGUSRES_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_USER_EXPIRED {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_USER_EXPIRED_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_NO_ACCOUNT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_NO_ACCOUNT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_NO_JGT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_NO_JGT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_ERROR_TIMES {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_ERROR_TIMES_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_ERROR_AUTHTYPE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_ERROR_AUTHTYPE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_ERROR_AUTHEXPIRED {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_ERROR_AUTHEXPIRED_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_LOGIN_ERROR_PASSWDEXPIRED {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_ERROR_PASSWDEXPIRED_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_USERINFO_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_USERINFO_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_USERALLRIGHT_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_USERALLRIGHT_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_USERALLACCOUNT_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_USERALLACCOUNT_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_USERPASSWORD_MOD {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_USERPASSWORD_MOD_SOURCE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_SOURCE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_USERPASSWORD_MOD_SAME {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_SAME_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_USERPASSWORD_MOD_COMPLEXITY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_COMPLEXITY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ACCOUNTINFO_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ACCOUNTINFO_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_TRADENO_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_TRADENO_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_CONTRACTINFO_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_CONTRACTINFO_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SPECIALOPTIONFUTURE_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SPECIALOPTIONFUTURE_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_COMMODITYORDERTYPE_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_COMMODITYORDERTYPE_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERTIMEINFORCE_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERTIMEINFORCE_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_USER_ORDER_FREQUENCE_QRY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_USER_ORDER_FREQUENCE_QRY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_ACCOUNT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_ACCOUNT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_ACCOUNT_STATE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_ACCOUNT_STATE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_SIDE_TRADE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_SIDE_TRADE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_OPTIONS_TRADE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_OPTIONS_TRADE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_COMMODITY_TRADE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_COMMODITY_TRADE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_OPEN_RIGHT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_OPEN_RIGHT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_RISK_CHECK {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_RISK_CHECK_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_CONTRACT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_CONTRACT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_TRADEROUTE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_TRADEROUTE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_POSITIONMAX {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_POSITIONMAX_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDER_NOTRADE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_NOTRADE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDER_CLOSE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_CLOSE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_NOTENOUGHFUND {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_NOTENOUGHFUND_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_ORDERTYPE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_ORDERTYPE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_TIMEINFORCE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_TIMEINFORCE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_NO_TACTICS {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_NO_TACTICS_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_POSITION_CANNOT_CLOSE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_POSITION_CANNOT_CLOSE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_AUTOCHECK_FAIL {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_AUTOCHECK_FAIL_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_LME_NOTREADY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_LME_NOTREADY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_CLOSEMODE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_CLOSEMODE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SWAP_CONTRACT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SWAP_CONTRACT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_USERNO_NOTHAS_ACCOUNT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_USERNO_NOTHAS_ACCOUNT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_UPPERCHANNEL_BROKEN {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_UPPERCHANNEL_BROKEN_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_UPPERCHANNEL_NOT_EXIST {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_UPPERCHANNEL_NOT_EXIST_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERDELETE_NOT_SYSNO {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERDELETE_NOT_SYSNO_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERDELETE_NOT_STATE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERDELETE_NOT_STATE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERACTIVE_NOT_STATE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERACTIVE_NOT_STATE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERCHECK_NOT_STATE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERCHECK_NOT_STATE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERCHECK_FAIL {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERCHECK_FAIL_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERMODIFY_NOT_STATE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERMODIFY_NOT_STATE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERMODIFY_BACK_INPUT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERMODIFY_BACK_INPUT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_FEE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_FEE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERINSERT_MARGIN {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_MARGIN_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDER_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_RSPQUOTE_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_RSPQUOTE_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_TRADENO_NOT_FIND {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_TRADENO_NOT_FIND_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDER_NO_CLOSE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_NO_CLOSE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_QRY_QUOTE_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_QRY_QUOTE_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_EXPIREDATE_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_EXPIREDATE_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_CMB_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_CMB_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERSERVER_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERSERVER_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_POSITION_CANNOT_EXEC_OR_ABANDON {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_POSITION_CANNOT_EXEC_OR_ABANDON_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERCHECK_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERCHECK_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDERMAXOPENVOL_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERMAXOPENVOL_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDER_QTY_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_QTY_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDER_APPLY_NO_PERMIT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_APPLY_NO_PERMIT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDER_FREQ_OVERRUN {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_FREQ_OVERRUN_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_COMB_NO_SIDEORHEDGE {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_COMB_NO_SIDEORHEDGE_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDER_FREQUENCY {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_FREQUENCY_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_ORDER_QUERYING {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_QUERYING_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SUBSCRIBEQUOTE_MAX {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_MAX_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SUBSCRIBEQUOTE_EXCHANGE_MAX {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_EXCHANGE_MAX_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SUBSCRIBEQUOTE_NO_RIGHT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_NO_RIGHT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SUBSCRIBEQUOTE_NO_EXCHANGE_RIGHT {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_NO_EXCHANGE_RIGHT_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SUBSCRIBEQUOTE_COMMODITY_NOT_EXIST {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_COMMODITY_NOT_EXIST_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_SUBSCRIBEQUOTE_CONTRACT_MAY_NOT_EXIST {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_CONTRACT_MAY_NOT_EXIST_get();
-      return ret;
-    } 
-  }
-
-  public static int TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL {
-    get {
-      int ret = QTapTradeApiPINVOKE.TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL_get();
-      return ret;
-    } 
-  }
-
-  public static ITapTradeAPI CreateTapTradeAPI(TapAPIApplicationInfo appInfo, out int iResult) {
-    global::System.IntPtr cPtr = QTapTradeApiPINVOKE.CreateTapTradeAPI(TapAPIApplicationInfo.getCPtr(appInfo), out iResult);
-    ITapTradeAPI ret = (cPtr == global::System.IntPtr.Zero) ? null : new ITapTradeAPI(cPtr, false);
-    if (QTapTradeApiPINVOKE.SWIGPendingException.Pending) throw QTapTradeApiPINVOKE.SWIGPendingException.Retrieve();
-    return ret;
-  }
-
-  public static void FreeTapTradeAPI(ITapTradeAPI apiObj) {
-    QTapTradeApiPINVOKE.FreeTapTradeAPI(ITapTradeAPI.getCPtr(apiObj));
-  }
-
-  public static string GetTapTradeAPIVersion() {
-    string ret = QTapTradeApiPINVOKE.GetTapTradeAPIVersion();
-    return ret;
-  }
-
-  public static int SetTapTradeAPIDataPath(string path) {
-    int ret = QTapTradeApiPINVOKE.SetTapTradeAPIDataPath(path);
-    return ret;
-  }
-
-  public static int SetTapTradeAPILogLevel(char level) {
-    int ret = QTapTradeApiPINVOKE.SetTapTradeAPILogLevel(level);
-    return ret;
-  }
-
-}
+namespace QTapTradeWrapperApi
+{
+
+    public class QTapTradeApi
+    {
+        /// <summary>
+        /// 是否标识 'Y'
+        /// </summary>
+        public static char APIYNFLAG_YES
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APIYNFLAG_YES_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 是否标识 'N'
+        /// </summary>
+        public static char APIYNFLAG_NO
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APIYNFLAG_NO_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 日志级别 'N'
+        /// </summary>
+        public static char APILOGLEVEL_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APILOGLEVEL_NONE_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 日志级别 'E'
+        /// </summary>
+        public static char APILOGLEVEL_ERROR
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APILOGLEVEL_ERROR_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 日志级别 'W'
+        /// </summary>
+        public static char APILOGLEVEL_WARNING
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APILOGLEVEL_WARNING_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 日志级别 'D'
+        /// </summary>
+        public static char APILOGLEVEL_DEBUG
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APILOGLEVEL_DEBUG_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型-无
+        /// </summary>
+        public static char TAPI_COMMODITY_TYPE_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_NONE_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型-现货
+        /// </summary>
+        public static char TAPI_COMMODITY_TYPE_SPOT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_SPOT_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型-期货
+        /// </summary>
+        public static char TAPI_COMMODITY_TYPE_FUTURES
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_FUTURES_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型-期权
+        /// </summary>
+        public static char TAPI_COMMODITY_TYPE_OPTION
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_OPTION_get();
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型-跨期套利
+        /// </summary>
+        public static char TAPI_COMMODITY_TYPE_SPREAD_MONTH
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_SPREAD_MONTH_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_SPREAD_COMMODITY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_SPREAD_COMMODITY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_BUL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_BUL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_BER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_BER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_STD
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_STD_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_STG
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_STG_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_PRT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_PRT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_BLT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_BLT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_BRT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_BRT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_DIRECTFOREX
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_DIRECTFOREX_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_INDIRECTFOREX
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_INDIRECTFOREX_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_CROSSFOREX
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_CROSSFOREX_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_INDEX
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_INDEX_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_STOCK
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_STOCK_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_SPOT_TRADINGDEFER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_SPOT_TRADINGDEFER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_FUTURE_LOCK
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_FUTURE_LOCK_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_COMMODITY_TYPE_EFP
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_COMMODITY_TYPE_EFP_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CALLPUT_FLAG_CALL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CALLPUT_FLAG_CALL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CALLPUT_FLAG_PUT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CALLPUT_FLAG_PUT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CALLPUT_FLAG_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CALLPUT_FLAG_NONE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ACCOUNT_TYPE_PERSON
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_TYPE_PERSON_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ACCOUNT_TYPE_ORGANIZATION
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_TYPE_ORGANIZATION_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_RIGHT_ORDER_DEL
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_ORDER_DEL_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_RIGHT_ORDER_CHECK
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_ORDER_CHECK_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_RIGHT_ONLY_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_ONLY_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_RIGHT_ONLY_OPEN
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_ONLY_OPEN_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_RIGHT_SHFE_QUOTE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_RIGHT_SHFE_QUOTE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_USERTYPE_CLIENT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_CLIENT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_USERTYPE_BROKER
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_BROKER_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_USERTYPE_TRADER
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_TRADER_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_USERTYPE_RISK
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_RISK_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_USERTYPE_MANAGER
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_MANAGER_get();
+                return ret;
+            }
+        }
+
+        public static int TAPI_USERTYPE_QUOTE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPI_USERTYPE_QUOTE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ACCOUNT_STATE_NORMAL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_STATE_NORMAL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ACCOUNT_STATE_CANCEL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_STATE_CANCEL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ACCOUNT_STATE_SLEEP
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_STATE_SLEEP_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ACCOUNT_FAMILYTYPE_NOMAL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_FAMILYTYPE_NOMAL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ACCOUNT_FAMILYTYPE_CHILD
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ACCOUNT_FAMILYTYPE_CHILD_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_MARKET
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_MARKET_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_LIMIT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_LIMIT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_STOP_MARKET
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_STOP_MARKET_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_STOP_LIMIT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_STOP_LIMIT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_OPT_EXEC
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_OPT_EXEC_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_OPT_ABANDON
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_OPT_ABANDON_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_REQQUOT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_REQQUOT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_RSPQUOT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_RSPQUOT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_SWAP
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_SWAP_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_COMB
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_COMB_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_UNCOMB
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_UNCOMB_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_PROFIT_MARKET
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_PROFIT_MARKET_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_PROFIT_LIMIT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_PROFIT_LIMIT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_HEDGE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_HEDGE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_OPTION_AUTO_CLOSE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_OPTION_AUTO_CLOSE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_FUTURE_AUTO_CLOSE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_FUTURE_AUTO_CLOSE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_MARKET_POSITION_KEEP
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_MARKET_POSITION_KEEP_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TYPE_OPTION_AUTOEXEC_ABAND
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TYPE_OPTION_AUTOEXEC_ABAND_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_SELF_ETRADER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_SELF_ETRADER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_PROXY_ETRADER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_PROXY_ETRADER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_JTRADER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_JTRADER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_MANUAL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_MANUAL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_CARRY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_CARRY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_PROGRAM
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_PROGRAM_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_DELIVERY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_DELIVERY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_ABANDON
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_ABANDON_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_CHANNEL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_CHANNEL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_SOURCE_ESUNNY_API
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_SOURCE_ESUNNY_API_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TIMEINFORCE_GFD
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_GFD_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TIMEINFORCE_GTC
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_GTC_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TIMEINFORCE_GTD
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_GTD_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TIMEINFORCE_FAK
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_FAK_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_TIMEINFORCE_FOK
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_TIMEINFORCE_FOK_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_SIDE_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_SIDE_NONE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_SIDE_BUY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_SIDE_BUY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_SIDE_SELL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_SIDE_SELL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_SIDE_ALL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_SIDE_ALL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_PositionEffect_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_PositionEffect_NONE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_PositionEffect_OPEN
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_PositionEffect_OPEN_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_PositionEffect_COVER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_PositionEffect_COVER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_PositionEffect_COVER_TODAY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_PositionEffect_COVER_TODAY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_HEDGEFLAG_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_HEDGEFLAG_NONE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_HEDGEFLAG_T
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_HEDGEFLAG_T_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_HEDGEFLAG_B
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_HEDGEFLAG_B_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_HEDGEFLAG_L
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_HEDGEFLAG_L_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_SUBMIT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_SUBMIT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_ACCEPT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_ACCEPT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_TRIGGERING
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_TRIGGERING_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_EXCTRIGGERING
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_EXCTRIGGERING_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_QUEUED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_QUEUED_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_PARTFINISHED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_PARTFINISHED_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_FINISHED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_FINISHED_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_CANCELING
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_CANCELING_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_MODIFYING
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_MODIFYING_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_CANCELED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_CANCELED_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_LEFTDELETED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_LEFTDELETED_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_FAIL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_FAIL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_DELETED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_DELETED_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_SUPPENDED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_SUPPENDED_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_DELETEDFOREXPIRE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_DELETEDFOREXPIRE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_EFFECT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_EFFECT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_STATE_APPLY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_STATE_APPLY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CALCULATE_MODE_PERCENTAGE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CALCULATE_MODE_PERCENTAGE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CALCULATE_MODE_QUOTA
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CALCULATE_MODE_QUOTA_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CALCULATE_MODE_ABSOLUTE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CALCULATE_MODE_ABSOLUTE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_ALL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_ALL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_SELF_ETRADER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_SELF_ETRADER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_PROXY_ETRADER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_PROXY_ETRADER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_JTRADER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_JTRADER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_MANUAL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_MANUAL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_CARRY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_CARRY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_PROGRAM
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_PROGRAM_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_DELIVERY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_DELIVERY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_ABANDON
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_ABANDON_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_CHANNEL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_CHANNEL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_MATCH_SOURCE_ESUNNY_API
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_MATCH_SOURCE_ESUNNY_API_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CLOSE_MODE_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CLOSE_MODE_NONE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CLOSE_MODE_UNFINISHED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CLOSE_MODE_UNFINISHED_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CLOSE_MODE_OPENCOVER
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CLOSE_MODE_OPENCOVER_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CLOSE_MODE_CLOSETODAY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CLOSE_MODE_CLOSETODAY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_FUTURES_ALG_ZHUBI
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_FUTURES_ALG_ZHUBI_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_FUTURES_ALG_DINGSHI
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_FUTURES_ALG_DINGSHI_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_OPTION_ALG_FUTURES
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_OPTION_ALG_FUTURES_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_OPTION_ALG_OPTION
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_OPTION_ALG_OPTION_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_LWFlag_L
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_LWFlag_L_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_LWFlag_W
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_LWFlag_W_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_DEPOSITCALCULATE_MODE_FEN
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_DEPOSITCALCULATE_MODE_FEN_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_DEPOSITCALCULATE_MODE_SUO
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_DEPOSITCALCULATE_MODE_SUO_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CMB_DIRECT_FIRST
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CMB_DIRECT_FIRST_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CMB_DIRECT_SECOND
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CMB_DIRECT_SECOND_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_DELIVERY_MODE_GOODS
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_GOODS_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_DELIVERY_MODE_CASH
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_CASH_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_DELIVERY_MODE_EXECUTE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_EXECUTE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_DELIVERY_MODE_ABANDON
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_ABANDON_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_DELIVERY_MODE_HKF
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_DELIVERY_MODE_HKF_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CONTRACT_TYPE_TRADEQUOTE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CONTRACT_TYPE_TRADEQUOTE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_CONTRACT_TYPE_QUOTE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_CONTRACT_TYPE_QUOTE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TACTICS_TYPE_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TACTICS_TYPE_NONE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TACTICS_TYPE_READY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TACTICS_TYPE_READY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TACTICS_TYPE_ATUO
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TACTICS_TYPE_ATUO_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TACTICS_TYPE_CONDITION
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TACTICS_TYPE_CONDITION_get();
+                return ret;
+            }
+        }
+
+        public static char APIORDER_INSERT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APIORDER_INSERT_get();
+                return ret;
+            }
+        }
+
+        public static char APIORDER_MODIFY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APIORDER_MODIFY_get();
+                return ret;
+            }
+        }
+
+        public static char APIORDER_DELETE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APIORDER_DELETE_get();
+                return ret;
+            }
+        }
+
+        public static char APIORDER_SUSPEND
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APIORDER_SUSPEND_get();
+                return ret;
+            }
+        }
+
+        public static char APIORDER_ACTIVATE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APIORDER_ACTIVATE_get();
+                return ret;
+            }
+        }
+
+        public static char APIORDER_SYSTEM_DELETE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.APIORDER_SYSTEM_DELETE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRIGGER_CONDITION_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_CONDITION_NONE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRIGGER_CONDITION_GREAT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_CONDITION_GREAT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRIGGER_CONDITION_LITTLE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_CONDITION_LITTLE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRIGGER_PRICE_NONE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_PRICE_NONE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRIGGER_PRICE_BUY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_PRICE_BUY_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRIGGER_PRICE_SELL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_PRICE_SELL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRIGGER_PRICE_LAST
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRIGGER_PRICE_LAST_get();
+                return ret;
+            }
+        }
+
+        public static byte TAPI_MARKET_LEVEL_0
+        {
+            get
+            {
+                byte ret = QTapTradeApiPINVOKE.TAPI_MARKET_LEVEL_0_get();
+                return ret;
+            }
+        }
+
+        public static byte TAPI_MARKET_LEVEL_1
+        {
+            get
+            {
+                byte ret = QTapTradeApiPINVOKE.TAPI_MARKET_LEVEL_1_get();
+                return ret;
+            }
+        }
+
+        public static byte TAPI_MARKET_LEVEL_5
+        {
+            get
+            {
+                byte ret = QTapTradeApiPINVOKE.TAPI_MARKET_LEVEL_5_get();
+                return ret;
+            }
+        }
+
+        public static byte TAPI_MARKET_LEVEL_10
+        {
+            get
+            {
+                byte ret = QTapTradeApiPINVOKE.TAPI_MARKET_LEVEL_10_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_BID
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_BID_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_MATCH
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_MATCH_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_CONTINUOUS
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_CONTINUOUS_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_PAUSED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_PAUSED_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_CLOSE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_CLOSE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_DEALLAST
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_DEALLAST_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_GWDISCONNECT
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_GWDISCONNECT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_UNKNOWN
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_UNKNOWN_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_INITIALIZE
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_INITIALIZE_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_TRADE_STATE_READY
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_TRADE_STATE_READY_get();
+                return ret;
+            }
+        }
+
+        public static uint TAPI_NOTICE_IGNORE_NONE
+        {
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_NONE_get();
+                return ret;
+            }
+        }
+
+        public static uint TAPI_NOTICE_IGNORE_ALL
+        {
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_ALL_get();
+                return ret;
+            }
+        }
+
+        public static uint TAPI_NOTICE_IGNORE_FUND
+        {
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_FUND_get();
+                return ret;
+            }
+        }
+
+        public static uint TAPI_NOTICE_IGNORE_ORDER
+        {
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_ORDER_get();
+                return ret;
+            }
+        }
+
+        public static uint TAPI_NOTICE_IGNORE_FILL
+        {
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_FILL_get();
+                return ret;
+            }
+        }
+
+        public static uint TAPI_NOTICE_IGNORE_POSITION
+        {
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_POSITION_get();
+                return ret;
+            }
+        }
+
+        public static uint TAPI_NOTICE_IGNORE_CLOSE
+        {
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_CLOSE_get();
+                return ret;
+            }
+        }
+
+        public static uint TAPI_NOTICE_IGNORE_POSITIONPROFIT
+        {
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TAPI_NOTICE_IGNORE_POSITIONPROFIT_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_QRY_TYPE_ALL
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_QRY_TYPE_ALL_get();
+                return ret;
+            }
+        }
+
+        public static char TAPI_ORDER_QRY_TYPE_UNENDED
+        {
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TAPI_ORDER_QRY_TYPE_UNENDED_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SUCCEED
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SUCCEED_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ConnectFail
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ConnectFail_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LinkAuthFail
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LinkAuthFail_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_HostUnavailable
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_HostUnavailable_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SendDataError
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SendDataError_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_TestIDError
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_TestIDError_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_NotReadyTestNetwork
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_NotReadyTestNetwork_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_CurTestNotOver
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_CurTestNotOver_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_NOFrontAvailable
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_NOFrontAvailable_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DataPathAvaiable
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DataPathAvaiable_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_RepeatLogin
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_RepeatLogin_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_InnerError
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_InnerError_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LastReqNotFinish
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LastReqNotFinish_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_InputValueError
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_InputValueError_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_AuthCode_Invalid
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_AuthCode_Invalid_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_AuthCode_Expired
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_AuthCode_Expired_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_AuthCode_TypeNotMatch
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_AuthCode_TypeNotMatch_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_API_NotReady
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_API_NotReady_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_UDP_LISTEN_FAILED
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_UDP_LISTEN_FAILED_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_UDP_LISTENING
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_UDP_LISTENING_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_NotImplemented
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_NotImplemented_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_CallOneTimeOnly
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_CallOneTimeOnly_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_Frequently
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_Frequently_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_NULL
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_NULL_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIYNFLAG
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIYNFLAG_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPILOGLEVEL
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPILOGLEVEL_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPICommodityType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPICommodityType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPICallOrPutFlagType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPICallOrPutFlagType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIAccountType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIAccountState
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountState_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIAccountFamilyType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIAccountFamilyType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIOrderTypeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderTypeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIOrderSourceType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderSourceType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPITimeInForceType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITimeInForceType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPISideType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPISideType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIPositionEffectType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIPositionEffectType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIHedgeFlagType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIHedgeFlagType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIOrderStateType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderStateType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPICalculateModeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPICalculateModeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIMatchSourceType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIMatchSourceType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIOpenCloseModeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOpenCloseModeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIFutureAlgType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIFutureAlgType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIOptionAlgType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOptionAlgType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIBankAccountLWFlagType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIBankAccountLWFlagType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIMarginCalculateModeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIMarginCalculateModeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIOptionMarginCalculateModeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOptionMarginCalculateModeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPICmbDirectType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPICmbDirectType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIDeliveryModeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIDeliveryModeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIContractTypeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIContractTypeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPITacticsTypeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITacticsTypeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIORDERACT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIORDERACT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPITriggerConditionType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITriggerConditionType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPITradingStateType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPITradingStateType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIMarketLevelType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIMarketLevelType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_INPUTERROR_TAPIOrderQryTypeType
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_INPUTERROR_TAPIOrderQryTypeType_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_CLOSE_INIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_CLOSE_INIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_CLOSE_PASS
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_CLOSE_PASS_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_READ_ERROR
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_READ_ERROR_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_WRITE_ERROR
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_WRITE_ERROR_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_BUF_FULL
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_BUF_FULL_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_IOCP_ERROR
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_IOCP_ERROR_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_PARSE_ERROR
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_PARSE_ERROR_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_CONNECT_TIMEOUT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_CONNECT_TIMEOUT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_INIT_ERROR
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_INIT_ERROR_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_HAS_CONNECTED
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_HAS_CONNECTED_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_HAS_EXIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_HAS_EXIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_TRY_LATER
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_TRY_LATER_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_DISCONNECT_HEARTBEAT_FAILED
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_DISCONNECT_HEARTBEAT_FAILED_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_USER
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_USER_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_DDA
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_DDA_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_LICENSE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_LICENSE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_MODULE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_MODULE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_FORCE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_FORCE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_STATE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_STATE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_PASS
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_PASS_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_RIGHT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_RIGHT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_COUNT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_COUNT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_NOTIN_SERVERFLAGUSRES
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_NOTIN_SERVERFLAGUSRES_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_USER_EXPIRED
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_USER_EXPIRED_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_NO_ACCOUNT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_NO_ACCOUNT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_NO_JGT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_NO_JGT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_ERROR_TIMES
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_ERROR_TIMES_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_ERROR_AUTHTYPE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_ERROR_AUTHTYPE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_ERROR_AUTHEXPIRED
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_ERROR_AUTHEXPIRED_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_LOGIN_ERROR_PASSWDEXPIRED
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_LOGIN_ERROR_PASSWDEXPIRED_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_USERINFO_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_USERINFO_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_USERALLRIGHT_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_USERALLRIGHT_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_USERALLACCOUNT_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_USERALLACCOUNT_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_USERPASSWORD_MOD
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_USERPASSWORD_MOD_SOURCE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_SOURCE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_USERPASSWORD_MOD_SAME
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_SAME_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_USERPASSWORD_MOD_COMPLEXITY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_USERPASSWORD_MOD_COMPLEXITY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ACCOUNTINFO_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ACCOUNTINFO_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_TRADENO_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_TRADENO_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_CONTRACTINFO_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_CONTRACTINFO_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SPECIALOPTIONFUTURE_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SPECIALOPTIONFUTURE_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_COMMODITYORDERTYPE_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_COMMODITYORDERTYPE_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERTIMEINFORCE_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERTIMEINFORCE_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_USER_ORDER_FREQUENCE_QRY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_USER_ORDER_FREQUENCE_QRY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_ACCOUNT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_ACCOUNT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_ACCOUNT_STATE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_ACCOUNT_STATE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_SIDE_TRADE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_SIDE_TRADE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_OPTIONS_TRADE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_OPTIONS_TRADE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_COMMODITY_TRADE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_COMMODITY_TRADE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_OPEN_RIGHT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_OPEN_RIGHT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_RISK_CHECK
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_RISK_CHECK_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_CONTRACT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_CONTRACT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_TRADEROUTE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_TRADEROUTE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_POSITIONMAX
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_POSITIONMAX_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDER_NOTRADE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_NOTRADE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDER_CLOSE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_CLOSE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_NOTENOUGHFUND
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_NOTENOUGHFUND_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_ORDERTYPE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_ORDERTYPE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_TIMEINFORCE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_TIMEINFORCE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_NO_TACTICS
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_NO_TACTICS_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_POSITION_CANNOT_CLOSE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_POSITION_CANNOT_CLOSE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_AUTOCHECK_FAIL
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_AUTOCHECK_FAIL_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_LME_NOTREADY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_LME_NOTREADY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_CLOSEMODE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_CLOSEMODE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SWAP_CONTRACT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SWAP_CONTRACT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_USERNO_NOTHAS_ACCOUNT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_USERNO_NOTHAS_ACCOUNT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_UPPERCHANNEL_BROKEN
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_UPPERCHANNEL_BROKEN_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_UPPERCHANNEL_NOT_EXIST
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_UPPERCHANNEL_NOT_EXIST_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERDELETE_NOT_SYSNO
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERDELETE_NOT_SYSNO_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERDELETE_NOT_STATE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERDELETE_NOT_STATE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERACTIVE_NOT_STATE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERACTIVE_NOT_STATE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERCHECK_NOT_STATE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERCHECK_NOT_STATE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERCHECK_FAIL
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERCHECK_FAIL_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERMODIFY_NOT_STATE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERMODIFY_NOT_STATE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERMODIFY_BACK_INPUT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERMODIFY_BACK_INPUT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_FEE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_FEE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERINSERT_MARGIN
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERINSERT_MARGIN_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDER_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_RSPQUOTE_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_RSPQUOTE_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_TRADENO_NOT_FIND
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_TRADENO_NOT_FIND_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDER_NO_CLOSE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_NO_CLOSE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_QRY_QUOTE_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_QRY_QUOTE_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_EXPIREDATE_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_EXPIREDATE_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_CMB_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_CMB_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERSERVER_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERSERVER_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_POSITION_CANNOT_EXEC_OR_ABANDON
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_POSITION_CANNOT_EXEC_OR_ABANDON_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERCHECK_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERCHECK_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDERMAXOPENVOL_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDERMAXOPENVOL_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDER_QTY_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_QTY_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDER_APPLY_NO_PERMIT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_APPLY_NO_PERMIT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDER_FREQ_OVERRUN
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_FREQ_OVERRUN_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_COMB_NO_SIDEORHEDGE
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_COMB_NO_SIDEORHEDGE_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDER_FREQUENCY
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_FREQUENCY_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_ORDER_QUERYING
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_ORDER_QUERYING_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SUBSCRIBEQUOTE_MAX
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_MAX_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SUBSCRIBEQUOTE_EXCHANGE_MAX
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_EXCHANGE_MAX_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SUBSCRIBEQUOTE_NO_RIGHT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_NO_RIGHT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SUBSCRIBEQUOTE_NO_EXCHANGE_RIGHT
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_NO_EXCHANGE_RIGHT_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SUBSCRIBEQUOTE_COMMODITY_NOT_EXIST
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_COMMODITY_NOT_EXIST_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_SUBSCRIBEQUOTE_CONTRACT_MAY_NOT_EXIST
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_SUBSCRIBEQUOTE_CONTRACT_MAY_NOT_EXIST_get();
+                return ret;
+            }
+        }
+
+        public static int TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL
+        {
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL_get();
+                return ret;
+            }
+        }
+
+        /// <summary>
+        /// 创建TapTradeAPI的接口对象。创建整个交易API的接口
+        /// </summary>
+        /// <param name="appInfo">应用程序相关信息。KeyOperationLogPath 路径为空时不产生其操作日志</param>
+        /// <param name="iResult">创建接口的错误码。</param>
+        /// <returns>创建失败，具体原因可通过输出参数iResult判断。</returns>
+        public static ITapTradeAPI CreateTapTradeAPI(TapAPIApplicationInfo appInfo, out int iResult)
+        {
+            global::System.IntPtr cPtr = QTapTradeApiPINVOKE.CreateTapTradeAPI(TapAPIApplicationInfo.getCPtr(appInfo), out iResult);
+            ITapTradeAPI ret = (cPtr == global::System.IntPtr.Zero) ? null : new ITapTradeAPI(cPtr, false);
+            if (QTapTradeApiPINVOKE.SWIGPendingException.Pending) throw QTapTradeApiPINVOKE.SWIGPendingException.Retrieve();
+            return ret;
+        }
+        /// <summary>
+        /// 销毁通过CreateTapTradeAPI函数创建的ITapTradeAPI对象。
+        /// </summary>
+        /// <param name="apiObj">ITapTradeAPI对象</param>
+        public static void FreeTapTradeAPI(ITapTradeAPI apiObj)
+        {
+            QTapTradeApiPINVOKE.FreeTapTradeAPI(ITapTradeAPI.getCPtr(apiObj));
+        }
+        /// <summary>
+        /// 获取TapTradeAPI的版本信息
+        /// </summary>
+        /// <returns></returns>
+        public static string GetTapTradeAPIVersion()
+        {
+            string ret = QTapTradeApiPINVOKE.GetTapTradeAPIVersion();
+            return ret;
+        }
+        /// <summary>
+        /// 设置API自身保存数据目录。调用函数的同时会在path描述的目录下打开以年月日（格式TapTradeAPI[YYYYMMDD].log)命名的文件，
+        /// 没有此文件的情况下会试图创建此文件。文件中保存的数据为API接收到的重要数据和API的使用和错误日志。
+        /// </summary>
+        /// <param name="path">目录。必须可用，目录符号Window下为”\\”或者”/”</param>
+        /// <returns> 0 成功 非0 错误码</returns>
+        public static int SetTapTradeAPIDataPath(string path)
+        {
+            int ret = QTapTradeApiPINVOKE.SetTapTradeAPIDataPath(path);
+            return ret;
+        }
+        /// <summary>
+        /// 设置API的日志级别。设定日志的输出级别，只有当实际日志级别与此处设定的级别相同或更高时，才会将日志写入SetTapTradeAPIDataPath()函数打开的日志文件。
+        /// </summary>
+        /// <param name="level">level 日志级别：
+        /// APILOGLEVEL_NONE	：不记录日志；
+        /// APILOGLEVEL_ERROR	：记录Error日志；
+        /// APILOGLEVEL_WARNING	：记录Error和Warning日志；
+        /// APILOGLEVEL_DEBUG	：记录Error、Warning和Debug日志
+        /// </param>
+        /// <returns>0 设定成功 非0 错误码</returns>
+        public static int SetTapTradeAPILogLevel(char level)
+        {
+            int ret = QTapTradeApiPINVOKE.SetTapTradeAPILogLevel(level);
+            return ret;
+        }
+
+    }
 
 }
