@@ -8,81 +8,103 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
 
-public class TapAPIOrderCancelReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
+    public class TapAPIOrderCancelReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-  internal TapAPIOrderCancelReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderCancelReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIOrderCancelReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPIOrderCancelReq(swigCPtr);
+        internal TapAPIOrderCancelReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderCancelReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIOrderCancelReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPIOrderCancelReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+
+        public int RefInt
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIOrderCancelReq_RefInt_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TapAPIOrderCancelReq_RefInt_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public string RefString
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIOrderCancelReq_RefString_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPIOrderCancelReq_RefString_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public char ServerFlag
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIOrderCancelReq_ServerFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPIOrderCancelReq_ServerFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public string OrderNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIOrderCancelReq_OrderNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPIOrderCancelReq_OrderNo_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIOrderCancelReq() : this(QTapTradeApiPINVOKE.new_TapAPIOrderCancelReq(), true)
+        {
+        }
+
     }
-  }
-
-  public int RefInt {
-    set {
-      QTapTradeApiPINVOKE.TapAPIOrderCancelReq_RefInt_set(swigCPtr, value);
-    } 
-    get {
-      int ret = QTapTradeApiPINVOKE.TapAPIOrderCancelReq_RefInt_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string RefString {
-    set {
-      QTapTradeApiPINVOKE.TapAPIOrderCancelReq_RefString_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPIOrderCancelReq_RefString_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char ServerFlag {
-    set {
-      QTapTradeApiPINVOKE.TapAPIOrderCancelReq_ServerFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPIOrderCancelReq_ServerFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPIOrderCancelReq_OrderNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPIOrderCancelReq_OrderNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIOrderCancelReq() : this(QTapTradeApiPINVOKE.new_TapAPIOrderCancelReq(), true) {
-  }
-
-}
 
 }

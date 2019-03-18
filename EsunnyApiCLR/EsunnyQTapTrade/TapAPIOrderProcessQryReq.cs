@@ -8,61 +8,83 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
+    /// <summary>
+    /// 委托流程查询
+    /// </summary>
+    public class TapAPIOrderProcessQryReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIOrderProcessQryReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIOrderProcessQryReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderProcessQryReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIOrderProcessQryReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPIOrderProcessQryReq(swigCPtr);
+        internal TapAPIOrderProcessQryReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderProcessQryReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIOrderProcessQryReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPIOrderProcessQryReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 服务器标识
+        /// </summary>
+        public char ServerFlag
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIOrderProcessQryReq_ServerFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPIOrderProcessQryReq_ServerFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托编码
+        /// </summary>
+        public string OrderNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIOrderProcessQryReq_OrderNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPIOrderProcessQryReq_OrderNo_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIOrderProcessQryReq() : this(QTapTradeApiPINVOKE.new_TapAPIOrderProcessQryReq(), true)
+        {
+        }
+
     }
-  }
-
-  public char ServerFlag {
-    set {
-      QTapTradeApiPINVOKE.TapAPIOrderProcessQryReq_ServerFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPIOrderProcessQryReq_ServerFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPIOrderProcessQryReq_OrderNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPIOrderProcessQryReq_OrderNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIOrderProcessQryReq() : this(QTapTradeApiPINVOKE.new_TapAPIOrderProcessQryReq(), true) {
-  }
-
-}
 
 }

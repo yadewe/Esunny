@@ -8,62 +8,84 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
+    /// <summary>
+    /// 交易所时间状态信息通知结构
+    /// </summary>
+    public class TapAPIExchangeStateInfoNotice : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIExchangeStateInfoNotice : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIExchangeStateInfoNotice(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIExchangeStateInfoNotice obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIExchangeStateInfoNotice() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPIExchangeStateInfoNotice(swigCPtr);
+        internal TapAPIExchangeStateInfoNotice(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIExchangeStateInfoNotice obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIExchangeStateInfoNotice()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPIExchangeStateInfoNotice(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 是否最后一包数据
+        /// </summary>
+        public char IsLast
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIExchangeStateInfoNotice_IsLast_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPIExchangeStateInfoNotice_IsLast_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易所时间状态信息
+        /// </summary>
+        public TapAPIExchangeStateInfo ExchangeStateInfo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIExchangeStateInfoNotice_ExchangeStateInfo_set(swigCPtr, TapAPIExchangeStateInfo.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = QTapTradeApiPINVOKE.TapAPIExchangeStateInfoNotice_ExchangeStateInfo_get(swigCPtr);
+                TapAPIExchangeStateInfo ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIExchangeStateInfo(cPtr, false);
+                return ret;
+            }
+        }
+
+        public TapAPIExchangeStateInfoNotice() : this(QTapTradeApiPINVOKE.new_TapAPIExchangeStateInfoNotice(), true)
+        {
+        }
+
     }
-  }
-
-  public char IsLast {
-    set {
-      QTapTradeApiPINVOKE.TapAPIExchangeStateInfoNotice_IsLast_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPIExchangeStateInfoNotice_IsLast_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIExchangeStateInfo ExchangeStateInfo {
-    set {
-      QTapTradeApiPINVOKE.TapAPIExchangeStateInfoNotice_ExchangeStateInfo_set(swigCPtr, TapAPIExchangeStateInfo.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = QTapTradeApiPINVOKE.TapAPIExchangeStateInfoNotice_ExchangeStateInfo_get(swigCPtr);
-      TapAPIExchangeStateInfo ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIExchangeStateInfo(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public TapAPIExchangeStateInfoNotice() : this(QTapTradeApiPINVOKE.new_TapAPIExchangeStateInfoNotice(), true) {
-  }
-
-}
 
 }

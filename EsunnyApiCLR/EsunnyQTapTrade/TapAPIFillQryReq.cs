@@ -8,51 +8,68 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
+    /// <summary>
+    /// 成交查询请求结构
+    /// </summary>
+    public class TapAPIFillQryReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIFillQryReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIFillQryReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIFillQryReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIFillQryReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPIFillQryReq(swigCPtr);
+        internal TapAPIFillQryReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIFillQryReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIFillQryReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPIFillQryReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 流水号
+        /// </summary>
+        public uint StreamID
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIFillQryReq_StreamID_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TapAPIFillQryReq_StreamID_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIFillQryReq() : this(QTapTradeApiPINVOKE.new_TapAPIFillQryReq(), true)
+        {
+        }
+
     }
-  }
-
-  public uint StreamID {
-    set {
-      QTapTradeApiPINVOKE.TapAPIFillQryReq_StreamID_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = QTapTradeApiPINVOKE.TapAPIFillQryReq_StreamID_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIFillQryReq() : this(QTapTradeApiPINVOKE.new_TapAPIFillQryReq(), true) {
-  }
-
-}
 
 }

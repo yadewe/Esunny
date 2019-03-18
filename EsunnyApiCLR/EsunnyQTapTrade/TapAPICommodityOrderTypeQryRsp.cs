@@ -8,72 +8,99 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
+    /// <summary>
+    /// 委托类型查询应答
+    /// </summary>
+    public class TapAPICommodityOrderTypeQryRsp : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPICommodityOrderTypeQryRsp : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPICommodityOrderTypeQryRsp(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPICommodityOrderTypeQryRsp obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPICommodityOrderTypeQryRsp() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPICommodityOrderTypeQryRsp(swigCPtr);
+        internal TapAPICommodityOrderTypeQryRsp(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPICommodityOrderTypeQryRsp obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPICommodityOrderTypeQryRsp()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPICommodityOrderTypeQryRsp(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 品种信息
+        /// </summary>
+        public TapAPICommodity Commodity
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_Commodity_set(swigCPtr, TapAPICommodity.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_Commodity_get(swigCPtr);
+                TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托类型个数
+        /// </summary>
+        public int Count
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_Count_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_Count_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托类型
+        /// </summary>
+        public string OrderTypes
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_OrderTypes_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_OrderTypes_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPICommodityOrderTypeQryRsp() : this(QTapTradeApiPINVOKE.new_TapAPICommodityOrderTypeQryRsp(), true)
+        {
+        }
+
     }
-  }
-
-  public TapAPICommodity Commodity {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_Commodity_set(swigCPtr, TapAPICommodity.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_Commodity_get(swigCPtr);
-      TapAPICommodity ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPICommodity(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public int Count {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_Count_set(swigCPtr, value);
-    } 
-    get {
-      int ret = QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_Count_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderTypes {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_OrderTypes_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityOrderTypeQryRsp_OrderTypes_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPICommodityOrderTypeQryRsp() : this(QTapTradeApiPINVOKE.new_TapAPICommodityOrderTypeQryRsp(), true) {
-  }
-
-}
 
 }

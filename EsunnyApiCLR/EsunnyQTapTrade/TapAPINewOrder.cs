@@ -8,421 +8,623 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户下单请求结构
+    /// </summary>
+    public class TapAPINewOrder : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPINewOrder : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPINewOrder(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPINewOrder obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPINewOrder() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPINewOrder(swigCPtr);
+        internal TapAPINewOrder(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPINewOrder obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPINewOrder()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPINewOrder(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 客户资金帐号
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易所编号
+        /// </summary>
+        public string ExchangeNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_ExchangeNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_ExchangeNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型
+        /// </summary>
+        public char CommodityType
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_CommodityType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_CommodityType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种编码类型
+        /// </summary>
+        public string CommodityNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_CommodityNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_CommodityNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 合约1
+        /// </summary>
+        public string ContractNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_ContractNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_ContractNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 执行价格1
+        /// </summary>
+        public string StrikePrice
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_StrikePrice_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_StrikePrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 看张看跌1
+        /// </summary>
+        public char CallOrPutFlag
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_CallOrPutFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_CallOrPutFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 合约2
+        /// </summary>
+        public string ContractNo2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_ContractNo2_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_ContractNo2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 执行价格2
+        /// </summary>
+        public string StrikePrice2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_StrikePrice2_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_StrikePrice2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 看张看跌2
+        /// </summary>
+        public char CallOrPutFlag2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_CallOrPutFlag2_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_CallOrPutFlag2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托类型
+        /// </summary>
+        public char OrderType
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_OrderType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托来源
+        /// </summary>
+        public char OrderSource
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_OrderSource_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderSource_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托有效类型
+        /// </summary>
+        public char TimeInForce
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_TimeInForce_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_TimeInForce_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 有效日期(GTD情况下使用)
+        /// </summary>
+        public string ExpireTime
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_ExpireTime_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_ExpireTime_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 是否风险报单
+        /// </summary>
+        public char IsRiskOrder
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_IsRiskOrder_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_IsRiskOrder_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买入卖出
+        /// </summary>
+        public char OrderSide
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_OrderSide_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderSide_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 开平标志1
+        /// </summary>
+        public char PositionEffect
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_PositionEffect_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_PositionEffect_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 开平标志2
+        /// </summary>
+        public char PositionEffect2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_PositionEffect2_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_PositionEffect2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 询价号
+        /// </summary>
+        public string InquiryNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_InquiryNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_InquiryNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 投机保值
+        /// </summary>
+        public char HedgeFlag
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_HedgeFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_HedgeFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托价格1
+        /// </summary>
+        public double OrderPrice
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_OrderPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托价格2，做市商应价使用
+        /// </summary>
+        public double OrderPrice2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_OrderPrice2_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderPrice2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        ///  触发价格
+        /// </summary>
+        public double StopPrice
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_StopPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPINewOrder_StopPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托数量
+        /// </summary>
+        public uint OrderQty
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_OrderQty_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 最小成交量
+        /// </summary>
+        public uint OrderMinQty
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_OrderMinQty_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderMinQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 冰山单最小随机量
+        /// </summary>
+        public uint MinClipSize
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_MinClipSize_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_MinClipSize_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 冰山单最大随机量
+        /// </summary>
+        public uint MaxClipSize
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_MaxClipSize_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_MaxClipSize_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 整型参考值
+        /// </summary>
+        public int RefInt
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_RefInt_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TapAPINewOrder_RefInt_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 字符串参考值
+        /// </summary>
+        public string RefString
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_RefString_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_RefString_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 策略单类型
+        /// </summary>
+        public char TacticsType
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_TacticsType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_TacticsType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 触发条件
+        /// </summary>
+        public char TriggerCondition
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_TriggerCondition_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_TriggerCondition_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 触发价格类型
+        /// </summary>
+        public char TriggerPriceType
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_TriggerPriceType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_TriggerPriceType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 是否T+1有效
+        /// </summary>
+        public char AddOneIsValid
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_AddOneIsValid_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_AddOneIsValid_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托数量2
+        /// </summary>
+        public uint OrderQty2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_OrderQty2_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderQty2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 投机保值2
+        /// </summary>
+        public char HedgeFlag2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_HedgeFlag2_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_HedgeFlag2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 市价撮合深度
+        /// </summary>
+        public byte MarketLevel
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_MarketLevel_set(swigCPtr, value);
+            }
+            get
+            {
+                byte ret = QTapTradeApiPINVOKE.TapAPINewOrder_MarketLevel_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 行权后期货是否自对冲
+        /// </summary>
+        public char FutureAutoCloseFlag
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_FutureAutoCloseFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPINewOrder_FutureAutoCloseFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 上手通道号
+        /// </summary>
+        public string UpperChannelNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPINewOrder_UpperChannelNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPINewOrder_UpperChannelNo_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPINewOrder() : this(QTapTradeApiPINVOKE.new_TapAPINewOrder(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ExchangeNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_ExchangeNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_ExchangeNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CommodityType {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_CommodityType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_CommodityType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_CommodityNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_CommodityNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ContractNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_ContractNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_ContractNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string StrikePrice {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_StrikePrice_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_StrikePrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CallOrPutFlag {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_CallOrPutFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_CallOrPutFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ContractNo2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_ContractNo2_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_ContractNo2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string StrikePrice2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_StrikePrice2_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_StrikePrice2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CallOrPutFlag2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_CallOrPutFlag2_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_CallOrPutFlag2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char OrderType {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_OrderType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char OrderSource {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_OrderSource_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderSource_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char TimeInForce {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_TimeInForce_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_TimeInForce_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ExpireTime {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_ExpireTime_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_ExpireTime_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char IsRiskOrder {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_IsRiskOrder_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_IsRiskOrder_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char OrderSide {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_OrderSide_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderSide_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char PositionEffect {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_PositionEffect_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_PositionEffect_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char PositionEffect2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_PositionEffect2_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_PositionEffect2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string InquiryNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_InquiryNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_InquiryNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char HedgeFlag {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_HedgeFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_HedgeFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double OrderPrice {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_OrderPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double OrderPrice2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_OrderPrice2_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderPrice2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double StopPrice {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_StopPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPINewOrder_StopPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint OrderQty {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_OrderQty_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint OrderMinQty {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_OrderMinQty_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderMinQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint MinClipSize {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_MinClipSize_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_MinClipSize_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint MaxClipSize {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_MaxClipSize_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_MaxClipSize_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int RefInt {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_RefInt_set(swigCPtr, value);
-    } 
-    get {
-      int ret = QTapTradeApiPINVOKE.TapAPINewOrder_RefInt_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string RefString {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_RefString_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_RefString_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char TacticsType {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_TacticsType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_TacticsType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char TriggerCondition {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_TriggerCondition_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_TriggerCondition_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char TriggerPriceType {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_TriggerPriceType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_TriggerPriceType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char AddOneIsValid {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_AddOneIsValid_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_AddOneIsValid_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint OrderQty2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_OrderQty2_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = QTapTradeApiPINVOKE.TapAPINewOrder_OrderQty2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char HedgeFlag2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_HedgeFlag2_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_HedgeFlag2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public byte MarketLevel {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_MarketLevel_set(swigCPtr, value);
-    } 
-    get {
-      byte ret = QTapTradeApiPINVOKE.TapAPINewOrder_MarketLevel_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char FutureAutoCloseFlag {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_FutureAutoCloseFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPINewOrder_FutureAutoCloseFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string UpperChannelNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPINewOrder_UpperChannelNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPINewOrder_UpperChannelNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPINewOrder() : this(QTapTradeApiPINVOKE.new_TapAPINewOrder(), true) {
-  }
-
-}
 
 }

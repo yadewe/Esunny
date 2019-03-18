@@ -8,71 +8,98 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
+    /// <summary>
+    /// 深度行情信息
+    /// </summary>
+    public class TapAPIDeepQuoteInfo : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIDeepQuoteInfo : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIDeepQuoteInfo(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIDeepQuoteInfo obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIDeepQuoteInfo() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPIDeepQuoteInfo(swigCPtr);
+        internal TapAPIDeepQuoteInfo(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIDeepQuoteInfo obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIDeepQuoteInfo()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPIDeepQuoteInfo(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 买卖方向
+        /// </summary>
+        public char Side
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Side_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Side_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 挂单价格
+        /// </summary>
+        public double Price
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Price_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Price_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 挂单数量
+        /// </summary>
+        public uint Qty
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Qty_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Qty_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIDeepQuoteInfo() : this(QTapTradeApiPINVOKE.new_TapAPIDeepQuoteInfo(), true)
+        {
+        }
+
     }
-  }
-
-  public char Side {
-    set {
-      QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Side_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Side_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double Price {
-    set {
-      QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Price_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Price_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint Qty {
-    set {
-      QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Qty_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = QTapTradeApiPINVOKE.TapAPIDeepQuoteInfo_Qty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIDeepQuoteInfo() : this(QTapTradeApiPINVOKE.new_TapAPIDeepQuoteInfo(), true) {
-  }
-
-}
 
 }

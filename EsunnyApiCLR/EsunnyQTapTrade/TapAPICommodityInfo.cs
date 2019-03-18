@@ -8,311 +8,458 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
+    /// <summary>
+    /// 交易品种信息
+    /// </summary>
+    public class TapAPICommodityInfo : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPICommodityInfo : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPICommodityInfo(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPICommodityInfo obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPICommodityInfo() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPICommodityInfo(swigCPtr);
+        internal TapAPICommodityInfo(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPICommodityInfo obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPICommodityInfo()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPICommodityInfo(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 交易所编码
+        /// </summary>
+        public string ExchangeNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_ExchangeNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_ExchangeNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型
+        /// </summary>
+        public char CommodityType
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种编号
+        /// </summary>
+        public string CommodityNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种名称
+        /// </summary>
+        public string CommodityName
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityName_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityName_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种英文名称
+        /// </summary>
+        public string CommodityEngName
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityEngName_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityEngName_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 关联品种交易所编码
+        /// </summary>
+        public string RelateExchangeNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateExchangeNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateExchangeNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 关联品种品种类型
+        /// </summary>
+        public char RelateCommodityType
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 关联品种品种编号
+        /// </summary>
+        public string RelateCommodityNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 关联品种2交易所编码
+        /// </summary>
+        public string RelateExchangeNo2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateExchangeNo2_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateExchangeNo2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 关联品种2品种类型
+        /// </summary>
+        public char RelateCommodityType2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityType2_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityType2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 关联品种2品种编号
+        /// </summary>
+        public string RelateCommodityNo2
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityNo2_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityNo2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易币种
+        /// </summary>
+        public string TradeCurrency
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_TradeCurrency_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_TradeCurrency_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 结算币种
+        /// </summary>
+        public string SettleCurrency
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_SettleCurrency_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_SettleCurrency_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 每手乘数
+        /// </summary>
+        public double ContractSize
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_ContractSize_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_ContractSize_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 期货保证金方式,分笔'1',锁仓'2'
+        /// </summary>
+        public char MarginCalculateMode
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_MarginCalculateMode_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_MarginCalculateMode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 期权保证金公式
+        /// </summary>
+        public char OptionMarginCalculateMode
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_OptionMarginCalculateMode_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_OptionMarginCalculateMode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 开平方式
+        /// </summary>
+        public char OpenCloseMode
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_OpenCloseMode_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_OpenCloseMode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 执行价格倍数
+        /// </summary>
+        public double StrikePriceTimes
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_StrikePriceTimes_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_StrikePriceTimes_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 单行情品种
+        /// </summary>
+        public char IsOnlyQuoteCommodity
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_IsOnlyQuoteCommodity_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_IsOnlyQuoteCommodity_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 最小变动价位
+        /// </summary>
+        public double CommodityTickSize
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityTickSize_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityTickSize_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 报价分母
+        /// </summary>
+        public int CommodityDenominator
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityDenominator_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityDenominator_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 组合方向
+        /// </summary>
+        public char CmbDirect
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_CmbDirect_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CmbDirect_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 只可平仓提前天数
+        /// </summary>
+        public int OnlyCanCloseDays
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_OnlyCanCloseDays_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_OnlyCanCloseDays_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交割行权方式
+        /// </summary>
+        public char DeliveryMode
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_DeliveryMode_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_DeliveryMode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交割日偏移
+        /// </summary>
+        public int DeliveryDays
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_DeliveryDays_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_DeliveryDays_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// T+1分割时间
+        /// </summary>
+        public string AddOneTime
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_AddOneTime_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_AddOneTime_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种时区
+        /// </summary>
+        public int CommodityTimeZone
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityTimeZone_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityTimeZone_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPICommodityInfo() : this(QTapTradeApiPINVOKE.new_TapAPICommodityInfo(), true)
+        {
+        }
+
     }
-  }
-
-  public string ExchangeNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_ExchangeNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_ExchangeNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CommodityType {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityName {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityName_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityName_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityEngName {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityEngName_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityEngName_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string RelateExchangeNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateExchangeNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateExchangeNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char RelateCommodityType {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string RelateCommodityNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string RelateExchangeNo2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateExchangeNo2_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateExchangeNo2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char RelateCommodityType2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityType2_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityType2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string RelateCommodityNo2 {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityNo2_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_RelateCommodityNo2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string TradeCurrency {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_TradeCurrency_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_TradeCurrency_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string SettleCurrency {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_SettleCurrency_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_SettleCurrency_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double ContractSize {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_ContractSize_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_ContractSize_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char MarginCalculateMode {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_MarginCalculateMode_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_MarginCalculateMode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char OptionMarginCalculateMode {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_OptionMarginCalculateMode_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_OptionMarginCalculateMode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char OpenCloseMode {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_OpenCloseMode_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_OpenCloseMode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double StrikePriceTimes {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_StrikePriceTimes_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_StrikePriceTimes_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char IsOnlyQuoteCommodity {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_IsOnlyQuoteCommodity_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_IsOnlyQuoteCommodity_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double CommodityTickSize {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityTickSize_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityTickSize_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int CommodityDenominator {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityDenominator_set(swigCPtr, value);
-    } 
-    get {
-      int ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityDenominator_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CmbDirect {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_CmbDirect_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CmbDirect_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int OnlyCanCloseDays {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_OnlyCanCloseDays_set(swigCPtr, value);
-    } 
-    get {
-      int ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_OnlyCanCloseDays_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char DeliveryMode {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_DeliveryMode_set(swigCPtr, value);
-    } 
-    get {
-      char ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_DeliveryMode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int DeliveryDays {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_DeliveryDays_set(swigCPtr, value);
-    } 
-    get {
-      int ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_DeliveryDays_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string AddOneTime {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_AddOneTime_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_AddOneTime_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int CommodityTimeZone {
-    set {
-      QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityTimeZone_set(swigCPtr, value);
-    } 
-    get {
-      int ret = QTapTradeApiPINVOKE.TapAPICommodityInfo_CommodityTimeZone_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPICommodityInfo() : this(QTapTradeApiPINVOKE.new_TapAPICommodityInfo(), true) {
-  }
-
-}
 
 }

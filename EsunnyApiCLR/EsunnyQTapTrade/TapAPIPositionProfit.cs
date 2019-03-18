@@ -8,111 +8,158 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace QTapTradeWrapperApi {
+namespace QTapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户持仓盈亏
+    /// </summary>
+    public class TapAPIPositionProfit : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIPositionProfit : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIPositionProfit(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIPositionProfit obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIPositionProfit() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          QTapTradeApiPINVOKE.delete_TapAPIPositionProfit(swigCPtr);
+        internal TapAPIPositionProfit(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIPositionProfit obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIPositionProfit()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        QTapTradeApiPINVOKE.delete_TapAPIPositionProfit(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 本地持仓号，服务器编写
+        /// </summary>
+        public string PositionNo
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 持仓流号
+        /// </summary>
+        public uint PositionStreamId
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionStreamId_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionStreamId_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 持仓盈亏
+        /// </summary>
+        public double PositionProfit
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionProfit_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionProfit_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// LME持仓盈亏
+        /// </summary>
+        public double LMEPositionProfit
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIPositionProfit_LMEPositionProfit_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_LMEPositionProfit_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 期权市值
+        /// </summary>
+        public double OptionMarketValue
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIPositionProfit_OptionMarketValue_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_OptionMarketValue_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 计算价格
+        /// </summary>
+        public double CalculatePrice
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIPositionProfit_CalculatePrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_CalculatePrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 逐笔浮盈
+        /// </summary>
+        public double FloatingPL
+        {
+            set
+            {
+                QTapTradeApiPINVOKE.TapAPIPositionProfit_FloatingPL_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_FloatingPL_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIPositionProfit() : this(QTapTradeApiPINVOKE.new_TapAPIPositionProfit(), true)
+        {
+        }
+
     }
-  }
-
-  public string PositionNo {
-    set {
-      QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint PositionStreamId {
-    set {
-      QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionStreamId_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionStreamId_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double PositionProfit {
-    set {
-      QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionProfit_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_PositionProfit_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double LMEPositionProfit {
-    set {
-      QTapTradeApiPINVOKE.TapAPIPositionProfit_LMEPositionProfit_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_LMEPositionProfit_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double OptionMarketValue {
-    set {
-      QTapTradeApiPINVOKE.TapAPIPositionProfit_OptionMarketValue_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_OptionMarketValue_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double CalculatePrice {
-    set {
-      QTapTradeApiPINVOKE.TapAPIPositionProfit_CalculatePrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_CalculatePrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double FloatingPL {
-    set {
-      QTapTradeApiPINVOKE.TapAPIPositionProfit_FloatingPL_set(swigCPtr, value);
-    } 
-    get {
-      double ret = QTapTradeApiPINVOKE.TapAPIPositionProfit_FloatingPL_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIPositionProfit() : this(QTapTradeApiPINVOKE.new_TapAPIPositionProfit(), true) {
-  }
-
-}
 
 }
