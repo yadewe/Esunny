@@ -8,704 +8,1109 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// TapTradeAPI 的回调通知接口。
+    /// </summary>
+    public class ITapTradeAPINotify : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class ITapTradeAPINotify : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal ITapTradeAPINotify(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(ITapTradeAPINotify obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~ITapTradeAPINotify() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_ITapTradeAPINotify(swigCPtr);
+        internal ITapTradeAPINotify(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(ITapTradeAPINotify obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~ITapTradeAPINotify()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_ITapTradeAPINotify(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 连接成功回调通知
+        /// </summary>
+        public virtual void OnConnect()
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnConnect(swigCPtr);
+        }
+        /// <summary>
+        /// 系统登录过程回调。此函数为Login()登录函数的回调，调用Login()成功后建立了链路连接，然后API将向服务器发送登录认证信息，
+        /// 登录期间的数据发送情况和登录的回馈信息传递到此回调函数中。该回调返回成功，说明用户登录成功。但是不代表API准备完毕。
+        /// </summary>
+        /// <param name="errorCode">返回错误码,0表示成功。</param>
+        /// <param name="loginRspInfo">登陆应答信息，如果errorCode!=0，则loginRspInfo=NULL。</param>
+        public virtual void OnRspLogin(int errorCode, TapAPITradeLoginRspInfo loginRspInfo)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspLogin(swigCPtr, errorCode, TapAPITradeLoginRspInfo.getCPtr(loginRspInfo));
+        }
+        /// <summary>
+        /// 二次认证联系方式通知。登录完成后，如果需要二次认证（9.2.7后台），会收到联系方式的通知，可以选择通知消息的一个联系方式（邮箱或者电话）
+        /// 请求发送二次认证授权码（RequestVertificateCode）。该回调返回成功，说明需要二次认证，并且需要选择一个联系方式然后调用RequestVertificateCode。
+        /// </summary>
+        /// <param name="errorCode">返回错误码,0表示成功。如果账户没有绑定二次认证联系方式，则返回10016错误。</param>
+        /// <param name="isLast">标识是否是最后一条联系信息。</param>
+        /// <param name="ContactInfo">认证方式信息，如果errorCode!=0，则ContactInfo为空。</param>
+        public virtual void OnRtnContactInfo(int errorCode, char isLast, string ContactInfo)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnContactInfo(swigCPtr, errorCode, isLast, ContactInfo);
+        }
+        /// <summary>
+        /// 请求发送二次认证码应答。请求获取二次认证授权码，后台发送邮件或者短信，并给出应答，包含发送序号以及认证码有效期。
+        /// 该回调返回成功，说明需要二次认证，并且需要选择一个联系方式然后调用RequestVertificateCode。
+        /// </summary>
+        /// <param name="sessionID">请求二次认证码会话ID。</param>
+        /// <param name="errorCode">如果没有绑定联系，返回10016错误.</param>
+        /// <param name="rsp">二次认证码有效期，以秒返回，在二次认证有效期内，可以重复设置二次认证码，但是不能再重新申请二次认证码。</param>
+        public virtual void OnRspRequestVertificateCode(uint sessionID, int errorCode, TapAPIRequestVertificateCodeRsp rsp)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspRequestVertificateCode(swigCPtr, sessionID, errorCode, TapAPIRequestVertificateCodeRsp.getCPtr(rsp));
+        }
+        /// <summary>
+        /// API到期提醒回调。此函数为Login()登录成功后，如果到期日与当前日期小于30天，则进行回调提醒。
+        /// 该函数回调，则说明授权在一个月之内到期。否则不产生该回调。
+        /// </summary>
+        /// <param name="date">返回API授权到期日。</param>
+        /// <param name="days">返回还有几天授权到期。</param>
+        public virtual void OnExpriationDate(string date, int days)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnExpriationDate(swigCPtr, date, days);
+        }
+        /// <summary>
+        /// 通知用户API准备就绪。只有用户回调收到此就绪通知时才能进行后续的各种行情数据查询操作。此回调函数是API能否正常工作的标志。就绪后才可以进行后续正常操作
+        /// </summary>
+        /// <param name="errorCode">0：API准备好，否则未准备好</param>
+        public virtual void OnAPIReady(int errorCode)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnAPIReady(swigCPtr, errorCode);
+        }
+        /// <summary>
+        /// API和服务失去连接的回调.在API使用过程中主动或者被动与服务器服务失去连接后都会触发此回调通知用户与服务器的连接已经断开。
+        /// </summary>
+        /// <param name="reasonCode">断开原因代码。</param>
+        public virtual void OnDisconnect(int reasonCode)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnDisconnect(swigCPtr, reasonCode);
+        }
+        /// <summary>
+        /// 通知用户密码修改结果
+        /// </summary>
+        /// <param name="sessionID">修改密码的会话ID,和ChangePassword返回的会话ID对应。</param>
+        /// <param name="errorCode">返回错误码，0表示成功。</param>
+        public virtual void OnRspChangePassword(uint sessionID, int errorCode)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspChangePassword(swigCPtr, sessionID, errorCode);
+        }
+        /// <summary>
+        /// 认证账户密码反馈
+        /// </summary>
+        /// <param name="sessionID">修改密码的会话ID,和AuthPassword返回的会话ID对应。</param>
+        /// <param name="errorCode">返回错误码，0表示成功。</param>
+        public virtual void OnRspAuthPassword(uint sessionID, int errorCode)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspAuthPassword(swigCPtr, sessionID, errorCode);
+        }
+        /// <summary>
+        /// 返回系统交易日期和当天LME到期日
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
+        public virtual void OnRspQryTradingDate(uint sessionID, int errorCode, TapAPITradingCalendarQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryTradingDate(swigCPtr, sessionID, errorCode, TapAPITradingCalendarQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 设置用户预留信息反馈。该接口暂未实现
+        /// </summary>
+        /// <param name="sessionID">设置用户预留信息的会话ID</param>
+        /// <param name="errorCode">返回错误码，0表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
+        public virtual void OnRspSetReservedInfo(uint sessionID, int errorCode, string info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspSetReservedInfo(swigCPtr, sessionID, errorCode, info);
+        }
+        /// <summary>
+        /// 返回用户信息。此回调接口向用户返回查询的资金账号的详细信息。用户有必要将得到的账号编号保存起来，然后在后续的函数调用中使用。
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
+        public virtual void OnRspQryAccount(uint sessionID, uint errorCode, char isLast, TapAPIAccountInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryAccount(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回资金账户的资金信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryFund(uint sessionID, int errorCode, char isLast, TapAPIFundData info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryFund(swigCPtr, sessionID, errorCode, isLast, TapAPIFundData.getCPtr(info));
+        }
+        /// <summary>
+        /// 用户资金变化通知。用户的委托成交后会引起资金数据的变化，因此需要向用户实时反馈。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
+        public virtual void OnRtnFund(TapAPIFundData info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnFund(swigCPtr, TapAPIFundData.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回系统中的交易所信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryExchange(uint sessionID, int errorCode, char isLast, TapAPIExchangeInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryExchange(swigCPtr, sessionID, errorCode, isLast, TapAPIExchangeInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回系统中品种信息。此回调接口用于向用户返回得到的所有品种信息。
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID，和GetAllCommodities()函数返回对应；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryCommodity(uint sessionID, int errorCode, char isLast, TapAPICommodityInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryCommodity(swigCPtr, sessionID, errorCode, isLast, TapAPICommodityInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回系统中合约信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryContract(uint sessionID, int errorCode, char isLast, TapAPITradeContractInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryContract(swigCPtr, sessionID, errorCode, isLast, TapAPITradeContractInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回新增合约信息。向用户推送新的合约。主要用来处理在交易时间段中服务器添加了新合约时，向用户发送这个合约的信息。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRtnContract(TapAPITradeContractInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnContract(swigCPtr, TapAPITradeContractInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 订单操作应答。下单、撤单、改单应答。下单都会有次应答回调，如果下单请求结构中没有填写合约或者资金账号，则仅返回错误号。
+        /// 撤单、改单错误由应答和OnRtnOrder，成功仅返回OnRtnOrder回调。
+        /// </summary>
+        /// <param name="sessionID">标识请求对应的sessionID，以便确定该笔应答对应的请求。</param>
+        /// <param name="errorCode"> 错误码。0 表示成功。</param>
+        /// <param name="info">订单应答具体类型，包含订单操作类型和订单信息。
+        /// 订单信息指针部分情况下可能为空，如果为空，可以通过SessiuonID找到对应请求获取请求类型。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspOrderAction(uint sessionID, int errorCode, TapAPIOrderActionRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderAction(swigCPtr, sessionID, errorCode, TapAPIOrderActionRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回新委托。新下的或者其他地方下的推送过来的。服务器接收到客户下的委托内容后就会保存起来等待触发，同时向用户回馈一个
+        /// 新委托信息说明服务器正确处理了用户的请求，返回的信息中包含了全部的委托信息，同时有一个用来标示此委托的委托号。
+        /// 如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。        /// 
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRtnOrder(TapAPIOrderInfoNotice info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnOrder(swigCPtr, TapAPIOrderInfoNotice.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回用户查询的委托的具体信息。
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryOrder(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryOrder(swigCPtr, sessionID, errorCode, isLast, TapAPIOrderInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回查询的委托变化流程信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码，当errorCode==0时，info指向返回的委托变化流程结构体，不然为NULL；</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">返回的委托变化流程指针。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryOrderProcess(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryOrderProcess(swigCPtr, sessionID, errorCode, isLast, TapAPIOrderInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回查询的成交信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。</param>
+        public virtual void OnRspQryFill(uint sessionID, int errorCode, char isLast, TapAPIFillInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryFill(swigCPtr, sessionID, errorCode, isLast, TapAPIFillInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 推送来的成交信息.用户的委托成交后将向用户推送成交信息。
+        /// 如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRtnFill(TapAPIFillInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnFill(swigCPtr, TapAPIFillInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回查询的持仓
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryPosition(uint sessionID, int errorCode, char isLast, TapAPIPositionInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryPosition(swigCPtr, sessionID, errorCode, isLast, TapAPIPositionInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 持仓变化推送通知。如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRtnPosition(TapAPIPositionInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnPosition(swigCPtr, TapAPIPositionInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回查询的持仓汇总
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryPositionSummary(uint sessionID, int errorCode, char isLast, TapAPIPositionSummary info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryPositionSummary(swigCPtr, sessionID, errorCode, isLast, TapAPIPositionSummary.getCPtr(info));
+        }
+        /// <summary>
+        /// 持仓汇总变化推送通知。如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRtnPositionSummary(TapAPIPositionSummary info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnPositionSummary(swigCPtr, TapAPIPositionSummary.getCPtr(info));
+        }
+        /// <summary>
+        /// 持仓盈亏通知。如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRtnPositionProfit(TapAPIPositionProfitNotice info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnPositionProfit(swigCPtr, TapAPIPositionProfitNotice.getCPtr(info));
+        }
+        /// <summary>
+        /// 返回系统中的币种信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryCurrency(uint sessionID, int errorCode, char isLast, TapAPICurrencyInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryCurrency(swigCPtr, sessionID, errorCode, isLast, TapAPICurrencyInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 交易消息通知。返回查询的用户资金状态信息。信息说明了用户的资金状态，用户需要仔细查看这些信息。
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryTradeMessage(uint sessionID, int errorCode, char isLast, TapAPITradeMessage info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryTradeMessage(swigCPtr, sessionID, errorCode, isLast, TapAPITradeMessage.getCPtr(info));
+        }
+        /// <summary>
+        /// 交易消息通知。用户在交易过程中可能因为资金、持仓、平仓的状态变动使账户处于某些危险状态，或者某些重要的信息需要向用户通知。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRtnTradeMessage(TapAPITradeMessage info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnTradeMessage(swigCPtr, TapAPITradeMessage.getCPtr(info));
+        }
+        /// <summary>
+        /// 历史委托查询应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryHisOrder(uint sessionID, int errorCode, char isLast, TapAPIHisOrderQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisOrder(swigCPtr, sessionID, errorCode, isLast, TapAPIHisOrderQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 历史委托流程查询应答
+        /// </summary>
+        /// <param name="sessionID"> 请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryHisOrderProcess(uint sessionID, int errorCode, char isLast, TapAPIHisOrderQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisOrderProcess(swigCPtr, sessionID, errorCode, isLast, TapAPIHisOrderQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 历史成交查询应答  
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryHisMatch(uint sessionID, int errorCode, char isLast, TapAPIHisMatchQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisMatch(swigCPtr, sessionID, errorCode, isLast, TapAPIHisMatchQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 历史持仓查询应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryHisPosition(uint sessionID, int errorCode, char isLast, TapAPIHisPositionQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisPosition(swigCPtr, sessionID, errorCode, isLast, TapAPIHisPositionQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 历史交割查询应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryHisDelivery(uint sessionID, int errorCode, char isLast, TapAPIHisDeliveryQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisDelivery(swigCPtr, sessionID, errorCode, isLast, TapAPIHisDeliveryQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 资金调整查询应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryAccountCashAdjust(uint sessionID, int errorCode, char isLast, TapAPIAccountCashAdjustQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryAccountCashAdjust(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountCashAdjustQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 查询用户账单应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryBill(uint sessionID, int errorCode, char isLast, TapAPIBillQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryBill(swigCPtr, sessionID, errorCode, isLast, TapAPIBillQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 查询账户手续费计算参数
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryAccountFeeRent(uint sessionID, int errorCode, char isLast, TapAPIAccountFeeRentQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryAccountFeeRent(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountFeeRentQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 查询账户保证金计算参数
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspQryAccountMarginRent(uint sessionID, int errorCode, char isLast, TapAPIAccountMarginRentQryRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryAccountMarginRent(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountMarginRentQryRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 港交所做市商双边报价应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode"> 错误码。0 表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效</param>
+        public virtual void OnRspHKMarketOrderInsert(uint sessionID, int errorCode, TapAPIOrderMarketInsertRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspHKMarketOrderInsert(swigCPtr, sessionID, errorCode, TapAPIOrderMarketInsertRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 港交所做市商双边撤单应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspHKMarketOrderDelete(uint sessionID, int errorCode, TapAPIOrderMarketInsertRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspHKMarketOrderDelete(swigCPtr, sessionID, errorCode, TapAPIOrderMarketInsertRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 港交所询价通知
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnHKMarketQuoteNotice(TapAPIOrderQuoteMarketNotice info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnHKMarketQuoteNotice(swigCPtr, TapAPIOrderQuoteMarketNotice.getCPtr(info));
+        }
+        /// <summary>
+        /// 订单删除应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspOrderLocalRemove(uint sessionID, int errorCode, TapAPIOrderLocalRemoveRsp info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderLocalRemove(swigCPtr, sessionID, errorCode, TapAPIOrderLocalRemoveRsp.getCPtr(info));
+        }
+        /// <summary>
+        /// 订单录入应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspOrderLocalInput(uint sessionID, int errorCode, TapAPIOrderInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderLocalInput(swigCPtr, sessionID, errorCode, TapAPIOrderInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 订单修改应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspOrderLocalModify(uint sessionID, int errorCode, TapAPIOrderInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderLocalModify(swigCPtr, sessionID, errorCode, TapAPIOrderInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 订单转移应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspOrderLocalTransfer(uint sessionID, int errorCode, TapAPIOrderInfo info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderLocalTransfer(swigCPtr, sessionID, errorCode, TapAPIOrderInfo.getCPtr(info));
+        }
+        /// <summary>
+        /// 成交录入应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspFillLocalInput(uint sessionID, int errorCode, TapAPIFillLocalInputReq info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspFillLocalInput(swigCPtr, sessionID, errorCode, TapAPIFillLocalInputReq.getCPtr(info));
+        }
+        /// <summary>
+        /// 订单删除应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
+        public virtual void OnRspFillLocalRemove(uint sessionID, int errorCode, TapAPIFillLocalRemoveReq info)
+        {
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspFillLocalRemove(swigCPtr, sessionID, errorCode, TapAPIFillLocalRemoveReq.getCPtr(info));
+        }
+
+        public ITapTradeAPINotify() : this(TapTradeWrapperPINVOKE.new_ITapTradeAPINotify(), true)
+        {
+            SwigDirectorConnect();
+        }
+
+        private void SwigDirectorConnect()
+        {
+            if (SwigDerivedClassHasMethod("OnConnect", swigMethodTypes0))
+                swigDelegate0 = new SwigDelegateITapTradeAPINotify_0(SwigDirectorOnConnect);
+            if (SwigDerivedClassHasMethod("OnRspLogin", swigMethodTypes1))
+                swigDelegate1 = new SwigDelegateITapTradeAPINotify_1(SwigDirectorOnRspLogin);
+            if (SwigDerivedClassHasMethod("OnRtnContactInfo", swigMethodTypes2))
+                swigDelegate2 = new SwigDelegateITapTradeAPINotify_2(SwigDirectorOnRtnContactInfo);
+            if (SwigDerivedClassHasMethod("OnRspRequestVertificateCode", swigMethodTypes3))
+                swigDelegate3 = new SwigDelegateITapTradeAPINotify_3(SwigDirectorOnRspRequestVertificateCode);
+            if (SwigDerivedClassHasMethod("OnExpriationDate", swigMethodTypes4))
+                swigDelegate4 = new SwigDelegateITapTradeAPINotify_4(SwigDirectorOnExpriationDate);
+            if (SwigDerivedClassHasMethod("OnAPIReady", swigMethodTypes5))
+                swigDelegate5 = new SwigDelegateITapTradeAPINotify_5(SwigDirectorOnAPIReady);
+            if (SwigDerivedClassHasMethod("OnDisconnect", swigMethodTypes6))
+                swigDelegate6 = new SwigDelegateITapTradeAPINotify_6(SwigDirectorOnDisconnect);
+            if (SwigDerivedClassHasMethod("OnRspChangePassword", swigMethodTypes7))
+                swigDelegate7 = new SwigDelegateITapTradeAPINotify_7(SwigDirectorOnRspChangePassword);
+            if (SwigDerivedClassHasMethod("OnRspAuthPassword", swigMethodTypes8))
+                swigDelegate8 = new SwigDelegateITapTradeAPINotify_8(SwigDirectorOnRspAuthPassword);
+            if (SwigDerivedClassHasMethod("OnRspQryTradingDate", swigMethodTypes9))
+                swigDelegate9 = new SwigDelegateITapTradeAPINotify_9(SwigDirectorOnRspQryTradingDate);
+            if (SwigDerivedClassHasMethod("OnRspSetReservedInfo", swigMethodTypes10))
+                swigDelegate10 = new SwigDelegateITapTradeAPINotify_10(SwigDirectorOnRspSetReservedInfo);
+            if (SwigDerivedClassHasMethod("OnRspQryAccount", swigMethodTypes11))
+                swigDelegate11 = new SwigDelegateITapTradeAPINotify_11(SwigDirectorOnRspQryAccount);
+            if (SwigDerivedClassHasMethod("OnRspQryFund", swigMethodTypes12))
+                swigDelegate12 = new SwigDelegateITapTradeAPINotify_12(SwigDirectorOnRspQryFund);
+            if (SwigDerivedClassHasMethod("OnRtnFund", swigMethodTypes13))
+                swigDelegate13 = new SwigDelegateITapTradeAPINotify_13(SwigDirectorOnRtnFund);
+            if (SwigDerivedClassHasMethod("OnRspQryExchange", swigMethodTypes14))
+                swigDelegate14 = new SwigDelegateITapTradeAPINotify_14(SwigDirectorOnRspQryExchange);
+            if (SwigDerivedClassHasMethod("OnRspQryCommodity", swigMethodTypes15))
+                swigDelegate15 = new SwigDelegateITapTradeAPINotify_15(SwigDirectorOnRspQryCommodity);
+            if (SwigDerivedClassHasMethod("OnRspQryContract", swigMethodTypes16))
+                swigDelegate16 = new SwigDelegateITapTradeAPINotify_16(SwigDirectorOnRspQryContract);
+            if (SwigDerivedClassHasMethod("OnRtnContract", swigMethodTypes17))
+                swigDelegate17 = new SwigDelegateITapTradeAPINotify_17(SwigDirectorOnRtnContract);
+            if (SwigDerivedClassHasMethod("OnRspOrderAction", swigMethodTypes18))
+                swigDelegate18 = new SwigDelegateITapTradeAPINotify_18(SwigDirectorOnRspOrderAction);
+            if (SwigDerivedClassHasMethod("OnRtnOrder", swigMethodTypes19))
+                swigDelegate19 = new SwigDelegateITapTradeAPINotify_19(SwigDirectorOnRtnOrder);
+            if (SwigDerivedClassHasMethod("OnRspQryOrder", swigMethodTypes20))
+                swigDelegate20 = new SwigDelegateITapTradeAPINotify_20(SwigDirectorOnRspQryOrder);
+            if (SwigDerivedClassHasMethod("OnRspQryOrderProcess", swigMethodTypes21))
+                swigDelegate21 = new SwigDelegateITapTradeAPINotify_21(SwigDirectorOnRspQryOrderProcess);
+            if (SwigDerivedClassHasMethod("OnRspQryFill", swigMethodTypes22))
+                swigDelegate22 = new SwigDelegateITapTradeAPINotify_22(SwigDirectorOnRspQryFill);
+            if (SwigDerivedClassHasMethod("OnRtnFill", swigMethodTypes23))
+                swigDelegate23 = new SwigDelegateITapTradeAPINotify_23(SwigDirectorOnRtnFill);
+            if (SwigDerivedClassHasMethod("OnRspQryPosition", swigMethodTypes24))
+                swigDelegate24 = new SwigDelegateITapTradeAPINotify_24(SwigDirectorOnRspQryPosition);
+            if (SwigDerivedClassHasMethod("OnRtnPosition", swigMethodTypes25))
+                swigDelegate25 = new SwigDelegateITapTradeAPINotify_25(SwigDirectorOnRtnPosition);
+            if (SwigDerivedClassHasMethod("OnRspQryPositionSummary", swigMethodTypes26))
+                swigDelegate26 = new SwigDelegateITapTradeAPINotify_26(SwigDirectorOnRspQryPositionSummary);
+            if (SwigDerivedClassHasMethod("OnRtnPositionSummary", swigMethodTypes27))
+                swigDelegate27 = new SwigDelegateITapTradeAPINotify_27(SwigDirectorOnRtnPositionSummary);
+            if (SwigDerivedClassHasMethod("OnRtnPositionProfit", swigMethodTypes28))
+                swigDelegate28 = new SwigDelegateITapTradeAPINotify_28(SwigDirectorOnRtnPositionProfit);
+            if (SwigDerivedClassHasMethod("OnRspQryCurrency", swigMethodTypes29))
+                swigDelegate29 = new SwigDelegateITapTradeAPINotify_29(SwigDirectorOnRspQryCurrency);
+            if (SwigDerivedClassHasMethod("OnRspQryTradeMessage", swigMethodTypes30))
+                swigDelegate30 = new SwigDelegateITapTradeAPINotify_30(SwigDirectorOnRspQryTradeMessage);
+            if (SwigDerivedClassHasMethod("OnRtnTradeMessage", swigMethodTypes31))
+                swigDelegate31 = new SwigDelegateITapTradeAPINotify_31(SwigDirectorOnRtnTradeMessage);
+            if (SwigDerivedClassHasMethod("OnRspQryHisOrder", swigMethodTypes32))
+                swigDelegate32 = new SwigDelegateITapTradeAPINotify_32(SwigDirectorOnRspQryHisOrder);
+            if (SwigDerivedClassHasMethod("OnRspQryHisOrderProcess", swigMethodTypes33))
+                swigDelegate33 = new SwigDelegateITapTradeAPINotify_33(SwigDirectorOnRspQryHisOrderProcess);
+            if (SwigDerivedClassHasMethod("OnRspQryHisMatch", swigMethodTypes34))
+                swigDelegate34 = new SwigDelegateITapTradeAPINotify_34(SwigDirectorOnRspQryHisMatch);
+            if (SwigDerivedClassHasMethod("OnRspQryHisPosition", swigMethodTypes35))
+                swigDelegate35 = new SwigDelegateITapTradeAPINotify_35(SwigDirectorOnRspQryHisPosition);
+            if (SwigDerivedClassHasMethod("OnRspQryHisDelivery", swigMethodTypes36))
+                swigDelegate36 = new SwigDelegateITapTradeAPINotify_36(SwigDirectorOnRspQryHisDelivery);
+            if (SwigDerivedClassHasMethod("OnRspQryAccountCashAdjust", swigMethodTypes37))
+                swigDelegate37 = new SwigDelegateITapTradeAPINotify_37(SwigDirectorOnRspQryAccountCashAdjust);
+            if (SwigDerivedClassHasMethod("OnRspQryBill", swigMethodTypes38))
+                swigDelegate38 = new SwigDelegateITapTradeAPINotify_38(SwigDirectorOnRspQryBill);
+            if (SwigDerivedClassHasMethod("OnRspQryAccountFeeRent", swigMethodTypes39))
+                swigDelegate39 = new SwigDelegateITapTradeAPINotify_39(SwigDirectorOnRspQryAccountFeeRent);
+            if (SwigDerivedClassHasMethod("OnRspQryAccountMarginRent", swigMethodTypes40))
+                swigDelegate40 = new SwigDelegateITapTradeAPINotify_40(SwigDirectorOnRspQryAccountMarginRent);
+            if (SwigDerivedClassHasMethod("OnRspHKMarketOrderInsert", swigMethodTypes41))
+                swigDelegate41 = new SwigDelegateITapTradeAPINotify_41(SwigDirectorOnRspHKMarketOrderInsert);
+            if (SwigDerivedClassHasMethod("OnRspHKMarketOrderDelete", swigMethodTypes42))
+                swigDelegate42 = new SwigDelegateITapTradeAPINotify_42(SwigDirectorOnRspHKMarketOrderDelete);
+            if (SwigDerivedClassHasMethod("OnHKMarketQuoteNotice", swigMethodTypes43))
+                swigDelegate43 = new SwigDelegateITapTradeAPINotify_43(SwigDirectorOnHKMarketQuoteNotice);
+            if (SwigDerivedClassHasMethod("OnRspOrderLocalRemove", swigMethodTypes44))
+                swigDelegate44 = new SwigDelegateITapTradeAPINotify_44(SwigDirectorOnRspOrderLocalRemove);
+            if (SwigDerivedClassHasMethod("OnRspOrderLocalInput", swigMethodTypes45))
+                swigDelegate45 = new SwigDelegateITapTradeAPINotify_45(SwigDirectorOnRspOrderLocalInput);
+            if (SwigDerivedClassHasMethod("OnRspOrderLocalModify", swigMethodTypes46))
+                swigDelegate46 = new SwigDelegateITapTradeAPINotify_46(SwigDirectorOnRspOrderLocalModify);
+            if (SwigDerivedClassHasMethod("OnRspOrderLocalTransfer", swigMethodTypes47))
+                swigDelegate47 = new SwigDelegateITapTradeAPINotify_47(SwigDirectorOnRspOrderLocalTransfer);
+            if (SwigDerivedClassHasMethod("OnRspFillLocalInput", swigMethodTypes48))
+                swigDelegate48 = new SwigDelegateITapTradeAPINotify_48(SwigDirectorOnRspFillLocalInput);
+            if (SwigDerivedClassHasMethod("OnRspFillLocalRemove", swigMethodTypes49))
+                swigDelegate49 = new SwigDelegateITapTradeAPINotify_49(SwigDirectorOnRspFillLocalRemove);
+            TapTradeWrapperPINVOKE.ITapTradeAPINotify_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22, swigDelegate23, swigDelegate24, swigDelegate25, swigDelegate26, swigDelegate27, swigDelegate28, swigDelegate29, swigDelegate30, swigDelegate31, swigDelegate32, swigDelegate33, swigDelegate34, swigDelegate35, swigDelegate36, swigDelegate37, swigDelegate38, swigDelegate39, swigDelegate40, swigDelegate41, swigDelegate42, swigDelegate43, swigDelegate44, swigDelegate45, swigDelegate46, swigDelegate47, swigDelegate48, swigDelegate49);
+        }
+
+        private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes)
+        {
+            global::System.Reflection.MethodInfo methodInfo = this.GetType().GetMethod(methodName, global::System.Reflection.BindingFlags.Public | global::System.Reflection.BindingFlags.NonPublic | global::System.Reflection.BindingFlags.Instance, null, methodTypes, null);
+            bool hasDerivedMethod = methodInfo.DeclaringType.IsSubclassOf(typeof(ITapTradeAPINotify));
+            return hasDerivedMethod;
+        }
+
+        private void SwigDirectorOnConnect()
+        {
+            OnConnect();
+        }
+
+        private void SwigDirectorOnRspLogin(int errorCode, global::System.IntPtr loginRspInfo)
+        {
+            OnRspLogin(errorCode, (loginRspInfo == global::System.IntPtr.Zero) ? null : new TapAPITradeLoginRspInfo(loginRspInfo, false));
+        }
+
+        private void SwigDirectorOnRtnContactInfo(int errorCode, char isLast, string ContactInfo)
+        {
+            OnRtnContactInfo(errorCode, isLast, ContactInfo);
+        }
+
+        private void SwigDirectorOnRspRequestVertificateCode(uint sessionID, int errorCode, global::System.IntPtr rsp)
+        {
+            OnRspRequestVertificateCode(sessionID, errorCode, (rsp == global::System.IntPtr.Zero) ? null : new TapAPIRequestVertificateCodeRsp(rsp, false));
+        }
+
+        private void SwigDirectorOnExpriationDate(string date, int days)
+        {
+            OnExpriationDate(date, days);
+        }
+
+        private void SwigDirectorOnAPIReady(int errorCode)
+        {
+            OnAPIReady(errorCode);
+        }
+
+        private void SwigDirectorOnDisconnect(int reasonCode)
+        {
+            OnDisconnect(reasonCode);
+        }
+
+        private void SwigDirectorOnRspChangePassword(uint sessionID, int errorCode)
+        {
+            OnRspChangePassword(sessionID, errorCode);
+        }
+
+        private void SwigDirectorOnRspAuthPassword(uint sessionID, int errorCode)
+        {
+            OnRspAuthPassword(sessionID, errorCode);
+        }
+
+        private void SwigDirectorOnRspQryTradingDate(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspQryTradingDate(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPITradingCalendarQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspSetReservedInfo(uint sessionID, int errorCode, string info)
+        {
+            OnRspSetReservedInfo(sessionID, errorCode, info);
+        }
+
+        private void SwigDirectorOnRspQryAccount(uint sessionID, uint errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryAccount(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIAccountInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspQryFund(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryFund(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIFundData(info, false));
+        }
+
+        private void SwigDirectorOnRtnFund(global::System.IntPtr info)
+        {
+            OnRtnFund((info == global::System.IntPtr.Zero) ? null : new TapAPIFundData(info, false));
+        }
+
+        private void SwigDirectorOnRspQryExchange(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryExchange(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIExchangeInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspQryCommodity(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryCommodity(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPICommodityInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspQryContract(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryContract(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPITradeContractInfo(info, false));
+        }
+
+        private void SwigDirectorOnRtnContract(global::System.IntPtr info)
+        {
+            OnRtnContract((info == global::System.IntPtr.Zero) ? null : new TapAPITradeContractInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspOrderAction(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspOrderAction(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderActionRsp(info, false));
+        }
+
+        private void SwigDirectorOnRtnOrder(global::System.IntPtr info)
+        {
+            OnRtnOrder((info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfoNotice(info, false));
+        }
+
+        private void SwigDirectorOnRspQryOrder(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryOrder(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspQryOrderProcess(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryOrderProcess(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspQryFill(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryFill(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIFillInfo(info, false));
+        }
+
+        private void SwigDirectorOnRtnFill(global::System.IntPtr info)
+        {
+            OnRtnFill((info == global::System.IntPtr.Zero) ? null : new TapAPIFillInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspQryPosition(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryPosition(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIPositionInfo(info, false));
+        }
+
+        private void SwigDirectorOnRtnPosition(global::System.IntPtr info)
+        {
+            OnRtnPosition((info == global::System.IntPtr.Zero) ? null : new TapAPIPositionInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspQryPositionSummary(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryPositionSummary(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIPositionSummary(info, false));
+        }
+
+        private void SwigDirectorOnRtnPositionSummary(global::System.IntPtr info)
+        {
+            OnRtnPositionSummary((info == global::System.IntPtr.Zero) ? null : new TapAPIPositionSummary(info, false));
+        }
+
+        private void SwigDirectorOnRtnPositionProfit(global::System.IntPtr info)
+        {
+            OnRtnPositionProfit((info == global::System.IntPtr.Zero) ? null : new TapAPIPositionProfitNotice(info, false));
+        }
+
+        private void SwigDirectorOnRspQryCurrency(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryCurrency(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPICurrencyInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspQryTradeMessage(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryTradeMessage(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPITradeMessage(info, false));
+        }
+
+        private void SwigDirectorOnRtnTradeMessage(global::System.IntPtr info)
+        {
+            OnRtnTradeMessage((info == global::System.IntPtr.Zero) ? null : new TapAPITradeMessage(info, false));
+        }
+
+        private void SwigDirectorOnRspQryHisOrder(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryHisOrder(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisOrderQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspQryHisOrderProcess(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryHisOrderProcess(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisOrderQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspQryHisMatch(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryHisMatch(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisMatchQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspQryHisPosition(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryHisPosition(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisPositionQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspQryHisDelivery(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryHisDelivery(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisDeliveryQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspQryAccountCashAdjust(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryAccountCashAdjust(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIAccountCashAdjustQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspQryBill(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryBill(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIBillQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspQryAccountFeeRent(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryAccountFeeRent(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIAccountFeeRentQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspQryAccountMarginRent(uint sessionID, int errorCode, char isLast, global::System.IntPtr info)
+        {
+            OnRspQryAccountMarginRent(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIAccountMarginRentQryRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspHKMarketOrderInsert(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspHKMarketOrderInsert(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderMarketInsertRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspHKMarketOrderDelete(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspHKMarketOrderDelete(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderMarketInsertRsp(info, false));
+        }
+
+        private void SwigDirectorOnHKMarketQuoteNotice(global::System.IntPtr info)
+        {
+            OnHKMarketQuoteNotice((info == global::System.IntPtr.Zero) ? null : new TapAPIOrderQuoteMarketNotice(info, false));
+        }
+
+        private void SwigDirectorOnRspOrderLocalRemove(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspOrderLocalRemove(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderLocalRemoveRsp(info, false));
+        }
+
+        private void SwigDirectorOnRspOrderLocalInput(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspOrderLocalInput(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspOrderLocalModify(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspOrderLocalModify(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspOrderLocalTransfer(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspOrderLocalTransfer(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
+        }
+
+        private void SwigDirectorOnRspFillLocalInput(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspFillLocalInput(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIFillLocalInputReq(info, false));
+        }
+
+        private void SwigDirectorOnRspFillLocalRemove(uint sessionID, int errorCode, global::System.IntPtr info)
+        {
+            OnRspFillLocalRemove(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIFillLocalRemoveReq(info, false));
+        }
+
+        public delegate void SwigDelegateITapTradeAPINotify_0();
+        public delegate void SwigDelegateITapTradeAPINotify_1(int errorCode, global::System.IntPtr loginRspInfo);
+        public delegate void SwigDelegateITapTradeAPINotify_2(int errorCode, char isLast, string ContactInfo);
+        public delegate void SwigDelegateITapTradeAPINotify_3(uint sessionID, int errorCode, global::System.IntPtr rsp);
+        public delegate void SwigDelegateITapTradeAPINotify_4(string date, int days);
+        public delegate void SwigDelegateITapTradeAPINotify_5(int errorCode);
+        public delegate void SwigDelegateITapTradeAPINotify_6(int reasonCode);
+        public delegate void SwigDelegateITapTradeAPINotify_7(uint sessionID, int errorCode);
+        public delegate void SwigDelegateITapTradeAPINotify_8(uint sessionID, int errorCode);
+        public delegate void SwigDelegateITapTradeAPINotify_9(uint sessionID, int errorCode, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_10(uint sessionID, int errorCode, string info);
+        public delegate void SwigDelegateITapTradeAPINotify_11(uint sessionID, uint errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_12(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_13(global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_14(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_15(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_16(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_17(global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_18(uint sessionID, int errorCode, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_19(global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_20(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_21(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_22(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_23(global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_24(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_25(global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_26(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_27(global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_28(global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_29(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_30(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_31(global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_32(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_33(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_34(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_35(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_36(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_37(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_38(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_39(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_40(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_41(uint sessionID, int errorCode, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_42(uint sessionID, int errorCode, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_43(global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_44(uint sessionID, int errorCode, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_45(uint sessionID, int errorCode, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_46(uint sessionID, int errorCode, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_47(uint sessionID, int errorCode, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_48(uint sessionID, int errorCode, global::System.IntPtr info);
+        public delegate void SwigDelegateITapTradeAPINotify_49(uint sessionID, int errorCode, global::System.IntPtr info);
+
+        private SwigDelegateITapTradeAPINotify_0 swigDelegate0;
+        private SwigDelegateITapTradeAPINotify_1 swigDelegate1;
+        private SwigDelegateITapTradeAPINotify_2 swigDelegate2;
+        private SwigDelegateITapTradeAPINotify_3 swigDelegate3;
+        private SwigDelegateITapTradeAPINotify_4 swigDelegate4;
+        private SwigDelegateITapTradeAPINotify_5 swigDelegate5;
+        private SwigDelegateITapTradeAPINotify_6 swigDelegate6;
+        private SwigDelegateITapTradeAPINotify_7 swigDelegate7;
+        private SwigDelegateITapTradeAPINotify_8 swigDelegate8;
+        private SwigDelegateITapTradeAPINotify_9 swigDelegate9;
+        private SwigDelegateITapTradeAPINotify_10 swigDelegate10;
+        private SwigDelegateITapTradeAPINotify_11 swigDelegate11;
+        private SwigDelegateITapTradeAPINotify_12 swigDelegate12;
+        private SwigDelegateITapTradeAPINotify_13 swigDelegate13;
+        private SwigDelegateITapTradeAPINotify_14 swigDelegate14;
+        private SwigDelegateITapTradeAPINotify_15 swigDelegate15;
+        private SwigDelegateITapTradeAPINotify_16 swigDelegate16;
+        private SwigDelegateITapTradeAPINotify_17 swigDelegate17;
+        private SwigDelegateITapTradeAPINotify_18 swigDelegate18;
+        private SwigDelegateITapTradeAPINotify_19 swigDelegate19;
+        private SwigDelegateITapTradeAPINotify_20 swigDelegate20;
+        private SwigDelegateITapTradeAPINotify_21 swigDelegate21;
+        private SwigDelegateITapTradeAPINotify_22 swigDelegate22;
+        private SwigDelegateITapTradeAPINotify_23 swigDelegate23;
+        private SwigDelegateITapTradeAPINotify_24 swigDelegate24;
+        private SwigDelegateITapTradeAPINotify_25 swigDelegate25;
+        private SwigDelegateITapTradeAPINotify_26 swigDelegate26;
+        private SwigDelegateITapTradeAPINotify_27 swigDelegate27;
+        private SwigDelegateITapTradeAPINotify_28 swigDelegate28;
+        private SwigDelegateITapTradeAPINotify_29 swigDelegate29;
+        private SwigDelegateITapTradeAPINotify_30 swigDelegate30;
+        private SwigDelegateITapTradeAPINotify_31 swigDelegate31;
+        private SwigDelegateITapTradeAPINotify_32 swigDelegate32;
+        private SwigDelegateITapTradeAPINotify_33 swigDelegate33;
+        private SwigDelegateITapTradeAPINotify_34 swigDelegate34;
+        private SwigDelegateITapTradeAPINotify_35 swigDelegate35;
+        private SwigDelegateITapTradeAPINotify_36 swigDelegate36;
+        private SwigDelegateITapTradeAPINotify_37 swigDelegate37;
+        private SwigDelegateITapTradeAPINotify_38 swigDelegate38;
+        private SwigDelegateITapTradeAPINotify_39 swigDelegate39;
+        private SwigDelegateITapTradeAPINotify_40 swigDelegate40;
+        private SwigDelegateITapTradeAPINotify_41 swigDelegate41;
+        private SwigDelegateITapTradeAPINotify_42 swigDelegate42;
+        private SwigDelegateITapTradeAPINotify_43 swigDelegate43;
+        private SwigDelegateITapTradeAPINotify_44 swigDelegate44;
+        private SwigDelegateITapTradeAPINotify_45 swigDelegate45;
+        private SwigDelegateITapTradeAPINotify_46 swigDelegate46;
+        private SwigDelegateITapTradeAPINotify_47 swigDelegate47;
+        private SwigDelegateITapTradeAPINotify_48 swigDelegate48;
+        private SwigDelegateITapTradeAPINotify_49 swigDelegate49;
+
+        private static global::System.Type[] swigMethodTypes0 = new global::System.Type[] { };
+        private static global::System.Type[] swigMethodTypes1 = new global::System.Type[] { typeof(int), typeof(TapAPITradeLoginRspInfo) };
+        private static global::System.Type[] swigMethodTypes2 = new global::System.Type[] { typeof(int), typeof(char), typeof(string) };
+        private static global::System.Type[] swigMethodTypes3 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIRequestVertificateCodeRsp) };
+        private static global::System.Type[] swigMethodTypes4 = new global::System.Type[] { typeof(string), typeof(int) };
+        private static global::System.Type[] swigMethodTypes5 = new global::System.Type[] { typeof(int) };
+        private static global::System.Type[] swigMethodTypes6 = new global::System.Type[] { typeof(int) };
+        private static global::System.Type[] swigMethodTypes7 = new global::System.Type[] { typeof(uint), typeof(int) };
+        private static global::System.Type[] swigMethodTypes8 = new global::System.Type[] { typeof(uint), typeof(int) };
+        private static global::System.Type[] swigMethodTypes9 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPITradingCalendarQryRsp) };
+        private static global::System.Type[] swigMethodTypes10 = new global::System.Type[] { typeof(uint), typeof(int), typeof(string) };
+        private static global::System.Type[] swigMethodTypes11 = new global::System.Type[] { typeof(uint), typeof(uint), typeof(char), typeof(TapAPIAccountInfo) };
+        private static global::System.Type[] swigMethodTypes12 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIFundData) };
+        private static global::System.Type[] swigMethodTypes13 = new global::System.Type[] { typeof(TapAPIFundData) };
+        private static global::System.Type[] swigMethodTypes14 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIExchangeInfo) };
+        private static global::System.Type[] swigMethodTypes15 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPICommodityInfo) };
+        private static global::System.Type[] swigMethodTypes16 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPITradeContractInfo) };
+        private static global::System.Type[] swigMethodTypes17 = new global::System.Type[] { typeof(TapAPITradeContractInfo) };
+        private static global::System.Type[] swigMethodTypes18 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderActionRsp) };
+        private static global::System.Type[] swigMethodTypes19 = new global::System.Type[] { typeof(TapAPIOrderInfoNotice) };
+        private static global::System.Type[] swigMethodTypes20 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIOrderInfo) };
+        private static global::System.Type[] swigMethodTypes21 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIOrderInfo) };
+        private static global::System.Type[] swigMethodTypes22 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIFillInfo) };
+        private static global::System.Type[] swigMethodTypes23 = new global::System.Type[] { typeof(TapAPIFillInfo) };
+        private static global::System.Type[] swigMethodTypes24 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIPositionInfo) };
+        private static global::System.Type[] swigMethodTypes25 = new global::System.Type[] { typeof(TapAPIPositionInfo) };
+        private static global::System.Type[] swigMethodTypes26 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIPositionSummary) };
+        private static global::System.Type[] swigMethodTypes27 = new global::System.Type[] { typeof(TapAPIPositionSummary) };
+        private static global::System.Type[] swigMethodTypes28 = new global::System.Type[] { typeof(TapAPIPositionProfitNotice) };
+        private static global::System.Type[] swigMethodTypes29 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPICurrencyInfo) };
+        private static global::System.Type[] swigMethodTypes30 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPITradeMessage) };
+        private static global::System.Type[] swigMethodTypes31 = new global::System.Type[] { typeof(TapAPITradeMessage) };
+        private static global::System.Type[] swigMethodTypes32 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisOrderQryRsp) };
+        private static global::System.Type[] swigMethodTypes33 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisOrderQryRsp) };
+        private static global::System.Type[] swigMethodTypes34 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisMatchQryRsp) };
+        private static global::System.Type[] swigMethodTypes35 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisPositionQryRsp) };
+        private static global::System.Type[] swigMethodTypes36 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisDeliveryQryRsp) };
+        private static global::System.Type[] swigMethodTypes37 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIAccountCashAdjustQryRsp) };
+        private static global::System.Type[] swigMethodTypes38 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIBillQryRsp) };
+        private static global::System.Type[] swigMethodTypes39 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIAccountFeeRentQryRsp) };
+        private static global::System.Type[] swigMethodTypes40 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIAccountMarginRentQryRsp) };
+        private static global::System.Type[] swigMethodTypes41 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderMarketInsertRsp) };
+        private static global::System.Type[] swigMethodTypes42 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderMarketInsertRsp) };
+        private static global::System.Type[] swigMethodTypes43 = new global::System.Type[] { typeof(TapAPIOrderQuoteMarketNotice) };
+        private static global::System.Type[] swigMethodTypes44 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderLocalRemoveRsp) };
+        private static global::System.Type[] swigMethodTypes45 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderInfo) };
+        private static global::System.Type[] swigMethodTypes46 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderInfo) };
+        private static global::System.Type[] swigMethodTypes47 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderInfo) };
+        private static global::System.Type[] swigMethodTypes48 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIFillLocalInputReq) };
+        private static global::System.Type[] swigMethodTypes49 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIFillLocalRemoveReq) };
     }
-  }
-
-  public virtual void OnConnect() {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnConnect(swigCPtr);
-  }
-
-  public virtual void OnRspLogin(int errorCode, TapAPITradeLoginRspInfo loginRspInfo) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspLogin(swigCPtr, errorCode, TapAPITradeLoginRspInfo.getCPtr(loginRspInfo));
-  }
-
-  public virtual void OnRtnContactInfo(int errorCode, char isLast, string ContactInfo) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnContactInfo(swigCPtr, errorCode, isLast, ContactInfo);
-  }
-
-  public virtual void OnRspRequestVertificateCode(uint sessionID, int errorCode, TapAPIRequestVertificateCodeRsp rsp) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspRequestVertificateCode(swigCPtr, sessionID, errorCode, TapAPIRequestVertificateCodeRsp.getCPtr(rsp));
-  }
-
-  public virtual void OnExpriationDate(string date, int days) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnExpriationDate(swigCPtr, date, days);
-  }
-
-  public virtual void OnAPIReady(int errorCode) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnAPIReady(swigCPtr, errorCode);
-  }
-
-  public virtual void OnDisconnect(int reasonCode) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnDisconnect(swigCPtr, reasonCode);
-  }
-
-  public virtual void OnRspChangePassword(uint sessionID, int errorCode) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspChangePassword(swigCPtr, sessionID, errorCode);
-  }
-
-  public virtual void OnRspAuthPassword(uint sessionID, int errorCode) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspAuthPassword(swigCPtr, sessionID, errorCode);
-  }
-
-  public virtual void OnRspQryTradingDate(uint sessionID, int errorCode, TapAPITradingCalendarQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryTradingDate(swigCPtr, sessionID, errorCode, TapAPITradingCalendarQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspSetReservedInfo(uint sessionID, int errorCode, string info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspSetReservedInfo(swigCPtr, sessionID, errorCode, info);
-  }
-
-  public virtual void OnRspQryAccount(uint sessionID, uint errorCode, char isLast, TapAPIAccountInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryAccount(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspQryFund(uint sessionID, int errorCode, char isLast, TapAPIFundData info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryFund(swigCPtr, sessionID, errorCode, isLast, TapAPIFundData.getCPtr(info));
-  }
-
-  public virtual void OnRtnFund(TapAPIFundData info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnFund(swigCPtr, TapAPIFundData.getCPtr(info));
-  }
-
-  public virtual void OnRspQryExchange(uint sessionID, int errorCode, char isLast, TapAPIExchangeInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryExchange(swigCPtr, sessionID, errorCode, isLast, TapAPIExchangeInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspQryCommodity(uint sessionID, int errorCode, char isLast, TapAPICommodityInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryCommodity(swigCPtr, sessionID, errorCode, isLast, TapAPICommodityInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspQryContract(uint sessionID, int errorCode, char isLast, TapAPITradeContractInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryContract(swigCPtr, sessionID, errorCode, isLast, TapAPITradeContractInfo.getCPtr(info));
-  }
-
-  public virtual void OnRtnContract(TapAPITradeContractInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnContract(swigCPtr, TapAPITradeContractInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspOrderAction(uint sessionID, int errorCode, TapAPIOrderActionRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderAction(swigCPtr, sessionID, errorCode, TapAPIOrderActionRsp.getCPtr(info));
-  }
-
-  public virtual void OnRtnOrder(TapAPIOrderInfoNotice info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnOrder(swigCPtr, TapAPIOrderInfoNotice.getCPtr(info));
-  }
-
-  public virtual void OnRspQryOrder(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryOrder(swigCPtr, sessionID, errorCode, isLast, TapAPIOrderInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspQryOrderProcess(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryOrderProcess(swigCPtr, sessionID, errorCode, isLast, TapAPIOrderInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspQryFill(uint sessionID, int errorCode, char isLast, TapAPIFillInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryFill(swigCPtr, sessionID, errorCode, isLast, TapAPIFillInfo.getCPtr(info));
-  }
-
-  public virtual void OnRtnFill(TapAPIFillInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnFill(swigCPtr, TapAPIFillInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspQryPosition(uint sessionID, int errorCode, char isLast, TapAPIPositionInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryPosition(swigCPtr, sessionID, errorCode, isLast, TapAPIPositionInfo.getCPtr(info));
-  }
-
-  public virtual void OnRtnPosition(TapAPIPositionInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnPosition(swigCPtr, TapAPIPositionInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspQryPositionSummary(uint sessionID, int errorCode, char isLast, TapAPIPositionSummary info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryPositionSummary(swigCPtr, sessionID, errorCode, isLast, TapAPIPositionSummary.getCPtr(info));
-  }
-
-  public virtual void OnRtnPositionSummary(TapAPIPositionSummary info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnPositionSummary(swigCPtr, TapAPIPositionSummary.getCPtr(info));
-  }
-
-  public virtual void OnRtnPositionProfit(TapAPIPositionProfitNotice info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnPositionProfit(swigCPtr, TapAPIPositionProfitNotice.getCPtr(info));
-  }
-
-  public virtual void OnRspQryCurrency(uint sessionID, int errorCode, char isLast, TapAPICurrencyInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryCurrency(swigCPtr, sessionID, errorCode, isLast, TapAPICurrencyInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspQryTradeMessage(uint sessionID, int errorCode, char isLast, TapAPITradeMessage info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryTradeMessage(swigCPtr, sessionID, errorCode, isLast, TapAPITradeMessage.getCPtr(info));
-  }
-
-  public virtual void OnRtnTradeMessage(TapAPITradeMessage info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRtnTradeMessage(swigCPtr, TapAPITradeMessage.getCPtr(info));
-  }
-
-  public virtual void OnRspQryHisOrder(uint sessionID, int errorCode, char isLast, TapAPIHisOrderQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisOrder(swigCPtr, sessionID, errorCode, isLast, TapAPIHisOrderQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspQryHisOrderProcess(uint sessionID, int errorCode, char isLast, TapAPIHisOrderQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisOrderProcess(swigCPtr, sessionID, errorCode, isLast, TapAPIHisOrderQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspQryHisMatch(uint sessionID, int errorCode, char isLast, TapAPIHisMatchQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisMatch(swigCPtr, sessionID, errorCode, isLast, TapAPIHisMatchQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspQryHisPosition(uint sessionID, int errorCode, char isLast, TapAPIHisPositionQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisPosition(swigCPtr, sessionID, errorCode, isLast, TapAPIHisPositionQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspQryHisDelivery(uint sessionID, int errorCode, char isLast, TapAPIHisDeliveryQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryHisDelivery(swigCPtr, sessionID, errorCode, isLast, TapAPIHisDeliveryQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspQryAccountCashAdjust(uint sessionID, int errorCode, char isLast, TapAPIAccountCashAdjustQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryAccountCashAdjust(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountCashAdjustQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspQryBill(uint sessionID, int errorCode, char isLast, TapAPIBillQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryBill(swigCPtr, sessionID, errorCode, isLast, TapAPIBillQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspQryAccountFeeRent(uint sessionID, int errorCode, char isLast, TapAPIAccountFeeRentQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryAccountFeeRent(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountFeeRentQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspQryAccountMarginRent(uint sessionID, int errorCode, char isLast, TapAPIAccountMarginRentQryRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspQryAccountMarginRent(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountMarginRentQryRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspHKMarketOrderInsert(uint sessionID, int errorCode, TapAPIOrderMarketInsertRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspHKMarketOrderInsert(swigCPtr, sessionID, errorCode, TapAPIOrderMarketInsertRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspHKMarketOrderDelete(uint sessionID, int errorCode, TapAPIOrderMarketInsertRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspHKMarketOrderDelete(swigCPtr, sessionID, errorCode, TapAPIOrderMarketInsertRsp.getCPtr(info));
-  }
-
-  public virtual void OnHKMarketQuoteNotice(TapAPIOrderQuoteMarketNotice info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnHKMarketQuoteNotice(swigCPtr, TapAPIOrderQuoteMarketNotice.getCPtr(info));
-  }
-
-  public virtual void OnRspOrderLocalRemove(uint sessionID, int errorCode, TapAPIOrderLocalRemoveRsp info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderLocalRemove(swigCPtr, sessionID, errorCode, TapAPIOrderLocalRemoveRsp.getCPtr(info));
-  }
-
-  public virtual void OnRspOrderLocalInput(uint sessionID, int errorCode, TapAPIOrderInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderLocalInput(swigCPtr, sessionID, errorCode, TapAPIOrderInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspOrderLocalModify(uint sessionID, int errorCode, TapAPIOrderInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderLocalModify(swigCPtr, sessionID, errorCode, TapAPIOrderInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspOrderLocalTransfer(uint sessionID, int errorCode, TapAPIOrderInfo info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspOrderLocalTransfer(swigCPtr, sessionID, errorCode, TapAPIOrderInfo.getCPtr(info));
-  }
-
-  public virtual void OnRspFillLocalInput(uint sessionID, int errorCode, TapAPIFillLocalInputReq info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspFillLocalInput(swigCPtr, sessionID, errorCode, TapAPIFillLocalInputReq.getCPtr(info));
-  }
-
-  public virtual void OnRspFillLocalRemove(uint sessionID, int errorCode, TapAPIFillLocalRemoveReq info) {
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_OnRspFillLocalRemove(swigCPtr, sessionID, errorCode, TapAPIFillLocalRemoveReq.getCPtr(info));
-  }
-
-  public ITapTradeAPINotify() : this(TapTradeWrapperPINVOKE.new_ITapTradeAPINotify(), true) {
-    SwigDirectorConnect();
-  }
-
-  private void SwigDirectorConnect() {
-    if (SwigDerivedClassHasMethod("OnConnect", swigMethodTypes0))
-      swigDelegate0 = new SwigDelegateITapTradeAPINotify_0(SwigDirectorOnConnect);
-    if (SwigDerivedClassHasMethod("OnRspLogin", swigMethodTypes1))
-      swigDelegate1 = new SwigDelegateITapTradeAPINotify_1(SwigDirectorOnRspLogin);
-    if (SwigDerivedClassHasMethod("OnRtnContactInfo", swigMethodTypes2))
-      swigDelegate2 = new SwigDelegateITapTradeAPINotify_2(SwigDirectorOnRtnContactInfo);
-    if (SwigDerivedClassHasMethod("OnRspRequestVertificateCode", swigMethodTypes3))
-      swigDelegate3 = new SwigDelegateITapTradeAPINotify_3(SwigDirectorOnRspRequestVertificateCode);
-    if (SwigDerivedClassHasMethod("OnExpriationDate", swigMethodTypes4))
-      swigDelegate4 = new SwigDelegateITapTradeAPINotify_4(SwigDirectorOnExpriationDate);
-    if (SwigDerivedClassHasMethod("OnAPIReady", swigMethodTypes5))
-      swigDelegate5 = new SwigDelegateITapTradeAPINotify_5(SwigDirectorOnAPIReady);
-    if (SwigDerivedClassHasMethod("OnDisconnect", swigMethodTypes6))
-      swigDelegate6 = new SwigDelegateITapTradeAPINotify_6(SwigDirectorOnDisconnect);
-    if (SwigDerivedClassHasMethod("OnRspChangePassword", swigMethodTypes7))
-      swigDelegate7 = new SwigDelegateITapTradeAPINotify_7(SwigDirectorOnRspChangePassword);
-    if (SwigDerivedClassHasMethod("OnRspAuthPassword", swigMethodTypes8))
-      swigDelegate8 = new SwigDelegateITapTradeAPINotify_8(SwigDirectorOnRspAuthPassword);
-    if (SwigDerivedClassHasMethod("OnRspQryTradingDate", swigMethodTypes9))
-      swigDelegate9 = new SwigDelegateITapTradeAPINotify_9(SwigDirectorOnRspQryTradingDate);
-    if (SwigDerivedClassHasMethod("OnRspSetReservedInfo", swigMethodTypes10))
-      swigDelegate10 = new SwigDelegateITapTradeAPINotify_10(SwigDirectorOnRspSetReservedInfo);
-    if (SwigDerivedClassHasMethod("OnRspQryAccount", swigMethodTypes11))
-      swigDelegate11 = new SwigDelegateITapTradeAPINotify_11(SwigDirectorOnRspQryAccount);
-    if (SwigDerivedClassHasMethod("OnRspQryFund", swigMethodTypes12))
-      swigDelegate12 = new SwigDelegateITapTradeAPINotify_12(SwigDirectorOnRspQryFund);
-    if (SwigDerivedClassHasMethod("OnRtnFund", swigMethodTypes13))
-      swigDelegate13 = new SwigDelegateITapTradeAPINotify_13(SwigDirectorOnRtnFund);
-    if (SwigDerivedClassHasMethod("OnRspQryExchange", swigMethodTypes14))
-      swigDelegate14 = new SwigDelegateITapTradeAPINotify_14(SwigDirectorOnRspQryExchange);
-    if (SwigDerivedClassHasMethod("OnRspQryCommodity", swigMethodTypes15))
-      swigDelegate15 = new SwigDelegateITapTradeAPINotify_15(SwigDirectorOnRspQryCommodity);
-    if (SwigDerivedClassHasMethod("OnRspQryContract", swigMethodTypes16))
-      swigDelegate16 = new SwigDelegateITapTradeAPINotify_16(SwigDirectorOnRspQryContract);
-    if (SwigDerivedClassHasMethod("OnRtnContract", swigMethodTypes17))
-      swigDelegate17 = new SwigDelegateITapTradeAPINotify_17(SwigDirectorOnRtnContract);
-    if (SwigDerivedClassHasMethod("OnRspOrderAction", swigMethodTypes18))
-      swigDelegate18 = new SwigDelegateITapTradeAPINotify_18(SwigDirectorOnRspOrderAction);
-    if (SwigDerivedClassHasMethod("OnRtnOrder", swigMethodTypes19))
-      swigDelegate19 = new SwigDelegateITapTradeAPINotify_19(SwigDirectorOnRtnOrder);
-    if (SwigDerivedClassHasMethod("OnRspQryOrder", swigMethodTypes20))
-      swigDelegate20 = new SwigDelegateITapTradeAPINotify_20(SwigDirectorOnRspQryOrder);
-    if (SwigDerivedClassHasMethod("OnRspQryOrderProcess", swigMethodTypes21))
-      swigDelegate21 = new SwigDelegateITapTradeAPINotify_21(SwigDirectorOnRspQryOrderProcess);
-    if (SwigDerivedClassHasMethod("OnRspQryFill", swigMethodTypes22))
-      swigDelegate22 = new SwigDelegateITapTradeAPINotify_22(SwigDirectorOnRspQryFill);
-    if (SwigDerivedClassHasMethod("OnRtnFill", swigMethodTypes23))
-      swigDelegate23 = new SwigDelegateITapTradeAPINotify_23(SwigDirectorOnRtnFill);
-    if (SwigDerivedClassHasMethod("OnRspQryPosition", swigMethodTypes24))
-      swigDelegate24 = new SwigDelegateITapTradeAPINotify_24(SwigDirectorOnRspQryPosition);
-    if (SwigDerivedClassHasMethod("OnRtnPosition", swigMethodTypes25))
-      swigDelegate25 = new SwigDelegateITapTradeAPINotify_25(SwigDirectorOnRtnPosition);
-    if (SwigDerivedClassHasMethod("OnRspQryPositionSummary", swigMethodTypes26))
-      swigDelegate26 = new SwigDelegateITapTradeAPINotify_26(SwigDirectorOnRspQryPositionSummary);
-    if (SwigDerivedClassHasMethod("OnRtnPositionSummary", swigMethodTypes27))
-      swigDelegate27 = new SwigDelegateITapTradeAPINotify_27(SwigDirectorOnRtnPositionSummary);
-    if (SwigDerivedClassHasMethod("OnRtnPositionProfit", swigMethodTypes28))
-      swigDelegate28 = new SwigDelegateITapTradeAPINotify_28(SwigDirectorOnRtnPositionProfit);
-    if (SwigDerivedClassHasMethod("OnRspQryCurrency", swigMethodTypes29))
-      swigDelegate29 = new SwigDelegateITapTradeAPINotify_29(SwigDirectorOnRspQryCurrency);
-    if (SwigDerivedClassHasMethod("OnRspQryTradeMessage", swigMethodTypes30))
-      swigDelegate30 = new SwigDelegateITapTradeAPINotify_30(SwigDirectorOnRspQryTradeMessage);
-    if (SwigDerivedClassHasMethod("OnRtnTradeMessage", swigMethodTypes31))
-      swigDelegate31 = new SwigDelegateITapTradeAPINotify_31(SwigDirectorOnRtnTradeMessage);
-    if (SwigDerivedClassHasMethod("OnRspQryHisOrder", swigMethodTypes32))
-      swigDelegate32 = new SwigDelegateITapTradeAPINotify_32(SwigDirectorOnRspQryHisOrder);
-    if (SwigDerivedClassHasMethod("OnRspQryHisOrderProcess", swigMethodTypes33))
-      swigDelegate33 = new SwigDelegateITapTradeAPINotify_33(SwigDirectorOnRspQryHisOrderProcess);
-    if (SwigDerivedClassHasMethod("OnRspQryHisMatch", swigMethodTypes34))
-      swigDelegate34 = new SwigDelegateITapTradeAPINotify_34(SwigDirectorOnRspQryHisMatch);
-    if (SwigDerivedClassHasMethod("OnRspQryHisPosition", swigMethodTypes35))
-      swigDelegate35 = new SwigDelegateITapTradeAPINotify_35(SwigDirectorOnRspQryHisPosition);
-    if (SwigDerivedClassHasMethod("OnRspQryHisDelivery", swigMethodTypes36))
-      swigDelegate36 = new SwigDelegateITapTradeAPINotify_36(SwigDirectorOnRspQryHisDelivery);
-    if (SwigDerivedClassHasMethod("OnRspQryAccountCashAdjust", swigMethodTypes37))
-      swigDelegate37 = new SwigDelegateITapTradeAPINotify_37(SwigDirectorOnRspQryAccountCashAdjust);
-    if (SwigDerivedClassHasMethod("OnRspQryBill", swigMethodTypes38))
-      swigDelegate38 = new SwigDelegateITapTradeAPINotify_38(SwigDirectorOnRspQryBill);
-    if (SwigDerivedClassHasMethod("OnRspQryAccountFeeRent", swigMethodTypes39))
-      swigDelegate39 = new SwigDelegateITapTradeAPINotify_39(SwigDirectorOnRspQryAccountFeeRent);
-    if (SwigDerivedClassHasMethod("OnRspQryAccountMarginRent", swigMethodTypes40))
-      swigDelegate40 = new SwigDelegateITapTradeAPINotify_40(SwigDirectorOnRspQryAccountMarginRent);
-    if (SwigDerivedClassHasMethod("OnRspHKMarketOrderInsert", swigMethodTypes41))
-      swigDelegate41 = new SwigDelegateITapTradeAPINotify_41(SwigDirectorOnRspHKMarketOrderInsert);
-    if (SwigDerivedClassHasMethod("OnRspHKMarketOrderDelete", swigMethodTypes42))
-      swigDelegate42 = new SwigDelegateITapTradeAPINotify_42(SwigDirectorOnRspHKMarketOrderDelete);
-    if (SwigDerivedClassHasMethod("OnHKMarketQuoteNotice", swigMethodTypes43))
-      swigDelegate43 = new SwigDelegateITapTradeAPINotify_43(SwigDirectorOnHKMarketQuoteNotice);
-    if (SwigDerivedClassHasMethod("OnRspOrderLocalRemove", swigMethodTypes44))
-      swigDelegate44 = new SwigDelegateITapTradeAPINotify_44(SwigDirectorOnRspOrderLocalRemove);
-    if (SwigDerivedClassHasMethod("OnRspOrderLocalInput", swigMethodTypes45))
-      swigDelegate45 = new SwigDelegateITapTradeAPINotify_45(SwigDirectorOnRspOrderLocalInput);
-    if (SwigDerivedClassHasMethod("OnRspOrderLocalModify", swigMethodTypes46))
-      swigDelegate46 = new SwigDelegateITapTradeAPINotify_46(SwigDirectorOnRspOrderLocalModify);
-    if (SwigDerivedClassHasMethod("OnRspOrderLocalTransfer", swigMethodTypes47))
-      swigDelegate47 = new SwigDelegateITapTradeAPINotify_47(SwigDirectorOnRspOrderLocalTransfer);
-    if (SwigDerivedClassHasMethod("OnRspFillLocalInput", swigMethodTypes48))
-      swigDelegate48 = new SwigDelegateITapTradeAPINotify_48(SwigDirectorOnRspFillLocalInput);
-    if (SwigDerivedClassHasMethod("OnRspFillLocalRemove", swigMethodTypes49))
-      swigDelegate49 = new SwigDelegateITapTradeAPINotify_49(SwigDirectorOnRspFillLocalRemove);
-    TapTradeWrapperPINVOKE.ITapTradeAPINotify_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22, swigDelegate23, swigDelegate24, swigDelegate25, swigDelegate26, swigDelegate27, swigDelegate28, swigDelegate29, swigDelegate30, swigDelegate31, swigDelegate32, swigDelegate33, swigDelegate34, swigDelegate35, swigDelegate36, swigDelegate37, swigDelegate38, swigDelegate39, swigDelegate40, swigDelegate41, swigDelegate42, swigDelegate43, swigDelegate44, swigDelegate45, swigDelegate46, swigDelegate47, swigDelegate48, swigDelegate49);
-  }
-
-  private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes) {
-    global::System.Reflection.MethodInfo methodInfo = this.GetType().GetMethod(methodName, global::System.Reflection.BindingFlags.Public | global::System.Reflection.BindingFlags.NonPublic | global::System.Reflection.BindingFlags.Instance, null, methodTypes, null);
-    bool hasDerivedMethod = methodInfo.DeclaringType.IsSubclassOf(typeof(ITapTradeAPINotify));
-    return hasDerivedMethod;
-  }
-
-  private void SwigDirectorOnConnect() {
-    OnConnect();
-  }
-
-  private void SwigDirectorOnRspLogin(int errorCode, global::System.IntPtr loginRspInfo) {
-    OnRspLogin(errorCode, (loginRspInfo == global::System.IntPtr.Zero) ? null : new TapAPITradeLoginRspInfo(loginRspInfo, false));
-  }
-
-  private void SwigDirectorOnRtnContactInfo(int errorCode, char isLast, string ContactInfo) {
-    OnRtnContactInfo(errorCode, isLast, ContactInfo);
-  }
-
-  private void SwigDirectorOnRspRequestVertificateCode(uint sessionID, int errorCode, global::System.IntPtr rsp) {
-    OnRspRequestVertificateCode(sessionID, errorCode, (rsp == global::System.IntPtr.Zero) ? null : new TapAPIRequestVertificateCodeRsp(rsp, false));
-  }
-
-  private void SwigDirectorOnExpriationDate(string date, int days) {
-    OnExpriationDate(date, days);
-  }
-
-  private void SwigDirectorOnAPIReady(int errorCode) {
-    OnAPIReady(errorCode);
-  }
-
-  private void SwigDirectorOnDisconnect(int reasonCode) {
-    OnDisconnect(reasonCode);
-  }
-
-  private void SwigDirectorOnRspChangePassword(uint sessionID, int errorCode) {
-    OnRspChangePassword(sessionID, errorCode);
-  }
-
-  private void SwigDirectorOnRspAuthPassword(uint sessionID, int errorCode) {
-    OnRspAuthPassword(sessionID, errorCode);
-  }
-
-  private void SwigDirectorOnRspQryTradingDate(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspQryTradingDate(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPITradingCalendarQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspSetReservedInfo(uint sessionID, int errorCode, string info) {
-    OnRspSetReservedInfo(sessionID, errorCode, info);
-  }
-
-  private void SwigDirectorOnRspQryAccount(uint sessionID, uint errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryAccount(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIAccountInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspQryFund(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryFund(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIFundData(info, false));
-  }
-
-  private void SwigDirectorOnRtnFund(global::System.IntPtr info) {
-    OnRtnFund((info == global::System.IntPtr.Zero) ? null : new TapAPIFundData(info, false));
-  }
-
-  private void SwigDirectorOnRspQryExchange(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryExchange(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIExchangeInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspQryCommodity(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryCommodity(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPICommodityInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspQryContract(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryContract(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPITradeContractInfo(info, false));
-  }
-
-  private void SwigDirectorOnRtnContract(global::System.IntPtr info) {
-    OnRtnContract((info == global::System.IntPtr.Zero) ? null : new TapAPITradeContractInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspOrderAction(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspOrderAction(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderActionRsp(info, false));
-  }
-
-  private void SwigDirectorOnRtnOrder(global::System.IntPtr info) {
-    OnRtnOrder((info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfoNotice(info, false));
-  }
-
-  private void SwigDirectorOnRspQryOrder(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryOrder(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspQryOrderProcess(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryOrderProcess(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspQryFill(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryFill(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIFillInfo(info, false));
-  }
-
-  private void SwigDirectorOnRtnFill(global::System.IntPtr info) {
-    OnRtnFill((info == global::System.IntPtr.Zero) ? null : new TapAPIFillInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspQryPosition(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryPosition(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIPositionInfo(info, false));
-  }
-
-  private void SwigDirectorOnRtnPosition(global::System.IntPtr info) {
-    OnRtnPosition((info == global::System.IntPtr.Zero) ? null : new TapAPIPositionInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspQryPositionSummary(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryPositionSummary(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIPositionSummary(info, false));
-  }
-
-  private void SwigDirectorOnRtnPositionSummary(global::System.IntPtr info) {
-    OnRtnPositionSummary((info == global::System.IntPtr.Zero) ? null : new TapAPIPositionSummary(info, false));
-  }
-
-  private void SwigDirectorOnRtnPositionProfit(global::System.IntPtr info) {
-    OnRtnPositionProfit((info == global::System.IntPtr.Zero) ? null : new TapAPIPositionProfitNotice(info, false));
-  }
-
-  private void SwigDirectorOnRspQryCurrency(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryCurrency(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPICurrencyInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspQryTradeMessage(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryTradeMessage(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPITradeMessage(info, false));
-  }
-
-  private void SwigDirectorOnRtnTradeMessage(global::System.IntPtr info) {
-    OnRtnTradeMessage((info == global::System.IntPtr.Zero) ? null : new TapAPITradeMessage(info, false));
-  }
-
-  private void SwigDirectorOnRspQryHisOrder(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryHisOrder(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisOrderQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspQryHisOrderProcess(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryHisOrderProcess(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisOrderQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspQryHisMatch(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryHisMatch(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisMatchQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspQryHisPosition(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryHisPosition(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisPositionQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspQryHisDelivery(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryHisDelivery(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIHisDeliveryQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspQryAccountCashAdjust(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryAccountCashAdjust(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIAccountCashAdjustQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspQryBill(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryBill(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIBillQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspQryAccountFeeRent(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryAccountFeeRent(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIAccountFeeRentQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspQryAccountMarginRent(uint sessionID, int errorCode, char isLast, global::System.IntPtr info) {
-    OnRspQryAccountMarginRent(sessionID, errorCode, isLast, (info == global::System.IntPtr.Zero) ? null : new TapAPIAccountMarginRentQryRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspHKMarketOrderInsert(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspHKMarketOrderInsert(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderMarketInsertRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspHKMarketOrderDelete(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspHKMarketOrderDelete(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderMarketInsertRsp(info, false));
-  }
-
-  private void SwigDirectorOnHKMarketQuoteNotice(global::System.IntPtr info) {
-    OnHKMarketQuoteNotice((info == global::System.IntPtr.Zero) ? null : new TapAPIOrderQuoteMarketNotice(info, false));
-  }
-
-  private void SwigDirectorOnRspOrderLocalRemove(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspOrderLocalRemove(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderLocalRemoveRsp(info, false));
-  }
-
-  private void SwigDirectorOnRspOrderLocalInput(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspOrderLocalInput(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspOrderLocalModify(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspOrderLocalModify(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspOrderLocalTransfer(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspOrderLocalTransfer(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIOrderInfo(info, false));
-  }
-
-  private void SwigDirectorOnRspFillLocalInput(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspFillLocalInput(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIFillLocalInputReq(info, false));
-  }
-
-  private void SwigDirectorOnRspFillLocalRemove(uint sessionID, int errorCode, global::System.IntPtr info) {
-    OnRspFillLocalRemove(sessionID, errorCode, (info == global::System.IntPtr.Zero) ? null : new TapAPIFillLocalRemoveReq(info, false));
-  }
-
-  public delegate void SwigDelegateITapTradeAPINotify_0();
-  public delegate void SwigDelegateITapTradeAPINotify_1(int errorCode, global::System.IntPtr loginRspInfo);
-  public delegate void SwigDelegateITapTradeAPINotify_2(int errorCode, char isLast, string ContactInfo);
-  public delegate void SwigDelegateITapTradeAPINotify_3(uint sessionID, int errorCode, global::System.IntPtr rsp);
-  public delegate void SwigDelegateITapTradeAPINotify_4(string date, int days);
-  public delegate void SwigDelegateITapTradeAPINotify_5(int errorCode);
-  public delegate void SwigDelegateITapTradeAPINotify_6(int reasonCode);
-  public delegate void SwigDelegateITapTradeAPINotify_7(uint sessionID, int errorCode);
-  public delegate void SwigDelegateITapTradeAPINotify_8(uint sessionID, int errorCode);
-  public delegate void SwigDelegateITapTradeAPINotify_9(uint sessionID, int errorCode, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_10(uint sessionID, int errorCode, string info);
-  public delegate void SwigDelegateITapTradeAPINotify_11(uint sessionID, uint errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_12(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_13(global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_14(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_15(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_16(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_17(global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_18(uint sessionID, int errorCode, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_19(global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_20(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_21(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_22(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_23(global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_24(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_25(global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_26(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_27(global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_28(global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_29(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_30(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_31(global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_32(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_33(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_34(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_35(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_36(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_37(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_38(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_39(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_40(uint sessionID, int errorCode, char isLast, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_41(uint sessionID, int errorCode, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_42(uint sessionID, int errorCode, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_43(global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_44(uint sessionID, int errorCode, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_45(uint sessionID, int errorCode, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_46(uint sessionID, int errorCode, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_47(uint sessionID, int errorCode, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_48(uint sessionID, int errorCode, global::System.IntPtr info);
-  public delegate void SwigDelegateITapTradeAPINotify_49(uint sessionID, int errorCode, global::System.IntPtr info);
-
-  private SwigDelegateITapTradeAPINotify_0 swigDelegate0;
-  private SwigDelegateITapTradeAPINotify_1 swigDelegate1;
-  private SwigDelegateITapTradeAPINotify_2 swigDelegate2;
-  private SwigDelegateITapTradeAPINotify_3 swigDelegate3;
-  private SwigDelegateITapTradeAPINotify_4 swigDelegate4;
-  private SwigDelegateITapTradeAPINotify_5 swigDelegate5;
-  private SwigDelegateITapTradeAPINotify_6 swigDelegate6;
-  private SwigDelegateITapTradeAPINotify_7 swigDelegate7;
-  private SwigDelegateITapTradeAPINotify_8 swigDelegate8;
-  private SwigDelegateITapTradeAPINotify_9 swigDelegate9;
-  private SwigDelegateITapTradeAPINotify_10 swigDelegate10;
-  private SwigDelegateITapTradeAPINotify_11 swigDelegate11;
-  private SwigDelegateITapTradeAPINotify_12 swigDelegate12;
-  private SwigDelegateITapTradeAPINotify_13 swigDelegate13;
-  private SwigDelegateITapTradeAPINotify_14 swigDelegate14;
-  private SwigDelegateITapTradeAPINotify_15 swigDelegate15;
-  private SwigDelegateITapTradeAPINotify_16 swigDelegate16;
-  private SwigDelegateITapTradeAPINotify_17 swigDelegate17;
-  private SwigDelegateITapTradeAPINotify_18 swigDelegate18;
-  private SwigDelegateITapTradeAPINotify_19 swigDelegate19;
-  private SwigDelegateITapTradeAPINotify_20 swigDelegate20;
-  private SwigDelegateITapTradeAPINotify_21 swigDelegate21;
-  private SwigDelegateITapTradeAPINotify_22 swigDelegate22;
-  private SwigDelegateITapTradeAPINotify_23 swigDelegate23;
-  private SwigDelegateITapTradeAPINotify_24 swigDelegate24;
-  private SwigDelegateITapTradeAPINotify_25 swigDelegate25;
-  private SwigDelegateITapTradeAPINotify_26 swigDelegate26;
-  private SwigDelegateITapTradeAPINotify_27 swigDelegate27;
-  private SwigDelegateITapTradeAPINotify_28 swigDelegate28;
-  private SwigDelegateITapTradeAPINotify_29 swigDelegate29;
-  private SwigDelegateITapTradeAPINotify_30 swigDelegate30;
-  private SwigDelegateITapTradeAPINotify_31 swigDelegate31;
-  private SwigDelegateITapTradeAPINotify_32 swigDelegate32;
-  private SwigDelegateITapTradeAPINotify_33 swigDelegate33;
-  private SwigDelegateITapTradeAPINotify_34 swigDelegate34;
-  private SwigDelegateITapTradeAPINotify_35 swigDelegate35;
-  private SwigDelegateITapTradeAPINotify_36 swigDelegate36;
-  private SwigDelegateITapTradeAPINotify_37 swigDelegate37;
-  private SwigDelegateITapTradeAPINotify_38 swigDelegate38;
-  private SwigDelegateITapTradeAPINotify_39 swigDelegate39;
-  private SwigDelegateITapTradeAPINotify_40 swigDelegate40;
-  private SwigDelegateITapTradeAPINotify_41 swigDelegate41;
-  private SwigDelegateITapTradeAPINotify_42 swigDelegate42;
-  private SwigDelegateITapTradeAPINotify_43 swigDelegate43;
-  private SwigDelegateITapTradeAPINotify_44 swigDelegate44;
-  private SwigDelegateITapTradeAPINotify_45 swigDelegate45;
-  private SwigDelegateITapTradeAPINotify_46 swigDelegate46;
-  private SwigDelegateITapTradeAPINotify_47 swigDelegate47;
-  private SwigDelegateITapTradeAPINotify_48 swigDelegate48;
-  private SwigDelegateITapTradeAPINotify_49 swigDelegate49;
-
-  private static global::System.Type[] swigMethodTypes0 = new global::System.Type[] {  };
-  private static global::System.Type[] swigMethodTypes1 = new global::System.Type[] { typeof(int), typeof(TapAPITradeLoginRspInfo) };
-  private static global::System.Type[] swigMethodTypes2 = new global::System.Type[] { typeof(int), typeof(char), typeof(string) };
-  private static global::System.Type[] swigMethodTypes3 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIRequestVertificateCodeRsp) };
-  private static global::System.Type[] swigMethodTypes4 = new global::System.Type[] { typeof(string), typeof(int) };
-  private static global::System.Type[] swigMethodTypes5 = new global::System.Type[] { typeof(int) };
-  private static global::System.Type[] swigMethodTypes6 = new global::System.Type[] { typeof(int) };
-  private static global::System.Type[] swigMethodTypes7 = new global::System.Type[] { typeof(uint), typeof(int) };
-  private static global::System.Type[] swigMethodTypes8 = new global::System.Type[] { typeof(uint), typeof(int) };
-  private static global::System.Type[] swigMethodTypes9 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPITradingCalendarQryRsp) };
-  private static global::System.Type[] swigMethodTypes10 = new global::System.Type[] { typeof(uint), typeof(int), typeof(string) };
-  private static global::System.Type[] swigMethodTypes11 = new global::System.Type[] { typeof(uint), typeof(uint), typeof(char), typeof(TapAPIAccountInfo) };
-  private static global::System.Type[] swigMethodTypes12 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIFundData) };
-  private static global::System.Type[] swigMethodTypes13 = new global::System.Type[] { typeof(TapAPIFundData) };
-  private static global::System.Type[] swigMethodTypes14 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIExchangeInfo) };
-  private static global::System.Type[] swigMethodTypes15 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPICommodityInfo) };
-  private static global::System.Type[] swigMethodTypes16 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPITradeContractInfo) };
-  private static global::System.Type[] swigMethodTypes17 = new global::System.Type[] { typeof(TapAPITradeContractInfo) };
-  private static global::System.Type[] swigMethodTypes18 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderActionRsp) };
-  private static global::System.Type[] swigMethodTypes19 = new global::System.Type[] { typeof(TapAPIOrderInfoNotice) };
-  private static global::System.Type[] swigMethodTypes20 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIOrderInfo) };
-  private static global::System.Type[] swigMethodTypes21 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIOrderInfo) };
-  private static global::System.Type[] swigMethodTypes22 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIFillInfo) };
-  private static global::System.Type[] swigMethodTypes23 = new global::System.Type[] { typeof(TapAPIFillInfo) };
-  private static global::System.Type[] swigMethodTypes24 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIPositionInfo) };
-  private static global::System.Type[] swigMethodTypes25 = new global::System.Type[] { typeof(TapAPIPositionInfo) };
-  private static global::System.Type[] swigMethodTypes26 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIPositionSummary) };
-  private static global::System.Type[] swigMethodTypes27 = new global::System.Type[] { typeof(TapAPIPositionSummary) };
-  private static global::System.Type[] swigMethodTypes28 = new global::System.Type[] { typeof(TapAPIPositionProfitNotice) };
-  private static global::System.Type[] swigMethodTypes29 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPICurrencyInfo) };
-  private static global::System.Type[] swigMethodTypes30 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPITradeMessage) };
-  private static global::System.Type[] swigMethodTypes31 = new global::System.Type[] { typeof(TapAPITradeMessage) };
-  private static global::System.Type[] swigMethodTypes32 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisOrderQryRsp) };
-  private static global::System.Type[] swigMethodTypes33 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisOrderQryRsp) };
-  private static global::System.Type[] swigMethodTypes34 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisMatchQryRsp) };
-  private static global::System.Type[] swigMethodTypes35 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisPositionQryRsp) };
-  private static global::System.Type[] swigMethodTypes36 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIHisDeliveryQryRsp) };
-  private static global::System.Type[] swigMethodTypes37 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIAccountCashAdjustQryRsp) };
-  private static global::System.Type[] swigMethodTypes38 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIBillQryRsp) };
-  private static global::System.Type[] swigMethodTypes39 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIAccountFeeRentQryRsp) };
-  private static global::System.Type[] swigMethodTypes40 = new global::System.Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIAccountMarginRentQryRsp) };
-  private static global::System.Type[] swigMethodTypes41 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderMarketInsertRsp) };
-  private static global::System.Type[] swigMethodTypes42 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderMarketInsertRsp) };
-  private static global::System.Type[] swigMethodTypes43 = new global::System.Type[] { typeof(TapAPIOrderQuoteMarketNotice) };
-  private static global::System.Type[] swigMethodTypes44 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderLocalRemoveRsp) };
-  private static global::System.Type[] swigMethodTypes45 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderInfo) };
-  private static global::System.Type[] swigMethodTypes46 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderInfo) };
-  private static global::System.Type[] swigMethodTypes47 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIOrderInfo) };
-  private static global::System.Type[] swigMethodTypes48 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIFillLocalInputReq) };
-  private static global::System.Type[] swigMethodTypes49 = new global::System.Type[] { typeof(uint), typeof(int), typeof(TapAPIFillLocalRemoveReq) };
-}
 
 }

@@ -8,263 +8,568 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// TapTradeAPI 对外功能接口。包含了用户可以调用的功能函数。
+    /// </summary>
+    public class ITapTradeAPI : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class ITapTradeAPI : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal ITapTradeAPI(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(ITapTradeAPI obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~ITapTradeAPI() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_ITapTradeAPI(swigCPtr);
+        internal ITapTradeAPI(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(ITapTradeAPI obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~ITapTradeAPI()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_ITapTradeAPI(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 设置API的回调接口对象。系统对API的通知将通过设置的回调对象通知给使用者。
+        /// ITapTradeAPINotify是API的回调接口，用户需要继承实现此接口类对象来完成用户需要的功能。
+        /// 如果用户没有设置回调接口，则API不会向用户返回任何有用的信息。 同步操作
+        /// </summary>
+        /// <param name="pSpi">实现了ITapTradeAPINotify接口的对象</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int SetAPINotify(ITapTradeAPINotify pSpi)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetAPINotify(swigCPtr, ITapTradeAPINotify.getCPtr(pSpi));
+            return ret;
+        }
+        /// <summary>
+        /// 设置服务器的IP地址和端口。同步操作
+        /// </summary>
+        /// <param name="IP">IP地址</param>
+        /// <param name="port">端口号</param>
+        /// <param name="bSSL"></param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int SetHostAddress(string IP, ushort port, bool bSSL)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetHostAddress__SWIG_0(swigCPtr, IP, port, bSSL);
+            return ret;
+        }
+        /// <summary>
+        /// 设置服务器的IP地址和端口。同步操作
+        /// </summary>
+        /// <param name="IP">IP地址</param>
+        /// <param name="port">端口号</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int SetHostAddress(string IP, ushort port)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetHostAddress__SWIG_1(swigCPtr, IP, port);
+            return ret;
+        }
+
+        /// <summary>
+        /// 发起登录请求。API将先连接服务，建立链路，发起登录认证。在使用函数前用户需要完成服务器的设置SetHostAddress()，并且创建TapAPITradeLoginAuth类型的用户信息，
+        /// 并且需要设置好回调接口。登录过程中建立连接的返回信息通过回调OnConnect返回给用户。连接建立后的用户验证回馈信息通过回调OnLogin()返回给用户。
+        /// 登录成功后API会自动进行API的初始化，API向服务器请求基础数据，查询完以后会通过回调OnAPIReady()指示用户API初始化完成，可以进行后续的操作了。异步操作
+        /// </summary>
+        /// <param name="loginAuth">包含登录需要的验证信息。
+        /// TapAPITradeLoginAuth中的NoticeIgnoreFlag用于标记是否忽略特定的通知回调。
+        /// 例如：不需要接收OnRtnFund和OnRtnPositionProfit,可以这么设定：NoticeIgnoreFlag = TAPI_NOTICE_IGNORE_FUND | TAPI_NOTICE_IGNORE_POSITIONPROFIT;
+        /// </param>
+        /// <returns>0 登录成功，API开始准备后台数据；非0 错误码</returns>
+        public virtual int Login(TapAPITradeLoginAuth loginAuth)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_Login(swigCPtr, TapAPITradeLoginAuth.getCPtr(loginAuth));
+            return ret;
+        }
+        /// <summary>
+        /// 请求发送二次认证认证码。此函数需要9.2.7后台，根据回掉函数OnRtnContactInfo中的联系方式，选择其中一个请求二次认证吗，
+        /// 收到正确应答后可以通过SetVertificateCode 设置二次认证授权码完成登陆过程。
+        /// 该函数调用需要在登陆应答后返回10003错误，API会回调客户二次 认证的联系方式，用户选择其中一个联系方式（邮箱或者电话）请求二次认证。再通过设置二次认证授权码完成登陆。
+        /// </summary>
+        /// <param name="sessionID">本次请求的会话ID。</param>
+        /// <param name="ContactInfo">要接收二次认证吗的邮箱或者电话。</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int RequestVertificateCode(out uint sessionID, string ContactInfo)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_RequestVertificateCode(swigCPtr, out sessionID, ContactInfo);
+            return ret;
+        }
+        /// <summary>
+        /// 设置二次认证信息。登录完成后，如果系统配置需要进行二次认证码输入，则登录后会提示需要进行二次认证。
+        /// 此时调用该函数输入二次认证来完成登录。登录完成后不允许再调用此函数。其他原因引起的登录失败也不能调用次函数，否则会返回对应的错误信息。
+        /// 调用此接口后，会返回登录应答成功与否的标记，如果成功表示登录完成，可以等待OnAPIReady API完成回调。如果超时，回调完成后API会主动断开链接，需要再次进行登录操作。
+        /// 如果验证码错误，则可以再次调用此函数输入正确的验证码进行验证。异步操作
+        /// </summary>
+        /// <param name="VertificateCode">二次认证码。</param>
+        /// <returns>0 发送认证码成功，非0 错误码</returns>
+        public virtual int SetVertificateCode(string VertificateCode)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetVertificateCode(swigCPtr, VertificateCode);
+            return ret;
+        }
+        /// <summary>
+        /// 断开和服务器的链路连接。调用函数后API将登出并断开与服务器的连接。同步操作
+        /// </summary>
+        /// <returns>0 成功，非0 错误码</returns>
+        public virtual int Disconnect()
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_Disconnect(swigCPtr);
+            return ret;
+        }
+        /// <summary>
+        /// 修改密码。成功后用户密码将被设置成newPassword。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回此次修改密码的会话ID;</param>
+        /// <param name="req">请求修改密码的结构体</param>
+        /// <returns>0 成功；非0 错误码</returns>
+        public virtual int ChangePassword(out uint sessionID, TapAPIChangePasswordReq req)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_ChangePassword(swigCPtr, out sessionID, TapAPIChangePasswordReq.getCPtr(req));
+            return ret;
+        }
+        /// <summary>
+        /// 认证密码。交易员认证某个账户密码是否正确。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回此次修改密码的会话ID;</param>
+        /// <param name="req">请求认证密码的结构体</param>
+        /// <returns>0 成功；非0 错误码</returns>
+        public virtual int AuthPassword(out uint sessionID, TapAPIAuthPasswordReq req)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_AuthPassword(swigCPtr, out sessionID, TapAPIAuthPasswordReq.getCPtr(req));
+            return ret;
+        }
+        /// <summary>
+        /// 判断登录用户是否具有某权限。用户的权限在用户登录时已经传递给API，所以此函数执行的是本地的查询。同步操作
+        /// </summary>
+        /// <param name="rightID">权限ID。</param>
+        /// <returns>0 不具有权限；非0 具有权限</returns>
+        public virtual int HaveCertainRight(int rightID)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_HaveCertainRight(swigCPtr, rightID);
+            return ret;
+        }
+        /// <summary>
+        /// 查询系统日历。获取当前交易日，上次结算日，LME到期日，和上日LME到期日。该接口暂未实现。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryTradingDate(out uint sessionID)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryTradingDate(swigCPtr, out sessionID);
+            return ret;
+        }
+        /// <summary>
+        /// 设置用户预留信息。用户可以设置一个长度为50以内的字符信息，下次登录后可以得到这个信息。这个功能主要是用来让用户确认是自己的账号，主要是用来进行防伪。
+        /// 该接口暂未实现。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="info">预留信息字符串</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int SetReservedInfo(out uint sessionID, string info)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetReservedInfo(swigCPtr, out sessionID, info);
+            return ret;
+        }
+        /// <summary>
+        /// 查询用户下属的资金账号。TapAPIAccQryReq是包含资金账号结构的结构体，用户需要实例化此结构体，
+        /// 但是不需要填写，这个结构体主要是用来提醒用户保存资金账号，资金账号在后续的函数调用中很多函数都需要使用到。
+        /// 异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">查询用户下属的资金账号的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryAccount(out uint sessionID, TapAPIAccQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccount(swigCPtr, out sessionID, TapAPIAccQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 查询客户资金。TapAPIFundReq需要QryAccount()获取的资金账号。函数的回调将返回资金账号的资金信息。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">查询客户资金请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryFund(out uint sessionID, TapAPIFundReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryFund(swigCPtr, out sessionID, TapAPIFundReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 查询交易系统交易所信息。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryExchange(out uint sessionID)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryExchange(swigCPtr, out sessionID);
+            return ret;
+        }
+        /// <summary>
+        /// 查询系统品种信息。函数请求获取所有的品种信息。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryCommodity(out uint sessionID)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryCommodity(swigCPtr, out sessionID);
+            return ret;
+        }
+        /// <summary>
+        /// 查询系统中指定品种的合约信息。使用此函数前需要先Qrycommodity()取得品种信息，然后选择需要的品种将信息填入TapAPICommodity结构体中完成查询请求。
+        /// 或者TapAPICommodity不填，则返回所有信息。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">查询系统中指定品种的合约信息请求的结构体；
+        /// 该参数各字段为可选字段，可以用以下方法查询：1.全部留空：查所有合约；
+        /// 2.仅交易所编码有效：查该交易所下所有品种的合约；
+        /// 3.交易所编码和品种类型有效：查该交易所下指定品种类型的合约；
+        /// 4.交易所编码、品种类型和品种编码都有效：查该品种下的所有合约。
+        /// </param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryContract(out uint sessionID, TapAPICommodity qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryContract(swigCPtr, out sessionID, TapAPICommodity.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 用户下单的操作函数。用户的下单操作会造成用户的资金、持仓、平仓、资金、风控标记等多种数据的变化，
+        /// 所以用户下的单成交后，会有多个回调通知来向用户展示数据的变化。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="ClientOrderNo">返回客户本地委托号。</param>
+        /// <param name="order">新的委托</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int InsertOrder(out uint sessionID, string ClientOrderNo, TapAPINewOrder order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_InsertOrder(swigCPtr, out sessionID, ClientOrderNo, TapAPINewOrder.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 撤单。用户委托没有完全成交之前撤销剩余的委托。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="order">撤销的委托</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int CancelOrder(out uint sessionID, TapAPIOrderCancelReq order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_CancelOrder(swigCPtr, out sessionID, TapAPIOrderCancelReq.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 改单。用户的委托没有完全成交之前可以进行改单操作来修改剩余的未成交的委托。
+        /// 用户填写新的委托来修改原来的未成交的部分。报单的修改会对比已经成交的部分来扣除成交部分。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="order">修改的委托</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int AmendOrder(out uint sessionID, TapAPIAmendOrder order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_AmendOrder(swigCPtr, out sessionID, TapAPIAmendOrder.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 订单激活。用户的埋单需要发送时需要进行激活。或者港交所已挂起的订单。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="order">要激活的订单</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int ActivateOrder(out uint sessionID, TapAPIOrderCancelReq order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_ActivateOrder(swigCPtr, out sessionID, TapAPIOrderCancelReq.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 查询委托信息。返回当前的委托信息，可以查询所有委托，也可以查询所有未结束的委托。
+        /// 每次登陆，该接口只能进行一次调用。建议初始化时调用一次，后续的通知通过OnRtnOrder取得。
+        /// 异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">请求查询委托</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryOrder(out uint sessionID, TapAPIOrderQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryOrder(swigCPtr, out sessionID, TapAPIOrderQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 查询委托变化流程。查询用户的委托的变化流程，查询将返回委托的每一次的变化。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">委托流程查询信息结构体</param>
+        /// <returns>0 请求成功，非0 错误码</returns>
+        public virtual int QryOrderProcess(out uint sessionID, TapAPIOrderProcessQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryOrderProcess(swigCPtr, out sessionID, TapAPIOrderProcessQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        ///  查询成交信息。每次登陆，该接口只能进行一次调用。建议初始化时调用一次，后续的通知通过OnRtnFill取得。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">成交查询信息结构体指针。</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryFill(out uint sessionID, TapAPIFillQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryFill(swigCPtr, out sessionID, TapAPIFillQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 查询用户持仓。
+        /// 每次登陆，该接口只能进行一次调用。建议初始化时调用一次，后续的通知通过OnRtnPosition取得。
+        /// 异步操作
+        /// </summary>
+        /// <param name="sessionID"> 返回请求的会话ID;</param>
+        /// <param name="qryReq">查询用户持仓请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryPosition(out uint sessionID, TapAPIPositionQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryPosition(swigCPtr, out sessionID, TapAPIPositionQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 查询用户持仓汇总。
+        /// 每次登陆，该接口只能进行一次调用。建议初始化时调用一次，后续的通知通过OnRtnPosition取得。
+        /// 异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">查询用户持仓请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryPositionSummary(out uint sessionID, TapAPIPositionQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryPositionSummary(swigCPtr, out sessionID, TapAPIPositionQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 获取交易所用币种的信息。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryCurrency(out uint sessionID)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryCurrency(swigCPtr, out sessionID);
+            return ret;
+        }
+        /// <summary>
+        /// 客户资金调整查询请求。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">客户资金调整查询请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryAccountCashAdjust(out uint sessionID, TapAPIAccountCashAdjustQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccountCashAdjust(swigCPtr, out sessionID, TapAPIAccountCashAdjustQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 获取交易或风控消息。此函数用来主动获取账号的交易或者风控消息。交易或者风控消息用来标识账号的状态。易盛保留接口。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">获取交易或风控消息请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryTradeMessage(out uint sessionID, TapAPITradeMessageReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryTradeMessage(swigCPtr, out sessionID, TapAPITradeMessageReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 查询用户账单。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">查询帐单请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryBill(out uint sessionID, TapAPIBillQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryBill(swigCPtr, out sessionID, TapAPIBillQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 历史委托查询请求。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">历史委托查询请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryHisOrder(out uint sessionID, TapAPIHisOrderQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisOrder(swigCPtr, out sessionID, TapAPIHisOrderQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 历史委托流程查询请求。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">历史委托流程查询请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryHisOrderProcess(out uint sessionID, TapAPIHisOrderProcessQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisOrderProcess(swigCPtr, out sessionID, TapAPIHisOrderProcessQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 历史成交查询请求。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">历史成交查询请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryHisMatch(out uint sessionID, TapAPIHisMatchQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisMatch(swigCPtr, out sessionID, TapAPIHisMatchQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 历史持仓查询请求。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">历史持仓查询请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryHisPosition(out uint sessionID, TapAPIHisPositionQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisPosition(swigCPtr, out sessionID, TapAPIHisPositionQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 历史交割查询请求。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">历史交割查询请求的结构体</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryHisDelivery(out uint sessionID, TapAPIHisDeliveryQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisDelivery(swigCPtr, out sessionID, TapAPIHisDeliveryQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 客户手续费计算参数查询请求。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">客户手续费计算参数查询请求结构</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryAccountFeeRent(out uint sessionID, TapAPIAccountFeeRentQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccountFeeRent(swigCPtr, out sessionID, TapAPIAccountFeeRentQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 客户保证金计算参数查询请求。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回请求的会话ID;</param>
+        /// <param name="qryReq">客户保证金计算参数查询请求结构</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int QryAccountMarginRent(out uint sessionID, TapAPIAccountMarginRentQryReq qryReq)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccountMarginRent(swigCPtr, out sessionID, TapAPIAccountMarginRentQryReq.getCPtr(qryReq));
+            return ret;
+        }
+        /// <summary>
+        /// 港交所做市商双边报价指令。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回当前请求的SessionID;</param>
+        /// <param name="ClientBuyOrderNo">返回港交所双边报价中买单的客户本地委托号;</param>
+        /// <param name="ClientSellOrderNo">返回港交所双边报价中卖单的客户本地委托号;</param>
+        /// <param name="order">双边报价请求结构;</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int InsertHKMarketOrder(out uint sessionID, string ClientBuyOrderNo, string ClientSellOrderNo, TapAPIOrderMarketInsertReq order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_InsertHKMarketOrder(swigCPtr, out sessionID, ClientBuyOrderNo, ClientSellOrderNo, TapAPIOrderMarketInsertReq.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 港交所做市商双边撤单指令。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回当前请求的sessionID。</param>
+        /// <param name="order">港交所做市商撤单指令请求结构。</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int CancelHKMarketOrder(out uint sessionID, TapAPIOrderMarketDeleteReq order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_CancelHKMarketOrder(swigCPtr, out sessionID, TapAPIOrderMarketDeleteReq.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 订单删除指令。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回当前请求的sessionID。</param>
+        /// <param name="order">要订单删除的订单。</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int OrderLocalRemove(out uint sessionID, TapAPIOrderLocalRemoveReq order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalRemove(swigCPtr, out sessionID, TapAPIOrderLocalRemoveReq.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 订单录入指令。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回当前请求的sessionID。</param>
+        /// <param name="order">订单录入请求信息。</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int OrderLocalInput(out uint sessionID, TapAPIOrderLocalInputReq order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalInput(swigCPtr, out sessionID, TapAPIOrderLocalInputReq.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 订单修改指令。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回当前请求的sessionID。</param>
+        /// <param name="order">订单修改请求结构</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int OrderLocalModify(out uint sessionID, TapAPIOrderLocalModifyReq order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalModify(swigCPtr, out sessionID, TapAPIOrderLocalModifyReq.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 订单转移指令。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回当前请求的sessionID。</param>
+        /// <param name="order">订单转移请求信息。</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int OrderLocalTransfer(out uint sessionID, TapAPIOrderLocalTransferReq order)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalTransfer(swigCPtr, out sessionID, TapAPIOrderLocalTransferReq.getCPtr(order));
+            return ret;
+        }
+        /// <summary>
+        /// 成交录入指令。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回当前请求的sessionID。</param>
+        /// <param name="fill">要录入的成交信息</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int FillLocalInput(out uint sessionID, TapAPIFillLocalInputReq fill)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_FillLocalInput(swigCPtr, out sessionID, TapAPIFillLocalInputReq.getCPtr(fill));
+            return ret;
+        }
+        /// <summary>
+        /// 成交删除指令。异步操作
+        /// </summary>
+        /// <param name="sessionID">返回当前请求的sessionID。</param>
+        /// <param name="fill">成交删除请求信息</param>
+        /// <returns>0 请求成功；非0 错误码</returns>
+        public virtual int FillLocalRemove(out uint sessionID, TapAPIFillLocalRemoveReq fill)
+        {
+            int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_FillLocalRemove(swigCPtr, out sessionID, TapAPIFillLocalRemoveReq.getCPtr(fill));
+            return ret;
+        }
+
     }
-  }
-
-  public virtual int SetAPINotify(ITapTradeAPINotify pSpi) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetAPINotify(swigCPtr, ITapTradeAPINotify.getCPtr(pSpi));
-    return ret;
-  }
-
-  public virtual int SetHostAddress(string IP, ushort port, bool bSSL) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetHostAddress__SWIG_0(swigCPtr, IP, port, bSSL);
-    return ret;
-  }
-
-  public virtual int SetHostAddress(string IP, ushort port) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetHostAddress__SWIG_1(swigCPtr, IP, port);
-    return ret;
-  }
-
-  public virtual int Login(TapAPITradeLoginAuth loginAuth) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_Login(swigCPtr, TapAPITradeLoginAuth.getCPtr(loginAuth));
-    return ret;
-  }
-
-  public virtual int RequestVertificateCode(out uint sessionID, string ContactInfo) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_RequestVertificateCode(swigCPtr, out sessionID, ContactInfo);
-    return ret;
-  }
-
-  public virtual int SetVertificateCode(string VertificateCode) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetVertificateCode(swigCPtr, VertificateCode);
-    return ret;
-  }
-
-  public virtual int Disconnect() {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_Disconnect(swigCPtr);
-    return ret;
-  }
-
-  public virtual int ChangePassword(out uint sessionID, TapAPIChangePasswordReq req) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_ChangePassword(swigCPtr, out sessionID, TapAPIChangePasswordReq.getCPtr(req));
-    return ret;
-  }
-
-  public virtual int AuthPassword(out uint sessionID, TapAPIAuthPasswordReq req) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_AuthPassword(swigCPtr, out sessionID, TapAPIAuthPasswordReq.getCPtr(req));
-    return ret;
-  }
-
-  public virtual int HaveCertainRight(int rightID) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_HaveCertainRight(swigCPtr, rightID);
-    return ret;
-  }
-
-  public virtual int QryTradingDate(out uint sessionID) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryTradingDate(swigCPtr, out sessionID);
-    return ret;
-  }
-
-  public virtual int SetReservedInfo(out uint sessionID, string info) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_SetReservedInfo(swigCPtr, out sessionID, info);
-    return ret;
-  }
-
-  public virtual int QryAccount(out uint sessionID, TapAPIAccQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccount(swigCPtr, out sessionID, TapAPIAccQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryFund(out uint sessionID, TapAPIFundReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryFund(swigCPtr, out sessionID, TapAPIFundReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryExchange(out uint sessionID) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryExchange(swigCPtr, out sessionID);
-    return ret;
-  }
-
-  public virtual int QryCommodity(out uint sessionID) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryCommodity(swigCPtr, out sessionID);
-    return ret;
-  }
-
-  public virtual int QryContract(out uint sessionID, TapAPICommodity qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryContract(swigCPtr, out sessionID, TapAPICommodity.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int InsertOrder(out uint sessionID, string ClientOrderNo, TapAPINewOrder order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_InsertOrder(swigCPtr, out sessionID, ClientOrderNo, TapAPINewOrder.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int CancelOrder(out uint sessionID, TapAPIOrderCancelReq order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_CancelOrder(swigCPtr, out sessionID, TapAPIOrderCancelReq.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int AmendOrder(out uint sessionID, TapAPIAmendOrder order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_AmendOrder(swigCPtr, out sessionID, TapAPIAmendOrder.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int ActivateOrder(out uint sessionID, TapAPIOrderCancelReq order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_ActivateOrder(swigCPtr, out sessionID, TapAPIOrderCancelReq.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int QryOrder(out uint sessionID, TapAPIOrderQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryOrder(swigCPtr, out sessionID, TapAPIOrderQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryOrderProcess(out uint sessionID, TapAPIOrderProcessQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryOrderProcess(swigCPtr, out sessionID, TapAPIOrderProcessQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryFill(out uint sessionID, TapAPIFillQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryFill(swigCPtr, out sessionID, TapAPIFillQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryPosition(out uint sessionID, TapAPIPositionQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryPosition(swigCPtr, out sessionID, TapAPIPositionQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryPositionSummary(out uint sessionID, TapAPIPositionQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryPositionSummary(swigCPtr, out sessionID, TapAPIPositionQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryCurrency(out uint sessionID) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryCurrency(swigCPtr, out sessionID);
-    return ret;
-  }
-
-  public virtual int QryAccountCashAdjust(out uint sessionID, TapAPIAccountCashAdjustQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccountCashAdjust(swigCPtr, out sessionID, TapAPIAccountCashAdjustQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryTradeMessage(out uint sessionID, TapAPITradeMessageReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryTradeMessage(swigCPtr, out sessionID, TapAPITradeMessageReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryBill(out uint sessionID, TapAPIBillQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryBill(swigCPtr, out sessionID, TapAPIBillQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryHisOrder(out uint sessionID, TapAPIHisOrderQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisOrder(swigCPtr, out sessionID, TapAPIHisOrderQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryHisOrderProcess(out uint sessionID, TapAPIHisOrderProcessQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisOrderProcess(swigCPtr, out sessionID, TapAPIHisOrderProcessQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryHisMatch(out uint sessionID, TapAPIHisMatchQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisMatch(swigCPtr, out sessionID, TapAPIHisMatchQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryHisPosition(out uint sessionID, TapAPIHisPositionQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisPosition(swigCPtr, out sessionID, TapAPIHisPositionQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryHisDelivery(out uint sessionID, TapAPIHisDeliveryQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryHisDelivery(swigCPtr, out sessionID, TapAPIHisDeliveryQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryAccountFeeRent(out uint sessionID, TapAPIAccountFeeRentQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccountFeeRent(swigCPtr, out sessionID, TapAPIAccountFeeRentQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int QryAccountMarginRent(out uint sessionID, TapAPIAccountMarginRentQryReq qryReq) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_QryAccountMarginRent(swigCPtr, out sessionID, TapAPIAccountMarginRentQryReq.getCPtr(qryReq));
-    return ret;
-  }
-
-  public virtual int InsertHKMarketOrder(out uint sessionID, string ClientBuyOrderNo, string ClientSellOrderNo, TapAPIOrderMarketInsertReq order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_InsertHKMarketOrder(swigCPtr, out sessionID, ClientBuyOrderNo, ClientSellOrderNo, TapAPIOrderMarketInsertReq.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int CancelHKMarketOrder(out uint sessionID, TapAPIOrderMarketDeleteReq order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_CancelHKMarketOrder(swigCPtr, out sessionID, TapAPIOrderMarketDeleteReq.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int OrderLocalRemove(out uint sessionID, TapAPIOrderLocalRemoveReq order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalRemove(swigCPtr, out sessionID, TapAPIOrderLocalRemoveReq.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int OrderLocalInput(out uint sessionID, TapAPIOrderLocalInputReq order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalInput(swigCPtr, out sessionID, TapAPIOrderLocalInputReq.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int OrderLocalModify(out uint sessionID, TapAPIOrderLocalModifyReq order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalModify(swigCPtr, out sessionID, TapAPIOrderLocalModifyReq.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int OrderLocalTransfer(out uint sessionID, TapAPIOrderLocalTransferReq order) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_OrderLocalTransfer(swigCPtr, out sessionID, TapAPIOrderLocalTransferReq.getCPtr(order));
-    return ret;
-  }
-
-  public virtual int FillLocalInput(out uint sessionID, TapAPIFillLocalInputReq fill) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_FillLocalInput(swigCPtr, out sessionID, TapAPIFillLocalInputReq.getCPtr(fill));
-    return ret;
-  }
-
-  public virtual int FillLocalRemove(out uint sessionID, TapAPIFillLocalRemoveReq fill) {
-    int ret = TapTradeWrapperPINVOKE.ITapTradeAPI_FillLocalRemove(swigCPtr, out sessionID, TapAPIFillLocalRemoveReq.getCPtr(fill));
-    return ret;
-  }
-
-}
 
 }
