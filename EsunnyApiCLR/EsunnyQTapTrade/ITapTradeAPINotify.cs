@@ -82,132 +82,280 @@ namespace QTapTradeWrapperApi
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnDisconnect(swigCPtr, reasonCode);
         }
-
+        /// <summary>
+        /// 通知用户密码修改结果
+        /// </summary>
+        /// <param name="sessionID">修改密码的会话ID,和ChangePassword返回的会话ID对应。</param>
+        /// <param name="errorCode">返回错误码，0表示成功。</param>
         public virtual void OnRspChangePassword(uint sessionID, int errorCode)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspChangePassword(swigCPtr, sessionID, errorCode);
         }
-
+        /// <summary>
+        /// 设置用户预留信息反馈 该接口暂未实现
+        /// </summary>
+        /// <param name="sessionID">设置用户预留信息的会话ID</param>
+        /// <param name="errorCode">返回错误码，0表示成功。</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspSetReservedInfo(uint sessionID, int errorCode, string info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspSetReservedInfo(swigCPtr, sessionID, errorCode, info);
         }
-
+        /// <summary>
+        /// 返回用户信息 此回调接口向用户返回查询的资金账号的详细信息。用户有必要将得到的账号编号保存起来，然后在后续的函数调用中使用。
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryAccount(uint sessionID, uint errorCode, char isLast, TapAPIAccountInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryAccount(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回资金账户的资金信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryFund(uint sessionID, int errorCode, char isLast, TapAPIFundData info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryFund(swigCPtr, sessionID, errorCode, isLast, TapAPIFundData.getCPtr(info));
         }
-
+        /// <summary>
+        /// 用户资金变化通知 用户的委托成交后会引起资金数据的变化，因此需要向用户实时反馈。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRtnFund(TapAPIFundData info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRtnFund(swigCPtr, TapAPIFundData.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回系统中的交易所信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryExchange(uint sessionID, int errorCode, char isLast, TapAPIExchangeInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryExchange(swigCPtr, sessionID, errorCode, isLast, TapAPIExchangeInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回系统中品种信息 此回调接口用于向用户返回得到的所有品种信息。
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID，和GetAllCommodities()函数返回对应；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryCommodity(uint sessionID, int errorCode, char isLast, TapAPICommodityInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryCommodity(swigCPtr, sessionID, errorCode, isLast, TapAPICommodityInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回系统中合约信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryContract(uint sessionID, int errorCode, char isLast, TapAPITradeContractInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryContract(swigCPtr, sessionID, errorCode, isLast, TapAPITradeContractInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回新增合约信息  向用户推送新的合约。主要用来处理在交易时间段中服务器添加了新合约时，向用户发送这个合约的信息。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRtnContract(TapAPITradeContractInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRtnContract(swigCPtr, TapAPITradeContractInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回新委托。新下的或者其他地方下的推送过来的。服务器接收到客户下的委托内容后就会保存起来等待触发，同时向用户回馈一个
+        /// 新委托信息说明服务器正确处理了用户的请求，返回的信息中包含了全部的委托信息，同时有一个用来标示此委托的委托号。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRtnOrder(TapAPIOrderInfoNotice info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRtnOrder(swigCPtr, TapAPIOrderInfoNotice.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回对报单的主动操作结果 如下单，撤单等操作的结果。该接口目前没有用到，所有操作结果通过OnRtnOrder返回
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="info">报单的具体信息。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspOrderAction(uint sessionID, uint errorCode, TapAPIOrderActionRsp info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspOrderAction(swigCPtr, sessionID, errorCode, TapAPIOrderActionRsp.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回查询的委托信息 返回用户查询的委托的具体信息。
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryOrder(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryOrder(swigCPtr, sessionID, errorCode, isLast, TapAPIOrderInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回查询的委托变化流程信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码，当errorCode==0时，info指向返回的委托变化流程结构体，不然为NULL；</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">返回的委托变化流程。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryOrderProcess(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryOrderProcess(swigCPtr, sessionID, errorCode, isLast, TapAPIOrderInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回查询的成交信息
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryFill(uint sessionID, int errorCode, char isLast, TapAPIFillInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryFill(swigCPtr, sessionID, errorCode, isLast, TapAPIFillInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 推送来的成交信息 用户的委托成交后将向用户推送成交信息。
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
         public virtual void OnRtnFill(TapAPIFillInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRtnFill(swigCPtr, TapAPIFillInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回查询的持仓
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryPosition(uint sessionID, int errorCode, char isLast, TapAPIPositionInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryPosition(swigCPtr, sessionID, errorCode, isLast, TapAPIPositionInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 持仓变化推送通知
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
         public virtual void OnRtnPosition(TapAPIPositionInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRtnPosition(swigCPtr, TapAPIPositionInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 返回查询的平仓
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspQryClose(uint sessionID, int errorCode, char isLast, TapAPICloseInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryClose(swigCPtr, sessionID, errorCode, isLast, TapAPICloseInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 平仓数据变化推送
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
         public virtual void OnRtnClose(TapAPICloseInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRtnClose(swigCPtr, TapAPICloseInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 持仓盈亏通知
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 如果不关注此项内容，可以设定Login时的NoticeIgnoreFlag以屏蔽。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
         public virtual void OnRtnPositionProfit(TapAPIPositionProfitNotice info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRtnPositionProfit(swigCPtr, TapAPIPositionProfitNotice.getCPtr(info));
         }
-
+        /// <summary>
+        /// 深度行情查询应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据；</param>
+        /// <param name="info">指向返回的深度行情信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
         public virtual void OnRspQryDeepQuote(uint sessionID, int errorCode, char isLast, TapAPIDeepQuoteQryRsp info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryDeepQuote(swigCPtr, sessionID, errorCode, isLast, TapAPIDeepQuoteQryRsp.getCPtr(info));
         }
-
+        /// <summary>
+        /// 交易所时间状态信息查询应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
         public virtual void OnRspQryExchangeStateInfo(uint sessionID, int errorCode, char isLast, TapAPIExchangeStateInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspQryExchangeStateInfo(swigCPtr, sessionID, errorCode, isLast, TapAPIExchangeStateInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 交易所时间状态信息通知	
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRtnExchangeStateInfo(TapAPIExchangeStateInfoNotice info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRtnExchangeStateInfo(swigCPtr, TapAPIExchangeStateInfoNotice.getCPtr(info));
         }
-
+        /// <summary>
+        /// 询价通知
+        /// </summary>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRtnReqQuoteNotice(TapAPIReqQuoteNotice info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRtnReqQuoteNotice(swigCPtr, TapAPIReqQuoteNotice.getCPtr(info));
         }
-
+        /// <summary>
+        /// 上手信息查询应答
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。
+        /// 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+        /// </param>
         public virtual void OnRspUpperChannelInfo(uint sessionID, int errorCode, char isLast, TapAPIUpperChannelInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspUpperChannelInfo(swigCPtr, sessionID, errorCode, isLast, TapAPIUpperChannelInfo.getCPtr(info));
         }
-
+        /// <summary>
+        /// 客户最终费率应答。保证金比例计算方式：手数*每手乘数*计算参数*价格；
+        /// 保证金定额计算方式：手数*计算参数；
+        /// 手续费绝对方式计算方式：手数*按手数计算参数+手数*每手乘数*价格*按金额计算参数
+        /// </summary>
+        /// <param name="sessionID">请求的会话ID；</param>
+        /// <param name="errorCode">错误码。0 表示成功。</param>
+        /// <param name="isLast">标示是否是最后一批数据</param>
+        /// <param name="info">指向返回的信息结构体。当errorCode不为0时，info为空。不要修改和删除info所指示的数据；函数调用结束，参数不再有效。</param>
         public virtual void OnRspAccountRentInfo(uint sessionID, int errorCode, char isLast, TapAPIAccountRentInfo info)
         {
             QTapTradeApiPINVOKE.ITapTradeAPINotify_OnRspAccountRentInfo(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountRentInfo.getCPtr(info));
