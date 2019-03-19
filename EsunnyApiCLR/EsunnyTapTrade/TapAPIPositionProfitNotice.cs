@@ -8,62 +8,84 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户持仓盈亏通知
+    /// </summary>
+    public class TapAPIPositionProfitNotice : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIPositionProfitNotice : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIPositionProfitNotice(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIPositionProfitNotice obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIPositionProfitNotice() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIPositionProfitNotice(swigCPtr);
+        internal TapAPIPositionProfitNotice(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIPositionProfitNotice obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIPositionProfitNotice()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIPositionProfitNotice(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 是否最后一包
+        /// </summary>
+        public char IsLast
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_IsLast_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_IsLast_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 客户持仓盈亏信息
+        /// </summary>
+        public TapAPIPositionProfit Data
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_Data_set(swigCPtr, TapAPIPositionProfit.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_Data_get(swigCPtr);
+                TapAPIPositionProfit ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIPositionProfit(cPtr, false);
+                return ret;
+            }
+        }
+
+        public TapAPIPositionProfitNotice() : this(TapTradeWrapperPINVOKE.new_TapAPIPositionProfitNotice(), true)
+        {
+        }
+
     }
-  }
-
-  public char IsLast {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_IsLast_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_IsLast_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIPositionProfit Data {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_Data_set(swigCPtr, TapAPIPositionProfit.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIPositionProfitNotice_Data_get(swigCPtr);
-      TapAPIPositionProfit ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIPositionProfit(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public TapAPIPositionProfitNotice() : this(TapTradeWrapperPINVOKE.new_TapAPIPositionProfitNotice(), true) {
-  }
-
-}
 
 }

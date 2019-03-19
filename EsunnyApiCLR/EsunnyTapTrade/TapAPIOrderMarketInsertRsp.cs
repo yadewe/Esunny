@@ -8,381 +8,563 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户做市商应答请求结构
+    /// </summary>
+    public class TapAPIOrderMarketInsertRsp : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIOrderMarketInsertRsp : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIOrderMarketInsertRsp(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderMarketInsertRsp obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIOrderMarketInsertRsp() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIOrderMarketInsertRsp(swigCPtr);
+        internal TapAPIOrderMarketInsertRsp(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderMarketInsertRsp obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIOrderMarketInsertRsp()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIOrderMarketInsertRsp(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 客户资金帐号
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易所编号
+        /// </summary>
+        public string ExchangeNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ExchangeNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ExchangeNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种类型
+        /// </summary>
+        public char CommodityType
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CommodityType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CommodityType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 品种编码类型
+        /// </summary>
+        public string CommodityNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CommodityNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CommodityNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 合约
+        /// </summary>
+        public string ContractNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ContractNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ContractNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 执行价格
+        /// </summary>
+        public string StrikePrice
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_StrikePrice_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_StrikePrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 看张看跌
+        /// </summary>
+        public char CallOrPutFlag
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CallOrPutFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CallOrPutFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托类型
+        /// </summary>
+        public char OrderType
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托有效类型
+        /// </summary>
+        public char TimeInForce
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_TimeInForce_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_TimeInForce_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 有效日期(GTD情况下使用)
+        /// </summary>
+        public string ExpireTime
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ExpireTime_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ExpireTime_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托来源
+        /// </summary>
+        public char OrderSource
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSource_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSource_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买开平标志
+        /// </summary>
+        public char BuyPositionEffect
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_BuyPositionEffect_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_BuyPositionEffect_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖开平标志
+        /// </summary>
+        public char SellPositionEffect
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_SellPositionEffect_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_SellPositionEffect_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买委托价
+        /// </summary>
+        public double OrderBuyPrice
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖委托价
+        /// </summary>
+        public double OrderSellPrice
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellPrice_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellPrice_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买委托量
+        /// </summary>
+        public uint OrderBuyQty
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyQty_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖委托量
+        /// </summary>
+        public uint OrderSellQty
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellQty_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellQty_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易服务标识
+        /// </summary>
+        public char ServerFlag
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ServerFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ServerFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买委托号
+        /// </summary>
+        public string OrderBuyNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖委托号
+        /// </summary>
+        public string OrderSellNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 是否T+1有效
+        /// </summary>
+        public char AddOneIsValid
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_AddOneIsValid_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_AddOneIsValid_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 下单人
+        /// </summary>
+        public string OrderMarketUserNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderMarketUserNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderMarketUserNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 下单时间
+        /// </summary>
+        public string OrderMarketTime
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderMarketTime_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderMarketTime_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 整型参考值
+        /// </summary>
+        public int RefInt
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefInt_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefInt_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 浮点参考值
+        /// </summary>
+        public double RefDouble
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefDouble_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefDouble_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 字符串参考值
+        /// </summary>
+        public string RefString
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefString_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefString_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买本地委托编号
+        /// </summary>
+        public string ClientBuyOrderNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientBuyOrderNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientBuyOrderNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖本地委托编号
+        /// </summary>
+        public string ClientSellOrderNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientSellOrderNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientSellOrderNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 错误信息码
+        /// </summary>
+        public uint ErrorCode
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ErrorCode_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ErrorCode_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        public string ErrorText
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ErrorText_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ErrorText_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 终端本地IP地址（客户端填写）
+        /// </summary>
+        public string ClientLocalIP
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientLocalIP_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientLocalIP_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 终端本地Mac地址（客户端填写）
+        /// </summary>
+        public string ClientMac
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientMac_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientMac_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 前置记录的终端IP地址（前置填写）
+        /// </summary>
+        public string ClientIP
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientIP_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientIP_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string Remark
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_Remark_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_Remark_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIOrderMarketInsertRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderMarketInsertRsp(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ExchangeNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ExchangeNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ExchangeNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CommodityType {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CommodityType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CommodityType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CommodityNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CommodityNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CommodityNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ContractNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ContractNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ContractNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string StrikePrice {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_StrikePrice_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_StrikePrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CallOrPutFlag {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CallOrPutFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_CallOrPutFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char OrderType {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char TimeInForce {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_TimeInForce_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_TimeInForce_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ExpireTime {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ExpireTime_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ExpireTime_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char OrderSource {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSource_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSource_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char BuyPositionEffect {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_BuyPositionEffect_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_BuyPositionEffect_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char SellPositionEffect {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_SellPositionEffect_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_SellPositionEffect_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double OrderBuyPrice {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double OrderSellPrice {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellPrice_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellPrice_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint OrderBuyQty {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyQty_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint OrderSellQty {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellQty_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellQty_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char ServerFlag {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ServerFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ServerFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderBuyNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderBuyNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderSellNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderSellNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char AddOneIsValid {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_AddOneIsValid_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_AddOneIsValid_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderMarketUserNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderMarketUserNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderMarketUserNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderMarketTime {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderMarketTime_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_OrderMarketTime_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public int RefInt {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefInt_set(swigCPtr, value);
-    } 
-    get {
-      int ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefInt_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double RefDouble {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefDouble_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefDouble_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string RefString {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefString_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_RefString_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ClientBuyOrderNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientBuyOrderNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientBuyOrderNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ClientSellOrderNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientSellOrderNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientSellOrderNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public uint ErrorCode {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ErrorCode_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ErrorCode_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ErrorText {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ErrorText_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ErrorText_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ClientLocalIP {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientLocalIP_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientLocalIP_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ClientMac {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientMac_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientMac_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ClientIP {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientIP_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_ClientIP_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string Remark {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_Remark_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketInsertRsp_Remark_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIOrderMarketInsertRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderMarketInsertRsp(), true) {
-  }
-
-}
 
 }

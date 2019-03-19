@@ -8,61 +8,83 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 历史委托流程查询请求结构
+    /// </summary>
+    public class TapAPIHisOrderProcessQryReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIHisOrderProcessQryReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIHisOrderProcessQryReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIHisOrderProcessQryReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIHisOrderProcessQryReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIHisOrderProcessQryReq(swigCPtr);
+        internal TapAPIHisOrderProcessQryReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIHisOrderProcessQryReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIHisOrderProcessQryReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIHisOrderProcessQryReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 日期
+        /// </summary>
+        public string Date
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_Date_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_Date_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托编号
+        /// </summary>
+        public string OrderNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_OrderNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_OrderNo_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIHisOrderProcessQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIHisOrderProcessQryReq(), true)
+        {
+        }
+
     }
-  }
-
-  public string Date {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_Date_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_Date_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_OrderNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIHisOrderProcessQryReq_OrderNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIHisOrderProcessQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIHisOrderProcessQryReq(), true) {
-  }
-
-}
 
 }

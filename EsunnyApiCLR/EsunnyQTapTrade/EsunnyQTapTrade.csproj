@@ -7,7 +7,7 @@
     <ProjectGuid>{224F7F58-F8B9-464E-BE0C-8648F475C76F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EsunnyQTapTrade</RootNamespace>
+    <RootNamespace>QTapTradeWrapperApi</RootNamespace>
     <AssemblyName>EsunnyQTapTrade</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

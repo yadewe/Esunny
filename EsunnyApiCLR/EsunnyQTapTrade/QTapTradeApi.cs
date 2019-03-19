@@ -7,10 +7,14 @@
 // Do not make changes to this file unless you know what you are doing--modify
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
-
+/// <summary>
+/// 内盘交易
+/// </summary>
 namespace QTapTradeWrapperApi
 {
-
+    /// <summary>
+    /// 内盘交易封装
+    /// </summary>
     public class QTapTradeApi
     {
         /// <summary>

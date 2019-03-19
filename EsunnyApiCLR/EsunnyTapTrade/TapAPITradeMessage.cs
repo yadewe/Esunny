@@ -8,151 +8,218 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 交易消息发送应答结构
+    /// </summary>
+    public class TapAPITradeMessage : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPITradeMessage : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPITradeMessage(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPITradeMessage obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPITradeMessage() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPITradeMessage(swigCPtr);
+        internal TapAPITradeMessage(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPITradeMessage obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPITradeMessage()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPITradeMessage(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 流号
+        /// </summary>
+        public uint SerialID
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_SerialID_set(swigCPtr, value);
+            }
+            get
+            {
+                uint ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_SerialID_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 客户资金账号
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 消息有效时间
+        /// </summary>
+        public string TMsgValidDateTime
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgValidDateTime_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgValidDateTime_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 消息标题
+        /// </summary>
+        public string TMsgTitle
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgTitle_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgTitle_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 消息内容
+        /// </summary>
+        public string TMsgContent
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgContent_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgContent_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 消息类型
+        /// </summary>
+        public char TMsgType
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgType_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 消息级别
+        /// </summary>
+        public char TMsgLevel
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgLevel_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgLevel_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 是否发送短信
+        /// </summary>
+        public char IsSendBySMS
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendBySMS_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendBySMS_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 是否发送邮件
+        /// </summary>
+        public char IsSendByEMail
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendByEMail_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendByEMail_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 发送者
+        /// </summary>
+        public string Sender
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_Sender_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_Sender_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 发送时间
+        /// </summary>
+        public string SendDateTime
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPITradeMessage_SendDateTime_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_SendDateTime_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPITradeMessage() : this(TapTradeWrapperPINVOKE.new_TapAPITradeMessage(), true)
+        {
+        }
+
     }
-  }
-
-  public uint SerialID {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_SerialID_set(swigCPtr, value);
-    } 
-    get {
-      uint ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_SerialID_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string AccountNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string TMsgValidDateTime {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgValidDateTime_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgValidDateTime_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string TMsgTitle {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgTitle_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgTitle_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string TMsgContent {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgContent_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgContent_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char TMsgType {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char TMsgLevel {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgLevel_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_TMsgLevel_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char IsSendBySMS {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendBySMS_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendBySMS_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char IsSendByEMail {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendByEMail_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_IsSendByEMail_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string Sender {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_Sender_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_Sender_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string SendDateTime {
-    set {
-      TapTradeWrapperPINVOKE.TapAPITradeMessage_SendDateTime_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPITradeMessage_SendDateTime_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPITradeMessage() : this(TapTradeWrapperPINVOKE.new_TapAPITradeMessage(), true) {
-  }
-
-}
 
 }

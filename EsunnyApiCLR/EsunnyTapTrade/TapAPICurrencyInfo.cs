@@ -8,101 +8,143 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 交易币种信息
+    /// </summary>
+    public class TapAPICurrencyInfo : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPICurrencyInfo : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPICurrencyInfo(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPICurrencyInfo obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPICurrencyInfo() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPICurrencyInfo(swigCPtr);
+        internal TapAPICurrencyInfo(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPICurrencyInfo obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPICurrencyInfo()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPICurrencyInfo(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 币种编号
+        /// </summary>
+        public string CurrencyNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 币种组编号
+        /// </summary>
+        public string CurrencyGroupNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyGroupNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyGroupNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易汇率
+        /// </summary>
+        public double TradeRate
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 交易汇率2
+        /// </summary>
+        public double TradeRate2
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate2_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate2_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        ///  逐笔'1',盯市 '2'
+        /// </summary>
+        public char FutureAlg
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPICurrencyInfo_FutureAlg_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_FutureAlg_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 期权算法,期货方式'1',期权方式'2'
+        /// </summary>
+        public char OptionAlg
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPICurrencyInfo_OptionAlg_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_OptionAlg_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPICurrencyInfo() : this(TapTradeWrapperPINVOKE.new_TapAPICurrencyInfo(), true)
+        {
+        }
+
     }
-  }
-
-  public string CurrencyNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string CurrencyGroupNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyGroupNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_CurrencyGroupNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double TradeRate {
-    set {
-      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double TradeRate2 {
-    set {
-      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate2_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_TradeRate2_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char FutureAlg {
-    set {
-      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_FutureAlg_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_FutureAlg_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char OptionAlg {
-    set {
-      TapTradeWrapperPINVOKE.TapAPICurrencyInfo_OptionAlg_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPICurrencyInfo_OptionAlg_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPICurrencyInfo() : this(TapTradeWrapperPINVOKE.new_TapAPICurrencyInfo(), true) {
-  }
-
-}
 
 }

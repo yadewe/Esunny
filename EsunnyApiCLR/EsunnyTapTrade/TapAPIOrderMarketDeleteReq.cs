@@ -8,71 +8,98 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 港交所做市商双边撤单请求
+    /// </summary>
+    public class TapAPIOrderMarketDeleteReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIOrderMarketDeleteReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIOrderMarketDeleteReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderMarketDeleteReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIOrderMarketDeleteReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIOrderMarketDeleteReq(swigCPtr);
+        internal TapAPIOrderMarketDeleteReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderMarketDeleteReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIOrderMarketDeleteReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIOrderMarketDeleteReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 服务器标识
+        /// </summary>
+        public char ServerFlag
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_ServerFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_ServerFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 买委托号
+        /// </summary>
+        public string OrderBuyNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderBuyNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderBuyNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 卖委托号
+        /// </summary>
+        public string OrderSellNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderSellNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderSellNo_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIOrderMarketDeleteReq() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderMarketDeleteReq(), true)
+        {
+        }
+
     }
-  }
-
-  public char ServerFlag {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_ServerFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_ServerFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderBuyNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderBuyNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderBuyNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderSellNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderSellNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderMarketDeleteReq_OrderSellNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIOrderMarketDeleteReq() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderMarketDeleteReq(), true) {
-  }
-
-}
 
 }

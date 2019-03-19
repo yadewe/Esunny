@@ -7,7 +7,7 @@
     <ProjectGuid>{1C7F9C3D-5CC7-4DF7-923B-11D662B846A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EsunnyTapTrade</RootNamespace>
+    <RootNamespace>TapTradeWrapperApi</RootNamespace>
     <AssemblyName>EsunnyTapTrade</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

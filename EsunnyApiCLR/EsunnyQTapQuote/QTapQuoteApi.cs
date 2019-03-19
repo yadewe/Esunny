@@ -7,10 +7,14 @@
 // Do not make changes to this file unless you know what you are doing--modify
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
-
+/// <summary>
+/// 内盘行情
+/// </summary>
 namespace QTapQuoteWrapperApi
 {
-
+    /// <summary>
+    /// 内盘行情
+    /// </summary>
     public class QTapQuoteApi
     {
         public static char APIYNFLAG_YES

@@ -7,10 +7,14 @@
 // Do not make changes to this file unless you know what you are doing--modify
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
-
+/// <summary>
+/// 外盘交易
+/// </summary>
 namespace TapTradeWrapperApi
 {
-
+    /// <summary>
+    /// 交易封装类
+    /// </summary>
     public class TapTradeWrapper
     {
         public static char APIYNFLAG_YES

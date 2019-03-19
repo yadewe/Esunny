@@ -8,91 +8,128 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 客户撤单请求结构。必填项是ServerFlag和OrderNo.
+    /// </summary>
+    public class TapAPIOrderCancelReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIOrderCancelReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIOrderCancelReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderCancelReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIOrderCancelReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIOrderCancelReq(swigCPtr);
+        internal TapAPIOrderCancelReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderCancelReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIOrderCancelReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIOrderCancelReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 整型参考值
+        /// </summary>
+        public int RefInt
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefInt_set(swigCPtr, value);
+            }
+            get
+            {
+                int ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefInt_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 浮点参考值
+        /// </summary>
+        public double RefDouble
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefDouble_set(swigCPtr, value);
+            }
+            get
+            {
+                double ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefDouble_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 字符串参考值
+        /// </summary>
+        public string RefString
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefString_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefString_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 服务器标识
+        /// </summary>
+        public char ServerFlag
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_ServerFlag_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_ServerFlag_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 委托编码
+        /// </summary>
+        public string OrderNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_OrderNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_OrderNo_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIOrderCancelReq() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderCancelReq(), true)
+        {
+        }
+
     }
-  }
-
-  public int RefInt {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefInt_set(swigCPtr, value);
-    } 
-    get {
-      int ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefInt_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public double RefDouble {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefDouble_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefDouble_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string RefString {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefString_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_RefString_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char ServerFlag {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_ServerFlag_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_ServerFlag_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string OrderNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_OrderNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderCancelReq_OrderNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIOrderCancelReq() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderCancelReq(), true) {
-  }
-
-}
 
 }

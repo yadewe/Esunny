@@ -8,91 +8,128 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 历史成交查询请求结构
+    /// </summary>
+    public class TapAPIHisMatchQryReq : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIHisMatchQryReq : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIHisMatchQryReq(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIHisMatchQryReq obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIHisMatchQryReq() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIHisMatchQryReq(swigCPtr);
+        internal TapAPIHisMatchQryReq(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIHisMatchQryReq obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIHisMatchQryReq()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIHisMatchQryReq(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 客户资金账号
+        /// </summary>
+        public string AccountNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_AccountNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_AccountNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 客户属性号
+        /// </summary>
+        public string AccountAttributeNo
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_AccountAttributeNo_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_AccountAttributeNo_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 开始日期，必填
+        /// </summary>
+        public string BeginDate
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_BeginDate_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_BeginDate_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 结束日期，必填
+        /// </summary>
+        public string EndDate
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_EndDate_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_EndDate_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 统计类型
+        /// </summary>
+        public char CountType
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_CountType_set(swigCPtr, value);
+            }
+            get
+            {
+                char ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_CountType_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIHisMatchQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIHisMatchQryReq(), true)
+        {
+        }
+
     }
-  }
-
-  public string AccountNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_AccountNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_AccountNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string AccountAttributeNo {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_AccountAttributeNo_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_AccountAttributeNo_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string BeginDate {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_BeginDate_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_BeginDate_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string EndDate {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_EndDate_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_EndDate_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public char CountType {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_CountType_set(swigCPtr, value);
-    } 
-    get {
-      char ret = TapTradeWrapperPINVOKE.TapAPIHisMatchQryReq_CountType_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIHisMatchQryReq() : this(TapTradeWrapperPINVOKE.new_TapAPIHisMatchQryReq(), true) {
-  }
-
-}
 
 }

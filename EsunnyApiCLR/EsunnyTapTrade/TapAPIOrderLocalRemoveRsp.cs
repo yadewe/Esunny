@@ -8,82 +8,114 @@
 // the SWIG interface file instead.
 //------------------------------------------------------------------------------
 
-namespace TapTradeWrapperApi {
+namespace TapTradeWrapperApi
+{
+    /// <summary>
+    /// 订单删除应答结构
+    /// </summary>
+    public class TapAPIOrderLocalRemoveRsp : global::System.IDisposable
+    {
+        private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+        protected bool swigCMemOwn;
 
-public class TapAPIOrderLocalRemoveRsp : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
-
-  internal TapAPIOrderLocalRemoveRsp(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
-
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderLocalRemoveRsp obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
-
-  ~TapAPIOrderLocalRemoveRsp() {
-    Dispose();
-  }
-
-  public virtual void Dispose() {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          TapTradeWrapperPINVOKE.delete_TapAPIOrderLocalRemoveRsp(swigCPtr);
+        internal TapAPIOrderLocalRemoveRsp(global::System.IntPtr cPtr, bool cMemoryOwn)
+        {
+            swigCMemOwn = cMemoryOwn;
+            swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
         }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-      global::System.GC.SuppressFinalize(this);
+
+        internal static global::System.Runtime.InteropServices.HandleRef getCPtr(TapAPIOrderLocalRemoveRsp obj)
+        {
+            return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+        }
+
+        ~TapAPIOrderLocalRemoveRsp()
+        {
+            Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            lock (this)
+            {
+                if (swigCPtr.Handle != global::System.IntPtr.Zero)
+                {
+                    if (swigCMemOwn)
+                    {
+                        swigCMemOwn = false;
+                        TapTradeWrapperPINVOKE.delete_TapAPIOrderLocalRemoveRsp(swigCPtr);
+                    }
+                    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+                }
+                global::System.GC.SuppressFinalize(this);
+            }
+        }
+        /// <summary>
+        /// 订单删除请求结构
+        /// </summary>
+        public TapAPIOrderLocalRemoveReq req
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_req_set(swigCPtr, TapAPIOrderLocalRemoveReq.getCPtr(value));
+            }
+            get
+            {
+                global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_req_get(swigCPtr);
+                TapAPIOrderLocalRemoveReq ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIOrderLocalRemoveReq(cPtr, false);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 终端本地IP地址（客户端填写）
+        /// </summary>
+        public string ClientLocalIP
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientLocalIP_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientLocalIP_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 终端本地Mac地址（客户端填写）
+        /// </summary>
+        public string ClientMac
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientMac_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientMac_get(swigCPtr);
+                return ret;
+            }
+        }
+        /// <summary>
+        /// 前置记录的终端IP地址（前置填写）
+        /// </summary>
+        public string ClientIP
+        {
+            set
+            {
+                TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientIP_set(swigCPtr, value);
+            }
+            get
+            {
+                string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientIP_get(swigCPtr);
+                return ret;
+            }
+        }
+
+        public TapAPIOrderLocalRemoveRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderLocalRemoveRsp(), true)
+        {
+        }
+
     }
-  }
-
-  public TapAPIOrderLocalRemoveReq req {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_req_set(swigCPtr, TapAPIOrderLocalRemoveReq.getCPtr(value));
-    } 
-    get {
-      global::System.IntPtr cPtr = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_req_get(swigCPtr);
-      TapAPIOrderLocalRemoveReq ret = (cPtr == global::System.IntPtr.Zero) ? null : new TapAPIOrderLocalRemoveReq(cPtr, false);
-      return ret;
-    } 
-  }
-
-  public string ClientLocalIP {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientLocalIP_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientLocalIP_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ClientMac {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientMac_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientMac_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public string ClientIP {
-    set {
-      TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientIP_set(swigCPtr, value);
-    } 
-    get {
-      string ret = TapTradeWrapperPINVOKE.TapAPIOrderLocalRemoveRsp_ClientIP_get(swigCPtr);
-      return ret;
-    } 
-  }
-
-  public TapAPIOrderLocalRemoveRsp() : this(TapTradeWrapperPINVOKE.new_TapAPIOrderLocalRemoveRsp(), true) {
-  }
-
-}
 
 }
