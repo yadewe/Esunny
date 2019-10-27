@@ -72,6 +72,7 @@ namespace TapApiDemo
 
         private void TradeNotify_OnAPIReadyEvent(int errorCode)
         {
+            Console.WriteLine("TradeNotify_OnAPIReadyEvent");
             m_api.QryAccount(out m_sessionID, null);
             m_api.QryOrder(out m_sessionID, null);
             m_api.QryExchange(out m_sessionID);

@@ -45,7 +45,8 @@ namespace TapApiDemo
             m_api = TapQuoteWrapper.CreateTapQuoteAPI(appInfo, out iResult);
             if (m_api != null)
             {
-                m_api.SetAPINotify(QuoteNotify);
+              var t =  m_api.SetAPINotify(QuoteNotify);
+                Console.WriteLine($"SetAPINotify result:{t}");
             }
             return iResult;
         }
@@ -119,7 +120,7 @@ namespace TapApiDemo
         void QuoteNotify_OnAPIReadyEvent()
         {
             m_api.QryCommodity(out m_sessionID);
-            //m_api.QryContract(out m_sessionID,null);
+            //m_api.QryContract(out m_sessionID, new TapAPICommodity() {  });
         }
 
         void QuoteNotify_OnRspQryCommodityEvent(uint sessionId,int errorCode,char isLast, TapAPIQuoteCommodityInfo info)
@@ -154,14 +155,15 @@ namespace TapApiDemo
                 }
                 else
                 {
-                    var contract =new TapAPIContract();
-                    contract.Commodity.ExchangeNo = "HKEX";
-                    contract.Commodity.CommodityType = 'F';
-                    contract.Commodity.CommodityNo = "HSI";
-                    contract.ContractNo1 = "1903";
-                    contract.CallOrPutFlag1 = 'N';
-                    contract.CallOrPutFlag2 = 'N';
-                    m_api.SubscribeQuote(out m_sessionID, contract);
+                    //var contract =new TapAPIContract();
+                    //contract.Commodity.ExchangeNo = "HKEX";
+                    //contract.Commodity.CommodityType = 'F';
+                    //contract.Commodity.CommodityNo = "HSI";
+                    //contract.ContractNo1 = "2009W3";
+                    //contract.CallOrPutFlag1 = 'N';
+                    //contract.CallOrPutFlag2 = 'N';
+                    //m_api.SubscribeQuote(out m_sessionID, contract);
+                    m_api.SubscribeQuote(out m_sessionID, info.Contract);
                 }
             }
         }
