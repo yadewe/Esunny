@@ -127,21 +127,28 @@ namespace TapApiDemo
         {
             if (errorCode == 0)
             {
+                // 查询合约
+                m_api.QryContract(out m_sessionID, info.Commodity);
+
                 if (isLast != 'Y')
                 {
                     ListCommodity.Add(info);
                 }
                 else
                 {
-                    m_api.QryContract(out m_sessionID, new TapAPICommodity()
-                    {
-                        ExchangeNo = ListCommodity[1].Commodity.ExchangeNo,
-                        CommodityNo = "",
-                        CommodityType='F'
+                    //m_api.QryContract(out m_sessionID, new TapAPICommodity()
+                    //{
+                    //    ExchangeNo = ListCommodity[1].Commodity.ExchangeNo,
+                    //    CommodityNo = "",
+                    //    CommodityType='F'
                        
-                    });
+                    //});
                     
                 }
+            }
+            else
+            {
+                Console.WriteLine($"QuoteNotify_OnRspQryCommodityEvent result errorCode:{errorCode}");
             }
         }
 
@@ -149,6 +156,10 @@ namespace TapApiDemo
         {
             if (errorCode == 0)
             {
+                // 订阅
+                if(info!=null)
+                    m_api.SubscribeQuote(out m_sessionID, info.Contract);
+
                 if (isLast != 'Y')
                 {
                     ListContract.Add(info);
@@ -163,7 +174,6 @@ namespace TapApiDemo
                     //contract.CallOrPutFlag1 = 'N';
                     //contract.CallOrPutFlag2 = 'N';
                     //m_api.SubscribeQuote(out m_sessionID, contract);
-                    m_api.SubscribeQuote(out m_sessionID, info.Contract);
                 }
             }
         }

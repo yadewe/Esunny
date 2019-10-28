@@ -79,8 +79,19 @@ namespace TapApiDemo
             {
                 if (info != null)
                 {
-                    Console.WriteLine(info.Contract.Commodity.ExchangeNo+" "+info.Contract.Commodity.CommodityNo + " " + info.Contract.StrikePrice1 + " " + info.Q5DAvgQty);
+                    Console.WriteLine(
+                        info.Contract.Commodity.ExchangeNo+" "+info.Contract.Commodity.CommodityNo + " " + info.Contract.StrikePrice1 
+                        + " " + info.Q5DAvgQty
+                        + " " + info.QOpeningPrice
+                        + " " + info.QClosingPrice
+                        + " " + info.QHighPrice
+                        + " " + info.QLowPrice
+                        );
                 }
+            }
+            else
+            {
+                Console.WriteLine($"OnRspSubscribeQuote result errorCode:{errorCode}");
             }
         }
 
