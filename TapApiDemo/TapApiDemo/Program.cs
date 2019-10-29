@@ -15,7 +15,8 @@ namespace TapApiDemo
             var m_TradeCtrl = new TradeController();
             m_QuoteCtrl.OnRspLoginEvent += M_QuoteCtrl_OnRspLoginEvent;
             m_QuoteCtrl.OnDisconnectEvent += M_QuoteCtrl_OnDisconnectEvent;
-            int iInitAPIRst = m_QuoteCtrl.InitQuoteAPI();
+            //int iInitAPIRst = m_QuoteCtrl.InitQuoteAPI();
+            int iInitAPIRst = m_TradeCtrl.InitTradeAPI();
             if (0 != iInitAPIRst)
             {
                 Console.WriteLine("初始化行情API失败，错误码：" + iInitAPIRst);
@@ -27,15 +28,16 @@ namespace TapApiDemo
 
                 try
                 {
-                    if (!m_QuoteCtrl.Login("61.163.243.173", 7171, "ES", "123456"))
+                    //if (!m_QuoteCtrl.Login("61.163.243.173", 7171, "ES", "123456"))
+                    if (!m_TradeCtrl.Login("61.163.243.173", 7171, "ES", "123456"))
                     {
                         Console.WriteLine("登录失败");
                     }
 
                 }
-                catch
+                catch(Exception e)
                 {
-                    Console.WriteLine("登陆参数有误");
+                    Console.WriteLine($"登陆参数有误:{e.ToString()}");
                 }
             }
             iInitAPIRst = m_TradeCtrl.InitTradeAPI();
@@ -51,7 +53,7 @@ namespace TapApiDemo
 
         private static void M_QuoteCtrl_OnDisconnectEvent(int reasonCode)
         {
-            Console.WriteLine(reasonCode);
+            Console.WriteLine($"M_QuoteCtrl_OnDisconnectEvent code:{reasonCode}");
         }
 
         private static void M_QuoteCtrl_OnRspLoginEvent(int errorCode, TapQuoteWrapperApi.TapAPIQuotLoginRspInfo loginRspInfo)

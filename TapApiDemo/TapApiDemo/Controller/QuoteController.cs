@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -13,6 +14,7 @@ namespace TapApiDemo
         public CTapQuoteAPINotify QuoteNotify = null;
         private ITapQuoteAPI m_api = null;
         private uint m_sessionID = 0;
+        private object m_sessionID_Lock = new object();
 
         public delegate void OnQuoteUpdateHandler();
         public event OnQuoteUpdateHandler OnQuoteUpdateEvent;
@@ -119,7 +121,12 @@ namespace TapApiDemo
 
         void QuoteNotify_OnAPIReadyEvent()
         {
-            m_api.QryCommodity(out m_sessionID);
+            lock (m_sessionID_Lock)
+            {
+                Console.WriteLine($"sessionID update === value:{m_sessionID} - QryCommodity");
+                m_api.QryCommodity(out m_sessionID);
+                Console.WriteLine($"sessionID update end value:{m_sessionID} - QryCommodity");
+            }
             //m_api.QryContract(out m_sessionID, new TapAPICommodity() {  });
         }
 
@@ -127,8 +134,14 @@ namespace TapApiDemo
         {
             if (errorCode == 0)
             {
-                // 查询合约
-                m_api.QryContract(out m_sessionID, info.Commodity);
+                lock (m_sessionID_Lock)
+                {
+                    Console.WriteLine($"sessionID update === value:{m_sessionID} - QryContract");
+                    // 查询合约
+                    m_api.QryContract(out m_sessionID, info.Commodity);
+                    Console.WriteLine($"sessionID update end value:{m_sessionID} - QryContract");
+                    
+                }
 
                 if (isLast != 'Y')
                 {
@@ -151,14 +164,24 @@ namespace TapApiDemo
                 Console.WriteLine($"QuoteNotify_OnRspQryCommodityEvent result errorCode:{errorCode}");
             }
         }
-
+        bool isSubscribed = false;
         void QuoteNotify_OnRspQryContractEvent(uint sessionId, int errorCode, char isLast, TapAPIQuoteContractInfo info)
         {
             if (errorCode == 0)
             {
                 // 订阅
-                if(info!=null)
-                    m_api.SubscribeQuote(out m_sessionID, info.Contract);
+                if (info != null)
+                {
+                    lock (m_sessionID_Lock)
+                    {
+                        if(info.Contract.Commodity.CommodityNo == "HSI" && info.Contract.ContractNo1 == "1908" && !isSubscribed) { 
+                            var sRes = m_api.SubscribeQuote(out m_sessionID, info.Contract);
+                            isSubscribed = true;
+                            if (sRes != 0)
+                                Console.WriteLine($"QuoteNotify_OnRspQryContractEvent {info.Contract.ContractNo1} SubscribeQuote result:{sRes}");
+                        }
+                    }
+                }
 
                 if (isLast != 'Y')
                 {
