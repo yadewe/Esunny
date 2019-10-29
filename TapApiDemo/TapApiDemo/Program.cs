@@ -29,7 +29,7 @@ namespace TapApiDemo
                 try
                 {
                     //if (!m_QuoteCtrl.Login("61.163.243.173", 7171, "ES", "123456"))
-                    if (!m_TradeCtrl.Login("61.163.243.173", 7171, "ES", "123456"))
+                    if (!m_TradeCtrl.Login("61.163.243.173", 7171, "xxx", "xxx"))
                     {
                         Console.WriteLine("登录失败");
                     }

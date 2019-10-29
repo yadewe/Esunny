@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -94,7 +95,7 @@ namespace TapApiDemo
         }
         public override void OnRspQryOrder(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info)
         {
-            
+            Console.WriteLine($"OnRspQryOrder sessionID:{sessionID}, errorCode:{errorCode}, isLast:{isLast}, info:{JsonConvert.SerializeObject(info)}");
         }
         public override void OnRspQryOrderProcess(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info)
         {

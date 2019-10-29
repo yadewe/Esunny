@@ -12,6 +12,7 @@ namespace TapApiDemo
         public CTapTradeAPINotify TradeNotify = null;
         private ITapTradeAPI m_api = null;
         private uint m_sessionID = 0;
+        TapAPITradeLoginAuth m_loginInfo;
 
         public TradeController()
         {
@@ -51,11 +52,11 @@ namespace TapApiDemo
         public bool Login(string ip, ushort port, string username, string password)
         {
             m_api.SetHostAddress("123.161.206.213", 8383);
-            TapAPITradeLoginAuth loginInfo = new TapAPITradeLoginAuth();
-            loginInfo.UserNo = username;
-            loginInfo.Password = password;
-            loginInfo.ISModifyPassword = 'N';
-            return (0 == m_api.Login(loginInfo));
+            m_loginInfo = new TapAPITradeLoginAuth();
+            m_loginInfo.UserNo = username;
+            m_loginInfo.Password = password;
+            m_loginInfo.ISModifyPassword = 'N';
+            return (0 == m_api.Login(m_loginInfo));
         }
 
         private void InitEventHandler()
@@ -67,15 +68,30 @@ namespace TapApiDemo
 
         private void TradeNotify_OnDisconnectEvent(int reasonCode)
         {
-            
+            Console.WriteLine($"TradeNotify_OnDisconnectEvent code:{reasonCode}");
         }
 
         private void TradeNotify_OnAPIReadyEvent(int errorCode)
         {
-            Console.WriteLine("TradeNotify_OnAPIReadyEvent");
+            Console.WriteLine($"TradeNotify_OnAPIReadyEvent code:{errorCode}");
             m_api.QryAccount(out m_sessionID, null);
-            m_api.QryOrder(out m_sessionID, null);
+            m_api.QryOrder(out m_sessionID, new TapAPIOrderQryReq() { AccountNo = m_loginInfo.UserNo, CommodityNo = "HSI" });
             m_api.QryExchange(out m_sessionID);
+            var order = new TapAPINewOrder()
+            {
+                AccountNo = m_loginInfo.UserNo,
+                ContractNo = "1908",
+                CommodityNo = "HSI",
+                ExchangeNo = "HKEX",
+                OrderType = '2',
+                OrderPrice = 1234,
+                TacticsType = 'N',
+                PositionEffect = 'C',
+                CommodityType = 'F',
+                OrderSide = 'S'
+            };
+            var result = m_api.InsertOrder(out m_sessionID, "", order);
+            Console.WriteLine($"InsertOrder result:{result}");
         }
 
         private void TradeNotify_OnRspLoginEvent(int errorCode, TapAPITradeLoginRspInfo loginRspInfo)
