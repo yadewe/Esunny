@@ -54,7 +54,7 @@ namespace TapApiDemo
             if (OnRspQryCommodityEvent != null)
             {
                 OnRspQryCommodityEvent(sessionID, errorCode, isLast, info);
-                Console.WriteLine($"交易所：{info.Commodity.ExchangeNo}，品种编号：{info.Commodity.CommodityNo}，品种名称：{info.CommodityEngName},{info.CommodityName},{info.RelateCommodity1?.CommodityNo}");
+                //Console.WriteLine($"交易所：{info.Commodity.ExchangeNo}，品种编号：{info.Commodity.CommodityNo}，品种名称：{info.CommodityEngName},{info.CommodityName},{info.RelateCommodity1?.CommodityNo}");
             }
         }
 

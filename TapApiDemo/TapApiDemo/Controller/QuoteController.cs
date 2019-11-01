@@ -136,10 +136,10 @@ namespace TapApiDemo
             {
                 lock (m_sessionID_Lock)
                 {
-                    Console.WriteLine($"sessionID update === value:{m_sessionID} - QryContract");
+                    //Console.WriteLine($"sessionID update === value:{m_sessionID} - QryContract");
                     // 查询合约
                     m_api.QryContract(out m_sessionID, info.Commodity);
-                    Console.WriteLine($"sessionID update end value:{m_sessionID} - QryContract");
+                    //Console.WriteLine($"sessionID update end value:{m_sessionID} - QryContract");
                     
                 }
 
@@ -175,7 +175,7 @@ namespace TapApiDemo
                     lock (m_sessionID_Lock)
                     {
                         if(!isSubscribed && info.Contract!=null && info.Contract.Commodity != null 
-                            && info.Contract.Commodity.CommodityNo == "HSI" && info.Contract?.ContractNo1 == "1910" ) { 
+                            && info.Contract.Commodity.CommodityNo == "HSI" && info.Contract?.ContractNo1 == "1911" ) { 
                             var sRes = m_api.SubscribeQuote(out m_sessionID, info.Contract);
                             isSubscribed = true;
                             if (sRes != 0)

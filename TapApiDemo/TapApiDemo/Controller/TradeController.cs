@@ -84,17 +84,20 @@ namespace TapApiDemo
                 CommodityNo = "HSI",
                 ExchangeNo = "HKEX",
                 OrderType = TapTradeWrapper.TAPI_ORDER_TYPE_LIMIT,
-                OrderPrice = 27200,
+                OrderPrice = 27008,
                 TacticsType = TapTradeWrapper.TAPI_TACTICS_TYPE_NONE,
                 PositionEffect = TapTradeWrapper.TAPI_PositionEffect_OPEN,
                 CommodityType = TapTradeWrapper.TAPI_COMMODITY_TYPE_FUTURES,
-                OrderSide = TapTradeWrapper.TAPI_SIDE_NONE,
-                 OrderQty = 1,
-                  TriggerCondition = TapTradeWrapper.TAPI_TRIGGER_CONDITION_NONE
+                OrderSide = TapTradeWrapper.TAPI_SIDE_BUY,
+                OrderQty = 1,
+                TriggerCondition = TapTradeWrapper.TAPI_TRIGGER_CONDITION_NONE
             };
 
-            var result = m_api.InsertOrder(out m_sessionID, "", order);
-            Console.WriteLine($"InsertOrder result:{result}");
+            //var result = m_api.InsertOrder(out m_sessionID, "", order);
+            //Console.WriteLine($"InsertOrder result:{result}");
+            //order.OrderSide = TapTradeWrapper.TAPI_SIDE_SELL;
+            //result = m_api.InsertOrder(out m_sessionID, "", order);
+            //Console.WriteLine($"InsertOrder result:{result}");
         }
 
         private void TradeNotify_OnRspLoginEvent(int errorCode, TapAPITradeLoginRspInfo loginRspInfo)
