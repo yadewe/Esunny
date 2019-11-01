@@ -174,7 +174,8 @@ namespace TapApiDemo
                 {
                     lock (m_sessionID_Lock)
                     {
-                        if(info.Contract.Commodity.CommodityNo == "HSI" && info.Contract.ContractNo1 == "1908" && !isSubscribed) { 
+                        if(!isSubscribed && info.Contract!=null && info.Contract.Commodity != null 
+                            && info.Contract.Commodity.CommodityNo == "HSI" && info.Contract?.ContractNo1 == "1910" ) { 
                             var sRes = m_api.SubscribeQuote(out m_sessionID, info.Contract);
                             isSubscribed = true;
                             if (sRes != 0)

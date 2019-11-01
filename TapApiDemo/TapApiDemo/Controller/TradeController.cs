@@ -80,16 +80,19 @@ namespace TapApiDemo
             var order = new TapAPINewOrder()
             {
                 AccountNo = m_loginInfo.UserNo,
-                ContractNo = "1908",
+                ContractNo = "1911",
                 CommodityNo = "HSI",
                 ExchangeNo = "HKEX",
-                OrderType = '2',
-                OrderPrice = 1234,
-                TacticsType = 'N',
-                PositionEffect = 'C',
-                CommodityType = 'F',
-                OrderSide = 'S'
+                OrderType = TapTradeWrapper.TAPI_ORDER_TYPE_LIMIT,
+                OrderPrice = 27200,
+                TacticsType = TapTradeWrapper.TAPI_TACTICS_TYPE_NONE,
+                PositionEffect = TapTradeWrapper.TAPI_PositionEffect_OPEN,
+                CommodityType = TapTradeWrapper.TAPI_COMMODITY_TYPE_FUTURES,
+                OrderSide = TapTradeWrapper.TAPI_SIDE_NONE,
+                 OrderQty = 1,
+                  TriggerCondition = TapTradeWrapper.TAPI_TRIGGER_CONDITION_NONE
             };
+
             var result = m_api.InsertOrder(out m_sessionID, "", order);
             Console.WriteLine($"InsertOrder result:{result}");
         }

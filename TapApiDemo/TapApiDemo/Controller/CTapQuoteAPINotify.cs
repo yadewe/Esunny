@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -53,7 +54,7 @@ namespace TapApiDemo
             if (OnRspQryCommodityEvent != null)
             {
                 OnRspQryCommodityEvent(sessionID, errorCode, isLast, info);
-                Console.WriteLine($"交易所：{info.Commodity.ExchangeNo}，品种编号：{info.Commodity.CommodityNo}，品种名称：{info.CommodityEngName}");
+                Console.WriteLine($"交易所：{info.Commodity.ExchangeNo}，品种编号：{info.Commodity.CommodityNo}，品种名称：{info.CommodityEngName},{info.CommodityName},{info.RelateCommodity1?.CommodityNo}");
             }
         }
 
@@ -67,6 +68,18 @@ namespace TapApiDemo
             if (OnRspQryContractEvent != null)
             {
                 OnRspQryContractEvent(sessionID, errorCode, isLast, info);
+                if(info!=null && info?.Contract?.Commodity?.CommodityNo == "HSI")
+                {
+                    try
+                    {
+
+                    //Console.WriteLine($"ContractName：{info.ContractName}，ContractType：{info.ContractType}，ContractNo1：{info.Contract?.ContractNo1},{info.Contract?.StrikePrice1}, ContractExpDate:{info.ContractExpDate}");
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+                }
             }
         }
 
@@ -79,25 +92,31 @@ namespace TapApiDemo
             {
                 if (info != null)
                 {
-                    Console.WriteLine(
-                        info.Contract.Commodity.ExchangeNo+" "+info.Contract.Commodity.CommodityNo + " " + info.Contract.StrikePrice1 
-                        + " " + info.Q5DAvgQty
-                        + " " + info.QOpeningPrice
-                        + " " + info.QClosingPrice
-                        + " " + info.QHighPrice
-                        + " " + info.QLowPrice
-                        );
+                    Console.WriteLine($"OnRspSubscribeQuote errorCode:{errorCode}, ContractNo1:{info.Contract?.ContractNo1}");
+                    //Console.WriteLine( 
+                    //    info.Contract.Commodity.ExchangeNo+" "+info.Contract.Commodity.CommodityNo + " " + info.Contract.StrikePrice1 
+                    //    + " " + info.Q5DAvgQty
+                    //    + " " + info.QOpeningPrice
+                    //    + " " + info.QClosingPrice
+                    //    + " " + info.QHighPrice
+                    //    + " " + info.QLowPrice
+                    //    );
+                }
+                else
+                {
+                    Console.WriteLine($"OnRspSubscribeQuote result isLast:{isLast}");
                 }
             }
             else
             {
-                Console.WriteLine($"OnRspSubscribeQuote result errorCode:{errorCode}");
+                Console.WriteLine($"OnRspSubscribeQuote result sessionID:{sessionID} errorCode:{errorCode}");
             }
         }
 
         public override void OnRspUnSubscribeQuote(uint sessionID, int errorCode, char isLast, TapAPIContract info)
         {
-           
+            Console.WriteLine($"OnRspUnSubscribeQuote errorCode:{errorCode}, info:{JsonConvert.SerializeObject(info)}");
+
         }
 
         public override void OnRtnQuote(TapAPIQuoteWhole info)

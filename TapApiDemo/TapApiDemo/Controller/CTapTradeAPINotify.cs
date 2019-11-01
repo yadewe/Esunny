@@ -67,12 +67,14 @@ namespace TapApiDemo
 
         public override void OnRspOrderAction(uint sessionID, int errorCode, TapAPIOrderActionRsp info)
         {
+            Console.WriteLine($"OnRspOrderAction sessionID:{sessionID}, errorCode:{errorCode}");
            
         }
 
         public override void OnRspQryAccount(uint sessionID, uint errorCode, char isLast, TapAPIAccountInfo info)
         {
-            
+            Console.WriteLine($"OnRspQryAccount sessionID:{sessionID}, errorCode:{errorCode}");
+
         }
 
         public override void OnRspQryFund(uint sessionID, int errorCode, char isLast, TapAPIFundData info)
@@ -87,11 +89,12 @@ namespace TapApiDemo
 
         public override void OnRspQryCommodity(uint sessionID, int errorCode, char isLast, TapAPICommodityInfo info)
         {
-           
+            Console.WriteLine($"OnRspQryCommodity sessionID:{sessionID}, errorCode:{errorCode}");
+
         }
         public override void OnRspQryContract(uint sessionID, int errorCode, char isLast, TapAPITradeContractInfo info)
         {
-            
+            Console.WriteLine($"OnRspQryContract sessionID:{sessionID}, errorCode:{errorCode}");
         }
         public override void OnRspQryOrder(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info)
         {
@@ -122,7 +125,7 @@ namespace TapApiDemo
         }
         public override void OnRspQryTradeMessage(uint sessionID, int errorCode, char isLast, TapAPITradeMessage info)
         {
-           
+            Console.WriteLine($"OnRspQryTradeMessage sessionID:{sessionID}, errorCode:{errorCode}");
         }
         public override void OnRspQryHisOrder(uint sessionID, int errorCode, char isLast, TapAPIHisOrderQryRsp info)
         {
